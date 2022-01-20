@@ -10,7 +10,7 @@
 ## datasets
 - docbank 文本和layout分析文档数据集  https://github.com/doc-analysis/DocBank
 - 无标注的CDIP文档数据集 https://ir.nist.gov/cdip/
-- Layout检测，中文数据集 https://github.com/buptlihang/CDLA 
+
 
 
 
