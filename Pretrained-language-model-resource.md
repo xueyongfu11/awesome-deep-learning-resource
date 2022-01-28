@@ -9,7 +9,8 @@
 - bert相关 https://github.com/Jiakui/awesome-bert
 - 
 
-
+## tokenizer
+- 基于神经网络的分词模型 https://github.com/google/sentencepiece
 
 ## 词向量
 - 100+的中文词向量 https://github.com/Embedding/Chinese-Word-Vectors
