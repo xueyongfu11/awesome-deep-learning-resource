@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="detectron2" />
+            <item index="1" class="java.lang.String" itemvalue="seqeval" />
+            <item index="2" class="java.lang.String" itemvalue="torch" />
+            <item index="3" class="java.lang.String" itemvalue="datasets" />
+            <item index="4" class="java.lang.String" itemvalue="torchvision" />
+            <item index="5" class="java.lang.String" itemvalue="opencv-contrib-python" />
+            <item index="6" class="java.lang.String" itemvalue="premailer" />
+            <item index="7" class="java.lang.String" itemvalue="python-Levenshtein" />
+            <item index="8" class="java.lang.String" itemvalue="pyclipper" />
+            <item index="9" class="java.lang.String" itemvalue="imgaug" />
+            <item index="10" class="java.lang.String" itemvalue="lmdb" />
+            <item index="11" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="12" class="java.lang.String" itemvalue="transformers" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
