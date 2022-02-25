@@ -6,7 +6,25 @@
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer
 
 ## 预训练语言模型
+- https://github.com/stanfordnlp/GloVe
+- https://github.com/huawei-noah/Pretrained-Language-Model
 - bert相关 https://github.com/Jiakui/awesome-bert
+- https://github.com/PaddlePaddle/ERNIE
+- https://github.com/YunwenTechnology/Unilm
+- https://github.com/google-research/text-to-text-transfer-transformer
+- https://github.com/TsinghuaAI/CPM-1-Generate
+- https://github.com/sinovation/ZEN
+- https://github.com/dbiir/UER-py
+- https://github.com/ymcui/Chinese-ELECTRA
+- https://github.com/zhongerqiandan/pretrained-unilm-Chinese
+- https://github.com/ymcui/Chinese-BERT-wwm
+- https://github.com/ZhuiyiTechnology/WoBERT
+- https://github.com/NVIDIA/Megatron-LM
+
+## 长文本PTLM
+- https://github.com/SCHENLIU/longformer-chinese
+- https://github.com/allenai/longformer
+- https://github.com/Sleepychord/CogLTX
 - 
 
 ## tokenizer

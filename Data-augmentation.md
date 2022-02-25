@@ -11,6 +11,7 @@
 - https://github.com/benkeen/generatedata 
 - https://github.com/Belval/TextRecognitionDataGenerator 
 - https://github.com/snorkel-team/snorkel 
+- https://github.com/akkarimi/aeda_nlp
 
 ## CV
 
