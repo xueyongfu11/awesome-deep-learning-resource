@@ -2,6 +2,7 @@
 
 
 # Code
+<<<<<<< HEAD
 - https://github.com/xiaofei05/Distant-Supervised-Chinese-Relation-Extraction
 - https://github.com/sakuranew/BERT-AttributeExtraction
 - https://github.com/baidu/information-extraction
@@ -29,6 +30,24 @@
 - https://github.com/awslabs/dgl-ke
 - https://github.com/mattzheng/DouBanRecommend
 - 
+=======
+- KG学习资源 https://github.com/BrambleXu/knowledge-graph-learning
+- https://github.com/graph4ai/graph4nlp
+- https://github.com/malllabiisc/CompGCN
+- https://github.com/muhanzhang/SEAL
+- https://github.com/husthuke/awesome-knowledge-graph
+- https://github.com/xyjun/large-scale-GNN
+- https://github.com/GRAND-Lab/Awesome-Graph-Neural-Networks
+- https://github.com/vuptran/graph-representation-learning
+- https://github.com/benedekrozemberczki/awesome-graph-classification
+- https://github.com/FrancesZhou/GCNTrafficPrediction
+- https://github.com/anshul3899/gcn-graphsage-benchmarking
+- https://github.com/JiaxuanYou/P-GNN
+- https://github.com/tanglion/PyHugeGraph
+- https://github.com/FighterLYL/GraphNeuralNetwork
+- https://github.com/bojone/kg-2019
+- https://github.com/FighterLYL/GraphNeuralNetwork
+>>>>>>> 23d54392e0864fcb58778e4473203efda2178f8b
 
 
 # Blog

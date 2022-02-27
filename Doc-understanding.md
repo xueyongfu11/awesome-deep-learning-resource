@@ -3,6 +3,8 @@
 
 
 # Code
+- layout parser https://github.com/Layout-Parser/layout-parser
+- layout parser train https://github.com/Layout-Parser/layout-model-training
 - 文档理解相关资源 https://github.com/tstanislawek/awesome-document-understanding
 
 
