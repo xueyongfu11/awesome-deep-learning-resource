@@ -29,6 +29,10 @@ https://github.com/edward-zhu/dialog
 ## DST
 - Paper: Task-Oriented Dialogue as Dataflow Synthesis 2020 TACL https://github.com/microsoft/task_oriented_dialogue_as_dataflow_synthesis
 
+## 槽值填充
+- https://github.com/sz128/slot_filling_and_intent_detection_of_SLU
+- 
+
 ## dataset
 - 中文任务型对话系统数据集 https://github.com/thu-coai/CrossWOZ
 - 任务型对话数据集 https://github.com/sz128/NLU_datasets_with_task_oriented_dialogue
