@@ -4,7 +4,7 @@
 
 # Code
 - PaddleOCR 文字检测，文字识别，关键信息抽取，文档版面解析，文档表格解析 https://github.com/PaddlePaddle/PaddleOCR
-
+- https://github.com/open-mmlab/mmocr
 - layout-parsr https://github.com/Layout-Parser/layout-parser
   
 ## datasets
