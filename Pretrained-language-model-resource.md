@@ -7,7 +7,7 @@
 
 ## 预训练语言模型
 - https://github.com/stanfordnlp/GloVe
-- https://github.com/huawei-noah/Pretrained-Language-Model
+- 华为预训练语言模型 https://github.com/huawei-noah/Pretrained-Language-Model
 - bert相关 https://github.com/Jiakui/awesome-bert
 - https://github.com/brightmart/roberta_zh
 - https://github.com/sinovation/ZEN

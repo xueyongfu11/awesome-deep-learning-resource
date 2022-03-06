@@ -9,6 +9,7 @@
 - https://github.com/breadbread1984/PinSage-tf2.0
 - https://github.com/AlexYangLi/KGCN_Keras
 - https://github.com/JockWang/Graph-in-Recommendation-Systems
+- https://github.com/Jhy1993/Awesome-GNN-Recommendation
 - 
  
 # Blog
