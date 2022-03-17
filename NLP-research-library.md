@@ -11,7 +11,7 @@
 - https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
 - https://github.com/PaddlePaddle/Research
 - https://github.com/xcfcode/What-I-Have-Read
-- 
+- https://github.com/PaddlePaddle/awesome-DeepLearning
 
 
 # Blog
