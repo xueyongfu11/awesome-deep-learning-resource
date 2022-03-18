@@ -12,6 +12,10 @@
 - https://github.com/WenRichard/KBQA-BERT
 - https://github.com/xiaobaicxy/Operator_QA_Based_KB
 
+## datasets
+- SQA https://msropendata.com/datasets/b25190ed-0f59-47b1-9211-5962858142c2
+- CAQA https://amritasaha1812.github.io/CSQA/
+- 
 # Blog
 
 

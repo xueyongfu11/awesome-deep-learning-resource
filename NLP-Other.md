@@ -43,7 +43,6 @@
 
 ## 深度学习基础和面试
 - https://paddlepedia.readthedocs.io/en/latest/index.html
-
 - https://github.com/amusi/Deep-Learning-Interview-Book
 - https://github.com/ShanghaiTechAIClub/DLInterview
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
