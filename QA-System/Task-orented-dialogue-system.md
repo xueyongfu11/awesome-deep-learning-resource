@@ -1,12 +1,15 @@
-# Paper
-
-
 
 # Code
 
 - Rasa  https://github.com/RasaHQ/rasa 
+  - https://github.com/RasaHQ/rasa-demo
+  - https://github.com/scalableminds/chatroom
+  - https://github.com/RasaHQ/financial-demo
+  - https://github.com/RasaHQ/helpdesk-assistant
 - 查询话费消费情况的对话机器人 https://github.com/zqhZY/_rasa_chatbot 
 - 基于rasa的中文对话系统 https://github.com/GaoQ1/rasa_chatbot_cn 
+  - https://github.com/GaoQ1/rasa_nlu_gq
+  - https://github.com/GaoQ1/rasa-nlp-architect
 - rasa中文对话系统 https://github.com/crownpku/Rasa_NLU_Chi
 - ACCENTOR: Adding Chit-Chat to Enhance Task-Oriented Dialogues 2021 NAACL https://github.com/facebookresearch/accentor
 - 医疗领域任务型对话系统 2018 https://github.com/nnbay/MeicalChatbot-HRL
@@ -15,6 +18,7 @@
 - 对话状态跟踪，对话回复生成benchmark，multiwoz数据集 https://github.com/budzianowski/multiwoz
 - 任务型对话系统相关内容 https://github.com/AtmaHou/Task-Oriented-Dialogue-Research-Progress-Survey
 - 任务型对话系统中的文本回复生成 https://github.com/yizhen20133868/Awesome-TOD-NLG-Survey
+- https://github.com/BSlience/rasa-conversational-ai
 
 ## end-to-end
 - Paper：End-to-End Task-Completion Neural Dialogue Systems https://github.com/MiuLab/TC-Bot
@@ -28,10 +32,13 @@ https://github.com/edward-zhu/dialog
 
 ## DST
 - Paper: Task-Oriented Dialogue as Dataflow Synthesis 2020 TACL https://github.com/microsoft/task_oriented_dialogue_as_dataflow_synthesis
-
+- 百度unit对话产品 https://github.com/baidu/unit-dmkit
 ## 槽值填充
 - https://github.com/sz128/slot_filling_and_intent_detection_of_SLU
-- 
+- rasa对话策略学习模型 https://github.com/RasaHQ/TED-paper
+## Tools
+- 生成对话数据集 https://github.com/rodrigopivi/Chatito    
+  - 移动电信数据集 https://github.com/GaoQ1/chatito_gen_nlu_data
 
 ## dataset
 - 中文任务型对话系统数据集 https://github.com/thu-coai/CrossWOZ
