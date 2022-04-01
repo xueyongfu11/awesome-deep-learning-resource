@@ -39,7 +39,8 @@
 - https://github.com/kmario23/deep-learning-drizzle
 - https://github.com/bharathgs/Awesome-pytorch-list
 - https://github.com/paulbricman/python-sirajnet
--     
+- https://github.com/IntelLabs/nlp-architect
+- https://github.com/facebookresearch/ParlAI
 
 ## 深度学习基础和面试
 - https://paddlepedia.readthedocs.io/en/latest/index.html
