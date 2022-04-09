@@ -14,11 +14,15 @@
   - all easy, base on rasa1.10
 - rasa中文对话系统 easy https://github.com/crownpku/Rasa_NLU_Chi 
 ## Important
-- 对话状态跟踪，对话回复生成benchmark，multiwoz数据集 https://github.com/budzianowski/multiwoz
+- https://github.com/thu-coai/Convlab-2
+  - demo整合了任务型对话系统的pipline
+- https://github.com/budzianowski/multiwoz
+  - 任务型对话系统的相关论文
 - 任务型对话系统相关内容 https://github.com/AtmaHou/Task-Oriented-Dialogue-Research-Progress-Survey
-- 任务型对话系统中的文本回复生成 https://github.com/yizhen20133868/Awesome-TOD-NLG-Survey
-- https://github.com/BSlience/rasa-conversational-ai
-
+- https://github.com/yizhen20133868/Awesome-TOD-NLG-Survey
+  - 任务型对话系统中的文本回复生成 
+- https://github.com/thu-coai
+  - 清华大学AI对话组 github
 ## end-to-end
 - Paper：End-to-End Task-Completion Neural Dialogue Systems https://github.com/MiuLab/TC-Bot
 - 未知paper https://github.com/shawnwun/NNDIAL
@@ -27,13 +31,20 @@
 - Global-to-local Memory Pointer Networks for Task-Oriented Dialogue 2019 ICLR https://github.com/jasonwu0731/GLMP
 - Paper: Sequicity: Simplifying Task-oriented Dialogue Systems with Single Sequence-to-Sequence Architectures 2018 ACL https://github.com/WING-NUS/sequicity
 - An End-to-End Trainable Neural Network Model with Belief Tracking for Task-Oriented Dialog; Bing Liu, et. al.；A Network-based End-to-End Trainable Task-oriented Dialogue System; Wen, Tsung-Hsien, et. al.
-https://github.com/edward-zhu/dialog
+- https://github.com/edward-zhu/dialog
 - ACCENTOR: Adding Chit-Chat to Enhance Task-Oriented Dialogues 2021 NAACL https://github.com/facebookresearch/accentor
-
+- https://github.com/MiuLab/TC-Bot
+  - 端到端的对话系统，同时实现了用户模拟器
+- https://github.com/shawnwun/NNDIAL
 
 ## DST
 - Paper: Task-Oriented Dialogue as Dataflow Synthesis 2020 TACL https://github.com/microsoft/task_oriented_dialogue_as_dataflow_synthesis
 - 百度unit对话产品 https://github.com/baidu/unit-dmkit
+  - DM Kit作为UNIT的开源对话管理模块，可以无缝对接UNIT的理解能力，并赋予开发者多状态的复杂对话流程管理能力，还可以低成本对接外部知识库，迅速丰富话术信息量。
+  - 已经不再更新
+- https://github.com/google-research-datasets/simulated-dialogue
+- https://github.com/budzianowski/multiwoz
+
 ## NLU
 - https://github.com/sz128/slot_filling_and_intent_detection_of_SLU
 - rasa对话策略学习模型 https://github.com/RasaHQ/TED-paper

@@ -6,9 +6,7 @@
 - https://github.com/SadeemAlharthi/Arabic_Question-Answering_System_Using_Search_Engine_Techniques
 - baidu AnyQ https://github.com/baidu/AnyQ
 - https://colab.research.google.com/drive/1tcsEQ7igx7lw_R0Pfpmsg9Wf3DEXyOvk#scrollTo=ZiXOVpeutyWg
-
-
-
-# Blog
-
+- https://github.com/baidu/Dialogue/tree/master/DAM
+- https://github.com/gunthercox/ChatterBot
+  
 
