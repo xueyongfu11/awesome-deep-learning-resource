@@ -11,7 +11,8 @@
 - https://github.com/ricardorei/lightning-text-classification
 - https://github.com/IBM/MAX-Toxic-Comment-Classifier
 - https://github.com/brightmart/text_classification
-- 
+- https://github.com/facebookresearch/fastText
+  - fastText模型：ngram+word特征；向量平均；层次softmax
 
 ## 多分类
 - https://github.com/kaushaltrivedi/bert-toxic-comments-multilabel

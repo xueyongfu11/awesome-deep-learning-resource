@@ -41,6 +41,7 @@
 - https://github.com/paulbricman/python-sirajnet
 - https://github.com/IntelLabs/nlp-architect
 - https://github.com/facebookresearch/ParlAI
+- https://github.com/princewen/tensorflow_practice
 
 ## 深度学习基础和面试
 - https://paddlepedia.readthedocs.io/en/latest/index.html

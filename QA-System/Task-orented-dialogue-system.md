@@ -1,4 +1,13 @@
 
+## NLG
+- Semantically Conditioned LSTM-based Natural Language Generation for Spoken Dialogue Systems
+  - 2015, EMNLP
+  - 阅读笔记：  
+    1.LSTM单元中加入DM门控单元，对action进行编码  
+    2.两个基于seq2seq模型生成，前向模型生成候选结果，后向模型对候选再排序（基于损失）
+  - code：https://github.com/andy194673/nlg-sclstm-multiwoz
+
+
 # Code
 ## Projects
 - Rasa  https://github.com/RasaHQ/rasa 
@@ -57,6 +66,13 @@
 - 医疗领域任务型对话系统 2018 https://github.com/nnbay/MeicalChatbot-HRL
 ## Retrieval-Base
 - 增量训练的任务型对话系统 Incremental Learning from Scratch for Task-Oriented Dialogue Systems 2019 ACL https://github.com/Leechikara/Incremental-Dialogue-System
+- Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog
+  - 2019 EMNLP-IJCNLP
+  - 学习笔记 
+  - code： https://github.com/truthless11/GDPL
+
+
+
 ## Tools
 - 生成对话数据集 https://github.com/rodrigopivi/Chatito    
   - 移动电信数据集 https://github.com/GaoQ1/chatito_gen_nlu_data
