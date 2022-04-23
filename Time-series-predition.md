@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction
 - https://github.com/cuge1995/awesome-time-series
 - https://github.com/Alro10/deep-learning-time-series
@@ -12,6 +10,6 @@
 
 
 
-# Blog
+
 
 

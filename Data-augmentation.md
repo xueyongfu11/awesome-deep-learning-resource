@@ -1,7 +1,6 @@
-# Paper
 
 
-# Code
+# Repo
 ## NLP
 - https://github.com/prakhar21/TextAugmentation-GPT2
 - https://github.com/makcedward/nlpaug 
@@ -21,5 +20,4 @@
 ## CV
 
 
-# Blog
 

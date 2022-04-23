@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/google/dopamine
 - https://github.com/openai/gym
 - https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow
@@ -14,6 +12,6 @@
 
 
 
-# Blog
+
 
 

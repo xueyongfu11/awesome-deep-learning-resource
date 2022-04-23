@@ -1,10 +1,7 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/baidu/lac
 
 
-# Blog
 
 

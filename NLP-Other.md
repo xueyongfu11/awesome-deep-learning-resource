@@ -1,7 +1,6 @@
-# Paper
 
 
-# Code
+# Repo
 - https://github.com/nkrnrnk/BertPunc
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
 - https://github.com/boudinfl/pke
@@ -50,6 +49,6 @@
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
 - 百面机器学习、百面深度学习（书）
 
-# Blog
+
 
 

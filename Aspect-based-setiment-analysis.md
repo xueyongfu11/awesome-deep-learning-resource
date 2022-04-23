@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 
 - https://github.com/shantanuj/TC-LSTM-LeftRight-
 - https://github.com/HSLCY/ABSA-BERT-pair
@@ -21,6 +19,5 @@
 
 
 
-# Blog
 
 

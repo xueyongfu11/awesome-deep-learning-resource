@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/terrifyzhao/text_matching
 - https://github.com/TharinduDR/Simple-Sentence-Similarity
 - https://github.com/NTMC-Community/MatchZoo-py
@@ -12,6 +10,6 @@
 - https://github.com/seatgeek/fuzzywuzzy
 - 
 
-# Blog
+
 
 

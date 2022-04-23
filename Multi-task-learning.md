@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - 多任务学习开源代码 https://github.com/namisan/mt-dnn
 - https://github.com/thuml/MTlearn
 - https://github.com/brianlan/pytorch-grad-norm
@@ -30,7 +28,5 @@
 - 
 
 
-
-# Blog
 
 

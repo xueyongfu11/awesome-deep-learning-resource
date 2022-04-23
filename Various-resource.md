@@ -1,8 +1,5 @@
-# Paper
 
-
-
-# Code
+# Repo
 
 ## NLP
 - 中文自然语言处理相关资料 https://github.com/crownpku/Awesome-Chinese-NLP
@@ -11,7 +8,3 @@
 
 ## CV
 
-
-
-
-# Blog

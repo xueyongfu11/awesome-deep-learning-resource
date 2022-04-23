@@ -1,10 +1,8 @@
-# Paper
 
 
-# Code
+# Repo
 
 
 
-# Blog
 
 

@@ -1,8 +1,6 @@
-# Paper
 
 
-
-# Code
+# Repo
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer
 
 ## 预训练语言模型
@@ -53,4 +51,3 @@
 - https://github.com/facebookresearch/fastText
 - 
 
-# Blog

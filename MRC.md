@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/sogou/SogouMRCToolkit
 
 
@@ -10,6 +8,5 @@
 - https://trec.nist.gov/data/qamain.html
 - https://rajpurkar.github.io/SQuAD-explorer/
 
-# Blog
 
 

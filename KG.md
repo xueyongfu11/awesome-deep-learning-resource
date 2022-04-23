@@ -1,8 +1,6 @@
-# Paper
 
 
-# Code
-<<<<<<< HEAD
+# Repo
 - https://github.com/xiaofei05/Distant-Supervised-Chinese-Relation-Extraction
 - https://github.com/sakuranew/BERT-AttributeExtraction
 - https://github.com/baidu/information-extraction
@@ -29,8 +27,6 @@
 - https://github.com/wgwang/ccks2020-baseline
 - https://github.com/awslabs/dgl-ke
 - https://github.com/mattzheng/DouBanRecommend
-- 
-=======
 - KG学习资源 https://github.com/BrambleXu/knowledge-graph-learning
 - https://github.com/graph4ai/graph4nlp
 - https://github.com/malllabiisc/CompGCN
@@ -47,9 +43,8 @@
 - https://github.com/FighterLYL/GraphNeuralNetwork
 - https://github.com/bojone/kg-2019
 - https://github.com/FighterLYL/GraphNeuralNetwork
->>>>>>> 23d54392e0864fcb58778e4473203efda2178f8b
 
 
-# Blog
+
 
 

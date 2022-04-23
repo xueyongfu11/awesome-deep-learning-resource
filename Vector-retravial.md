@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - milvus https://github.com/milvus-io/milvus
 - faiss 向量检索的开山之作 https://github.com/facebookresearch/faiss
 - annoy https://github.com/spotify/annoy
@@ -12,6 +10,6 @@
 - https://github.com/Hironsan/bertsearch
 - https://github.com/milvus-io/bootcamp
 - 
-# Blog
+
 
 

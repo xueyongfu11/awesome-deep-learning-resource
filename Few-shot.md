@@ -1,4 +1,3 @@
-# Paper
 
 
 # Code
@@ -6,6 +5,5 @@
 
 
 
-# Blog
 
 

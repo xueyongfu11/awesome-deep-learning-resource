@@ -1,7 +1,6 @@
-# Paper
 
 
-# Code
+# Repo
 - KGQA paper，code等 https://github.com/BshoterJ/awesome-kgqa
 - 医疗知识图谱问答 https://github.com/liuhuanyong/QASystemOnMedicalKG
 - https://github.com/ZihengZZH/awesome-multimodal-knowledge-graph
@@ -15,7 +14,6 @@
 ## datasets
 - SQA https://msropendata.com/datasets/b25190ed-0f59-47b1-9211-5962858142c2
 - CAQA https://amritasaha1812.github.io/CSQA/
-- 
-# Blog
+
 
 

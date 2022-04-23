@@ -1,12 +1,8 @@
-# Paper
 
 
-# Code
+# Repo
 - https://github.com/pluto-junzeng/CNSD
 - 
 
-
-
-# Blog
 
 

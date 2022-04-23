@@ -1,7 +1,6 @@
-# Paper
 
 
-# Code
+# Repo
 - https://github.com/HIT-SCIR/ltp
 - https://github.com/ownthink/Jiagu
 - https://github.com/isnowfy/snownlp

@@ -1,5 +1,3 @@
-# Paper
-
 
 # Code
 - https://github.com/HoyTta0/KnowledgeDistillation
@@ -7,7 +5,5 @@
 - 
 
 
-
-# Blog
 
 

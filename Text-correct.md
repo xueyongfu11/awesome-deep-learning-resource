@@ -1,7 +1,5 @@
-# Paper
 
-
-# Code
+# Repo
 - https://github.com/tongchangD/bert_for_corrector
 - https://github.com/taozhijiang/chinese_correct_wsd
 - https://github.com/PengheLiu/Cn_Speck_Checker
@@ -13,6 +11,6 @@
 
 
 
-# Blog
+
 
 
