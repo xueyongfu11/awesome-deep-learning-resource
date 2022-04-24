@@ -108,6 +108,8 @@
 - Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog
   - 2019 EMNLP-IJCNLP
   - 学习笔记：
+    1.使用AIRL对抗逆强化学习方法估计reward  
+    2.使用PPO算法进行更新策略函数和值函数
   - code： https://github.com/truthless11/GDPL
 
 ## NLG
