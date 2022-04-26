@@ -59,7 +59,7 @@
 - Paper: Data-Efficient Information Extraction from Form-Like Documents
   - year: 2022
   - 阅读笔记:  
-    1.提出文档信息抽取的迁移学习方法：比如同语言的source domain训练之后，再target domain上微调，或者不通语言训练数据之后的迁移学习  
+    1.提出文档信息抽取的迁移学习方法：比如同语言的source domain训练之后，在target domain上微调，或者不同语言训练数据之后的迁移学习  
     2.模型pipline：候选实体抽取，候选实体排序，赋值
   - code:
 
@@ -78,6 +78,15 @@
     concat到target block中的每个token
   - code:
   
+- Paper: TRIE: End-to-End Text Reading and Information Extraction for Document Understanding
+  - year: 2021 ACM MM2020
+  - 阅读笔记:  
+    1.一种end2end的文档信息抽取：文本检测，文本识别，信息抽取
+    2.通过ROIAlign方法从文本检测和识别模块中获取visual features
+    3.将文本特征和l文本框即layout信息融合，并通过自注意力进行建模，最后得到text features
+    4.将text features和visual features融合人得到context features，然后再与text features fuse之后送给LSTM网络，进行信息抽取
+  - code:
+  
 - Representation Learning for Information Extraction from Form-like Documents
   - 2020 ACL
   - 笔记：
@@ -86,6 +95,7 @@
     3.将候选实体类型的embedding和2中embedding进行binary cls  
     4.未使用多模态信息
   - code: https://github.com/Praneet9/Representation-Learning-for-Information-Extraction
+
 
 ## Layout
 
@@ -98,16 +108,17 @@
 
 ## Dataset
 
-- 发票数据集 https://github.com/clovaai/cord
+- https://github.com/clovaai/cord
+  - 发票数据集, 英文
 
+- https://github.com/HCIILAB/EPHOIE
+  - 中文 
+  
+- https://github.com/beacandler/EATEN
+  - 中文数据集 
 
-## chinese
-
-- 中文 https://github.com/HCIILAB/EPHOIE
-
-- 中文数据集 https://github.com/beacandler/EATEN
-
-- 中文 https://github.com/RuilinXu/GovDoc-CN
+- https://github.com/RuilinXu/GovDoc-CN
+  - 中文 
 
 
  
