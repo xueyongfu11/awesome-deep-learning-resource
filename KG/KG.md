@@ -46,5 +46,25 @@
 
 
 
+- https://github.com/zjunlp/deepke
+  - http://deepke.zjukg.cn/CN/index.html
+  - DeepKE 是一个支持低资源、长篇章的知识图谱抽取工具，用户可以定制输入的数据集
+  和模型实现命名实体识别、关系抽取、属性抽取等知识图谱构建功能。
+
+- https://github.com/thunlp/OpenKE
+  - 知识图谱表示学习框架
+
+- https://github.com/zjukg/NeuralKG
+  - official web：http://neuralkg.zjukg.org/CN/
+  - NeuralKG是一个通用的知识图谱神经网络表示学习工具，其包含常用的知识图谱嵌入
+  模型、基于图神经网络的图谱推理模型，以及多个规则增强推理模型
+  
+- https://github.com/zjunlp/PromptKG
+  - PromptKGC（Incoming）是一个基于Pretrain-Prompt-Fitune预训练范式的
+  知识图谱抽取和补全工具，支持文本生成、对话等多种应用和任务。
+  
+- https://github.com/zjukg/FedE
+  - FedKGE是一个分布式的知识图谱学习与应用框架，通过联邦学习等技术方法实现在
+  分布环境下实现隐私保护条件下的知识图谱学习、推理、问答等应用。
 
 

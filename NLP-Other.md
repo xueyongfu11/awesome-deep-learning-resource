@@ -1,6 +1,7 @@
 
 
 # Repo
+- https://github.com/DA-southampton/Tech_Aarticle
 - https://github.com/nkrnrnk/BertPunc
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
 - https://github.com/boudinfl/pke
@@ -43,6 +44,7 @@
 - https://github.com/princewen/tensorflow_practice
 
 ## 深度学习基础和面试
+- https://github.com/DA-southampton/NLP_ability
 - https://paddlepedia.readthedocs.io/en/latest/index.html
 - https://github.com/amusi/Deep-Learning-Interview-Book
 - https://github.com/ShanghaiTechAIClub/DLInterview
