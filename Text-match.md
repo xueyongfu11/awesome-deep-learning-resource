@@ -8,7 +8,10 @@
 - https://github.com/pengming617/text_matching
 - https://github.com/shenweichen/DeepMatch
 - https://github.com/seatgeek/fuzzywuzzy
-- 
+
+- https://github.com/DengBoCong/text-similarity
+
+
 
 
 

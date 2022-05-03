@@ -97,6 +97,13 @@
 - https://github.com/yizhen20133868/Awesome-SLU-Survey
 - Joint Multiple Intent Detection and Slot Filling https://github.com/yizhen20133868/GL-GIN
 
+- Paper:   SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
+  - year: 2020 EMNLP
+  - 阅读笔记: 
+    1.提出了一个非自回归但是拥有自回归性能的ID-SF联合模型  
+    2.bert未使用绝对位置编码，而是使用相对位置编码  
+    3.使用two-pass组件替代CRF，解决了非自回归的输出标签独立的问题。方法是将上一次迭代的标签作为下次模型迭代的输入，起始时全O，需要对tag进行embedding。目的是为了学习标签的边界或者依赖问题。
+  - code: 
 
 - 医疗领域任务型对话系统 2018 https://github.com/nnbay/MeicalChatbot-HRL
 ## Retrieval-Base

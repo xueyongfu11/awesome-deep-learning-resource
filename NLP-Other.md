@@ -43,6 +43,11 @@
 - https://github.com/facebookresearch/ParlAI
 - https://github.com/princewen/tensorflow_practice
 
+- https://github.com/DengBoCong/nlp-paper  
+
+- https://github.com/goto456/stopwords
+  - 四种语言的相关停用词
+
 ## 深度学习基础和面试
 - https://github.com/DA-southampton/NLP_ability
 - https://paddlepedia.readthedocs.io/en/latest/index.html

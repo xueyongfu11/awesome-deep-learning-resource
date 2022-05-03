@@ -6,3 +6,6 @@
 
 - http://coai.cs.tsinghua.edu.cn/tools/4
 
+- https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/sentiment_analysis
+  - 百度paddle开源
+
