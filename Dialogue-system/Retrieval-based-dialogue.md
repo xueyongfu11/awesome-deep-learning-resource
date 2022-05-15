@@ -42,3 +42,20 @@
     2.使用m个codex来表征context的global特征，m是超参数，影响推理速度
     3.candidate的表征extand到m个condex，来计算注意力。然后根据注意力得分加权codex，从而得到context的表征，最后和candidate的表征计算得分
   - code: 非官方 https://github.com/sfzhou5678/PolyEncoder
+  
+- Paper: Semantic Role Labeling Guided Multi-turn Dialogue ReWriter
+  - year: 2020 EMNLP
+  - 阅读笔记: 
+    1.使用unilm的文本生成方式进行对话重写
+    2.训练出了一个在对话（多句，传统SRL无法使用）数据上的语义角色分析模型，来增强语义信息
+    3.将树形的语义角色分析结果转成三元组，与context拼接。
+    4.使用了角色类型，SRL类型，对话重写内容的segment type id；不同三元组之间不直接计算self-attention，三元组只和context计算attention；每个三元组内进行位置编码
+  - code: 
+  
+- Paper: Improving Multi-turn Dialogue Modelling with Utterance ReWriter
+  - year: 2019 ACL
+  - 阅读笔记: 
+    1.基于encoder-decoder+point network的transformer模型
+    2.encoder和decoder的attention计算：encoder中的context，utterance要分别计算，然后concat
+    3.point network：分别计算context，utterance的注意力得分，并用一个0-1的拉姆达加权
+  - code: https://github.com/chin-gyou/dialogue-utterance-rewriter
