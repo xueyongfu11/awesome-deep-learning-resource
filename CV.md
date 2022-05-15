@@ -1,6 +1,8 @@
 
 # Repo
 
+- https://github.com/pytorch/vision
+
 - https://github.com/jbhuang0604/awesome-computer-vision
 - https://github.com/donnyyou/torchcv
 - https://github.com/facebookresearch/detectron2
@@ -10,8 +12,6 @@
 - https://github.com/xiaofengShi/CHINESE-OCR
 - https://github.com/facebookresearch/detectron2
 - https://github.com/open-mmlab/mmocr
-- 
-
 
 
 

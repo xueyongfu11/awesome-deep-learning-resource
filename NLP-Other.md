@@ -1,6 +1,9 @@
 
 
 # Repo
+
+- https://github.com/ivan-bilan/The-NLP-Pandect
+
 - https://github.com/DA-southampton/Tech_Aarticle
 - https://github.com/nkrnrnk/BertPunc
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
@@ -49,12 +52,14 @@
   - 四种语言的相关停用词
 
 ## 深度学习基础和面试
+- https://github.com/chehongshu/machine-learning-interview-chinese
 - https://github.com/DA-southampton/NLP_ability
 - https://paddlepedia.readthedocs.io/en/latest/index.html
 - https://github.com/amusi/Deep-Learning-Interview-Book
 - https://github.com/ShanghaiTechAIClub/DLInterview
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
 - 百面机器学习、百面深度学习（书）
+
 
 
 

@@ -1,6 +1,26 @@
 
 ## Pretain-multi-modal
 
+- Paper: BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents
+  - year: 2022 AAAI
+  - 阅读笔记: 
+    1.多模态预训练语言模型：tokens，layout，没有visual feature
+    2.预训练任务：masked token prediction，Area-masked Language Model：随机选择某一个候选框，然后以该候选框为中心按照某一个分布随机抽样扩大候选框，然后对新候选框的进行mask，使模型进行预测，使得模型依赖更长的上下文进行预测
+    3.表现结果上，超过其他未加入visual feature的文档多模态预训练语言模型
+    4.但是仍然低于加入图像特征的模型
+  - code: https://github.com/clovaai/bros
+  - blog:https://mp.weixin.qq.com/s/plZJUjB590VnmjHJcgvm9g
+
+- Paper: Unified Pretraining Framework for Document Understanding
+  - year: 2021 NeurIPS
+  - 阅读笔记: 
+    1.region sacle的多模态预训练语言模型
+    2.使用层次文档embedding方法，以sentence为mask基础
+    3.使用cnn-based模型进行图像特征的提取，每个sentence的visual feature使用POIAlign进行特征提取，并使用量化模块对visual feature进行离散化，方便学习
+    4.使用门控多模态cross注意力方式，得到的text feature和visual feature，concat之后经过FNN之后计算权重
+    5.预训练任务：mask sentence model，图像对比学习：pos使用visual feature和量化模块输出visual feature，text-visual align
+  - code: 
+
 - Paper: Towards a Multi-modal, Multi-task Learning based Pre-training Framework for Document Representation Learning
   - year: 2022
   - 阅读笔记:  

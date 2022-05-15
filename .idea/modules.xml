@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Deep-learning-resource.iml" filepath="$PROJECT_DIR$/.idea/Deep-learning-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../awesome-DL-blog/.idea/awesome-DL-blog.iml" filepath="$PROJECT_DIR$/../awesome-DL-blog/.idea/awesome-DL-blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../awesome-resources/.idea/awesome-resources.iml" filepath="$PROJECT_DIR$/../awesome-resources/.idea/awesome-resources.iml" />
     </modules>
   </component>
 </project>
