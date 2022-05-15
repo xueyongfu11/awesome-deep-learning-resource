@@ -5,7 +5,9 @@
 - https://github.com/pliang279/awesome-multimodal-ml
 
 
-# Information extraction
+# Paper
+
+## Information extraction
 
 - Paper: Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
   - year: 2020

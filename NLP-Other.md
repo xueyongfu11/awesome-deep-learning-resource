@@ -2,6 +2,20 @@
 
 # Repo
 
+- https://github.com/DengBoCong/nlp-paper
+
+- https://github.com/HIT-UG-Group/DeepLearning-MuLi-Notes
+
+- https://github.com/bplank/awesome-neural-adaptation-in-NLP
+
+- https://github.com/AMAI-GmbH/AI-Expert-Roadmap
+
+- https://github.com/DeepPavlov/convai
+
+- https://github.com/zhpmatrix/nlp-competitions-list-review
+
+- https://github.com/GanjinZero/awesome_Chinese_medical_NLP
+
 - https://github.com/ivan-bilan/The-NLP-Pandect
 
 - https://github.com/DA-southampton/Tech_Aarticle

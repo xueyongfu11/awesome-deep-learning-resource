@@ -2,6 +2,8 @@
 # Repo
 - chatterBot闲聊机器人   https://github.com/gunthercox/ChatterBot
   - 基于文档知识库的问答系统
+  
+- https://github.com/Morizeyao/GPT2-Chinese
 
 ## 基于预训练语言模型的对话机器人
 
