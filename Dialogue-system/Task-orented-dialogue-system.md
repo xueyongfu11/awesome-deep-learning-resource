@@ -20,7 +20,8 @@
 
 - https://github.com/qhduan/ConversationalRobotDesign
 
-## Projects
+## RASA series
+
 - Rasa  https://github.com/RasaHQ/rasa 
   - 官方文档 https://rasa.com/docs
   - https://github.com/RasaHQ/rasa-demo
@@ -37,8 +38,11 @@
   
 - rasa中文对话系统 easy https://github.com/crownpku/Rasa_NLU_Chi 
 
+- https://github.com/alfredfrancis/ai-chatbot-framework
+  - 任务型对话开源框架，相对rasa功能不够强大，不够灵活
 
-
+- https://github.com/botpress/botpress
+  - 对话系统框架，类似RASA，优势是以UI方式进行对话流创建
 
 # Paper
 
@@ -66,6 +70,30 @@
   - 端到端的对话系统，同时实现了用户模拟器
 - https://github.com/shawnwun/NNDIAL
 
+- Paper: GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-Supervised Learning and Explicit Policy Injection
+  - year: 2022 AAAI
+  - 阅读笔记: 
+    1.提出一种半监督许学习和对话策略信息注入的任务型对话系统的预训练模型
+    2.预训练：plain text文本预训练和任务型对话预训练同时进行，损失不完全相同
+    3.预训练任务：一致性正则（类似SimCSE的损失），回复生成，回复选择，act分类（仅任务型对话）
+    4.fine-tune：模型同UBAR，并增加act分类任务
+  - code: https://github.com/siat-nlp/GALAXY
+  
+- Paper: UBAR: Towards Fully End-to-End Task-Oriented Dialog System with GPT-2
+  - year:  2021 AAAI
+  - 阅读笔记: 
+    1.一种端到端基于GPT2的任务型对话系统模型
+    2.根据user utterance生成belief state，如domain slot value slot value domain2 slot value
+    3.根据belief state进行数据库的查询
+    4.根据user utterance，belief state，db生成act，response。response经过Delexicalization，value-independent的占位符
+  - code: https://github.com/ TonyNemo/UBAR-MultiWOZ
+
+- Paper: End-to-end LSTM-based dialog control optimized with supervised and reinforcement learning
+  - year: 2016
+  - 阅读笔记: 
+    1.end2end(不包含nlg)的方式将对话历史映射到action
+    2.模型中涉及到实体抽取，对话状态的表征，action强化学习
+  - code: 
 
 ## DST
 
