@@ -79,6 +79,21 @@
     4.fine-tune：模型同UBAR，并增加act分类任务
   - code: https://github.com/siat-nlp/GALAXY
   
+- Paper: Improving End-to-End Task-Oriented Dialogue System with A Simple Auxiliary Task
+  - year: 2021
+  - 阅读笔记: 
+    1.模型架构类UBAR
+    2.加入辅助任务：参考span-based dst，通过ontology和utterance匹配的方式获取标签数据，然后预测每个utterance中token的标签
+  - code: https://github.com/bepoetree/MTTOD
+
+- Paper: Multi-Task Pre-Training for Plug-and-Play Task-Oriented Dialogue System
+  - year: 2021
+  - 阅读笔记: 
+    1.使用多任务学习+prompt learning的方式学习DOT任务中的各个子任务
+    2.优势：避免了级联式模型的误差传递；可以应用每个子任务的数据集；更快的推理速度
+    3.推理：首先生成DST，然后获取DB state，然后在并行的执行POL和GLG
+  - code: https://github.com/awslabs/pptod
+  
 - Paper: UBAR: Towards Fully End-to-End Task-Oriented Dialog System with GPT-2
   - year:  2021 AAAI
   - 阅读笔记: 
