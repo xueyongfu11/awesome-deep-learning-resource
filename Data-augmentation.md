@@ -15,7 +15,7 @@
 - https://github.com/quincyliang/nlp-data-augmentation
 - https://github.com/huggingface/adversarialnlp
 - https://github.com/akkarimi/aeda_nlp
-
+- https://github.com/jasonwei20/eda_nlp
 
 ## CV
 

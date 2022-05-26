@@ -42,7 +42,6 @@ Paper阅读笔记，以及相关Paper开源代码，还包括自己平时搜集�
 - [Cluster](./Cluster.md)
 - [Contrastive learning](./Contrastive-learning.md)
 - [Date augmentation](./Data-augmentation.md)
-- [Datasets](./Datasets.md)
 - [Dependency parsing](./Dependency-parsing.md)
 - [Deployment](./Deployment.md)
 - [Event extraction](./Event-extraction.md)
