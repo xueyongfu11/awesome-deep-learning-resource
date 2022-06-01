@@ -126,19 +126,11 @@
 - 文档理解相关资源 https://github.com/tstanislawek/awesome-document-understanding
 
 
-## Dataset
+## Multi-modal document QA
 
-- https://github.com/clovaai/cord
-  - 发票数据集, 英文
+- https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/doc_vqa
 
-- https://github.com/HCIILAB/EPHOIE
-  - 中文 
-  
-- https://github.com/beacandler/EATEN
-  - 中文数据集 
 
-- https://github.com/RuilinXu/GovDoc-CN
-  - 中文 
 
 
  

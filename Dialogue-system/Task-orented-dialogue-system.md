@@ -48,7 +48,7 @@
 
 ## end-to-end
 
-- Paper：End-to-End Task-Completion Neural Dialogue Systems https://github.com/MiuLab/TC-Bot
+- End-to-End Task-Completion Neural Dialogue Systems https://github.com/MiuLab/TC-Bot
 
 - 未知paper https://github.com/shawnwun/NNDIAL
 
@@ -58,7 +58,7 @@
 
 - Global-to-local Memory Pointer Networks for Task-Oriented Dialogue 2019 ICLR https://github.com/jasonwu0731/GLMP
 
-- Paper: Sequicity: Simplifying Task-oriented Dialogue Systems with Single Sequence-to-Sequence Architectures 2018 ACL https://github.com/WING-NUS/sequicity
+- Sequicity: Simplifying Task-oriented Dialogue Systems with Single Sequence-to-Sequence Architectures 2018 ACL https://github.com/WING-NUS/sequicity
 
 - An End-to-End Trainable Neural Network Model with Belief Tracking for Task-Oriented Dialog; Bing Liu, et. al.；A Network-based End-to-End Trainable Task-oriented Dialogue System; Wen, Tsung-Hsien, et. al.
 
@@ -70,7 +70,7 @@
   - 端到端的对话系统，同时实现了用户模拟器
 - https://github.com/shawnwun/NNDIAL
 
-- Paper: GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-Supervised Learning and Explicit Policy Injection
+- GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-Supervised Learning and Explicit Policy Injection
   - year: 2022 AAAI
   - 阅读笔记: 
     1.提出一种半监督许学习和对话策略信息注入的任务型对话系统的预训练模型
@@ -79,14 +79,14 @@
     4.fine-tune：模型同UBAR，并增加act分类任务
   - code: https://github.com/siat-nlp/GALAXY
   
-- Paper: Improving End-to-End Task-Oriented Dialogue System with A Simple Auxiliary Task
+- Improving End-to-End Task-Oriented Dialogue System with A Simple Auxiliary Task
   - year: 2021
   - 阅读笔记: 
     1.模型架构类UBAR
     2.加入辅助任务：参考span-based dst，通过ontology和utterance匹配的方式获取标签数据，然后预测每个utterance中token的标签
   - code: https://github.com/bepoetree/MTTOD
 
-- Paper: Multi-Task Pre-Training for Plug-and-Play Task-Oriented Dialogue System
+- Multi-Task Pre-Training for Plug-and-Play Task-Oriented Dialogue System
   - year: 2021
   - 阅读笔记: 
     1.使用多任务学习+prompt learning的方式学习DOT任务中的各个子任务
@@ -94,7 +94,7 @@
     3.推理：首先生成DST，然后获取DB state，然后在并行的执行POL和GLG
   - code: https://github.com/awslabs/pptod
   
-- Paper: UBAR: Towards Fully End-to-End Task-Oriented Dialog System with GPT-2
+- UBAR: Towards Fully End-to-End Task-Oriented Dialog System with GPT-2
   - year:  2021 AAAI
   - 阅读笔记: 
     1.一种端到端基于GPT2的任务型对话系统模型
@@ -103,7 +103,7 @@
     4.根据user utterance，belief state，db生成act，response。response经过Delexicalization，value-independent的占位符
   - code: https://github.com/ TonyNemo/UBAR-MultiWOZ
 
-- Paper: End-to-end LSTM-based dialog control optimized with supervised and reinforcement learning
+- End-to-end LSTM-based dialog control optimized with supervised and reinforcement learning
   - year: 2016
   - 阅读笔记: 
     1.end2end(不包含nlg)的方式将对话历史映射到action
@@ -147,7 +147,7 @@
 - https://github.com/yizhen20133868/Awesome-SLU-Survey
 - Joint Multiple Intent Detection and Slot Filling https://github.com/yizhen20133868/GL-GIN
 
-- Paper:   SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
+- SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
   - year: 2020 EMNLP
   - 阅读笔记: 
     1.提出了一个非自回归但是拥有自回归性能的ID-SF联合模型  

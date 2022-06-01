@@ -36,6 +36,8 @@ Paper阅读笔记，以及相关Paper开源代码，还包括自己平时搜集�
   - [retrieval system](./Retrieval-system/Retrieval-system.md)
   - [vector retrieval](./Retrieval-system/Vector-retravial.md)
 
+- [Datasets](./Datasets)
+
 - [Active learning](./Active-learning.md)
 - [Automated machine learning](./Automated-machine-learning.md)
 - [Base deep learning](./Base-deep-learning.md)

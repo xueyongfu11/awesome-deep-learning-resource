@@ -11,6 +11,20 @@
 
 # 数据平台
 
+- [格物钛](https://gas.graviti.cn/open-datasets)
+- [CLUE](https://www.cluebenchmarks.com/index.html)
+- [千言中文数据集](https://www.luge.ai/#/)
+- [智源指数CUGE](http://cuge.baai.ac.cn/#/)
+- [天池数据集](https://tianchi.aliyun.com/dataset)
+- [超神经](https://hyper.ai/datasets)
+
+- [GLUE](https://gluebenchmark.com/)
+- [Huggingface dataset](https://huggingface.co/datasets)
+- [Kaggle dataset](https://www.kaggle.com/datasets)
+- [Paper With Code 数据集](https://www.paperswithcode.com/datasets)
+- [LinDat](https://lindat.mff.cuni.cz/)
+- [Google dataset](https://datasetsearch.research.google.com/)
+
 - 搜狗实验室
   - 搜狗实验室提供了一些高质量的中文文本数据集，时间比较早，多为2012年以前的数据。
   - [https://www.sogou.com/labs/resource/list_pingce.php](https://link.zhihu.com/?target=https%3A//www.sogou.com/labs/resource/list_pingce.php)

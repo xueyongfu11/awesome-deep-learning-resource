@@ -26,6 +26,8 @@
 - 百度百科
   - 只能自己爬，爬取得链接：`https://pan.baidu.com/share/init?surl=i3wvfil` 提取码 neqs 。 
 
+- https://dumps.wikimedia.org/zhwiki/
+
 ## Task-oriented dialogue system
 
 - Medical DS
