@@ -1,7 +1,15 @@
 
 ## Pretain-multi-modal
 
-- Paper: BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents
+- LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking
+  - 2022
+  - 阅读笔记：
+    1.相比layoutlmv1、v2基于token，v3是基于segment的多模态预训练语言模型
+    2.预训练任务：MLM，图像掩码（基于ViT的patch masked predition），alignment（预测segment对应的patch是否被mask）
+    3.1D、2D绝对位置编码，self-attention中加入1D和2D的相对位置编码信息（同layoutlmv2）
+  - code:https://aka.ms/layoutlmv3
+
+- BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents
   - year: 2022 AAAI
   - 阅读笔记: 
     1.多模态预训练语言模型：tokens，layout，没有visual feature
@@ -11,7 +19,13 @@
   - code: https://github.com/clovaai/bros
   - blog:https://mp.weixin.qq.com/s/plZJUjB590VnmjHJcgvm9g
 
-- Paper: Unified Pretraining Framework for Document Understanding
+- StructuralLM: Structural Pre-training for Form Understanding
+  - year:2021
+  - 阅读笔记：  
+  1.基于cell-level的多模态预训练语言模型
+  2.预训练任务：常见的MLVM；将cell-level 2D的位置信息全换成0，预测所在的patch块（一种分类任务）
+
+- Unified Pretraining Framework for Document Understanding
   - year: 2021 NeurIPS
   - 阅读笔记: 
     1.region sacle的多模态预训练语言模型
@@ -21,7 +35,7 @@
     5.预训练任务：mask sentence model，图像对比学习：pos使用visual feature和量化模块输出visual feature，text-visual align
   - code: 
 
-- Paper: Towards a Multi-modal, Multi-task Learning based Pre-training Framework for Document Representation Learning
+- Towards a Multi-modal, Multi-task Learning based Pre-training Framework for Document Representation Learning
   - year: 2022
   - 阅读笔记:  
     1.多模态预训练文档理解模型，longformer  
@@ -31,7 +45,7 @@
     5.应用：特别是文档检索
   - code:
   
-- Paper: StrucTexT: Structured Text Understanding with Multi-Modal Transformers
+- StrucTexT: Structured Text Understanding with Multi-Modal Transformers
   - year: 2021
   - 阅读笔记:  
     1.多模态预训练文档理解模型  
@@ -76,7 +90,7 @@
 
 ## Not pretrained
 
-- Paper: Data-Efficient Information Extraction from Form-Like Documents
+- Data-Efficient Information Extraction from Form-Like Documents
   - year: 2022
   - 阅读笔记:  
     1.提出文档信息抽取的迁移学习方法：比如同语言的source domain训练之后，在target domain上微调，或者不同语言训练数据之后的迁移学习  
@@ -90,7 +104,7 @@
     2.提出一种训练数据管理方法，这种方法是基于候选生成，候选排序，赋值的模型来说的
   - code:
 
-- Paper: Using Neighborhood Context to Improve Information Extraction from Visual Documents Captured on Mobile Phones
+- Using Neighborhood Context to Improve Information Extraction from Visual Documents Captured on Mobile Phones
   - year: 2021
   - 阅读笔记:  
     1.非预训练的多模态的文档信息抽取  
@@ -98,7 +112,7 @@
     concat到target block中的每个token
   - code:
   
-- Paper: TRIE: End-to-End Text Reading and Information Extraction for Document Understanding
+- TRIE: End-to-End Text Reading and Information Extraction for Document Understanding
   - year: 2021 ACM MM2020
   - 阅读笔记:  
     1.一种end2end的文档信息抽取：文本检测，文本识别，信息抽取

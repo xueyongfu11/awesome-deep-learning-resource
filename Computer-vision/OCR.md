@@ -6,7 +6,7 @@
 - https://github.com/open-mmlab/mmocr
 - layout-parsr https://github.com/Layout-Parser/layout-parser
 - https://github.com/tesseract-ocr/tesseract
-  
+  - GUI工具 https://github.com/manisandro/gImageReader
 ## datasets
 - docbank 文本和layout分析文档数据集  https://github.com/doc-analysis/DocBank
 - 无标注的CDIP文档数据集 https://ir.nist.gov/cdip/
