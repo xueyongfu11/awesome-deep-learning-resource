@@ -11,6 +11,19 @@
 - https://github.com/hecongqing/CCKS2019_EventEntityExtraction_Rank5
 - 
 
+## 地址解析
+## address correction
+- https://github.com/modood/Administrative-divisions-of-China
+  - 中文地址多级标准数据库
+- https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov
+  - 中文地址多级标准数据库
+- https://huggingface.co/cola/chinese-address-ner
+- https://github.com/youzanai/trexpark
+  - 收货地址预训练语言模型
+- https://www.kaggle.com/competitions/scl-2021-ds/overview/description
+  - Kaggle比赛
+- https://github.com/leodotnet/neural-chinese-address-parsing
+  - This page contains the code used in the work "Neural Chinese Address Parsing" published at NAACL 2019.
 
 
 

@@ -11,11 +11,11 @@
 
 # 数据平台
 
-- [格物钛](https://gas.graviti.cn/open-datasets)
 - [CLUE](https://www.cluebenchmarks.com/index.html)
 - [千言中文数据集](https://www.luge.ai/#/)
 - [智源指数CUGE](http://cuge.baai.ac.cn/#/)
 - [天池数据集](https://tianchi.aliyun.com/dataset)
+- [格物钛](https://gas.graviti.cn/open-datasets)
 - [超神经](https://hyper.ai/datasets)
 
 - [GLUE](https://gluebenchmark.com/)

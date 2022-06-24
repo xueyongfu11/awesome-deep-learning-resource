@@ -4,6 +4,8 @@
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer
 
 ## 预训练语言模型
+- https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
+  - 收集了一些高质量 中文 预训练语言模型
 - https://github.com/stanfordnlp/GloVe
 - 华为预训练语言模型 https://github.com/huawei-noah/Pretrained-Language-Model
 - bert相关 https://github.com/Jiakui/awesome-bert
