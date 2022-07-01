@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+  - [Pretain-multi-modal](#pretain-multi-modal)
+  - [Pretrain-cv-modal](#pretrain-cv-modal)
+  - [Not pretrained](#not-pretrained)
+  - [Layout](#layout)
+  - [Multi-modal document QA](#multi-modal-document-qa)
+- [Dataset](#dataset)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 
 ## Pretain-multi-modal
 
@@ -146,5 +160,20 @@
 
 
 
+ # Dataset
 
- 
+- https://github.com/baidu/DuReader/tree/master/DuReader-vis
+  - 中文多模态文档阅读理解数据集
+  - Paper: DuReadervis: A Chinese Dataset for Open-domain Document Visual Question Answering
+
+- https://github.com/clovaai/cord
+  - 发票数据集, 英文
+
+- https://github.com/HCIILAB/EPHOIE
+  - 中文 
+  
+- https://github.com/beacandler/EATEN
+  - 中文数据集 
+
+- https://github.com/RuilinXu/GovDoc-CN
+  - 中文 
