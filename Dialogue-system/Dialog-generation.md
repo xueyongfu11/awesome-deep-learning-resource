@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Repo](#repo)
+  - [基于预训练语言模型的对话机器人](#%E5%9F%BA%E4%BA%8E%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AF%B9%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA)
+- [Paper](#paper)
+  - [Pre-trained-model-for-generation](#pre-trained-model-for-generation)
+- [Datasets](#datasets)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 # Repo
   

@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Repo](#repo)
+  - [预训练语言模型](#预训练语言模型)
+  - [蒸馏](#蒸馏)
+  - [长文本PTLM](#长文本ptlm)
+  - [tokenizer](#tokenizer)
+  - [词向量](#词向量)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 # Repo
@@ -6,6 +19,7 @@
 ## 预训练语言模型
 - https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
   - 收集了一些高质量 中文 预训练语言模型
+- https://github.com/dbiir/UER-py
 - https://github.com/stanfordnlp/GloVe
 - 华为预训练语言模型 https://github.com/huawei-noah/Pretrained-Language-Model
 - bert相关 https://github.com/Jiakui/awesome-bert

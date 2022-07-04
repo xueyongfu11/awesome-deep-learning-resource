@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Deep-learning-resource](#deep-learning-resource)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Deep-learning-resource
 Paper阅读笔记，以及相关Paper开源代码，还包括自己平时搜集到的一
 些深度学习领域的优秀Repo
