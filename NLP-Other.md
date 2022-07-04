@@ -2,8 +2,6 @@
 
 # Repo
 
-- https://github.com/alibaba/EasyNLP
-
 - https://github.com/DengBoCong/nlp-paper
 
 - https://github.com/HIT-UG-Group/DeepLearning-MuLi-Notes

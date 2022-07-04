@@ -1,6 +1,8 @@
 
 # Repo
 
+- https://github.com/shibing624/pycorrector
+- https://github.com/iqiyi/FASPell
 - https://github.com/HillZhang1999/MuCGEC
   - CCL2022文本纠错任务数据集
 - https://github.com/blcuicall/CCL2022-CLTC
@@ -14,6 +16,15 @@
 - https://github.com/LorraineZhou/NLP-CGED
 - https://github.com/Chunngai/gec-papers
 - https://github.com/zhpmatrix/cged_tf
+
+
+## Post-OCR text correction
+
+- https://github.com/tiantian91091317/OCR-Corrector
+- https://github.com/shrutirij/ocr-post-correction
+- https://sites.google.com/view/icdar2019-postcorrectionocr
+  - ICDAR2019 OCR识别后文本纠错
+- https://github.com/skishore/makemeahanzi
 
 
 
