@@ -10,6 +10,8 @@
 
 
 # Repo
+- https://github.com/huggingface/transformers
+- https://github.com/microsoft/unilm
 - https://github.com/HIT-SCIR/ltp
 - https://github.com/ownthink/Jiagu
 - https://github.com/isnowfy/snownlp
