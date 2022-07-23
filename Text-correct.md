@@ -12,24 +12,20 @@
 
 # Repo
 - https://github.com/wdimmy/Automatic-Corpus-Generation
+  - 数据合成
 - https://github.com/awasthiabhijeet/PIE/tree/master/errorify
   - 数据合成
+  
 - https://github.com/nghuyong/text-correction-papers
+- https://github.com/Chunngai/gec-papers
+  
 - https://github.com/shibing624/pycorrector
 - https://github.com/iqiyi/FASPell
 - https://github.com/HillZhang1999/MuCGEC
   - CCL2022文本纠错任务数据集
 - https://github.com/blcuicall/CCL2022-CLTC
   - CCL 2022 汉语学习者文本纠错评测，官方任务发布网站
-- https://github.com/PaddlePaddle/PaddleNLP/tree/develop/examples/text_correction/ernie-csc
-- https://github.com/tongchangD/bert_for_corrector
-- https://github.com/taozhijiang/chinese_correct_wsd
-- https://github.com/PengheLiu/Cn_Speck_Checker
-- https://github.com/beyondacm/Autochecker4Chinese
-- https://github.com/ccheng16/correction
-- https://github.com/LorraineZhou/NLP-CGED
-- https://github.com/Chunngai/gec-papers
-- https://github.com/zhpmatrix/cged_tf
+
 
 # Paper
 
