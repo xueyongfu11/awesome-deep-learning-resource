@@ -2,14 +2,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Paper](#paper)
 - [Code](#code)
   - [ES](#es)
-- [Blog](#blog)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Paper
 
 
 # Code
@@ -30,6 +27,6 @@
 - https://github.com/NLPchina/elasticsearch-analysis-ansj
 - 
  
-# Blog
+
 
 

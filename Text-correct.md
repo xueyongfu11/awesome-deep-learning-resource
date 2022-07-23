@@ -3,12 +3,16 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
+  - [Post-OCR text correction](#post-ocr-text-correction)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Repo
-
+- https://github.com/wdimmy/Automatic-Corpus-Generation
+- https://github.com/awasthiabhijeet/PIE/tree/master/errorify
+  - 数据合成
+- https://github.com/nghuyong/text-correction-papers
 - https://github.com/shibing624/pycorrector
 - https://github.com/iqiyi/FASPell
 - https://github.com/HillZhang1999/MuCGEC

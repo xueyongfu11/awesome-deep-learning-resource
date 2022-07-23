@@ -3,13 +3,15 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
+  - [深度学习基础和面试](#深度学习基础和面试)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
 # Repo
+
+- https://github.com/sebastianruder/NLP-progress
 
 - https://github.com/DengBoCong/nlp-paper
 
