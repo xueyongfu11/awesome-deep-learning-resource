@@ -11,6 +11,8 @@
 
 # Repo
 
+- https://github.com/alibaba/EasyNLP
+
 - https://github.com/sebastianruder/NLP-progress
 
 - https://github.com/DengBoCong/nlp-paper
