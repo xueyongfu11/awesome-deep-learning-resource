@@ -3,8 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [地址解析](#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)
-  - [address correction](#address-correction)
+  - [地址解析](#地址解析)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -22,14 +21,13 @@
 - 
 
 ## 地址解析
-## address correction
 - https://github.com/modood/Administrative-divisions-of-China
   - 中文地址多级标准数据库
 - https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov
   - 中文地址多级标准数据库
 - https://huggingface.co/cola/chinese-address-ner
 - https://github.com/youzanai/trexpark
-  - 收货地址预训练语言模型
+  - 有赞开源：收货地址预训练语言模型
 - https://www.kaggle.com/competitions/scl-2021-ds/overview/description
   - Kaggle比赛
 - https://github.com/leodotnet/neural-chinese-address-parsing
