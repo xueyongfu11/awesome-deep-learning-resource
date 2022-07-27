@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
+  - [自动添加标点](#自动添加标点)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -14,5 +15,9 @@
 - https://github.com/github/gitignore
 
 
+## 自动添加标点
+
+- https://github.com/PaddlePaddle/PaddleSpeech
+- https://github.com/yeyupiaoling/PPASR
 
 
