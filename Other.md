@@ -13,7 +13,8 @@
 - https://github.com/tonybeltramelli/pix2code
   - 将图片转成html
 - https://github.com/github/gitignore
-
+- https://github.com/BYVoid/OpenCC
+  - 中文繁体转简体
 
 ## 自动添加标点
 

@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
+  - [hanzi similar](#hanzi-similar)
 - [Paper](#paper)
   - [Grammatical Error Correction](#grammatical-error-correction)
   - [chinese spelling correction](#chinese-spelling-correction)
@@ -17,9 +18,9 @@
 # Repo
 
 - https://github.com/wdimmy/Automatic-Corpus-Generation
-  - 数据合成
+  - 中文数据合成:通过模糊图像并进行OCR识别来构建混淆集；通过ASR来构建混淆集
 - https://github.com/awasthiabhijeet/PIE/tree/master/errorify
-  - 数据合成
+  - 英文数据合成
   
 - https://github.com/nghuyong/text-correction-papers
 - https://github.com/Chunngai/gec-papers
@@ -29,6 +30,13 @@
 - https://github.com/iqiyi/FASPell
 
 - https://github.com/yuantiku/fairseq-gec
+
+## hanzi similar
+- https://github.com/houbb/nlp-hanzi-similar
+- https://github.com/houbb/word-checker/blob/master/README_ZH.md
+- https://github.com/Inigo-numero1/zh-spelling-mistakes-dictionaries
+- https://github.com/TmengT/WordSimilarity
+
 
 # Paper
 
@@ -86,5 +94,5 @@
 - https://github.com/destwang/CTCResources#datasets
 
 - [CoNLL-2014 Shared Task: Grammatical Error Correction](https://www.comp.nus.edu.sg/~nlp/conll14st.html)
-- 
+- https://www.cl.cam.ac.uk/research/nl/bea2019st/#data
 
