@@ -36,7 +36,8 @@
 - https://github.com/houbb/word-checker/blob/master/README_ZH.md
 - https://github.com/Inigo-numero1/zh-spelling-mistakes-dictionaries
 - https://github.com/TmengT/WordSimilarity
-
+- 各种词库：https://github.com/fighting41love/funNLP
+- THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
 
 # Paper
 
