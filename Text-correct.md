@@ -30,6 +30,7 @@
 - https://github.com/iqiyi/FASPell
 
 - https://github.com/yuantiku/fairseq-gec
+- https://github.com/1250658183/Chinese-Error-Checking
 
 ## hanzi similar
 - https://github.com/houbb/nlp-hanzi-similar
