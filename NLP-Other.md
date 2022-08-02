@@ -87,6 +87,10 @@
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
 - 百面机器学习、百面深度学习（书）
 
+- https://github.com/MisterBooo/LeetCodeAnimation
+- https://github.com/labuladong/fucking-algorithm
+- https://github.com/wangyuGithub01/Machine_Learning_Resources
+
 
 
 
