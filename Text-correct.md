@@ -11,6 +11,8 @@
   - [Post ASR Error correction](#post-asr-error-correction)
 - [Competition](#competition)
 - [Datasets](#datasets)
+  - [chinese](#chinese)
+  - [englist](#englist)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -37,6 +39,7 @@
 - https://github.com/houbb/word-checker/blob/master/README_ZH.md
 - https://github.com/Inigo-numero1/zh-spelling-mistakes-dictionaries
 - https://github.com/TmengT/WordSimilarity
+  
 - 各种词库：https://github.com/fighting41love/funNLP
 - THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
 
@@ -73,7 +76,6 @@
 - https://github.com/shrutirij/ocr-post-correction
 - https://sites.google.com/view/icdar2019-postcorrectionocr
   - ICDAR2019 OCR识别后文本纠错
-- https://github.com/skishore/makemeahanzi
 
 
 ## Post ASR Error correction
@@ -89,12 +91,15 @@
   - https://github.com/blcuicall/CCL2022-CLTC
   - https://github.com/HillZhang1999/MuCGEC
 
+
 # Datasets
 
+## chinese
 - https://github.com/HillZhang1999/MuCGEC
   - CCL2022文本纠错任务数据集
 - https://github.com/destwang/CTCResources#datasets
 
+## englist
 - [CoNLL-2014 Shared Task: Grammatical Error Correction](https://www.comp.nus.edu.sg/~nlp/conll14st.html)
 - https://www.cl.cam.ac.uk/research/nl/bea2019st/#data
 
