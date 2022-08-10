@@ -3,10 +3,11 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
+  - [chinese spelling correction](#chinese-spelling-correction)
   - [hanzi similar](#hanzi-similar)
 - [Paper](#paper)
   - [Grammatical Error Correction](#grammatical-error-correction)
-  - [chinese spelling correction](#chinese-spelling-correction)
+  - [chinese spelling correction](#chinese-spelling-correction-1)
   - [Post-OCR text correction](#post-ocr-text-correction)
   - [Post ASR Error correction](#post-asr-error-correction)
 - [Competition](#competition)
@@ -28,8 +29,12 @@
   
 - https://github.com/shibing624/pycorrector
 - https://github.com/iqiyi/FASPell
-
+- https://github.com/gitabtion/BertBasedCorrectionModels
+  - 基于bert的文本纠错模型
 - https://github.com/yuantiku/fairseq-gec
+
+## chinese spelling correction
+- https://github.com/liushulinle/PLOME
 
 ## hanzi similar
 - https://github.com/houbb/nlp-hanzi-similar
