@@ -4,6 +4,7 @@
 
 - [Repo](#repo)
   - [自动添加标点](#自动添加标点)
+  - [datasets](#datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -23,3 +24,6 @@
 - https://github.com/nkrnrnk/BertPunc
 
 
+## datasets
+- https://github.com/brightmart/nlp_chinese_corpus
+- https://github.com/nonamestreet/weixin_public_corpus
