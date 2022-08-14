@@ -4,11 +4,12 @@
 
 - [Progress](#progress)
 - [code library](#code-library)
-- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
+- [自动添加标点](#自动添加标点)
 - [datasets](#datasets)
 - [Tools](#tools)
-- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
+- [深度学习基础和面试](#深度学习基础和面试)
 - [leecode](#leecode)
+- [label Tools](#label-tools)
 - [not deep learning](#not-deep-learning)
   - [VPN](#vpn)
 
@@ -53,6 +54,7 @@
 - https://github.com/allenai/allennlp
 - https://github.com/google-research/google-research
 - https://github.com/PaddlePaddle/Research
+- https://github.com/ml-tooling/best-of-ml-python
 
 
 - https://github.com/HIT-SCIR/ltp
@@ -93,7 +95,7 @@
   - 将图片转成html
 - https://github.com/BYVoid/OpenCC
   - 中文繁体转简体
-- - https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
+- https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
 
 
 ## 深度学习基础和面试
@@ -117,7 +119,13 @@
 - https://github.com/youngyangyang04/leetcode-master
 - https://github.com/MisterBooo/LeetCodeAnimation
 - https://github.com/labuladong/fucking-algorithm
-  
+
+
+## label Tools
+- Labelme标注工具 https://github.com/wkentaro/labelme
+- Doccano https://github.com/doccano/doccano
+- https://github.com/jiesutd/YEDDA
+
 
 ## not deep learning
 - https://github.com/soimort/you-get

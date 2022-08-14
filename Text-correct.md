@@ -35,6 +35,8 @@
   - 基于bert的文本纠错模型
 - https://github.com/yuantiku/fairseq-gec
 - https://github.com/1250658183/Chinese-Error-Checking
+- https://github.com/HillZhang1999/MuCGEC
+
 
 ## chinese spelling correction
 - https://github.com/liushulinle/PLOME
