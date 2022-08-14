@@ -59,6 +59,15 @@
   - code：https://github.com/grammarly/gector
 
 ## chinese spelling correction
+
+- MDCSpell: A Multi-task Detector-Corrector Framework for Chinese Spelling Correction
+  - 2022 ACL
+  - 阅读笔记：
+    1.使用多任务学习（即检测loss和纠正loss）的方式建模中文拼写纠错任务
+    2.使用同一个bert模型对source文本和target文本进行表征，使用binary loss计算检测网络的损失
+    3.将检测网络的最后一层的输出，融合到纠错网络的最后一层输出
+    4.纠错网络最后的投影层（一层全连接）的权重参数使用输入的word embedding进行初始化
+
 - Correcting Chinese Spelling Errors with Phonetic Pre-training
   - 2021 ACL
   - 阅读笔记：

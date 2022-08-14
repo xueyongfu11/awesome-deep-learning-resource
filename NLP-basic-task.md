@@ -1,7 +1,5 @@
 
 
-
-
 # chunk
 - https://github.com/baidu/lac
 
@@ -11,5 +9,6 @@
 - https://github.com/yzhangcs/parser
 - https://github.com/leodotnet/neural-chinese-address-parsing
 - https://github.com/baidu/DDParser
-- biaffine机制的句法分析 https://github.com/tdozat/Parser-v1
-- v2 https://github.com/tdozat/Parser-v2
+- biaffine机制的句法分析
+  - https://github.com/tdozat/Parser-v1
+  - v2 https://github.com/tdozat/Parser-v2

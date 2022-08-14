@@ -80,8 +80,11 @@
 
 ## 深度学习基础和面试
 - https://github.com/chehongshu/machine-learning-interview-chinese
+  - 传统机器学习算法
 - https://github.com/DA-southampton/NLP_ability
+  - NLP
 - https://paddlepedia.readthedocs.io/en/latest/index.html
+  - paddle深度学习基础内容和面试资源，ML、DL、CV、NLP
 - https://github.com/amusi/Deep-Learning-Interview-Book
 - https://github.com/ShanghaiTechAIClub/DLInterview
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
