@@ -4,10 +4,10 @@
 
 - [Progress](#progress)
 - [code library](#code-library)
-- [自动添加标点](#自动添加标点)
+- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
 - [datasets](#datasets)
 - [Tools](#tools)
-- [深度学习基础和面试](#深度学习基础和面试)
+- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
 - [leecode](#leecode)
 - [not deep learning](#not-deep-learning)
   - [VPN](#vpn)
