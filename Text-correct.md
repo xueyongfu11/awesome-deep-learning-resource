@@ -65,25 +65,25 @@
 - MDCSpell: A Multi-task Detector-Corrector Framework for Chinese Spelling Correction
   - 2022 ACL
   - 阅读笔记：
-    1.使用多任务学习（即检测loss和纠正loss）的方式建模中文拼写纠错任务
-    2.使用同一个bert模型对source文本和target文本进行表征，使用binary loss计算检测网络的损失
-    3.将检测网络的最后一层的输出，融合到纠错网络的最后一层输出
-    4.纠错网络最后的投影层（一层全连接）的权重参数使用输入的word embedding进行初始化
+    1. 使用多任务学习（即检测loss和纠正loss）的方式建模中文拼写纠错任务
+    2. 使用同一个bert模型对source文本和target文本进行表征，使用binary loss计算检测网络的损失
+    3. 将检测网络的最后一层的输出，融合到纠错网络的最后一层输出
+    4. 纠错网络最后的投影层（一层全连接）的权重参数使用输入的word embedding进行初始化
 
 - Correcting Chinese Spelling Errors with Phonetic Pre-training
   - 2021 ACL
   - 阅读笔记：
-    1.中文拼写错误方面，基于融入拼音的预训练和融入拼音的错误检测和错误纠正等方法
-    2.预训练：将传统的[MASK]替换成拼音或者基于拼音的混淆词，以及传统给的mask策略
-    3.错误检测：基于序列标注的方法，将word+pinyin作为输入
-    4.根据错误检测的概率数据将word embedding和pinyin embedding加权，作为错误纠正模块的输入
+    1. 中文拼写错误方面，基于融入拼音的预训练和融入拼音的错误检测和错误纠正等方法
+    2. 预训练：将传统的[MASK]替换成拼音或者基于拼音的混淆词，以及传统给的mask策略
+    3. 错误检测：基于序列标注的方法，将word+pinyin作为输入
+    4. 根据错误检测的概率数据将word embedding和pinyin embedding加权，作为错误纠正模块的输入
   - code：https://github.com/PaddlePaddle/PaddleNLP/tree/develop/examples/text_correction/ernie-csc
 
 - Spelling Error Correction with Soft-Masked BERT
   - 2020
   - 阅读笔记：
-    1.原生的bert的检错能力很差，所有soft-masked bert增加了一个错误检测模块
-    2.根据错误检测模块的数据概率将word embedding和mask embedding加权，作为纠正模块的输入
+    1. 原生的bert的检错能力很差，所有soft-masked bert增加了一个错误检测模块
+    2. 根据错误检测模块的数据概率将word embedding和mask embedding加权，作为纠正模块的输入
   - code:
 
 ## Post-OCR text correction
