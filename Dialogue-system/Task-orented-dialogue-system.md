@@ -91,41 +91,41 @@
 - GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-Supervised Learning and Explicit Policy Injection
   - year: 2022 AAAI
   - 阅读笔记: 
-    1.提出一种半监督许学习和对话策略信息注入的任务型对话系统的预训练模型
-    2.预训练：plain text文本预训练和任务型对话预训练同时进行，损失不完全相同
-    3.预训练任务：一致性正则（类似SimCSE的损失），回复生成，回复选择，act分类（仅任务型对话）
-    4.fine-tune：模型同UBAR，并增加act分类任务
+    1. 提出一种半监督许学习和对话策略信息注入的任务型对话系统的预训练模型
+    2. 预训练：plain text文本预训练和任务型对话预训练同时进行，损失不完全相同
+    3. 预训练任务：一致性正则（类似SimCSE的损失），回复生成，回复选择，act分类（仅任务型对话）
+    4. fine-tune：模型同UBAR，并增加act分类任务
   - code: https://github.com/siat-nlp/GALAXY
   
 - Improving End-to-End Task-Oriented Dialogue System with A Simple Auxiliary Task
   - year: 2021
   - 阅读笔记: 
-    1.模型架构类UBAR
-    2.加入辅助任务：参考span-based dst，通过ontology和utterance匹配的方式获取标签数据，然后预测每个utterance中token的标签
+    1. 模型架构类UBAR
+    2. 加入辅助任务：参考span-based dst，通过ontology和utterance匹配的方式获取标签数据，然后预测每个utterance中token的标签
   - code: https://github.com/bepoetree/MTTOD
 
 - Multi-Task Pre-Training for Plug-and-Play Task-Oriented Dialogue System
   - year: 2021
   - 阅读笔记: 
-    1.使用多任务学习+prompt learning的方式学习DOT任务中的各个子任务
-    2.优势：避免了级联式模型的误差传递；可以应用每个子任务的数据集；更快的推理速度
-    3.推理：首先生成DST，然后获取DB state，然后在并行的执行POL和GLG
+    1. 使用多任务学习+prompt learning的方式学习DOT任务中的各个子任务
+    2. 优势：避免了级联式模型的误差传递；可以应用每个子任务的数据集；更快的推理速度
+    3. 推理：首先生成DST，然后获取DB state，然后在并行的执行POL和GLG
   - code: https://github.com/awslabs/pptod
   
 - UBAR: Towards Fully End-to-End Task-Oriented Dialog System with GPT-2
   - year:  2021 AAAI
   - 阅读笔记: 
-    1.一种端到端基于GPT2的任务型对话系统模型
-    2.根据user utterance生成belief state，如domain slot value slot value domain2 slot value
-    3.根据belief state进行数据库的查询
-    4.根据user utterance，belief state，db生成act，response。response经过Delexicalization，value-independent的占位符
+    1. 一种端到端基于GPT2的任务型对话系统模型
+    2. 根据user utterance生成belief state，如domain slot value slot value domain2 slot value
+    3. 根据belief state进行数据库的查询
+    4. 根据user utterance，belief state，db生成act，response。response经过Delexicalization，value-independent的占位符
   - code: https://github.com/ TonyNemo/UBAR-MultiWOZ
 
 - End-to-end LSTM-based dialog control optimized with supervised and reinforcement learning
   - year: 2016
   - 阅读笔记: 
-    1.end2end(不包含nlg)的方式将对话历史映射到action
-    2.模型中涉及到实体抽取，对话状态的表征，action强化学习
+    1. end2end(不包含nlg)的方式将对话历史映射到action
+    2. 模型中涉及到实体抽取，对话状态的表征，action强化学习
   - code: 
 
 ## DST
@@ -137,17 +137,17 @@
 - SUMBT: Slot-Utterance Matching for Universal and Scalable Belief Tracking
   - 2019 ACL
   - 阅读笔记
-    1.基于匹配的方式获取slot-value，具有可扩展性  
-    2.参考阅读理解模型，将slot-type作为query，sys，usr的utterance作为text，通过计算注意，得到表示向量  
-    3.2中向量和slot-value向量计算相似度  
-    4.DST需要判断每个domain-slot的slot-value是空的还是具体的值。所以做法是每个domain-slot跟utterance进行融合计算，
+    1. 基于匹配的方式获取slot-value，具有可扩展性  
+    2. 参考阅读理解模型，将slot-type作为query，sys，usr的utterance作为text，通过计算注意，得到表示向量  
+    3. 2中向量和slot-value向量计算相似度  
+    4. DST需要判断每个domain-slot的slot-value是空的还是具体的值。所以做法是每个domain-slot跟utterance进行融合计算，
     跟相应slot-value的所有可能取值进行相似度的计算
     
 - Transferable Multi-Domain State Generator for Task-Oriented Dialogue Systems
   - 2019 ACL
   - 阅读笔记：
-    1.使用生成模型，对每个domain-slot作为decoder的first-token，进行slot-value的预测  
-    2.将decoder的first-token的隐向量跟encoder进行slot-gate的三分类，作为生成的slot-value的标识
+    1. 使用生成模型，对每个domain-slot作为decoder的first-token，进行slot-value的预测  
+    2. 将decoder的first-token的隐向量跟encoder进行slot-gate的三分类，作为生成的slot-value的标识
 
 - 百度unit对话产品 https://github.com/baidu/unit-dmkit
   - DM Kit作为UNIT的开源对话管理模块，可以无缝对接UNIT的理解能力，并赋予开发者多状态的复杂对话流程管理能力，还可以低成本对接外部知识库，迅速丰富话术信息量。
@@ -168,9 +168,9 @@
 - SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
   - year: 2020 EMNLP
   - 阅读笔记: 
-    1.提出了一个非自回归但是拥有自回归性能的ID-SF联合模型  
-    2.bert未使用绝对位置编码，而是使用相对位置编码  
-    3.使用two-pass组件替代CRF，解决了非自回归的输出标签独立的问题。方法是将上一次迭代的标签作为下次模型迭代的输入，起始时全O，需要对tag进行embedding。目的是为了学习标签的边界或者依赖问题。
+    1. 提出了一个非自回归但是拥有自回归性能的ID-SF联合模型  
+    2. bert未使用绝对位置编码，而是使用相对位置编码  
+    3. 使用two-pass组件替代CRF，解决了非自回归的输出标签独立的问题。方法是将上一次迭代的标签作为下次模型迭代的输入，起始时全O，需要对tag进行embedding。目的是为了学习标签的边界或者依赖问题。
   - code: 
 
 - 医疗领域任务型对话系统 2018 https://github.com/nnbay/MeicalChatbot-HRL
@@ -183,8 +183,8 @@
 - Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog
   - 2019 EMNLP-IJCNLP
   - 学习笔记：
-    1.使用AIRL对抗逆强化学习方法估计reward  
-    2.使用PPO算法进行更新策略函数和值函数
+    1. 使用AIRL对抗逆强化学习方法估计reward  
+    2. 使用PPO算法进行更新策略函数和值函数
   - code： https://github.com/truthless11/GDPL
 
 ## NLG
@@ -192,8 +192,8 @@
 - Semantically Conditioned LSTM-based Natural Language Generation for Spoken Dialogue Systems
   - 2015, EMNLP
   - 阅读笔记：  
-    1.LSTM单元中加入DM门控单元，对action进行编码  
-    2.两个基于seq2seq模型生成，前向模型生成候选结果，后向模型对候选再排序（基于损失）
+    1. LSTM单元中加入DM门控单元，对action进行编码  
+    2. 两个基于seq2seq模型生成，前向模型生成候选结果，后向模型对候选再排序（基于损失）
   - code：https://github.com/andy194673/nlg-sclstm-multiwoz
 
 ## Tools
