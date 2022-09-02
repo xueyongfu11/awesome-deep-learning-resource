@@ -27,7 +27,7 @@
   
 - https://github.com/nghuyong/text-correction-papers
 - https://github.com/Chunngai/gec-papers
-- https://github.com/destwang/CTCResources/blob/main/README_ZH.md
+- https://github.com/destwang/CTCResources
   
 - https://github.com/shibing624/pycorrector
 - https://github.com/iqiyi/FASPell
