@@ -32,8 +32,23 @@
 
 ## few-shot
 
+- https://github.com/daooshee/Few-Shot-Learning
+- https://github.com/ha-lins/MetaLearning4NLP-Papers
+- https://github.com/johnnyasd12/awesome-few-shot-meta-learning
+
 - https://github.com/ShaneTian/Att-Induction
-- https://github.com/xionghhcs/few_shot_learning
+  - 未开放paper，测试发现Induction network loss并不收敛，acc始终是20%
+- https://github.com/iesl/metanlp
+
+
+- PROTOTRANSFORMER: A META-LEARNING APPROACH TO PROVIDING STUDENT FEEDBACK
+  - year:2020
+  - 阅读笔记：
+    1. paper主要应用在code相关的meta-learning任务中，并在NLP任务有很好的效果
+    2. 使用robert对模型encoding，同时使用label embedding mean embedding作为一个token加入input，以此来融合side information
+    3. 使用SMLMT作为self-supervise的训练方式
+    4. details: 对于N-way K-shot C-query，采样时对每个类采样K个样本，然后对每个样本采样C个作为query；SMLMT并非是一个直接的分类问题，而是同一个类的support set和query set使用相同token mask；只希望正样本的距离比负样本的距离大就可以，所以推理时support set要包含真实类
+  - code: https://github.com/mhw32/prototransformer-public
 
 - Dynamic Memory Induction Networks for Few-Shot Text Classification
   - year: 2020
@@ -50,5 +65,5 @@
     2. 多支持集和请求集的样本text都用encoder进行embedding，具体是LSTM，然后使用self-attention加权得到text的句子embedding
     3. 计算类别embedding：使用胶囊网络对每个样本进行嵌入，然后通过动态路由的方法加权类别的所有样本，得到类别embedding
     4. 类别embedding和query集样本的两个embedding计算mse得分。
-  - code: https://github.com/wuzhiye7/Induction-Network-on-FewRel
+  - code: https://github.com/wuzhiye7/Induction-Network-on-FewRel；https://github.com/zhongyuchen/few-shot-text-classification
 
