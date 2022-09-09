@@ -3,7 +3,8 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [end-to-end](#end-to-end)
+- [Paper](#paper)
+  - [joint RE](#joint-re)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -11,9 +12,12 @@
 
 # Repo
 - https://github.com/roomylee/awesome-relation-extraction
-- 提供了四种关系抽取模型 https://github.com/zhoujx4/NLP-Series-relation-extraction
-- 生物学领域的信息抽取工具 https://github.com/BaderLab/saber/tree/development
-## end-to-end
+  - paper list
+- https://github.com/zhoujx4/NLP-Series-relation-extraction
+  - 提供了四种关系抽取模型 
+- https://github.com/BaderLab/saber/tree/development
+  - 生物学领域的信息抽取工具 
+
 - 2021 https://github.com/Receiling/UniRE
 - 2020 EMNLP https://github.com/LorrinWWW/two-are-better-than-one
 - bert biaffine机制 https://github.com/bowang-lab/joint-ner-and-re
@@ -32,5 +36,15 @@
 - 2019 https://github.com/datquocnguyen/jointRE
 
 
+# Paper
+
+## joint RE
+
+- Two are Better than One: Joint Entity and Relation Extraction with Table-Sequence Encoders
+  - year: 2020  EMNLP
+  - 阅读笔记：
+    1. 使用填表的方式进行关系抽取，使用两种表示table-encoder和seq-encoder
+    2. table-encoder使用多源word embedding进行第一个table unit的初始输入，然后使用MD-RNN网络
+    3. seq-encoder使用BERT网络模型，但是取消了scaled-dot用2中table作为注意力得分
 
 

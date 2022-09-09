@@ -3,7 +3,8 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [地址解析](#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)
+  - [地址解析](#地址解析)
+- [Paper](#paper)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -34,5 +35,12 @@
   - This page contains the code used in the work "Neural Chinese Address Parsing" published at NAACL 2019.
 
 
+# Paper
 
+- Hierarchically-Refined Label Attention Network for Sequence Labeling
+  - year:2019  EMNLP
+  - 阅读笔记：
+    1. 相较于CRF，LAN能够捕捉更长期的标签依赖，更快的解码速度
+    2. 基于BiLSTM网络，将BILSTM的隐层输出H作为Q，label embedding作为K，V，使用多头的自注意力网络，得到的输出再cancat上input的embedding
+    3. 最后直接使用自注意力得分，得到最后的输出
 
