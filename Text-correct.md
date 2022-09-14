@@ -62,6 +62,13 @@
 
 ## chinese spelling correction
 
+- General and Domain Adaptive Chinese Spelling Check with Error Consistent Pretraining
+  - 2022
+  - 笔记：
+    1. 根据错误一致性来构建预训练数据集，输入的特征包含拼音，字形等，预训练任务包含正确字词预测和通过字图预测所对应字标签
+    2. 通过引入领域词典的方式来提供自适应能力，改方法鼓励模型解码时更多的领域词典中字
+  - code；https://github.com/Aopolin-Lv/ECSpell
+
 - MDCSpell: A Multi-task Detector-Corrector Framework for Chinese Spelling Correction
   - 2022 ACL
   - 阅读笔记：
