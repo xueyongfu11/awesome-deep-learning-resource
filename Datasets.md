@@ -3,7 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Reference](#reference)
-- [数据平台](#%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0)
+  - [中文数据集](#中文数据集)
+  - [领域数据集](#领域数据集)
+- [数据平台](#数据平台)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -11,12 +13,19 @@
 # Reference
 
 - https://github.com/candlewill/Dialog_Corpus
-- https://github.com/codemayq/chinese_chatbot_corpus
-- 中文自然语言处理数据集 https://github.com/SophonPlus/ChineseNlpCorpus
 - https://github.com/IceFlameWorm/NLP_Datasets
-- https://github.com/brightmart/nlp_chinese_corpus
+
 - https://github.com/InsaneLife/ChineseNLPCorpus
 
+## 中文数据集
+- https://github.com/liucongg/NLPDataSet
+- https://github.com/SophonPlus/ChineseNlpCorpus
+- https://github.com/codemayq/chinese_chatbot_corpus
+- https://github.com/brightmart/nlp_chinese_corpus
+
+## 领域数据集
+- https://github.com/guoxw/wenshu-
+  - 裁判文书数据集
 
 # 数据平台
 
