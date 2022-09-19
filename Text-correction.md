@@ -60,13 +60,15 @@
     2.在推理方面，相较于NMT的方法在速度上有很大提升
   - code：https://github.com/grammarly/gector
 
+
 ## chinese spelling correction
 
 - General and Domain Adaptive Chinese Spelling Check with Error Consistent Pretraining
   - 2022
   - 笔记：
     1. 根据错误一致性来构建预训练数据集，输入的特征包含拼音，字形等，预训练任务包含正确字词预测和通过字图预测所对应字标签
-    2. 通过引入领域词典的方式来提供自适应能力，改方法鼓励模型解码时更多的领域词典中字
+    2. 模型使用基于token分类的类ner模型，tag类别使用常见的中文字，增加新的不纠正标签，对不在tag中的token打上非纠错标签
+    3. 通过引入领域词典的方式来提供自适应能力，该方法鼓励模型解码时更多的领域词典中的字
   - code；https://github.com/Aopolin-Lv/ECSpell
 
 - MDCSpell: A Multi-task Detector-Corrector Framework for Chinese Spelling Correction
