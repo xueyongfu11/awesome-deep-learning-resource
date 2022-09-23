@@ -81,7 +81,17 @@
 - A Survey on Spoken Language Understanding: Recent Advances and New Frontiers
   - code: https://github.com/yizhen20133868/Awesome-SLU-Survey
   - slot filling and intert detection survey
-  
+
+- A Co-interactive Transformer for joint Slot Filling and Intent Detection
+  - year: 2021 
+  - 阅读笔记：
+    1. 提出一种intent和slot共交互的transformer结构，同时将intent label和slot label的表示融合进模型
+    2. 使用BERT或者BiLSTM作为share encoder，然后将intent label和slot label进行encoding
+    3. 将share encoder表示作为query，intent label表示作为key和value，输入到self-attention结构，同理将slot label表示作为key和value，输入到self-attention结构，并将两个输出拼接。
+    4. 将3中的输出输入到FFN，并使用基于基于window的token表征。FFN的输出再拼接上3中未拼接的两个输出上，再进行LN，分别得到slot和intent的表征输出。
+    5. 对slot的表征输出+CRF进行slot抽取，intent的表征输出+maxpooling进行分类
+  - code: https://github.com/kangbrilliant/DCA-Net
+
 - Joint Multiple Intent Detection and Slot Filling
   - year: 2021
   - 阅读笔记：

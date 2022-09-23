@@ -54,14 +54,6 @@
     1. paper认为response依赖于不同的对话线，所有需要先对context分类出不同的对话线
     2. 对不同的对话线分别encoding，表征的结果与candidate的表征计算attention，并得到context的表征，然后与candidate计算score
   - code: https://github.com/JiaQiSJTU/ResponseSelection.
-
-- Paper: Poly-encoders: architectures and pre-training strategies for fast and accurate multi-sentence scoring
-  - year: 2020 ICLR
-  - 阅读笔记: 
-    1. 提出跟bi-encoder推理速度相当，精度与cross-encoder接近的poly-encoder模型，该模型延续的bi-encoder的双transformer结构
-    2. 使用m个codex来表征context的global特征，m是超参数，影响推理速度
-    3. candidate的表征extand到m个condex，来计算注意力。然后根据注意力得分加权codex，从而得到context的表征，最后和candidate的表征计算得分
-  - code: 非官方 https://github.com/sfzhou5678/PolyEncoder
   
 - Paper: Semantic Role Labeling Guided Multi-turn Dialogue ReWriter
   - year: 2020 EMNLP
