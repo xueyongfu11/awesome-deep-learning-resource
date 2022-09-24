@@ -5,6 +5,7 @@
 - [Repo](#repo)
   - [地址解析](#地址解析)
 - [Paper](#paper)
+- [datasets](#datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -44,3 +45,6 @@
     2. 基于BiLSTM网络，将BILSTM的隐层输出H作为Q，label embedding作为K，V，使用多头的自注意力网络，得到的输出再cancat上input的embedding
     3. 最后直接使用自注意力得分，得到最后的输出
 
+# datasets
+- [中文医疗信息处理评测基准CBLUE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.22060218.J_2657303350.1.70e81343dFDilp&dataId=95414)
+- 

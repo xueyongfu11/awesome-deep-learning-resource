@@ -24,10 +24,13 @@
 - https://github.com/codemayq/chinese_chatbot_corpus
 - https://github.com/brightmart/nlp_chinese_corpus
 
+
 ## 领域数据集
 
 - https://github.com/guoxw/wenshu-
   - 裁判文书数据集
+- THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
+
 
 # 数据平台
 
