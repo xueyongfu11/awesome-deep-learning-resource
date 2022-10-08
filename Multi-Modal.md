@@ -4,7 +4,9 @@
 
 - [Repo](#repo)
 - [Paper](#paper)
+  - [cross-modal retrieval](#cross-modal-retrieval)
   - [Information extraction](#information-extraction)
+  - [datasets](#datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -16,6 +18,17 @@
 
 
 # Paper
+
+## cross-modal retrieval
+
+- https://github.com/Paranioar/Cross-modal_Retrieval_Tutorial
+  - 跨模态检索paper set
+- https://github.com/IDEA-CCNL/Fengshenbang-LM
+  - 太乙：多模态预训练语言模型
+- https://wukong-dataset.github.io/wukong-dataset/benchmark.html
+  - WuKong, benchmark, baseline
+- https://github.com/openai/CLIP
+
 
 ## Information extraction
 
@@ -30,3 +43,10 @@
     6. 应为属性和属性值存在一致性，加入kl损失，然后使用多任务学习方式优化
     7. 提出多模态实验数据集
   - code: https://github.com/jd-aig/JAVE
+
+
+## datasets
+
+- https://paperswithcode.com/dataset/flickr30k-cna
+  - 中文数据集
+- [多模态分析数据集（Multimodal Dataset）整理](https://zhuanlan.zhihu.com/p/189876288)
