@@ -50,3 +50,4 @@
 - https://paperswithcode.com/dataset/flickr30k-cna
   - 中文数据集
 - [多模态分析数据集（Multimodal Dataset）整理](https://zhuanlan.zhihu.com/p/189876288)
+- [华为诺亚开源首个亿级中文多模态数据集-悟空](https://mp.weixin.qq.com/s/qXwnKCVi01LRjDYpYl9jLw)

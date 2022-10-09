@@ -5,7 +5,7 @@
 - [Repo](#repo)
   - [地址解析](#地址解析)
 - [Paper](#paper)
-- [datasets](#datasets)
+  - [Chinese datasets](#chinese-datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -45,6 +45,31 @@
     2. 基于BiLSTM网络，将BILSTM的隐层输出H作为Q，label embedding作为K，V，使用多头的自注意力网络，得到的输出再cancat上input的embedding
     3. 最后直接使用自注意力得分，得到最后的输出
 
-# datasets
+
+## Chinese datasets
+
+- [中文命名实体识别数据集](https://mp.weixin.qq.com/s/bIRhscHb1VjMAM1axLcUhw)
 - [中文医疗信息处理评测基准CBLUE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.22060218.J_2657303350.1.70e81343dFDilp&dataId=95414)
-- 
+
+- https://github.com/liucongg/NLPDataSet
+  - 包括中文摘要数据集、中文片段抽取式阅读理解数据集（QA）、中文文本相似度数据集和中文NER数据集
+
+- 微博实体识别.
+  - https://github.com/hltcoe/golden-horse
+
+- boson数据。
+  - 包含6种实体类型。
+  - https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/boson
+
+- 人民日报数据集。
+  - 人名、地名、组织名三种实体类型 
+  - 1998：[https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao](https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao) 
+  - 2004：https://pan.baidu.com/s/1LDwQjoj7qc-HT9qwhJ3rcA password: 1fa3
+  
+- MSRA微软亚洲研究院数据集。
+  - 5 万多条中文命名实体识别标注数据（包括地点、机构、人物） 
+  - https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/MSRA
+
+- SIGHAN Bakeoff 2005：一共有四个数据集，包含繁体中文和简体中文，下面是简体中文分词数据。
+  - MSR: <http://sighan.cs.uchicago.edu/bakeoff2005/>
+  - PKU ：<http://sighan.cs.uchicago.edu/bakeoff2005/> 

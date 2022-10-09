@@ -2,15 +2,13 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Repo](#repo)
-  - [NLP](#nlp)
-  - [CV](#cv)
+- [NLP](#nlp)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-# Repo
+
 ## NLP
 - https://github.com/prakhar21/TextAugmentation-GPT2
 - https://github.com/makcedward/nlpaug 
@@ -27,7 +25,7 @@
 - https://github.com/akkarimi/aeda_nlp
 - https://github.com/jasonwei20/eda_nlp
 
-## CV
+
 
 
 

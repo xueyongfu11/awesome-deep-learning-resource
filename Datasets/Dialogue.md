@@ -4,11 +4,11 @@
 
 - [English](#english)
 - [Chinese](#chinese)
-  - [通用数据](#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE)
+  - [通用数据](#通用数据)
   - [Task-oriented dialogue system](#task-oriented-dialogue-system)
   - [chitchat dataset](#chitchat-dataset)
   - [FAQ](#faq)
-  - [CQA(社区问答)](#cqa%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%94)
+  - [CQA(社区问答)](#cqa社区问答)
   - [NL2SQL](#nl2sql)
   - [Other](#other)
 

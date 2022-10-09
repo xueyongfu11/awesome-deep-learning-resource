@@ -7,7 +7,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Repo
+## Repo
 - https://github.com/google/dopamine
 - https://github.com/openai/gym
 - https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow
