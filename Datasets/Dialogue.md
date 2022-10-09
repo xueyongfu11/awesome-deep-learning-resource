@@ -14,9 +14,6 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-
-
-
 # Chinese
 
 ## 通用数据
@@ -118,6 +115,7 @@
 
 - 地址：https://github.com/SophonPlus/ChineseNlpCorpus
 
+
 ## CQA(社区问答)
 
 - 社区问答json版(webtext2019zh) ：大规模高质量数据集
@@ -133,6 +131,7 @@
     做为通用中文语料，做大模型预训练的语料或训练词向量。其中类别信息也比较有用，可以用于做监督训练，从而构建更好句子表示的模型、句子相似性任务等。  
     结合点赞数量这一额外信息，预测回复的受欢迎程度或训练答案评分系统。  
 
+
 ## NL2SQL
 
 - NL2SQL 
@@ -143,7 +142,6 @@
   
 - DuSQL  
   - 多表 复杂 [DuSQL](https://www.aclweb.org/anthology/2020.emnlp-main.562.pdf) |
-
 
 
 ## Other

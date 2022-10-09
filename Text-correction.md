@@ -37,6 +37,8 @@
 - https://github.com/1250658183/Chinese-Error-Checking
 - https://github.com/HillZhang1999/MuCGEC
 
+- https://github.com/letiantian/Pinyin2Hanzi
+  - 拼音转汉字
 
 ## chinese spelling correction
 - https://github.com/liushulinle/PLOME

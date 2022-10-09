@@ -2,7 +2,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [汇总](#汇总)
 - [Progress](#progress)
+- [竞赛方案](#竞赛方案)
 - [code library](#code-library)
 - [自动添加标点](#自动添加标点)
 - [datasets](#datasets)
@@ -10,10 +12,17 @@
 - [深度学习基础和面试](#深度学习基础和面试)
 - [leecode](#leecode)
 - [label Tools](#label-tools)
+- [Paper tools](#paper-tools)
 - [not deep learning](#not-deep-learning)
   - [VPN](#vpn)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 汇总
+
+- https://github.com/CLUEbenchmark/DataCLUE
+  - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
+- https://github.com/lrs1353281004/Chinese_medical_NLP
 
 ## Progress
 - https://github.com/DengBoCong/nlp-paper
@@ -21,7 +30,6 @@
 - https://github.com/iwangjian/Paper-Reading
 - https://github.com/sebastianruder/NLP-progress
 - https://github.com/bplank/awesome-neural-adaptation-in-NLP
-- https://github.com/zhpmatrix/nlp-competitions-list-review
 - https://github.com/ivan-bilan/The-NLP-Pandect
 - https://github.com/DA-southampton/Tech_Aarticle
 - https://github.com/GanjinZero/awesome_Chinese_medical_NLP
@@ -35,6 +43,11 @@
 - https://github.com/xcfcode/What-I-Have-Read
 - https://github.com/PaddlePaddle/awesome-DeepLearning
 
+
+## 竞赛方案
+- https://github.com/zhpmatrix/nlp-competitions-list-review
+- https://github.com/datawhalechina/competition-baseline
+- https://github.com/TingFree/NLPer-Arsenal
 
 ## code library
 - https://github.com/alibaba/EasyNLP
@@ -127,6 +140,8 @@
 - https://github.com/jiesutd/YEDDA
 - https://github.com/SophonPlus/ChineseAnnotator
 
+## Paper tools
+- https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
 
 ## not deep learning
 - https://github.com/soimort/you-get

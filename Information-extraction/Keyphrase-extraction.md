@@ -20,6 +20,10 @@
 - https://github.com/thunlp/BERT-KPE
 - https://github.com/microsoft/OpenKP
 - https://github.com/boudinfl/pke
+- https://github.com/dongrixinyu/chinese_keyphrase_extractor
+- https://github.com/yukuotc/SIFRank_zh
+- https://github.com/luozhouyang/embedrank
+- https://github.com/swisscom/ai-research-keyphrase-extraction
 
 
 ## datasets
