@@ -4,37 +4,33 @@
 
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Reference](#reference)
-  - [中文数据集](#中文数据集)
-  - [领域数据集](#领域数据集)
+- [汇总](#汇总)
+- [中文数据集](#中文数据集)
 - [数据平台](#数据平台)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Reference
+
+
+## 汇总
 
 - https://github.com/candlewill/Dialog_Corpus
-- https://github.com/IceFlameWorm/NLP_Datasets
 - https://github.com/InsaneLife/ChineseNLPCorpus
 - https://github.com/brightmart/nlp_chinese_corpus
 - https://github.com/nonamestreet/weixin_public_corpus
+
 
 ## 中文数据集
 
 - https://github.com/liucongg/NLPDataSet
 - https://github.com/SophonPlus/ChineseNlpCorpus
-- https://github.com/codemayq/chinese_chatbot_corpus
 - https://github.com/brightmart/nlp_chinese_corpus
-
-
-## 领域数据集
-
 - https://github.com/guoxw/wenshu-
   - 裁判文书数据集
 - THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
 
 
-# 数据平台
+## 数据平台
 
 - [CLUE](https://www.cluebenchmarks.com/index.html)
 - [千言中文数据集](https://www.luge.ai/#/)
@@ -49,16 +45,12 @@
 - [LinDat](https://lindat.mff.cuni.cz/)
 - [Google dataset](https://datasetsearch.research.google.com/)
 - 搜狗实验室
-
   - 搜狗实验室提供了一些高质量的中文文本数据集，时间比较早，多为2012年以前的数据。
   - [https://www.sogou.com/labs/resource/list_pingce.php](https://link.zhihu.com/?target=https%3A//www.sogou.com/labs/resource/list_pingce.php)
 - 中科大自然语言处理与信息检索共享平台
-
   - [http://www.nlpir.org/?action-category-catid-28](https://link.zhihu.com/?target=http%3A//www.nlpir.org/%3Faction-category-catid-28)
 - 中文语料小数据
-
   - 包含了中文命名实体识别、中文关系识别、中文阅读理解等一些小量数据。
   - https://github.com/crownpku/Small-Chinese-Corpus
 - 维基百科数据集
-
   - https://dumps.wikimedia.org/

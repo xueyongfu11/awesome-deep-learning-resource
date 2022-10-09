@@ -2,18 +2,27 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [汇总](#汇总)
 - [Progress](#progress)
+- [竞赛方案](#竞赛方案)
 - [code library](#code-library)
 - [自动添加标点](#自动添加标点)
-- [competition](#competition)
+- [datasets](#datasets)
 - [Tools](#tools)
 - [深度学习基础和面试](#深度学习基础和面试)
 - [leecode](#leecode)
 - [label Tools](#label-tools)
-- [non deep learning](#non-deep-learning)
+- [Paper tools](#paper-tools)
+- [not deep learning](#not-deep-learning)
   - [VPN](#vpn)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 汇总
+
+- https://github.com/CLUEbenchmark/DataCLUE
+  - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
+- https://github.com/lrs1353281004/Chinese_medical_NLP
 
 ## Progress
 - https://github.com/DengBoCong/nlp-paper
@@ -133,7 +142,10 @@
 - Labelme标注工具 https://github.com/wkentaro/labelme
 - Doccano https://github.com/doccano/doccano
 - https://github.com/jiesutd/YEDDA
+- https://github.com/SophonPlus/ChineseAnnotator
 
+## Paper tools
+- https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
 
 ## non deep learning
 - https://github.com/soimort/you-get

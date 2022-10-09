@@ -3,15 +3,14 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-- [Paper](#paper)
-  - [pipline RE](#pipline-re)
-  - [joint RE](#joint-re)
+- [pipline RE](#pipline-re)
+- [joint RE](#joint-re)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-# Repo
+## Repo
 
 - https://github.com/thunlp/NREPapers
 - https://github.com/roomylee/awesome-relation-extraction
@@ -34,8 +33,6 @@
 - 2020 bert biaffine机制 https://github.com/bowang-lab/joint-ner-and-re
 - 2019 https://github.com/datquocnguyen/jointRE
 
-
-# Paper
 
 ## pipline RE
 

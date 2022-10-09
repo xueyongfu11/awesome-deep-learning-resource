@@ -37,6 +37,8 @@
 - https://github.com/1250658183/Chinese-Error-Checking
 - https://github.com/HillZhang1999/MuCGEC
 
+- https://github.com/letiantian/Pinyin2Hanzi
+  - 拼音转汉字
 
 ## chinese spelling correction
 - https://github.com/liushulinle/PLOME
@@ -123,6 +125,9 @@
 - https://github.com/HillZhang1999/MuCGEC
   - CCL2022文本纠错任务数据集
 - https://github.com/destwang/CTCResources#datasets
+- 汉语拆字字典
+  - https://github.com/kfcd/chaizi
+  - https://link.zhihu.com/?target=https%3A//github.com/kfcd/chaizi 
 
 ## englist
 - [CoNLL-2014 Shared Task: Grammatical Error Correction](https://www.comp.nus.edu.sg/~nlp/conll14st.html)

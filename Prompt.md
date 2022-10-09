@@ -8,7 +8,12 @@
 
 
 
-# Repo
+## Repo
+
+- https://github.com/CLUEbenchmark/pCLUE
+  - 中文提示学习排行榜，将多个不同NLP任务转化成基于prompt格式，使用生成式模型进行预测
+- https://github.com/clue-ai/PromptCLUE
+  
 - https://github.com/bigscience-workshop/promptsource/ 
   - PromptSource is a toolkit for creating, sharing and using natural language prompts.
 - zero shot model https://huggingface.co/bigscience/T0pp/tree/main

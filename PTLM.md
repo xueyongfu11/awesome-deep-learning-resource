@@ -3,17 +3,17 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [预训练语言模型](#预训练语言模型)
-  - [蒸馏](#蒸馏)
-  - [长文本PTLM](#长文本ptlm)
-  - [tokenizer](#tokenizer)
-  - [词向量](#词向量)
+- [预训练语言模型](#预训练语言模型)
+- [蒸馏](#蒸馏)
+- [长文本PTLM](#长文本ptlm)
+- [tokenizer](#tokenizer)
+- [词向量](#词向量)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-# Repo
+## Repo
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer
 
 ## 预训练语言模型

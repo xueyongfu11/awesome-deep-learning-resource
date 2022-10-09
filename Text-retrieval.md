@@ -2,16 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [English](#english)
-- [Chinese](#chinese)
+- [Chinese datasets](#chinese-datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# English
 
 
-# Chinese
+
+## Chinese datasets
 
 - ATEC语义相似度学习赛数据集
   - 比赛链接：https://dc.cloud.alipay.com/index#/topic/ranking?id=8   

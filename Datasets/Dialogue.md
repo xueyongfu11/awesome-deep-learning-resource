@@ -2,20 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [English](#english)
 - [Chinese](#chinese)
-  - [通用数据](#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE)
+  - [通用数据](#通用数据)
   - [Task-oriented dialogue system](#task-oriented-dialogue-system)
   - [chitchat dataset](#chitchat-dataset)
   - [FAQ](#faq)
-  - [CQA(社区问答)](#cqa%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%94)
+  - [CQA(社区问答)](#cqa社区问答)
   - [NL2SQL](#nl2sql)
   - [Other](#other)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-# English
 
 
 # Chinese
@@ -119,6 +115,7 @@
 
 - 地址：https://github.com/SophonPlus/ChineseNlpCorpus
 
+
 ## CQA(社区问答)
 
 - 社区问答json版(webtext2019zh) ：大规模高质量数据集
@@ -134,6 +131,7 @@
     做为通用中文语料，做大模型预训练的语料或训练词向量。其中类别信息也比较有用，可以用于做监督训练，从而构建更好句子表示的模型、句子相似性任务等。  
     结合点赞数量这一额外信息，预测回复的受欢迎程度或训练答案评分系统。  
 
+
 ## NL2SQL
 
 - NL2SQL 
@@ -144,7 +142,6 @@
   
 - DuSQL  
   - 多表 复杂 [DuSQL](https://www.aclweb.org/anthology/2020.emnlp-main.562.pdf) |
-
 
 
 ## Other
