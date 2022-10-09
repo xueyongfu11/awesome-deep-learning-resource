@@ -3,19 +3,24 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [important](#important)
+- [datasets](#datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-# Repo
 
-## important 
+## Repo 
 
 - https://github.com/fendouai/Awesome-Chatbot
 - https://github.com/facebookresearch/ParlAI
 - https://github.com/DeepPavlov/convai
+
+
+
+## datasets
+
+- https://github.com/codemayq/chinese_chatbot_corpus
 
 
 

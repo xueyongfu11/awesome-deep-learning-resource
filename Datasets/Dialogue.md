@@ -2,7 +2,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [English](#english)
 - [Chinese](#chinese)
   - [通用数据](#通用数据)
   - [Task-oriented dialogue system](#task-oriented-dialogue-system)
@@ -15,7 +14,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# English
+
 
 
 # Chinese
