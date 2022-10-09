@@ -16,6 +16,8 @@
 - https://github.com/candlewill/Dialog_Corpus
 - https://github.com/IceFlameWorm/NLP_Datasets
 - https://github.com/InsaneLife/ChineseNLPCorpus
+- https://github.com/brightmart/nlp_chinese_corpus
+- https://github.com/nonamestreet/weixin_public_corpus
 
 ## 中文数据集
 

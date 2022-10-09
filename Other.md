@@ -5,12 +5,12 @@
 - [Progress](#progress)
 - [code library](#code-library)
 - [自动添加标点](#自动添加标点)
-- [datasets](#datasets)
+- [competition](#competition)
 - [Tools](#tools)
 - [深度学习基础和面试](#深度学习基础和面试)
 - [leecode](#leecode)
 - [label Tools](#label-tools)
-- [not deep learning](#not-deep-learning)
+- [non deep learning](#non-deep-learning)
   - [VPN](#vpn)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -80,11 +80,13 @@
 - https://github.com/yeyupiaoling/PPASR
 - https://github.com/nkrnrnk/BertPunc
 
-
-## datasets
-- https://github.com/brightmart/nlp_chinese_corpus
-- https://github.com/nonamestreet/weixin_public_corpus
-
+## competition
+- https://github.com/geekinglcq/CDCS.git 
+- https://github.com/EliotAndres/kaggle-past-solutions.git 
+- https://github.com/HuangCongQing/AI_competitions.git 
+- https://github.com/iphysresearch/DataSciComp.git 
+- https://github.com/Smilexuhc/Data-Competition-TopSolution.git 
+  
 
 ## Tools
 - https://github.com/yaleimeng/Final_word_Similarity
@@ -96,7 +98,10 @@
 - https://github.com/BYVoid/OpenCC
   - 中文繁体转简体
 - https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
-
+- https://github.com/huyingxi/Synonyms.git 
+  - 中文近义词工具包
+- https://github.com/yaleimeng/Final_word_Similarity.git
+  - 中文近义词
 
 ## 深度学习基础和面试
 - https://github.com/chehongshu/machine-learning-interview-chinese
@@ -111,7 +116,10 @@
 - 百面机器学习、百面深度学习（书）
 - https://github.com/wangyuGithub01/Machine_Learning_Resources
 - https://github.com/d2l-ai/d2l-zh
-
+- https://github.com/scutan90/DeepLearning-500-questions.git  
+  - 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。
+- https://github.com/kmario23/deep-learning-drizzle.git
+  - 深度学习、强化学习、机器学习、计算机视觉、和NLP的讲座! !
 
 ## leecode
 - https://github.com/TheAlgorithms/Python
@@ -127,7 +135,7 @@
 - https://github.com/jiesutd/YEDDA
 
 
-## not deep learning
+## non deep learning
 - https://github.com/soimort/you-get
 - https://github.com/github/gitignore
 - https://github.com/wistbean/learn_python3_spider

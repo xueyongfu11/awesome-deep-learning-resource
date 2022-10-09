@@ -65,5 +65,24 @@
 - 词向量相关paper，resource，dataset https://github.com/Hironsan/awesome-embedding-models
 - ngrams词向量模型 https://github.com/zhezhaoa/ngram2vec
 - https://github.com/facebookresearch/fastText
-- 
-
+- https://github.com/danielfrg/word2vec.git  
+  - Python interface to Google word2vec  
+- https://github.com/stanfordnlp/GloVe.git  
+  - GloVe model for distributed word representation  
+- https://github.com/facebookresearch/fastText.git  
+  - Library for fast text representation and classification.  
+- https://github.com/zlsdu/Word-Embedding.git  
+  - Word2vec, Fasttext, Glove, Elmo, Bert, Flair pre-train Word Embedding  
+- https://github.com/Rokid/ELMo-chinese.git  
+  - Deep contextualized word representations 中文 汉语  
+- https://github.com/Hironsan/awesome-embedding-models.git  
+  - A curated list of awesome embedding models tutorials, projects and communities
+- https://github.com/kmario23/KenLM-training.git  
+  - Training an n-gram based Language Model using KenLM toolkit for Deep Speech 2
+- https://github.com/Embedding/Chinese-Word-Vectors.git  
+  - 100+ Chinese Word Vectors 上百种预训练中文词向量 
+- https://github.com/zhezhaoa/ngram2vec.git  
+  - Four word embedding models implemented in Python. Supporting arbitrary context features
+- https://github.com/liuhuanyong/ChineseEmbedding.git  
+  - Chinese Embedding collection incling token ,postag ,pinyin,dependency,word embedding.中文自然语言处理向量合集,包括字向量,拼音向量,词向量,词性向量,依存关系向量.共5种类型的向量 
+- https://github.com/HIT-SCIR/ELMoForManyLangs.git 
