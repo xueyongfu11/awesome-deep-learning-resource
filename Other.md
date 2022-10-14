@@ -4,16 +4,15 @@
 
 - [汇总](#汇总)
 - [Progress](#progress)
-- [竞赛方案](#竞赛方案)
 - [code library](#code-library)
 - [自动添加标点](#自动添加标点)
-- [datasets](#datasets)
+- [competition](#competition)
 - [Tools](#tools)
 - [深度学习基础和面试](#深度学习基础和面试)
 - [leecode](#leecode)
 - [label Tools](#label-tools)
 - [Paper tools](#paper-tools)
-- [not deep learning](#not-deep-learning)
+- [non deep learning](#non-deep-learning)
   - [VPN](#vpn)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -65,9 +64,10 @@
 - https://github.com/PaddlePaddle/Research
 - https://github.com/ml-tooling/best-of-ml-python
 
-
-- https://github.com/HIT-SCIR/ltp
-  - LTP（Language Technology Platform） 提供了一系列中文自然语言处理工具，用户可以使用这些工具对于中文文本进行分词、词性标注、句法分析等等工作。
+- chinese nlp pkgs
+  - https://github.com/dongrixinyu/JioNLP
+  - https://github.com/HIT-SCIR/ltp
+    - LTP（Language Technology Platform） 提供了一系列中文自然语言处理工具，用户可以使用这些工具对于中文文本进行分词、词性标注、句法分析等等工作。
 
 
 - https://github.com/alibaba/EasyTransfer

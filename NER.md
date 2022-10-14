@@ -38,6 +38,15 @@
 
 # Paper
 
+- NFLAT: Non-Flat-Lattice Transformer for Chinese Named Entity Recognition
+  - year: 2022
+  - 阅读笔记：
+    1. 提出了一种non-flat-lattice transformer结构来建模中文ner，相比flat-lattice模型，更少的计算量、占用更少的显存和支持处理更长的文本
+    2. 将char embedding（原始文本）作为Q，word embedding作为K、V，基于一种InterAttention结构做attention计算。
+    3. InterAttention结构：Q加上可学习的参数再与K和相对距离矩阵相乘，相对距离矩阵是char位置和word起始位置的相对位置embedding的concat，然后再进行FFN，LN等
+    4. 在InterAttention结构基础上stack上几层transformer网络，使得信息进一步融合
+  - 
+
 - Hierarchically-Refined Label Attention Network for Sequence Labeling
   - year:2019  EMNLP
   - 阅读笔记：
