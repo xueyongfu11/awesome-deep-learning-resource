@@ -45,6 +45,15 @@
     3. 提出了一种预训练方法。使用无监督算法提取关键短语，作为正样本。仍然使用2中的方法对文档进行embedding。使用triple-loss来建模。
   - code: https://github.com/LinhanZ/mderank
 
+- Unsupervised Keyphrase Extraction by Jointly Modeling Local and Global Context
+  - year: 2021 EMNLP
+  - 阅读笔记：
+      1. 提出一种联合建模局部和全局上下文的无监督关键短语抽取算法
+      2. 全局：使用bert对document和候选的keyphrase embedding，使用曼哈顿距离计算相似度
+      3. 局部：将候选短语两两计算dot-product，并使用一种位置感知的中心度计算方法，本质是计算node的总度数，并根据两两短语与document的开头（或者结尾）距离越近，权重越大的规则计算
+      4. 最后排序结果参考两者得分相乘后的总分
+  - code: 
+
 
 ## datasets
 
