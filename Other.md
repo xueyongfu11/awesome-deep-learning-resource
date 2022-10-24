@@ -5,6 +5,7 @@
 - [汇总](#汇总)
 - [Progress](#progress)
 - [code library](#code-library)
+- [TrustAI(模型可解释性)](#trustai模型可解释性)
 - [自动添加标点](#自动添加标点)
 - [competition](#competition)
 - [Tools](#tools)
@@ -83,6 +84,10 @@
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
 
 
+## TrustAI(模型可解释性)
+- https://github.com/PaddlePaddle/TrustAI
+  
+
 ## 自动添加标点
 
 - https://github.com/PaddlePaddle/PaddleSpeech
@@ -116,11 +121,13 @@
 - https://github.com/chehongshu/machine-learning-interview-chinese
   - 传统机器学习算法
 - https://github.com/DA-southampton/NLP_ability
-  - NLP
+  - NLP基础、NLP任务paper解析
 - https://paddlepedia.readthedocs.io/en/latest/index.html
   - paddle深度学习基础内容和面试资源，ML、DL、CV、NLP
 - https://github.com/amusi/Deep-Learning-Interview-Book
+  - 面试问题，但是不一定包含问题解析
 - https://github.com/ShanghaiTechAIClub/DLInterview
+  - 简单基础
 - https://github.com/DarLiner/Algorithm_Interview_Notes-Chinese
 - 百面机器学习、百面深度学习（书）
 - https://github.com/wangyuGithub01/Machine_Learning_Resources

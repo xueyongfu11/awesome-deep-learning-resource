@@ -3,17 +3,18 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-- [预训练语言模型](#预训练语言模型)
-- [蒸馏](#蒸馏)
-- [长文本PTLM](#长文本ptlm)
-- [tokenizer](#tokenizer)
+  - [预训练语言模型](#预训练语言模型)
+  - [蒸馏](#蒸馏)
+  - [长文本PTLM](#长文本ptlm)
+  - [tokenizer](#tokenizer)
+- [Paper](#paper)
 - [词向量](#词向量)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-## Repo
+# Repo
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer
 
 ## 预训练语言模型
@@ -60,7 +61,17 @@
 ## tokenizer
 - 基于神经网络的分词模型 https://github.com/google/sentencepiece
 
-## 词向量
+# Paper
+
+- XLNet: Generalized Autoregressive Pretraining for Language Understanding
+  - year: 2019 
+  - 阅读笔记: 
+    1. 一种广义自回归预训练语言模型，通过一种文本随机排列的方法，从而建模双向的信息
+    2. 实现时并非对序列进行排列，可以使用attention mask机制来实现。具体是使用content流和query流，content流类似传统的attention计算，query流是以只包含位置信息的作为query，不能包含当前的token信息，从而实现在不同的阶段，token的可见性。
+    3. 引用了transformer-xl的片段循环机制和相对位置编码机制
+  - code: https://github.com/zihangdai/xlnet
+
+# 词向量
 - 100+的中文词向量 https://github.com/Embedding/Chinese-Word-Vectors
 - 词向量相关paper，resource，dataset https://github.com/Hironsan/awesome-embedding-models
 - ngrams词向量模型 https://github.com/zhezhaoa/ngram2vec
