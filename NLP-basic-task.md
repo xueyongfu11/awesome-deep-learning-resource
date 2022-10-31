@@ -2,15 +2,18 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [chunk](#chunk)
+- [word segmentation](#word-segmentation)
 - [dependency parsing](#dependency-parsing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
-# chunk
+# word segmentation
+- http://thulac.thunlp.org/
+  - thunlac
 - https://github.com/baidu/lac
+  - baidu lac
 
 
 # dependency parsing
