@@ -20,6 +20,8 @@
 
 # Repo
 
+## other
+
 - https://github.com/wdimmy/Automatic-Corpus-Generation
   - 中文数据合成:通过模糊图像并进行OCR识别来构建混淆集；通过ASR来构建混淆集
 - https://github.com/awasthiabhijeet/PIE/tree/master/errorify
@@ -80,6 +82,13 @@
     2. 使用同一个bert模型对source文本和target文本进行表征，使用binary loss计算检测网络的损失
     3. 将检测网络的最后一层的输出，融合到纠错网络的最后一层输出
     4. 纠错网络最后的投影层（一层全连接）的权重参数使用输入的word embedding进行初始化
+
+- Visual and Phonological Feature Enhanced Siamese BERT for Chinese Spelling Error Correction
+  - 2022 
+  - 阅读笔记：
+    1. 使用一个融合了字形和拼音的bert模型和vanilla bert的双胞胎网络，来分别对形似和音似的字纠错，以及和形似音似无关的字纠错
+    2. 字形的embedding使用node2vec模型训练得到，通过对字进行组成分解，包含相同组分的字直接链接起来，计算得到字与字之间的链接权重
+    3. FS-BERT和vanilla BERT的输出用一个标量point加权起来，point通过一个sigmoid函数得到
 
 - Correcting Chinese Spelling Errors with Phonetic Pre-training
   - 2021 ACL

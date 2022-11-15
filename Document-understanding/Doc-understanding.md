@@ -16,6 +16,14 @@
 
 ## Pretain-multi-modal
 
+- LiLT: A Simple yet Effective Language-Independent Layout Transformer for Structured Document Understanding
+  - year: 2022 ACL
+  - 阅读笔记: 
+    1. 提出一种语言独立的layout transformer结构，未引入图像特征
+    2. 预训练：使用text流和layout流的双流网络结构，双流之间使用BIACM来进行信息的交互
+    3. 预训练的方式：MLM，通过对bbox进行mask，来预测其所在区域；判断token-box是否对齐等三个任务
+  - code: https://github.com/jpWang/LiLT
+
 - LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking
   - 2022
   - 阅读笔记：
