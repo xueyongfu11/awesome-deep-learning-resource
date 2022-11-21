@@ -137,6 +137,17 @@
 - https://github.com/kmario23/deep-learning-drizzle.git
   - 深度学习、强化学习、机器学习、计算机视觉、和NLP的讲座! !
 
+- C++
+  - https://github.com/Light-City/CPlusPlusThings
+  - https://github.com/zouxiaobo/interview_back_end
+  - https://github.com/chankeh/cpp-backend-reference/blob/master/back-end.md
+  - https://github.com/Ewenwan/ShiYanLou
+  - https://github.com/youngyangyang04/TechCPP
+
+- JAVA
+  - 
+
+
 ## leecode
 - https://github.com/TheAlgorithms/Python
 - https://github.com/labuladong/fucking-algorithm
