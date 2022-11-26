@@ -10,6 +10,7 @@
 
 # Repo
 
+
 - https://github.com/zjukg/neuralkg
 
 - https://github.com/zjunlp/deepke
@@ -33,14 +34,16 @@
   - FedKGE是一个分布式的知识图谱学习与应用框架，通过联邦学习等技术方法实现在
   分布环境下实现隐私保护条件下的知识图谱学习、推理、问答等应用。
 
+- https://github.com/dmlc/dgl
+- https://github.com/snap-stanford/ogb
+- https://github.com/pyg-team/pytorch_geometric
+- https://github.com/atomistic-machine-learning/schnetpack
+
 - https://github.com/xiaofei05/Distant-Supervised-Chinese-Relation-Extraction
 - https://github.com/sakuranew/BERT-AttributeExtraction
 - https://github.com/baidu/information-extraction
 - https://github.com/plkmo/Bible_Text_GCN
 - https://github.com/husthuke/awesome-knowledge-graph
-- https://github.com/dmlc/dgl
-- https://github.com/pyg-team/pytorch_geometric
-- https://github.com/snap-stanford/ogb
 - https://github.com/omri1348/LRGA
 - https://github.com/Jhy1993/Awesome-GNN-Recommendation
 - https://github.com/ownthink/KnowledgeGraphData
@@ -77,7 +80,14 @@
 - https://github.com/FighterLYL/GraphNeuralNetwork
 
 
+- 图神经网络Benchmark
+  - https://ogb.stanford.edu/
+  - https://github.com/graphdeeplearning/benchmarking-gnns
+
+- 图神经网络常见基本任务：https://docs.dgl.ai/tutorials/blitz/index.html
+  
+- Python之Networkx详解：https://blog.csdn.net/u012856866/article/details/116458059
 
 
-
-
+# Dataset
+- 数据集：https://www.jianshu.com/p/67137451b67f

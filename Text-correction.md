@@ -70,11 +70,17 @@
 - SDCL: Self-Distillation Contrastive Learning for Chinese Spell Checking
   - 2022  AACL
   - 阅读笔记：
-    1. 提出一个自蒸馏对比学习的中文拼写纠错模型
-    2. 将包含错误token的文本输入bert，将正确的文本输入bert输入另外一个bert，并作为教师模型
-    3. 将错误token的hidden_state和相对应的正确的token的hidden_state作为正样本，负样本从同一个batch中获取。目的是通过对比学习来拉近confusion set之间的距离
-    4. 学生模型的hidden_state和对应token的word embedding进行点积的计算之后进行softmax，计算和真实token的交叉熵
-    5. 教师模型部分的交叉熵损失计算方法没有看懂
+    1. 提出一种基于对比学习的中文拼写纠错模型
+    2. 使用两个共享weight的bert模型，teacher model输入correct sentence，另外一个输入corrupted sentence
+    3. student model的输出H与word-embedding点积，计算交叉熵损失；corrupted word embedding和correct word embedding作为正例，同一个batch作为负例，计算对比损失；teacher model输入corrupted sentence，与loss1类型，输出H与word-embedding点积，计算交叉熵损失。
+
+- A Chinese Spelling Check Framework Based on Reverse Contrastive Learning
+  - 2022
+  - 阅读笔记：
+    1. 提出一种反对比学习的中文拼写纠错模型
+  2. 只关注负样本的构建。负样本是：一个batch中的同音异形词作为负样本；
+  一个batch中的形近字（在混淆集中）作为负样本
+  3. 反对比学习的好处是可以对容易混淆的样本做区分
 
 - General and Domain Adaptive Chinese Spelling Check with Error Consistent Pretraining
   - 2022
