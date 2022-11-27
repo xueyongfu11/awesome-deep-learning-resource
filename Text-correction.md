@@ -45,6 +45,9 @@
 ## chinese spelling correction
 - https://github.com/liushulinle/PLOME
 
+## grammatical error correction
+- https://modelscope.cn/models/damo/nlp_bart_text-error-correction_chinese/summary
+
 ## hanzi similar
 - https://github.com/houbb/nlp-hanzi-similar
 - https://github.com/houbb/word-checker/blob/master/README_ZH.md
@@ -73,6 +76,14 @@
     1. 提出一种基于对比学习的中文拼写纠错模型
     2. 使用两个共享weight的bert模型，teacher model输入correct sentence，另外一个输入corrupted sentence
     3. student model的输出H与word-embedding点积，计算交叉熵损失；corrupted word embedding和correct word embedding作为正例，同一个batch作为负例，计算对比损失；teacher model输入corrupted sentence，与loss1类型，输出H与word-embedding点积，计算交叉熵损失。
+
+- uChecker: Masked Pretrained Language Models as Unsupervised Chinese Spelling Checkers
+  - 2022  COLING
+  - 阅读笔记：
+    1. 提出一种基于MLM的无监督预训练的中文文本纠错模型
+    2. 以BERT为基础模型进行fine-training，在整个过程种freeze bert模型参数
+    3. 提出：1）无监督的拼写错误检测以及相应的错误纠正2）自监督的拼写错误检测：理论是correct token的embedding和其隐状态输出向量的relation > error token的embedding和其隐状态输出向量的embedding。因为token的embedding和隐状态的向量属于不同的向量空间，因此使用了一个interation model来建模
+  - code: 
 
 - A Chinese Spelling Check Framework Based on Reverse Contrastive Learning
   - 2022
@@ -146,6 +157,8 @@
 # Datasets
 
 ## chinese
+- https://github.com/blcuicall/YACLC
+  - 智源指数平台：汉语学习者文本多维标注数据集YACLC
 - https://github.com/HillZhang1999/MuCGEC
   - CCL2022文本纠错任务数据集
 - https://github.com/destwang/CTCResources#datasets
