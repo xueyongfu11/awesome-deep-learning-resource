@@ -60,6 +60,27 @@
 # Paper
 
 ##  Grammatical Error Correction
+
+- From Spelling to Grammar: A New Framework for Chinese Grammatical Error Correction
+  - 2022
+  - 阅读笔记：
+    1. 提出了一种两阶段的中文语法纠错模型，先进行拼写纠错再进行语法纠错
+    2. 拼写纠错：通过频率阈值分割找出可能错误的位置，基于bert模型得到候选，根据混淆集得到高precision的拼写纠错结果
+    3. 使用BART模型，并融入词的POS以及从同义词词林种获取到的词的语义信息。
+    4. 引入一种POS辅助任务
+
+- FOCUS IS WHAT YOU NEED FOR CHINESE GRAMMATICAL ERROR CORRECTION
+  - 2022
+  - 阅读笔记:
+    1. 探索了multi-reference对模型不能带来正收益
+    2. 使用编辑距离、jaccard距离等方法从mult-reference种来构建出较少不确定性的数据
+
+- Chinese grammatical error correction based on knowledge distillation
+  - 2022
+  - 阅读笔记;
+    1. 提出使用模型蒸馏的中文语法纠错模型
+    2. 该paper没什么创新
+
 - GECToR – Grammatical Error Correction: Tag, Not Rewrite
   - 2020
   - 阅读笔记：
@@ -108,6 +129,14 @@
     2. 使用同一个bert模型对source文本和target文本进行表征，使用binary loss计算检测网络的损失
     3. 将检测网络的最后一层的输出，融合到纠错网络的最后一层输出
     4. 纠错网络最后的投影层（一层全连接）的权重参数使用输入的word embedding进行初始化
+
+- CRASpell: A Contextual Typo Robust Approach to Improve Chinese Spelling Correction
+  - 2022 ACL
+  - 阅读笔记：
+    1. 提出了一种上下文多错误鲁棒的中文拼写纠错模型
+    2. 为了解决过纠问题，再mlm的基础上加入copy概率，来鼓励模型使用对应的输入token，具体是预测一个概率值作为拷贝概率
+    3. 为了解决上下文错误对当前token纠错的影响，引入上下文错误并得到当前token的预测分布，使用KL散度来计算引入上下文错误和不引入上下文错误的预测分布差异
+  - code: https://github.com/liushulinle/CRASpell
 
 - Visual and Phonological Feature Enhanced Siamese BERT for Chinese Spelling Error Correction
   - 2022 
