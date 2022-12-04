@@ -75,11 +75,29 @@
     1. 探索了multi-reference对模型不能带来正收益
     2. 使用编辑距离、jaccard距离等方法从mult-reference种来构建出较少不确定性的数据
 
+- Mining Error Templates for Grammatical Error Correction
+  - 2022
+  - 阅读笔记：
+    1. 提出一种基于错误模板挖掘的终于语法纠错
+    2. 基于一种search pattern（如A...B是语法错误吗）来从互联网获取大量错误模板，如原因是...引起的，大约...左右
+    3. 基于获取的模板有三种纠正行为，提出使用基于GPT-2的语言困惑都的方法来得出每个模板的最佳纠错行为
+    4. 在learner text上没有效果，但在native text上有4%+的绝对提升
+  - code：https://github.com/HillZhang1999/gec_error_template
+
 - Chinese grammatical error correction based on knowledge distillation
   - 2022
   - 阅读笔记;
     1. 提出使用模型蒸馏的中文语法纠错模型
     2. 该paper没什么创新
+
+- Tail-to-Tail Non-Autoregressive Sequence Prediction for Chinese Grammatical Error Correction
+  - 2021 ACL
+  - 阅读笔记:
+    1. 提出了一种非自回归的端到端的中文语法纠错模型
+    2. 输入层：对于len(X)《 len(Y),则在X尾部添加mask，表示字符的插入; 相反则在Y的尾部添加pad，表示字符的删除；长度相等则不做改变。目的是为了使用CRF进行end2end的解码。
+    3. 使用bert模型获取hidden state，使用全连接层，输出维度是词表的大小。使用加入了focal loss的NLL loss作为模型参数学习的任务损失，使用CRF loss作为全局特征依赖的任务损失
+    4. 由于词表较大，CRF中的转移矩阵使用了矩阵分解方法；在inference时，使用top-k node的维特比解码算法来加速计算
+  - code: https://github.com/lipiji/TtT
 
 - GECToR – Grammatical Error Correction: Tag, Not Rewrite
   - 2020

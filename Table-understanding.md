@@ -7,7 +7,10 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Paper
+# Paper
+
+## table sub-task
+
 - Classification of Layout vs Relational Tables on the Web: Machine Learning with Rendered Pages
   - year: 2022  ACM
   - 阅读笔记：
@@ -29,8 +32,16 @@
     2. encoder模型：将cell的行列header信息以及行的visual信息融合，作为cell的特征。为了融入context信息，将行text feature和visual feature concat之后使用LSTM来建模context特征，将列text feature 用LSTM建模context特征。最后将cell的行列特征concat之后，使用不同的header来建模result cell分类和cell关系分类任务。
   - code: 
 
+- TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance
+  - 2021 ACL
+  - 阅读笔记：
+    1. 提出一个混合的表格-文本问答数据集，并提出能够建模表格-文本数据的模型TAGOP
+    2. 模型以large-bert为backbone，输入question，以row方向flatten的table，以及与表格相关联的paragraph
+    3. 以I/O的方式抽取所有的span；使用cls预测计算操作符，对于divide、diff、change_ratio计算操作符，还需要预测顺序；使用cls，table的avg pooling，paragraph的avg pooling进行单位scale的预测
+  - code；
 
-## datasets
+
+# datasets
 
 - https://nextplusplus.github.io/TAT-QA/
 
