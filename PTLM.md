@@ -3,12 +3,12 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
-  - [预训练语言模型](#预训练语言模型)
-  - [蒸馏](#蒸馏)
-  - [长文本PTLM](#长文本ptlm)
+  - [预训练语言模型](#%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
+  - [蒸馏](#%E8%92%B8%E9%A6%8F)
+  - [长文本PTLM](#%E9%95%BF%E6%96%87%E6%9C%ACptlm)
   - [tokenizer](#tokenizer)
 - [Paper](#paper)
-- [词向量](#词向量)
+- [词向量](#%E8%AF%8D%E5%90%91%E9%87%8F)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

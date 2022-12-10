@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Paper](#paper)
+  - [table sub-task](#table-sub-task)
 - [datasets](#datasets)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -16,6 +17,13 @@
   - 阅读笔记：
     1. 通过构建表格特征如何行列位置，cell文本长度，高度宽度等特征
     2. 基于构架好的特征进行表格的分类
+
+- TAPEX: TABLE PRE-TRAINING VIA LEARNING A NEURAL SQL EXECUTOR
+  - year: 2022 ICLR
+  - 阅读笔记：
+    1. 提出了一种基于神经网络SQL执行器的表格预训练模型
+    2. 预训练：采样不同复杂度级别的sql template，执行获取结果，使用BART模型预训练，以sql+flatten table作为encoder的输入，以sql执行结果作为decoder的输出
+    3. 微调时使用question+flatten table作为输入
 
 - Numerical Tuple Extraction from Tables with Pre-training
   - year: 2022 KDD
@@ -38,11 +46,12 @@
     1. 提出一个混合的表格-文本问答数据集，并提出能够建模表格-文本数据的模型TAGOP
     2. 模型以large-bert为backbone，输入question，以row方向flatten的table，以及与表格相关联的paragraph
     3. 以I/O的方式抽取所有的span；使用cls预测计算操作符，对于divide、diff、change_ratio计算操作符，还需要预测顺序；使用cls，table的avg pooling，paragraph的avg pooling进行单位scale的预测
-  - code；
+  - code：
 
 
 # datasets
 
 - https://nextplusplus.github.io/TAT-QA/
+- https://nextplusplus.github.io/TAT-HQA/
 
 

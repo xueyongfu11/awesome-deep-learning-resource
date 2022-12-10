@@ -2,15 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [汇总](#汇总)
+- [汇总](#%E6%B1%87%E6%80%BB)
 - [Progress](#progress)
 - [code library](#code-library)
-- [TrustAI(模型可解释性)](#trustai模型可解释性)
-- [自动添加标点](#自动添加标点)
+- [TrustAI(模型可解释性)](#trustai%E6%A8%A1%E5%9E%8B%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7)
+- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
 - [competition](#competition)
 - [Tools](#tools)
-- [编程语言](#编程语言)
-- [深度学习基础和面试](#深度学习基础和面试)
+- [编程语言](#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
+- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
 - [leecode](#leecode)
 - [label Tools](#label-tools)
 - [Paper tools](#paper-tools)

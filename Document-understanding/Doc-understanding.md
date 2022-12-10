@@ -1,19 +1,33 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Pretain-multi-modal](#pretain-multi-modal)
-- [Pretrain-cv-modal](#pretrain-cv-modal)
-- [Non-pretrained](#non-pretrained)
-- [Multi-modal document QA](#multi-modal-document-qa)
-- [Layout](#layout)
-- [Open source code](#open-source-code)
+- [Repo](#repo)
+- [Resource](#resource)
+- [Paper](#paper)
+  - [Pretain-multi-modal](#pretain-multi-modal)
+  - [Pretrain-cv-modal](#pretrain-cv-modal)
+  - [Non-pretrained](#non-pretrained)
+  - [Multi-modal document QA](#multi-modal-document-qa)
 - [Dataset](#dataset)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
+# Repo
+
+- https://github.com/PaddlePaddle/VIMER#structext
+- https://github.com/alibaba/AliceMind
+- https://github.com/tstanislawek/awesome-document-understanding
+  - 文档理解相关资源
+
+# Resource
+
+- DocVQA榜单：https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1 
+- 网页问答榜单WebSRC：https://x-lance.github.io/WebSRC/index.html
+
+
+# Paper
 ## Pretain-multi-modal
 
 - LiLT: A Simple yet Effective Language-Independent Layout Transformer for Structured Document Understanding
@@ -156,35 +170,8 @@
 
 - https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/doc_vqa
 
-## Layout
 
-- layout parser https://github.com/Layout-Parser/layout-parser
-- layout parser train https://github.com/Layout-Parser/layout-model-training
-
-## Open source code
-
-- https://github.com/alibaba/AliceMind
-
-  - The family of AliceMind,Pre-trained Models:
-    Language understanding model: StructBERT (ICLR 2020)
-    Generative language model: PALM (EMNLP 2020)
-    Cross-lingual language model: VECO (ACL 2021)
-    Cross-modal language model: StructVBERT (CVPR 2020 VQA Challenge Runner-up)
-    Structural language model: StructuralLM (ACL 2021)
-    Chinese language understanding model with multi-granularity inputs: LatticeBERT (NAACL 2021)
-    Pre-training table model: SDCUP (Under Review)
-    Large-scale chinese understanding and generation model: PLUG
-    Large-scale vision-language understanding and generation model: mPLUG
-    Fine-tuning Methods:
-    Effective and generalizable fine-tuning method ChildTuning (EMNLP 2021)
-    Model Compression:
-    Language model compression methods ContrastivePruning (AAAI 2022)
-    Parameter-Efficient Sparsity methods PST
-- https://github.com/tstanislawek/awesome-document-understanding
-
-  - 文档理解相关资源
-
-## Dataset
+# Dataset
 
 - https://github.com/baidu/DuReader/tree/master/DuReader-vis
   - 中文多模态文档阅读理解数据集

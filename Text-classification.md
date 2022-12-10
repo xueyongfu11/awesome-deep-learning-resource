@@ -3,7 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [document clssification](#document-clssification)
-- [多分类](#多分类)
+- [多分类](#%E5%A4%9A%E5%88%86%E7%B1%BB)
 - [few-shot](#few-shot)
 - [Chinese datasets](#chinese-datasets)
 

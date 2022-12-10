@@ -3,7 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Repo](#repo)
+  - [other](#other)
   - [chinese spelling correction](#chinese-spelling-correction)
+  - [grammatical error correction](#grammatical-error-correction)
   - [hanzi similar](#hanzi-similar)
 - [Paper](#paper)
   - [Grammatical Error Correction](#grammatical-error-correction)
