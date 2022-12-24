@@ -63,6 +63,13 @@
 
 # Paper
 
+- ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS
+  - 2020 ICLR
+  - 阅读笔记：
+    1. 提出了一个轻量级的预训练语言模型（无蒸馏操作）
+    2. embedding矩阵分解，跨层参数共享、句子顺序预测（采样方法同bert，即从同一个文档中采样两个两个的句子片段，将句子顺序颠倒）
+  - code: https://github.com/google-research/ALBERT
+
 - TinyBERT: Distilling BERT for Natural Language Understanding
   - year: 2020 EMNLP
   - 阅读笔记：
