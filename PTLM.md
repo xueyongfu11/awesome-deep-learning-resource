@@ -63,6 +63,21 @@
 
 # Paper
 
+- TinyBERT: Distilling BERT for Natural Language Understanding
+  - year: 2020 EMNLP
+  - 阅读笔记：
+    1. 提出了一个两阶段包含语训练蒸馏和下游任务蒸馏的语言模型TinyBert
+    2. 预训练阶段蒸馏：只进行transformer layer蒸馏，具体包括attention based distillation和hidden state based distillation
+    3. 下游任务微调阶段蒸馏：在一个已经微调好的bert的条件下，先使用transfomer layer蒸馏、embedding layer蒸馏，在使用prediction layer蒸馏（注意无需要再次输出数据）
+    4. 4-layers的tinybert可以达到9倍的推理速度提升，精度略有下降
+  - code: https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/TinyBERT
+
+- RoBERTa: A Robustly Optimized BERT Pretraining Approach
+  - year: 2019
+  - 阅读笔记：
+    1. 相比BERT，使用更多的训练数据、训练时间更长、batch更大；去掉了NSP预训练任务；使用了更长的序列；使用了动态mask机制
+  - code: https://github.com/facebookresearch/fairseq
+
 - XLNet: Generalized Autoregressive Pretraining for Language Understanding
   - year: 2019 
   - 阅读笔记: 
