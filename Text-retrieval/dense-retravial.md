@@ -8,6 +8,8 @@
 
 
 # Repo
+
+- https://github.com/PaddlePaddle/RocketQA
 - milvus https://github.com/milvus-io/milvus
 - faiss 向量检索的开山之作 https://github.com/facebookresearch/faiss
 - annoy https://github.com/spotify/annoy
