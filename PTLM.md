@@ -63,6 +63,22 @@
 
 # Paper
 
+- NEZHA: NEURAL CONTEXTUALIZED REPRESENTATION FOR CHINESE LANGUAGE UNDERSTANDING
+  - 2021 
+  - 阅读笔记：
+    1. 提出了一个中文预训练语言模型Nezha
+    2. 使用函数式相对位置编码（与transformer-XL中的相同位置编码的计算方式基本相似）；使用全词mask机制；使用了混合精度训练；使用了LAMB优化器
+  - code: https://github.com/huawei-noah/Pretrained-Language-Model
+
+- Mengzi: Towards Lightweight yet Ingenious Pre-trained Models for Chinese
+  - 2021
+  - 阅读笔记：
+    1. 提出了一个轻量级并强大的预训练语言模型mengzi
+    2. 预训练的setup：探索性的数据清洗，使用roberta来对模型进行初始化，使用LAMB优化器，并使用FP16和deepspeed来加速训练
+    3. 预训练：使用了POS NER MLM等预训练任务；使用了SOP预训练任务；使用了动态梯度纠正
+    4. 微调: 知识蒸馏、迁移学习、choice smoothing、对抗学习、数据增强等手段
+  - code：https://github.com/Langboat/Mengzi
+
 - ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS
   - 2020 ICLR
   - 阅读笔记：
