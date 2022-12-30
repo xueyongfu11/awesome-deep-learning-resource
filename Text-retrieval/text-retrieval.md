@@ -27,6 +27,13 @@
   
 ## paper
 
+- RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering
+  - 2021 NAACL
+  - 阅读笔记：
+    1. 提出了一个双塔的向量检索模型
+    2. 提出了三种训练优化方法：跨batch负样本（相对于batch内负样本）；训练一个交互模型，使用交互模型来获取 难负样本；根据训练好的交互模型，获取更多的训练集
+  - code: https://github.com/PaddlePaddle/Research/tree/master/NLP/NAACL2021-RocketQA
+
 - VIRT: Improving Representation-based Models for Text Matching through Virtual Interaction
   - year:2021 
   - 阅读笔记：

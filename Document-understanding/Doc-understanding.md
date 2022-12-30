@@ -42,8 +42,9 @@
   - 2022
   - 阅读笔记：
     1. 相比layoutlmv1、v2基于token，v3是基于segment的多模态预训练语言模型
-    2. 预训练任务：MLM，图像掩码（基于ViT的patch masked predition），alignment（预测segment对应的patch是否被mask）
+    2. 预训练任务：MLM，MIM（预测patch的label），alignment（预测segment对应的patch是否被mask）
     3. 1D、2D绝对位置编码，self-attention中加入1D和2D的相对位置编码信息（同layoutlmv2）
+    4. patch直接flatten后线性输入，为使用CNN或者faster-RCNN进行特征提取
   - code:https://aka.ms/layoutlmv3
 
 - BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents
@@ -168,6 +169,7 @@
 
 ## Multi-modal document QA
 
+- https://github.com/allanj/LayoutLMv3-DocVQA
 - https://github.com/PaddlePaddle/PaddleNLP/tree/develop/applications/doc_vqa
 
 

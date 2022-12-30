@@ -47,6 +47,9 @@
 
 
 ## code library
+
+- https://github.com/alibaba/AliceMind
+  - 集成了多种领域的预训练语言模型
 - https://github.com/alibaba/EasyNLP
 - https://github.com/fastai/fastai
 - https://github.com/rasbt/deeplearning-models
