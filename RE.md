@@ -37,14 +37,14 @@
 ## pipline RE
 
 - Packed Levitated Marker for Entity and Relation Extraction
-  - 2022 
+  - 2022 ACL
   - 阅读笔记：
-    1. 提出两种悬浮标记方法，一种是根据标记的相对距离对所有的标记进行分组，然后每个组和text拼接后送入encoder
+    1. 提出两种悬浮标记方法，一种是获取所有的span，并为每个span添加悬浮标记，根据span的相对距离对标记进行分组，然后每个组和text拼接后送入encoder，使用悬浮标记表征以及T-cat方法来获取更好的span表征，来达到对span更好的分类（NER）
     2. 另外一种方式是将subject使用固定标记，即在text中插入标记符，object使用悬浮标记方法
-  - code: https://github.com/LorrinWWW/two-are-better-than-one
+  - code: https://github.com/thunlp/PL-Marker
 
 - A Frustratingly Easy Approach for Entity and Relation Extraction
-  - 2021
+  - 2021 NAACL
   - 阅读笔记：
     1. 使用两个encoder分别对应NER和RE两个任务
     2. NER使用基于span的方法，span的表示使用的特征包含起始token和span长度
@@ -61,9 +61,10 @@
     1. 使用填表的方式进行关系抽取，使用两种表示table-encoder和seq-encoder
     2. table-encoder使用多源word embedding进行第一个table unit的初始输入，然后使用MD-RNN网络
     3. seq-encoder使用BERT网络模型，但是取消了scaled-dot用2中table作为注意力得分
+  - code: https://github.com/LorrinWWW/two-are-better-than-one
 
 - UNIRE: A Unified Label Space for Entity Relation Extraction
-  - 2021
+  - 2021 ACL
   - 阅读笔记：
     1. 使用填表的方式进行端到端的实体以及关系抽取
     2. 加入结构限制：实体对称和关系对称；预测出来的实体的概率要大于包含该实体的关系的概率

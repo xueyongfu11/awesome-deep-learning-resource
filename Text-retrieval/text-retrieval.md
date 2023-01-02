@@ -42,7 +42,16 @@
     3. 双塔模型的输出做双向注意力计算，得到u和v，u、v、|u-v|、max(u,v)拼接后接分类层
   - code: 
 
-- Paper: Poly-encoders: architectures and pre-training strategies for fast and accurate multi-sentence scoring
+- ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT
+  - 2020 SIGIR
+  - 阅读笔记：
+    1. re-rank：基于maxsim进行doc排序，具体是计算query中的每个token的embedding和doc中每个token的embedding的cosine相似度并取最大，然后相加，作为相似度进行文档排序
+    2. 用mask将query pad到固定长度，这种数据增强方式有一定的性能提升
+    3. end2end：使用faiss，query中的每个token的embedding来检索，然后将检索结果合并，然后将召回结果使用步骤1的方法re-rank
+    4. bert模型的输出经过一个线性层进行降维128，模型训练时使用LTR的pairwise loss，最大化相关doc和无关doc的分数差
+  - code: https://github.com/stanford-futuredata/ColBERT
+
+- Poly-encoders: architectures and pre-training strategies for fast and accurate multi-sentence scoring
   - year: 2020 ICLR
   - 阅读笔记: 
     1. 提出跟bi-encoder推理速度相当，精度与cross-encoder接近的poly-encoder模型，该模型延续的bi-encoder的双transformer结构
