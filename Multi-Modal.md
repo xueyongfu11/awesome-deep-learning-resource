@@ -15,12 +15,6 @@
 - https://github.com/Eurus-Holmes/Awesome-Multimodal-Research
 - https://github.com/thuiar/MMSA
 - https://github.com/pliang279/awesome-multimodal-ml
-
-
-# Paper
-
-## cross-modal retrieval
-
 - https://github.com/Paranioar/Cross-modal_Retrieval_Tutorial
   - 跨模态检索paper set
 - https://github.com/IDEA-CCNL/Fengshenbang-LM
@@ -29,10 +23,11 @@
   - WuKong, benchmark, baseline
 - https://github.com/openai/CLIP
 
+# Paper
 
 ## Information extraction
 
-- Paper: Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
+- Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
   - year: 2020
   - 阅读笔记:  
     1. 从产品描述中提取属性和属性值，通过融合产品图片特征，来提高抽取效果
@@ -45,7 +40,7 @@
   - code: https://github.com/jd-aig/JAVE
 
 
-## datasets
+# datasets
 
 - https://paperswithcode.com/dataset/flickr30k-cna
   - 中文数据集
