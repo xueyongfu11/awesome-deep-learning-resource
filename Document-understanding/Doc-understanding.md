@@ -23,6 +23,8 @@
 
 # Resource
 
+- https://rrc.cvc.uab.es/
+  - ICDAR比赛
 - DocVQA榜单：https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1 
 - 网页问答榜单WebSRC：https://x-lance.github.io/WebSRC/index.html
 

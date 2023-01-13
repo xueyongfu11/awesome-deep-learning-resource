@@ -144,6 +144,21 @@
     1. 使用生成模型，对每个domain-slot作为decoder的first-token，进行slot-value的预测
     2. 将decoder的first-token的隐向量跟encoder进行slot-gate的三分类，作为生成的slot-value的标识
 
+- Zero-Shot Adaptive Transfer for Conversational Language Understanding
+  - 2019 AAAI
+  - 阅读笔记：
+    1. 提出了一个少样本的领域自适应的槽位抽取模型
+    2. query使用BiLSTM encoding，encoding结果和slot label的embedding进行attention计算，结果再与encoding结果相加，再使用一个BiLSTM+FFN+CRF进行槽位抽取
+  - code: 
+
+- Towards Zero-Shot Frame Semantic Parsing for Domain Scaling
+  - 2017
+  - 阅读笔记：
+    1. 提出了一个少样本的领域自适应的槽位抽取模型
+    2. query使用BiLSTM encoding，encoding结果和slot label的embedding进行concat，使用一个FFN模型，再使用一个BiLSTM进行槽位抽取
+    3. 对比模型使用了共享encoder+各个任务层的模型
+    4. 推理时需要对每个槽位分别预测
+
 - 百度unit对话产品 https://github.com/baidu/unit-dmkit
   - DM Kit作为UNIT的开源对话管理模块，可以无缝对接UNIT的理解能力，并赋予开发者多状态的复杂对话流程管理能力，还可以低成本对接外部知识库，迅速丰富话术信息量。
   - 已经不再更新

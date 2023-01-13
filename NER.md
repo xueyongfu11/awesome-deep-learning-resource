@@ -38,6 +38,15 @@
 
 # Paper
 
+- MELM: Data Augmentation with Masked Entity Language Modeling for Low-Resource NER
+  - 2022 ACL
+  - 阅读笔记：
+    1. 提出了一种低资源下NER任务的数据增强方法
+    2. 对实体进行mask，并对实体的每个token的首尾添加label，label的embedding使用标签文本的embedding结果
+    3. 基于2中的数据进行模型的预训练，预训练只对实体的token进行mask，并应用了一种基于高斯概率分布的mask策略
+    4. 用只使用原始数据集训练的模型对增强的数据进行预测，保留预测label和gt label相同的数据集
+  - code：https://github.com/RandyZhouRan/MELM/
+
 - NFLAT: Non-Flat-Lattice Transformer for Chinese Named Entity Recognition
   - year: 2022
   - 阅读笔记：
