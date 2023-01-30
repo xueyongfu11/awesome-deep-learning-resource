@@ -177,6 +177,10 @@
 
 ## Paper tools
 - https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
+- https://mp.weixin.qq.com/s/v64js_pupc7VjjWNq9Kosw
+  - 神经网络作图
+- https://www.heywhale.com/mw/project/63c274b8c421c0f295c1c268
+  - Matplotlib 最具价值的50个可视化项目
 
 ## non deep learning
 - https://github.com/soimort/you-get

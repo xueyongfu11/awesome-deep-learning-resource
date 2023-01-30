@@ -19,6 +19,9 @@
 
 ## 预训练语言模型
 
+- 哈工大开源预训练语言模型
+  - https://huggingface.co/hfl
+  - https://github.com/ymcui/Chinese-BERT-wwm
 - https://github.com/CLUEbenchmark/CLUEPretrainedModels
 - https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
   - 收集了一些高质量 中文 预训练语言模型
