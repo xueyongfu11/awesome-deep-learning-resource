@@ -13,6 +13,8 @@
 - https://github.com/airaria/TextBrewer
 - 
 
+# C++重写
+- https://github.com/NVIDIA/FasterTransformer
 
 # inference tools
 - tensorRT https://github.com/shouxieai/tensorRT_Pro
