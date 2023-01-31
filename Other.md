@@ -131,6 +131,8 @@
   
 
 ## 深度学习基础和面试
+- https://github.com/google-research/tuning_playbook
+  - 科学化调参
 - https://github.com/chehongshu/machine-learning-interview-chinese
   - 传统机器学习算法
 - https://github.com/DA-southampton/NLP_ability
