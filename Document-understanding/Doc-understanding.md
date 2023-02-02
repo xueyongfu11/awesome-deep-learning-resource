@@ -32,6 +32,14 @@
 # Paper
 ## Pretain-multi-modal
 
+- ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding
+  - 2022 EMNLP
+  - 阅读笔记：
+    1. 提出了文档阅读顺序的预训练任务，具体是把attention看作token之间是否相邻，GT是一个01矩阵
+    2. 提出了被替换区域预测的预训练任务，具体是选择部分patch块用其他图像的patch块替换，使用cls来判断哪些patch被替换
+    3. 使用了空间感知的解耦注意力
+  - code: https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-layout
+
 - LiLT: A Simple yet Effective Language-Independent Layout Transformer for Structured Document Understanding
   - year: 2022 ACL
   - 阅读笔记: 
@@ -46,7 +54,7 @@
     1. 相比layoutlmv1、v2基于token，v3是基于segment的多模态预训练语言模型
     2. 预训练任务：MLM，MIM（预测patch的label），alignment（预测segment对应的patch是否被mask）
     3. 1D、2D绝对位置编码，self-attention中加入1D和2D的相对位置编码信息（同layoutlmv2）
-    4. patch直接flatten后线性输入，为使用CNN或者faster-RCNN进行特征提取
+    4. patch直接flatten后线性输入，未使用CNN或者faster-RCNN进行特征提取
   - code:https://aka.ms/layoutlmv3
 
 - BROS: A Pre-trained Language Model Focusing on Text and Layout for Better Key Information Extraction from Documents
@@ -58,6 +66,16 @@
     4. 但是仍然低于加入图像特征的模型
   - code: https://github.com/clovaai/bros
   - blog:https://mp.weixin.qq.com/s/plZJUjB590VnmjHJcgvm9g
+
+- Towards a Multi-modal, Multi-task Learning based Pre-training Framework for Document Representation Learning
+  - year: 2022
+  - 阅读笔记:
+    1. 多模态预训练文档理解模型，longformer
+    2. 预训练的输入特征：text，text position，layout， token image，images，image position
+    3. token image，images使用同一个resnet + FPN网络生成
+    4. 预训练任务：masked token预测，文档分类，使用一个特殊token得到输出与LDA得到的主题分布j计算softCE；对images顺序打乱，其他不改变，模型判断image和其他特征是否对应
+    5. 应用：特别是文档检索
+  - code:
 
 - StructuralLM: Structural Pre-training for Form Understanding
   - year:2021
@@ -74,16 +92,6 @@
     3. 使用cnn-based模型进行图像特征的提取，每个sentence的visual feature使用POIAlign进行特征提取，并使用量化模块对visual feature进行离散化，方便学习
     4. 使用门控多模态cross注意力方式，得到的text feature和visual feature，concat之后经过FNN之后计算权重
     5. 预训练任务：mask sentence model，图像对比学习：pos使用visual feature和量化模块输出visual feature，text-visual align
-  - code:
-
-- Towards a Multi-modal, Multi-task Learning based Pre-training Framework for Document Representation Learning
-  - year: 2022
-  - 阅读笔记:
-    1. 多模态预训练文档理解模型，longformer
-    2. 预训练的输入特征：text，text position，layout， token image，images，image position
-    3. token image，images使用同一个resnet + FPN网络生成
-    4. 预训练任务：masked token预测，文档分类，使用一个特殊token得到输出与LDA得到的主题分布j计算softCE；对images顺序打乱，其他不改变，模型判断image和其他特征是否对应
-    5. 应用：特别是文档检索
   - code:
 
 - StrucTexT: Structured Text Understanding with Multi-Modal Transformers
