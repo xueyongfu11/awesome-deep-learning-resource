@@ -16,7 +16,7 @@
 # Paper
 ### 2021
 - SDCUP: Schema Dependency-Enhanced Curriculum Pre-Training for Table Semantic Parsing
-  -   [[code]]()
+  -  
   - <details>
     <summary>阅读笔记: </summary>
     1. 通过探索question和schema的关系，提出了table pre-train的两个预训练方法：schema依赖预测任务和实体扰动恢复任务  <br>
