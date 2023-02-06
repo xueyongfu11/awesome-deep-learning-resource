@@ -13,5 +13,26 @@
 - https://github.com/wangpinggl/TREQS
 
 
+# Paper
+### 2021
+- SDCUP: Schema Dependency-Enhanced Curriculum Pre-Training for Table Semantic Parsing
+  -   [[code]]()
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 通过探索question和schema的关系，提出了table pre-train的两个预训练方法：schema依赖预测任务和实体扰动恢复任务  <br>
+    2. schema依赖预测：通过sql以及规则，使用biaffine attention来建立question和schema的关系和label，以交叉熵作为损失  <br>
+    3. 实体扰动恢复：通过对question中的存在依赖关系的实体交换，然后用模型预测真实的实体来恢复  <br>
+    4. MLM：对question的token进行mask，对schema中的column用相应的value来替代  
+    <img src="../assets\SDCUP1.png" align="middle" />
+    <img src="../assets\SDCUP2.png" align="middle" />
+    </details>
 
+
+# Datasets
+
+### 2020
+- SQUALL数据集：https://blog.csdn.net/weixin_43413013/article/details/126859147
+
+### 2018
+- Spider数据集:https://juejin.cn/post/7085557671528660999
 

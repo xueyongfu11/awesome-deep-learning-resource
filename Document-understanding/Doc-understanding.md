@@ -31,14 +31,15 @@
 
 # Paper
 ## Pretain-multi-modal
-
-- ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding
-  - 2022 EMNLP
-  - 阅读笔记：
-    1. 提出了文档阅读顺序的预训练任务，具体是把attention看作token之间是否相邻，GT是一个01矩阵
-    2. 提出了被替换区域预测的预训练任务，具体是选择部分patch块用其他图像的patch块替换，使用cls来判断哪些patch被替换
-    3. 使用了空间感知的解耦注意力
-  - code: https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-layout
+### 2022
+- ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding  
+  - EMNLP  [[code]](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/ernie-layout)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了文档阅读顺序的预训练任务，具体是把attention看作token之间是否相邻，GT是一个01矩阵  <br>
+    2. 提出了被替换区域预测的预训练任务，具体是选择部分patch块用其他图像的patch块替换，使用cls来判断哪些patch被替换  <br>
+    3. 使用了空间感知的解耦注意力  <br>
+    </details>
 
 - LiLT: A Simple yet Effective Language-Independent Layout Transformer for Structured Document Understanding
   - year: 2022 ACL
@@ -187,7 +188,7 @@
 
 - https://github.com/baidu/DuReader/tree/master/DuReader-vis
   - 中文多模态文档阅读理解数据集
-  - Paper: DuReadervis: A Chinese Dataset for Open-domain Document Visual Question Answering
+  - DuReadervis: A Chinese Dataset for Open-domain Document Visual Question Answering
 - https://github.com/clovaai/cord
   - 发票数据集, 英文
 - https://github.com/HCIILAB/EPHOIE

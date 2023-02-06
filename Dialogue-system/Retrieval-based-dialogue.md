@@ -34,13 +34,13 @@
   
 # Paper
 
-- Paper: 检索式聊天机器人技术综述  
+- 检索式聊天机器人技术综述  
   - year: 2021    
   - 阅读笔记:      
     1. 叙述了检索式聊天机器人的四种常见建模方法，以及相关方法的优缺点，并分析了当前检索式聊天机器人面临的问题
     2. 个人：每种方法体系都没有做很深的介绍，只是一个简单的概述     
 
-- Paper: ConveRT: Efficient and Accurate Conversational Representations from Transformers
+- ConveRT: Efficient and Accurate Conversational Representations from Transformers
   - year: 2020
   - 阅读笔记: 
     1. 一种快并且有效的双塔结构且基于transformer的对话回复选择预训练模型架构
@@ -48,14 +48,14 @@
     3. 模型在尺度，参数量，效率，效果都由很强的优势
   - code: 非官方 https://github.com/jordiclive/Convert-PolyAI-Torch
 
-- Paper: Multi-turn Response Selection using Dialogue Dependency Relations
+- Multi-turn Response Selection using Dialogue Dependency Relations
   - year: 2020 EMNLP
   - 阅读笔记: 
     1. paper认为response依赖于不同的对话线，所有需要先对context分类出不同的对话线
     2. 对不同的对话线分别encoding，表征的结果与candidate的表征计算attention，并得到context的表征，然后与candidate计算score
   - code: https://github.com/JiaQiSJTU/ResponseSelection.
   
-- Paper: Semantic Role Labeling Guided Multi-turn Dialogue ReWriter
+- Semantic Role Labeling Guided Multi-turn Dialogue ReWriter
   - year: 2020 EMNLP
   - 阅读笔记: 
     1. 使用unilm的文本生成方式进行对话重写
@@ -64,7 +64,7 @@
     4. 使用了角色类型，SRL类型，对话重写内容的segment type id；不同三元组之间不直接计算self-attention，三元组只和context计算attention；每个三元组内进行位置编码
   - code: 
   
-- Paper: Improving Multi-turn Dialogue Modelling with Utterance ReWriter
+- Improving Multi-turn Dialogue Modelling with Utterance ReWriter
   - year: 2019 ACL
   - 阅读笔记: 
     1. 基于encoder-decoder+point network的transformer模型
