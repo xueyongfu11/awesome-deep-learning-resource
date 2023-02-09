@@ -48,6 +48,17 @@
     3. 以I/O的方式抽取所有的span；使用cls预测计算操作符，对于divide、diff、change_ratio计算操作符，还需要预测顺序；使用cls，table的avg pooling，paragraph的avg pooling进行单位scale的预测
   - code：
 
+## table pre-train
+### 2020
+- TAPAS: Weakly Supervised Table Parsing via Pre-training
+  - ACL  [[code]](https://github.com/google-research/tapas)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 模型的输入：position id、segment id、row id、column id、rank id（数值或者日期的顺序），表示cell是否是先前问答历史中的答案的id  <br>
+    2. 预训练时将table和table中涉及的实体描述等信息作为输入，使用了MLM和实体文本描述和table是否匹配等两个任务，第二个任务作用不大  <br>
+    3. 微调:对于cell selection，不存在聚合函数，损失是column选择的损失+column中cell选择的损失；对于scalar answer，需要预测聚合函数，这块比较复杂，参考论文  <br>
+    <img src="./assets\tapas.png" align="middle" />
+    </details>
 
 # datasets
 
