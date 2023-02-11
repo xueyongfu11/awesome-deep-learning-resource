@@ -1,4 +1,4 @@
-# 内容说明
+# awesome-deep-learning-resource
 
 - 个人总结的自然语言处理NLP、计算机视觉CV、多模态等方向paper的阅读笔记
 - 收集到或者使用到的一些NLP、CV等领域的优秀开源仓库
