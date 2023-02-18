@@ -26,7 +26,7 @@
 - https://github.com/guoxw/wenshu-
   - 裁判文书数据集
 - THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
-
+- 中文财报数据网站：http://www.cninfo.com.cn/new/index
 
 ## 数据平台
 
