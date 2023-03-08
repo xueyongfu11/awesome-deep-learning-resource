@@ -33,6 +33,9 @@
 
 ## few-shot
 
+- https://github.com/CLUEbenchmark/FewCLUE
+  - 小样本学习测评基准-中文版
+- https://github.com/princeton-nlp/LM-BFF
 - https://github.com/daooshee/Few-Shot-Learning
 - https://github.com/ha-lins/MetaLearning4NLP-Papers
 - https://github.com/johnnyasd12/awesome-few-shot-meta-learning

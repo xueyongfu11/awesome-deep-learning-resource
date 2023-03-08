@@ -9,17 +9,14 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-
-## 汇总
+## 中文数据集
 
 - https://github.com/candlewill/Dialog_Corpus
 - https://github.com/InsaneLife/ChineseNLPCorpus
 - https://github.com/brightmart/nlp_chinese_corpus
 - https://github.com/nonamestreet/weixin_public_corpus
-
-
-## 中文数据集
-
+- https://github.com/CLUEbenchmark/CLUEDatasetSearch
+  - CLUE：搜索所有中文NLP数据集，附常用英文NLP数据集
 - https://github.com/liucongg/NLPDataSet
 - https://github.com/SophonPlus/ChineseNlpCorpus
 - https://github.com/brightmart/nlp_chinese_corpus

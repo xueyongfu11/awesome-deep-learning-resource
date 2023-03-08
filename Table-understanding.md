@@ -10,7 +10,7 @@
 
 # Paper
 
-## table interpretation (cell classfication, relation extraction etc.)
+## table interpretation
 ### 2022
 - Extraction of Product Specifications from the Web - Going Beyond Tables and Lists
   - <details>
@@ -104,6 +104,43 @@
     3. 微调:对于cell selection，不存在聚合函数，损失是column选择的损失+column中cell选择的损失；对于scalar answer，需要预测聚合函数，这块比较复杂，参考论文  <br>
     <img src="./assets\tapas.png" align="middle" />
     </details>
+
+## table-qa
+### 2022
+- Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder
+  - <details>
+    <summary>阅读笔记: </summary>
+    1.   <br>
+    2.   <br>
+    3.   <br>
+    <img src="" align="middle" />
+    </details>
+
+- UniRPG: Unified Discrete Reasoning over Table and Text as Program Generation
+  - <details>
+    <summary>阅读笔记: </summary>
+    1.   <br>
+    2.   <br>
+    3.   <br>
+    <img src="" align="middle" />
+    </details>
+
+### 2021
+- TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance
+  -  [[code]](https://nextplusplus.github.io/TAT-QA/)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出一个混合的表格-文本问答数据集，并提出能够建模表格-文本数据的模型TAGOP  <br>
+    2. 模型以large-bert为backbone，输入question，以row方向flatten的table，以及与表格相关联的paragraph  <br>
+    3. 以I/O的方式抽取所有的span；使用cls预测计算操作符，对于divide、diff、change_ratio计算操作符，还需要预测顺序；使用cls，table的avg pooling，paragraph的avg pooling进行单位scale的预测  <br>
+    <img src="./assets\tatqa.png" align="middle" />
+    </details>
+
+
+
+# resource
+
+- SemTab challenge：https://www.cs.ox.ac.uk/isg/challenges/sem-tab/
 
 # Datasets
 - https://nextplusplus.github.io/TAT-QA/
