@@ -25,6 +25,13 @@
   - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
 - https://github.com/lrs1353281004/Chinese_medical_NLP
 
+
+## NLU
+- FewNLU
+  - https://fewnlu.github.io/
+  - https://github.com/THUDM/FewNLU
+
+
 ## Progress
 - https://github.com/DengBoCong/nlp-paper
 - https://github.com/changwookjun/nlp-paper
