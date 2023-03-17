@@ -37,57 +37,100 @@
 
 
 # Paper
-
-- MELM: Data Augmentation with Masked Entity Language Modeling for Low-Resource NER
-  - 2022 ACL
-  - 阅读笔记：
-    1. 提出了一种低资源下NER任务的数据增强方法
-    2. 对实体进行mask，并对实体的每个token的首尾添加label，label的embedding使用标签文本的embedding结果
-    3. 基于2中的数据进行模型的预训练，预训练只对实体的token进行mask，并应用了一种基于高斯概率分布的mask策略
-    4. 用只使用原始数据集训练的模型对增强的数据进行预测，保留预测label和gt label相同的数据集
-  - code：https://github.com/RandyZhouRan/MELM/
-
+## NER
+### 2022
 - NFLAT: Non-Flat-Lattice Transformer for Chinese Named Entity Recognition
-  - year: 2022
-  - 阅读笔记：
-    1. 提出了一种non-flat-lattice transformer结构来建模中文ner，相比flat-lattice模型，更少的计算量、占用更少的显存和支持处理更长的文本
-    2. 将char embedding（原始文本）作为Q，word embedding作为K、V，基于一种InterAttention结构做attention计算。
-    3. InterAttention结构：Q加上可学习的参数再与K和相对距离矩阵相乘，相对距离矩阵是char位置和word起始位置的相对位置embedding的concat，然后再进行FFN，LN等
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一种non-flat-lattice transformer结构来建模中文ner，相比flat-lattice模型，更少的计算量、占用更少的显存和支持处理更长的文本  <br>
+    2. 将char embedding（原始文本）作为Q，word embedding作为K、V，基于一种InterAttention结构做attention计算。  <br>
+    3. InterAttention结构：Q加上可学习的参数再与K和相对距离矩阵相乘，相对距离矩阵是char位置和word起始位置的相对位置embedding的concat，然后再进行FFN，LN等  <br>
     4. 在InterAttention结构基础上stack上几层transformer网络，使得信息进一步融合
-  - 
+    <img src="" align="middle" />
+    </details>
 
+### 2019
 - Hierarchically-Refined Label Attention Network for Sequence Labeling
-  - year:2019  EMNLP
-  - 阅读笔记：
-    1. 相较于CRF，LAN能够捕捉更长期的标签依赖，更快的解码速度
-    2. 基于BiLSTM网络，将BILSTM的隐层输出H作为Q，label embedding作为K，V，使用多头的自注意力网络，得到的输出再cancat上input的embedding
-    3. 最后直接使用自注意力得分，得到最后的输出
+  - EMNLP 
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 相较于CRF，LAN能够捕捉更长期的标签依赖，更快的解码速度  <br>
+    2. 基于BiLSTM网络，将BILSTM的隐层输出H作为Q，label embedding作为K，V，使用多头的自注意力网络，得到的输出再cancat上input的embedding  <br>
+    3. 最后直接使用自注意力得分，得到最后的输出  <br>
+    <img src="" align="middle" />
+    </details>
+
+## few-shot ner
+### 2022
+- Label Semantics for Few Shot Named Entity Recognition
+  - ACL 
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 使用BERT双塔模型，一个BERT对文档进行encoding，另外一个BERT对label的description进行embedding（如B_PER: begin person, I_PER:inside person）  <br>
+    2. label description的embedding方式：使用cls的embedding，使用引入上下文的label embedding（person is very good at playing basketball，然后获取person的embedding）  <br>
+    3. 使用dot product计算token embedding和label description embedding的相似度  <br>
+    <img src="" align="middle" />
+    </details>
+
+- Template-free Prompt Tuning for Few-shot NER
+  - NAACL  [[code]]()
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 使用预训练语言模型的单词预测范式来预测实体对应的label word，非实体部分预测是其本身  <br>
+    2. label word是通过class标签映射过去的word集合，比如PER：John，Steve，POS：china，japan等  <br>
+    3. label word的构建：通过知识库和远程监督的方法构造伪数据集，使用预训练模型获取topn的实体，然后基于统计和LM获取的实体构建label word  <br>
+    <img src="" align="middle" />
+    </details>
+
+### 2021
+- Template-Based Named Entity Recognition Using BART
+  - ACL Findings  [[code]](https://github.com/Nealcly/templateNER)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 将source文本作为encoder的输入，构建template，并输入实体span和相应的label，作为decoder的target文本  <br>
+    2. 推理时，使用BART模型对所有候选实体构成的target文本进行打分，使用最高得分作为实体的标注结果  <br>
+    3. 训练：领域内，标签不均衡的情况；领域迁移，先在其他领域的丰富数据上训练，然后在少样本领域数据上fitune <br>
+    4. 4. 持续学习的能力
+    <img src="./assets/templateNER.png" align="middle" />
+    </details>
+
+## data-augmentation
+### 2022
+- MELM: Data Augmentation with Masked Entity Language Modeling for Low-Resource NER
+  - ACL  [[code]](https://github.com/RandyZhouRan/MELM/)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一种低资源下NER任务的数据增强方法  <br>
+    2. 对实体进行mask，并对实体的每个token的首尾添加label，label的embedding使用标签文本的embedding结果，目的是为了是模型生成类别属于改标签的实体  <br>
+    3. 基于2中的数据进行模型的预训练，预训练只对实体的token进行mask，并应用了一种基于高斯概率分布的mask策略  <br>
+    4. 用只使用了原始数据集训练的模型对增强好的数据进行过滤，保留预测label和gt label相同的数据集
+    <img src="" align="middle" />
+    </details>
 
 
-## Chinese datasets
+# Dataset
+## english datasets
 
-- [中文命名实体识别数据集](https://mp.weixin.qq.com/s/bIRhscHb1VjMAM1axLcUhw)
-- [中文医疗信息处理评测基准CBLUE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.22060218.J_2657303350.1.70e81343dFDilp&dataId=95414)
 
-- https://github.com/liucongg/NLPDataSet
-  - 包括中文摘要数据集、中文片段抽取式阅读理解数据集（QA）、中文文本相似度数据集和中文NER数据集
 
-- 微博实体识别.
-  - https://github.com/hltcoe/golden-horse
+## chinese datasets
 
-- boson数据。
-  - 包含6种实体类型。
+- 数据集下载链接：
+  - https://github.com/GuocaiL/nlp_corpus
+  - aliyun: https://tianchi.aliyun.com/dataset/145108
+  - https://github.com/liucongg/NLPDataSet
+    - 包括中文摘要数据集、中文片段抽取式阅读理解数据集（QA）、中文文本相似度数据集和中文NER数据集
+
+- CLUENER2020: https://www.cluebenchmarks.com/introduce.html
+- MSRA数据集：https://modelscope.cn/datasets/damo/msra_ner/summary
+- 中药说明书实体识别2020: https://tianchi.aliyun.com/dataset/86819
+- 中文医学命名实体识别数据集(CMeEE): https://tianchi.aliyun.com/dataset/144495?spm=5176.12282016.0.0.432a4f03lzLpsw
+- weibo命名实体识别数据集
+  - https://modelscope.cn/datasets/damo/weibo_ner/summary
+- boson数据
   - https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/boson
-
 - 人民日报数据集。
   - 人名、地名、组织名三种实体类型 
   - 1998：[https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao](https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao) 
   - 2004：https://pan.baidu.com/s/1LDwQjoj7qc-HT9qwhJ3rcA password: 1fa3
-  
-- MSRA微软亚洲研究院数据集。
-  - 5 万多条中文命名实体识别标注数据（包括地点、机构、人物） 
-  - https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/MSRA
-
-- SIGHAN Bakeoff 2005：一共有四个数据集，包含繁体中文和简体中文，下面是简体中文分词数据。
-  - MSR: <http://sighan.cs.uchicago.edu/bakeoff2005/>
-  - PKU ：<http://sighan.cs.uchicago.edu/bakeoff2005/> 
+- MSRA微软亚洲研究院数据集: https://tianchi.aliyun.com/dataset/144307?spm=5176.12282016.0.0.432a4f03LnyjOw
