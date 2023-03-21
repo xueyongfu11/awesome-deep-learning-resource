@@ -20,7 +20,6 @@
 
 # Paper
 
-## GLM
 ### 2023
 - GLM-130B: AN OPEN BILINGUAL PRE-TRAINED MODEL
   - ICLM  [[code]](https://github.com/THUDM/GLM-130B/)
@@ -35,15 +34,15 @@
     <img src="" align="middle" />
     </details>
 
-### 2021
-- 
-  - EMNLP  [[code]]()
+### 2022
+- Training language models to follow instructions with human feedback
   - <details>
     <summary>阅读笔记: </summary>
-    1.   <br>
-    2.   <br>
-    3.   <br>
-    <img src="" align="middle" />
+    1. 使用人工编写的prompt数据，基于GPT3模型进行再训练，得到一个增强的预训练语言模型  <br>
+    2. 基于1中训练好的预训练语言模型以及构建好的prompt集，使用beam-search等生成prompt的多个回复结果，然后人工对生成的多个结果排序，然后基于该数据训练了一个6B的打分模型，使用的是pair-wise的ranking loss  <br>
+    3. 基于PPO算法训练强化学习模型，模型使用1中预训练好的模型进行初始化，给定prompt生成输出，然后用2中打分模型计算得分，然后优化强化学习模型。然后再使用强化学习模型生成，再打分。优化目标函数中添加了自回归语言模型的loss  <br>
+    <img src="assets\instructGPT1.png" align="middle" />
+    <img src="assets\instructGPT2.png" align="middle" />
     </details>
 
 
