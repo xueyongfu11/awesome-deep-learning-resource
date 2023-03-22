@@ -12,11 +12,32 @@
 
 
 # Repo
+- https://github.com/dair-ai/Prompt-Engineering-Guide
+  - https://www.promptingguide.ai/
+- https://huggingface.co/google/flan-t5-xxl
+- https://github.com/nebuly-ai/nebullvm
+  - LLaMA+RLHF
+- https://github.com/lucidrains/PaLM-rlhf-pytorch
+  - PaLM+RLHF
+- https://github.com/togethercomputer/OpenChatKit
+  - 指令微调，对话时使用检索结果增强上下文，20b、6b
+- https://github.com/bigscience-workshop/xmtf
+
 - https://github.com/THUDM/ChatGLM-6B
+- https://github.com/lich99/ChatGLM-finetune-LoRA
+- https://github.com/mymusise/ChatGLM-Tuning
+- https://huggingface.co/silver/chatglm-6b-slim
 - https://github.com/THUDM/GLM-130B/
 - https://github.com/THUDM/GLM
   - [ChatGLM内测](https://chatglm.cn/login)
   - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
+
+- https://github.com/tatsu-lab/stanford_alpaca
+  - 基于自生成的instructions来微雕LLaMA模型
+- https://github.com/tloen/alpaca-lora
+  - 基于low-rank adaption训练的alpaca
+  - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
+
 
 # Paper
 
