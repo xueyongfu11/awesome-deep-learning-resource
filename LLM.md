@@ -22,6 +22,17 @@
 - https://github.com/togethercomputer/OpenChatKit
   - 指令微调，对话时使用检索结果增强上下文，20b、6b
 - https://github.com/bigscience-workshop/xmtf
+- https://github.com/LAION-AI/Open-Assistant
+  - Open Assistant 是 LAION 机构开源的，旨在训练一个 ChatGPT 的小规模替代版
+  - Open-Assistant全流程训练指南:https://zhuanlan.zhihu.com/p/609003237
+- https://github.com/CarperAI/trlx
+  - trlX is a distributed training framework designed from the ground up to focus on fine-tuning large language models with reinforcement learning using either a provided reward function or a reward-labeled dataset.
+- https://github.com/BlinkDL/RWKV-LM
+  - 用 RWKV 架构（不是transformer结构）训练的chatgpt
+- https://github.com/allenai/RL4LMs
+  - 这个库包括了比较多 RL 算法（PPO，NLPO，A2C和TRPO），它论文说在 2000 个实验里做了 RL 在 LLM 上面的训练。RL4LMs当前的计划包括分布式训练更大的模型和新的RL算法
+- https://github.com/hpcaitech/ColossalAI/tree/main/applications/ChatGPT
+
 
 - https://github.com/THUDM/ChatGLM-6B
 - https://github.com/lich99/ChatGLM-finetune-LoRA
@@ -38,10 +49,24 @@
   - 基于low-rank adaption训练的alpaca
   - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
 
+- https://github.com/lvwerra/trl
+  - 基于GPT2的instructGPT
+- https://github.com/HarderThenHarder/transformers_tasks/tree/main/RLHF
+  - 基于上面的TRL做的；增加了基于人工打分的Reward模型训练，还提供了Reward数据的标注平台；RM 模型训练：基于 ernie-3.0-base-zh 继续训练的
+
 
 # Paper
 
 ### 2023
+- Language Is Not All You Need: Aligning Perception with Language Models
+  - [[code]](https://github.com/microsoft/unilm)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一个多模态因果大模型，方法是将图片用clip模型编码成离散的code，当作额外的token的加入到词表中。针对text和image，使用special token了区别模态的类型
+    2. 使用Magneto来初始化模型，使用xPOS作为位置编码的方法，该方法的好处是解决了传统注意力消散的情况  <br>
+    <img src="" align="middle" />
+    </details>
+
 - GLM-130B: AN OPEN BILINGUAL PRE-TRAINED MODEL
   - ICLM  [[code]](https://github.com/THUDM/GLM-130B/)
   - <details>
