@@ -13,8 +13,10 @@
 - https://github.com/airaria/TextBrewer
 - 
 
+
 # C++重写
 - https://github.com/NVIDIA/FasterTransformer
+
 
 # inference tools
 - tensorRT https://github.com/shouxieai/tensorRT_Pro
@@ -26,3 +28,8 @@
   - https://developer.ibm.com/articles/introduction-to-the-model-asset-exchange-on-ibm-developer/
 
 
+# Quantization
+
+- [A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using Hugging Face Transformers, Accelerate and bitsandbytes](https://huggingface.co/blog/hf-bitsandbytes-integration)
+  - 量化的基本原理
+  - transformers中的8bit的矩阵乘法

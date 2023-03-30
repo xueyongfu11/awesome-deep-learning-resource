@@ -32,12 +32,16 @@
 - https://github.com/allenai/RL4LMs
   - 这个库包括了比较多 RL 算法（PPO，NLPO，A2C和TRPO），它论文说在 2000 个实验里做了 RL 在 LLM 上面的训练。RL4LMs当前的计划包括分布式训练更大的模型和新的RL算法
 - https://github.com/hpcaitech/ColossalAI/tree/main/applications/ChatGPT
-
+- https://github.com/LianjiaTech/BELLE
+  - https://huggingface.co/BelleGroup
 
 - https://github.com/THUDM/ChatGLM-6B
 - https://github.com/lich99/ChatGLM-finetune-LoRA
+  - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
 - https://github.com/mymusise/ChatGLM-Tuning
+  - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
 - https://huggingface.co/silver/chatglm-6b-slim
+  - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
 - https://github.com/THUDM/GLM-130B/
 - https://github.com/THUDM/GLM
   - [ChatGLM内测](https://chatglm.cn/login)
