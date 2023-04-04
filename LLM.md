@@ -12,6 +12,12 @@
 
 
 # Repo
+
+- Vicuna
+  - https://vicuna.lmsys.org/
+  - https://github.com/lm-sys/FastChat
+  - https://chat.lmsys.org/
+  
 - https://github.com/dair-ai/Prompt-Engineering-Guide
   - https://www.promptingguide.ai/
 - https://huggingface.co/google/flan-t5-xxl
@@ -40,6 +46,8 @@
   - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
 - https://github.com/mymusise/ChatGLM-Tuning
   - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+- https://github.com/liangwq/Chatglm_lora_multi-gpu
+  - 支持多机多卡训练
 - https://huggingface.co/silver/chatglm-6b-slim
   - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
 - https://github.com/THUDM/GLM-130B/
