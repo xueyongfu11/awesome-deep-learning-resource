@@ -36,6 +36,7 @@
   - https://huggingface.co/BelleGroup
 
 - https://github.com/THUDM/ChatGLM-6B
+- https://github.com/liangwq/Chatglm_lora_multi-gpu
 - https://github.com/lich99/ChatGLM-finetune-LoRA
   - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
 - https://github.com/mymusise/ChatGLM-Tuning
