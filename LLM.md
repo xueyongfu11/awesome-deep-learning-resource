@@ -20,6 +20,26 @@
 
 - LAMMA
   - https://huggingface.co/blog/trl-peft
+  - https://github.com/tatsu-lab/stanford_alpaca
+    - 基于自生成的instructions来微雕LLaMA模型
+  - https://github.com/tloen/alpaca-lora
+    - 基于low-rank adaption训练的alpaca
+    - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
+
+- GLM
+  - https://github.com/THUDM/ChatGLM-6B
+  - https://github.com/lich99/ChatGLM-finetune-LoRA
+    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+  - https://github.com/mymusise/ChatGLM-Tuning
+    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+  - https://github.com/liangwq/Chatglm_lora_multi-gpu
+    - 支持多机多卡训练
+  - https://huggingface.co/silver/chatglm-6b-slim
+    - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
+  - https://github.com/THUDM/GLM-130B/
+  - https://github.com/THUDM/GLM
+    - [ChatGLM内测](https://chatglm.cn/login)
+    - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
 
 - BLOOM
   - https://github.com/bigscience-workshop/xmtf
@@ -50,27 +70,6 @@
 - https://github.com/hpcaitech/ColossalAI/tree/main/applications/ChatGPT
 - https://github.com/LianjiaTech/BELLE
   - https://huggingface.co/BelleGroup
-
-- GLM
-  - https://github.com/THUDM/ChatGLM-6B
-  - https://github.com/lich99/ChatGLM-finetune-LoRA
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/mymusise/ChatGLM-Tuning
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/liangwq/Chatglm_lora_multi-gpu
-    - 支持多机多卡训练
-  - https://huggingface.co/silver/chatglm-6b-slim
-    - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
-  - https://github.com/THUDM/GLM-130B/
-  - https://github.com/THUDM/GLM
-    - [ChatGLM内测](https://chatglm.cn/login)
-    - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
-
-- https://github.com/tatsu-lab/stanford_alpaca
-  - 基于自生成的instructions来微雕LLaMA模型
-- https://github.com/tloen/alpaca-lora
-  - 基于low-rank adaption训练的alpaca
-  - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
 
 - https://github.com/lvwerra/trl
   - 基于GPT2的instructGPT

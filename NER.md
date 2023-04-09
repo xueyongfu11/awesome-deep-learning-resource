@@ -111,11 +111,13 @@
 # Dataset
 ## english datasets
 
+- CoNLL-2003命名实体数据集
+  - 两种语言:英语和德语, 数据量1w+, 实体：地名、人名、组织名...
 
 
 ## chinese datasets
 
-- 数据集下载链接：
+- NER数据集下载链接：
   - https://github.com/GuocaiL/nlp_corpus
   - aliyun: https://tianchi.aliyun.com/dataset/145108
   - https://github.com/liucongg/NLPDataSet
