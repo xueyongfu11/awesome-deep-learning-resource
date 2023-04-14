@@ -126,7 +126,9 @@
 - CLUENER2020: https://www.cluebenchmarks.com/introduce.html
 - MSRA数据集：https://modelscope.cn/datasets/damo/msra_ner/summary
 - 中药说明书实体识别2020: https://tianchi.aliyun.com/dataset/86819
-- 中文医学命名实体识别数据集(CMeEE): https://tianchi.aliyun.com/dataset/144495?spm=5176.12282016.0.0.432a4f03lzLpsw
+- CBLUE
+  - https://github.com/CBLUEbenchmark/CBLUE
+  - 中文医学命名实体识别数据集(CMeEE): https://tianchi.aliyun.com/dataset/144495?spm=5176.12282016.0.0.432a4f03lzLpsw
 - weibo命名实体识别数据集
   - https://modelscope.cn/datasets/damo/weibo_ner/summary
 - boson数据
