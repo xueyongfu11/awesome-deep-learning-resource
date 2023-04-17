@@ -183,6 +183,10 @@
 - Doccano https://github.com/doccano/doccano
 - https://github.com/jiesutd/YEDDA
 - https://github.com/SophonPlus/ChineseAnnotator
+- [构想：中文文本标注工具（内附多个开源文本标注工具）](https://zhuanlan.zhihu.com/p/31149817)
+- https://github.com/heartexlabs/awesome-data-labeling
+- https://github.com/mingx9527/Data_Label_Tools
+- [超强大NLP标注工具——Prodigy](https://zhuanlan.zhihu.com/p/448179133)
 
 ## Paper tools
 - https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
