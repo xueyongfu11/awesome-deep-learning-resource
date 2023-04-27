@@ -26,11 +26,13 @@
 
 
 ## chinese datasets
+
+- https://github.com/InsaneLife/ChineseNLPCorpus
 - [NLP机器阅读理解：四大任务及相应数据集](https://mp.weixin.qq.com/s/KXq0d0xXuGVDOzlNds0jgw)
 - [中文机器阅读理解（片段抽取）数据集整理](https://mp.weixin.qq.com/s/dYDalqYB4JRiTbMgHDkYKA)
 - DuReader
   - [paper 链接](https://www.aclweb.org/anthology/W18-2605.pdf) | [数据集链接](https://ai.baidu.com/broad/introduction?dataset=dureader)
-  - 30万问题 140万文档 66万答案
+  - 30万问题 140万文档 66万答案  多文档   非抽取式，答案由人工生成
 - DuReade_robust
   - [数据集链接](https://github.com/PaddlePaddle/Research/tree/master/NLP/DuReader-Robust-BASELINE)
   - 2.2万问题，单篇章、抽取式阅读理解数据集
