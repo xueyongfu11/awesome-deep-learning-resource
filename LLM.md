@@ -89,6 +89,15 @@
 # Paper
 
 ### 2023
+
+- InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 将NER，RE，EE等数据集转化为instruction格式，基于FlanT5-10B模型训练  <br>
+    2. 针对NER，RE，EE等任务都加入辅助任务使得模型更好的学习  <br>
+    3. 相对于Bert-finetune，InstructUIE去的更好的效果；在少样本数据集上，超过了chatgpt3.5模型  <br>
+    </details>
+
 - Language Is Not All You Need: Aligning Perception with Language Models
   - [[code]](https://github.com/microsoft/unilm)
   - <details>
