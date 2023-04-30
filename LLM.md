@@ -13,12 +13,21 @@
 
 # Repo
 
+- https://github.com/MLNLP-World/Awesome-LLM
+- https://github.com/formulahendry/awesome-gpt
+
+- https://github.com/LC1332/Luotuo-Chinese-LLM
+
+- MOSS
+  - https://github.com/OpenLMLab/MOSS
+
 - Vicuna
   - https://vicuna.lmsys.org/
   - https://github.com/lm-sys/FastChat
   - https://chat.lmsys.org/
 
 - LAMMA
+  - https://github.com/ymcui/Chinese-LLaMA-Alpaca
   - https://huggingface.co/blog/trl-peft
   - https://github.com/tatsu-lab/stanford_alpaca
     - 基于自生成的instructions来微雕LLaMA模型
