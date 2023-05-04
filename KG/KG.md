@@ -91,4 +91,12 @@
 
 
 # Dataset
+
+## KG
+- OpenKG： http://openkg.cn/dataset
+
+## 知识图谱构建
+
+
+## 图神经网络训练
 - 数据集：https://www.jianshu.com/p/67137451b67f
