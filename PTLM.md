@@ -68,6 +68,15 @@
 
 # Paper
 
+- DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION
+  - ICLR  [[code]](https://github.com/microsoft/DeBERTa)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 相比bert，deberta的每个token使用content向量和position向量来表示，计算attention矩阵时，计算content2position,content2content,position2content,position2position等4个score的加和，因为这里的position是相对位置，实现时去掉了最后一个score  <br>
+    2. 使用了增强mask解码器，不同于bert把绝对位置加载输入层，enhanced mask decoder把绝对位置加在模型的最后一层，softmax之前  <br>
+    3. 下游finetune时，使用了对抗训练方法，不同传统的直接对word embeddding加上干扰项，deberta是在word embedding进行LN之后的输出加上干扰项，相比大模型来说，这种方法更加稳定  <br>
+    </details>
+
 - NEZHA: NEURAL CONTEXTUALIZED REPRESENTATION FOR CHINESE LANGUAGE UNDERSTANDING
   - 2021 
   - 阅读笔记：
