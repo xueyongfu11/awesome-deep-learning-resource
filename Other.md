@@ -30,10 +30,17 @@
   - 官网：https://fengshenbang-lm.com
   - huggingface web: https://huggingface.co/IDEA-CCNL?sort_models=downloads#models
 
-## NLU
-- FewNLU
-  - https://fewnlu.github.io/
-  - https://github.com/THUDM/FewNLU
+- Benchmark测试基准
+  - https://github.com/alibaba-research/ChineseBLUE
+  - https://github.com/CLUEbenchmark/CLUE
+  - GLUE：https://gluebenchmark.com/
+  - https://github.com/CLUEbenchmark/pCLUE
+    - 中文提示学习排行榜，将多个不同NLP任务转化成基于prompt格式，使用生成式模型进行预测
+  - https://github.com/clue-ai/PromptCLUE
+  - FewNLU
+    - 英文榜单
+    - https://fewnlu.github.io/
+    - https://github.com/THUDM/FewNLU
 
 
 ## Progress
@@ -46,9 +53,6 @@
 - https://github.com/ivan-bilan/The-NLP-Pandect
 - https://github.com/DA-southampton/Tech_Aarticle
 - https://github.com/GanjinZero/awesome_Chinese_medical_NLP
-- https://github.com/sebastianruder/NLP-progress
-- https://github.com/alibaba-research/ChineseBLUE
-- https://github.com/CLUEbenchmark/CLUE
 - https://github.com/NiuTrans/ABigSurvey
 - https://github.com/MLNLP-World/Top-AI-Conferences-Paper-with-Code
 - https://github.com/crownpku/Awesome-Chinese-NLP

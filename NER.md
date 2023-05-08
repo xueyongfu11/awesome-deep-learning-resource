@@ -20,7 +20,7 @@
 - https://github.com/FuYanzhe2/Name-Entity-Recognition
 - https://github.com/loujie0822/DeepIE
 - https://github.com/hecongqing/CCKS2019_EventEntityExtraction_Rank5
-- 
+
 
 ## 地址解析
 - https://github.com/modood/Administrative-divisions-of-China
@@ -90,7 +90,7 @@
     1. 将source文本作为encoder的输入，构建template，并输入实体span和相应的label，作为decoder的target文本  <br>
     2. 推理时，使用BART模型对所有候选实体构成的target文本进行打分，使用最高得分作为实体的标注结果  <br>
     3. 训练：领域内，标签不均衡的情况；领域迁移，先在其他领域的丰富数据上训练，然后在少样本领域数据上fitune <br>
-    4. 4. 持续学习的能力
+    4. 持续学习的能力
     <img src="./assets/templateNER.png" align="middle" />
     </details>
 
@@ -109,6 +109,7 @@
 
 
 # Dataset
+
 ## english datasets
 
 - CoNLL-2003命名实体数据集
@@ -133,7 +134,7 @@
   - https://modelscope.cn/datasets/damo/weibo_ner/summary
 - boson数据
   - https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/boson
-- 人民日报数据集。
+- 人民日报数据集
   - 人名、地名、组织名三种实体类型 
   - 1998：[https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao](https://github.com/InsaneLife/ChineseNLPCorpus/tree/master/NER/renMinRiBao) 
   - 2004：https://pan.baidu.com/s/1LDwQjoj7qc-HT9qwhJ3rcA password: 1fa3
