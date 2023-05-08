@@ -66,7 +66,23 @@
 ## tokenizer
 - 基于神经网络的分词模型 https://github.com/google/sentencepiece
 
+
 # Paper
+
+### 2023
+
+- DEBERTAV3: IMPROVING DEBERTA USING ELECTRA-STYLE PRE-TRAINING WITH GRADIENTDISENTANGLED EMBEDDING SHARING
+  - ICLR  [[code]](https://github.com/microsoft/DeBERTa)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 模型延续了deberta，不同的是，deberta-v3使用了ELECTRA的RTD任务  <br>
+    2. ELECTRA训练时，生成器和判别器的embedding是共享的，由于不同的任务会引起类似拔河竞争。deberta-v3实验证明相比各自拥有embedding，embedding共享是有效的  <br>
+    3. 训练的方法与NES相同，即生成器和判别器分别计算loss和反向传播  <br>
+    4. 先生成判别器的输入，然后再用MLM loss更新生成器的embedding权重（由于共享，此时判别器的embedding也相应更新），计算判别器的RTD loss，不在对生成器也就是判别器进行更新，而是更新E-delta，将E-delta+E从而得到判别器的embedding，同时也是生成器的新的embedding
+    </details>
+
+
+### 2021 
 
 - DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION
   - ICLR  [[code]](https://github.com/microsoft/DeBERTa)
@@ -93,37 +109,46 @@
     4. 微调: 知识蒸馏、迁移学习、choice smoothing、对抗学习、数据增强等手段
   - code：https://github.com/Langboat/Mengzi
 
+### 2020
+
 - ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS
-  - 2020 ICLR
-  - 阅读笔记：
-    1. 提出了一个轻量级的预训练语言模型（无蒸馏操作）
-    2. embedding矩阵分解，跨层参数共享、句子顺序预测（采样方法同bert，即从同一个文档中采样两个两个的句子片段，将句子顺序颠倒）
-  - code: https://github.com/google-research/ALBERT
+  - ICLR  [[code]](https://github.com/google-research/ALBERT)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一个轻量级的预训练语言模型（无蒸馏操作）  <br>
+    2. embedding矩阵分解，跨层参数共享、句子顺序预测（采样方法同bert，即从同一个文档中采样两个两个的句子片段，将句子顺序颠倒）  <br>
+    </details>
 
 - TinyBERT: Distilling BERT for Natural Language Understanding
-  - year: 2020 EMNLP
-  - 阅读笔记：
-    1. 提出了一个两阶段包含语训练蒸馏和下游任务蒸馏的语言模型TinyBert
-    2. 预训练阶段蒸馏：只进行transformer layer蒸馏，具体包括attention based distillation和hidden state based distillation
-    3. 下游任务微调阶段蒸馏：在一个已经微调好的bert的条件下，先使用transfomer layer蒸馏、embedding layer蒸馏，在使用prediction layer蒸馏（注意无需要再次输出数据）
+  - EMNLP  [[code]](https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/TinyBERT)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一个两阶段包含语训练蒸馏和下游任务蒸馏的语言模型TinyBert  <br>
+    2. 预训练阶段蒸馏：只进行transformer layer蒸馏，具体包括attention based distillation和hidden state based distillation  <br>
+    3. 下游任务微调阶段蒸馏：在一个已经微调好的bert的条件下，先使用transfomer layer蒸馏、embedding layer蒸馏，在使用prediction layer蒸馏（注意无需要再次输出数据）  <br>
     4. 4-layers的tinybert可以达到9倍的推理速度提升，精度略有下降
-  - code: https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/TinyBERT
+    </details>
+
+### 2019 
 
 - RoBERTa: A Robustly Optimized BERT Pretraining Approach
-  - year: 2019
-  - 阅读笔记：
-    1. 相比BERT，使用更多的训练数据、训练时间更长、batch更大；去掉了NSP预训练任务；使用了更长的序列；使用了动态mask机制
-  - code: https://github.com/facebookresearch/fairseq
+  - EMNLP  [[code]](https://github.com/facebookresearch/fairseq)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 相比BERT，使用更多的训练数据、训练时间更长、batch更大；去掉了NSP预训练任务；使用了更长的序列；使用了动态mask机制  <br>
+    </details>
 
 - XLNet: Generalized Autoregressive Pretraining for Language Understanding
-  - year: 2019 
-  - 阅读笔记: 
-    1. 一种广义自回归预训练语言模型，通过一种文本随机排列的方法，从而建模双向的信息
-    2. 实现时并非对序列进行排列，可以使用attention mask机制来实现。具体是使用content流和query流，content流类似传统的attention计算，query流是以只包含位置信息的作为query，不能包含当前的token信息，从而实现在不同的阶段，token的可见性。
-    3. 引用了transformer-xl的片段循环机制和相对位置编码机制
-  - code: https://github.com/zihangdai/xlnet
+  - [[code]](https://github.com/zihangdai/xlnet)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 一种广义自回归预训练语言模型，通过一种文本随机排列的方法，从而建模双向的信息  <br>
+    2. 实现时并非对序列进行排列，可以使用attention mask机制来实现。具体是使用content流和query流，content流类似传统的attention计算，query流是以只包含位置信息的作为query，不能包含当前的token信息，从而实现在不同的阶段，token的可见性。  <br>
+    3. 引用了transformer-xl的片段循环机制和相对位置编码机制  <br>
+    </details>
 
 # 词向量
+
 - 100+的中文词向量 https://github.com/Embedding/Chinese-Word-Vectors
 - 词向量相关paper，resource，dataset https://github.com/Hironsan/awesome-embedding-models
 - ngrams词向量模型 https://github.com/zhezhaoa/ngram2vec
