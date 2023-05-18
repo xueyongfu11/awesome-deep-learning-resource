@@ -19,9 +19,16 @@
 
 ## 预训练语言模型
 
+- https://huggingface.co/Langboat/mengzi-bert-base
+  - 中文模型，Pretrained model on 300G Chinese corpus. Masked language modeling(MLM), part-of-speech(POS) tagging and sentence order prediction(SOP) are used as training task.
+
+- T5
+  - https://huggingface.co/Langboat/mengzi-t5-base
+
 - 哈工大开源预训练语言模型
   - https://huggingface.co/hfl
   - https://github.com/ymcui/Chinese-BERT-wwm
+
 - https://github.com/CLUEbenchmark/CLUEPretrainedModels
 - https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
   - 收集了一些高质量 中文 预训练语言模型
