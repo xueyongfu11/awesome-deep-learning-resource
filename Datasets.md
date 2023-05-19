@@ -19,10 +19,17 @@
 - https://github.com/liucongg/NLPDataSet
 - https://github.com/SophonPlus/ChineseNlpCorpus
 - https://github.com/brightmart/nlp_chinese_corpus
-- https://github.com/guoxw/wenshu-
-  - 裁判文书数据集
 - THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
 - 中文财报数据网站：http://www.cninfo.com.cn/new/index
+
+- 通用语料
+  - 超对称：https://bbt.ssymmetry.com/data.html
+    - 通用语料、金融语料
+
+- 中文法律数据
+  - https://github.com/guoxw/wenshu-  裁判文书数据集
+  - https://github.com/pengxiao-song/awesome-chinese-legal-resources
+    - 本仓库致力于收集和整理全面的中国法律数据资源，旨在帮助研究人员及从业者展开工作
 
 ## 数据平台
 

@@ -7,7 +7,7 @@
   - [subdomain-1](#subdomain-1)
   - [subdomain-1](#subdomain-1-1)
 - [Dataset](#dataset)
-
+ 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
@@ -15,6 +15,12 @@
 
 - https://github.com/MLNLP-World/Awesome-LLM
 - https://github.com/formulahendry/awesome-gpt
+
+- https://github.com/pengxiao-song/LawGPT
+  - 基于中文法律知识的大语言模型
+  - 预训练+指令微调
+
+- 超对称大模型：https://bbt.ssymmetry.com/model.html
 
 - https://github.com/LC1332/Luotuo-Chinese-LLM
 
@@ -34,6 +40,8 @@
   - https://github.com/tloen/alpaca-lora
     - 基于low-rank adaption训练的alpaca
     - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
+  - https://github.com/Neutralzz/BiLLa
+  - https://github.com/starmpcc/CAMEL
 
 - GLM
   - https://github.com/THUDM/ChatGLM-6B
@@ -49,6 +57,8 @@
   - https://github.com/THUDM/GLM
     - [ChatGLM内测](https://chatglm.cn/login)
     - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
+  - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
+    - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
 
 - BLOOM
   - https://github.com/bigscience-workshop/xmtf
@@ -134,3 +144,6 @@
 
 
 # Dataset
+
+- https://huggingface.co/datasets/BAAI/COIG
+  - 北京智源人工智能研究院发布的中文指令数据集

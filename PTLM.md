@@ -36,10 +36,17 @@
     - 中文版的T5-large，采用了BertTokenizer和中文字级别词典
   - https://huggingface.co/IDEA-CCNL/Randeng-T5-Char-700M-MultiTask-Chinese
     - 在Randeng-T5-Char-700M的基础上，收集了100个左右的中文数据集，进行Text2Text统一范式的有监督任务预训练
+  - https://huggingface.co/Langboat/mengzi-t5-base
+
+
+- https://huggingface.co/Langboat/mengzi-bert-base
+  - 中文模型，Pretrained model on 300G Chinese corpus. Masked language modeling(MLM), part-of-speech(POS) tagging and sentence order prediction(SOP) are used as training task.
+
 
 - 哈工大开源预训练语言模型
   - https://huggingface.co/hfl
   - https://github.com/ymcui/Chinese-BERT-wwm
+
 - https://github.com/CLUEbenchmark/CLUEPretrainedModels
 - https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
   - 收集了一些高质量 中文 预训练语言模型

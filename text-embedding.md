@@ -8,6 +8,12 @@
 
 
 ## Repo
+
+- https://huggingface.co/spaces/mteb/leaderboard
+  - MTEB: Massive Text Embedding Benchmark
+
+- https://huggingface.co/hkunlp/instructor-large
+
 - https://github.com/Separius/awesome-sentence-embedding
 - https://github.com/bojone/BERT-whitening
 - https://github.com/UKPLab/sentence-transformers
