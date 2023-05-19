@@ -19,6 +19,24 @@
 
 ## 预训练语言模型
 
+- T5
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-784M
+    - 基于mT5-large，训练了它的中文版
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-784M-MultiTask-Chinese
+    - 在Randeng-T5-784M的基础上，收集了100个左右的中文数据集，进行Text2Text统一范式的有监督任务预训练
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-77M
+    - 中文版的mT5-small
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-77M-MultiTask-Chinese
+    - 在Randeng-T5-77M的基础上，收集了100个左右的中文数据集，进行Text2Text统一范式的有监督任务预训练
+  
+  - https://huggingface.co/lemon234071/t5-base-Chinese
+    - A mt5-base model that the vocab and word embedding are truncated, only Chinese and English characters are retained
+
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-Char-700M-Chinese
+    - 中文版的T5-large，采用了BertTokenizer和中文字级别词典
+  - https://huggingface.co/IDEA-CCNL/Randeng-T5-Char-700M-MultiTask-Chinese
+    - 在Randeng-T5-Char-700M的基础上，收集了100个左右的中文数据集，进行Text2Text统一范式的有监督任务预训练
+
 - 哈工大开源预训练语言模型
   - https://huggingface.co/hfl
   - https://github.com/ymcui/Chinese-BERT-wwm
