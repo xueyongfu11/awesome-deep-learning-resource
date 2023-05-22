@@ -38,6 +38,8 @@
     - 在Randeng-T5-Char-700M的基础上，收集了100个左右的中文数据集，进行Text2Text统一范式的有监督任务预训练
   - https://huggingface.co/Langboat/mengzi-t5-base
 
+- deberta
+  - https://fengshenbang-doc.readthedocs.io/zh/latest/docs/%E4%BA%8C%E9%83%8E%E7%A5%9E%E7%B3%BB%E5%88%97/index.html
 
 - https://huggingface.co/Langboat/mengzi-bert-base
   - 中文模型，Pretrained model on 300G Chinese corpus. Masked language modeling(MLM), part-of-speech(POS) tagging and sentence order prediction(SOP) are used as training task.
