@@ -16,9 +16,14 @@
 - https://github.com/MLNLP-World/Awesome-LLM
 - https://github.com/formulahendry/awesome-gpt
 
-- https://github.com/pengxiao-song/LawGPT
-  - 基于中文法律知识的大语言模型
-  - 预训练+指令微调
+
+- https://github.com/stability-AI/stableLM/
+
+- https://huggingface.co/YeungNLP/firefly-1b4
+- https://huggingface.co/YeungNLP/firefly-2b6
+
+- https://github.com/FreedomIntelligence/LLMZoo
+- https://github.com/project-baize/baize-chatbot/blob/main/README.md
 
 - 超对称大模型：https://bbt.ssymmetry.com/model.html
 
@@ -26,6 +31,11 @@
 
 - MOSS
   - https://github.com/OpenLMLab/MOSS
+
+- OpenAssistant
+  - https://github.com/LAION-AI/Open-Assistant 
+  - https://huggingface.co/datasets/OpenAssistant/oasst1
+  - https://open-assistant.io 
 
 - Vicuna
   - https://vicuna.lmsys.org/
@@ -59,6 +69,7 @@
     - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
   - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
     - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
+  - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
 
 - BLOOM
   - https://github.com/bigscience-workshop/xmtf
@@ -94,6 +105,24 @@
   - 基于GPT2的instructGPT
 - https://github.com/HarderThenHarder/transformers_tasks/tree/main/RLHF
   - 基于上面的TRL做的；增加了基于人工打分的Reward模型训练，还提供了Reward数据的标注平台；RM 模型训练：基于 ernie-3.0-base-zh 继续训练的
+
+
+## 领域大模型
+
+- https://github.com/scir-hi/huatuo-llama-med-chinese
+
+- https://github.com/BioFM/OpenBioMed
+  - 多模态生物医疗领域大模型
+
+- https://github.com/pengxiao-song/LawGPT
+  - 基于中文法律知识的大语言模型
+  - 预训练+指令微调
+
+
+## 并行训练框架
+
+- https://github.com/hpcaitech/ColossalAI
+
 
 
 # Paper

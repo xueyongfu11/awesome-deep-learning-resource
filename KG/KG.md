@@ -94,6 +94,11 @@
 
 ## KG
 - OpenKG： http://openkg.cn/dataset
+- CMeKG:
+  - 1.0:http://www5.zzu.edu.cn/nlp/info/1018/1715.htm
+  - 2.0:http://www5.zzu.edu.cn/nlp/info/1018/1785.htm
+- 中文产科知识图谱（Chinese Obstetric Knowledge Graph，COKG）
+  - http://www5.zzu.edu.cn/nlp/info/1015/2147.htm
 
 ## 知识图谱构建
 
