@@ -44,9 +44,7 @@
     - 英文榜单
     - https://fewnlu.github.io/
     - https://github.com/THUDM/FewNLU
-  - http://115.182.62.166:18000/public
-    - 大模型安全性评估
-
+  
 
 ## Progress
 - https://github.com/DengBoCong/nlp-paper

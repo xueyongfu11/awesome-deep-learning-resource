@@ -53,6 +53,8 @@
   - https://github.com/Neutralzz/BiLLa
   - https://github.com/starmpcc/CAMEL
   - https://github.com/zjunlp/CaMA
+  - https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
+    - IDEA研究眼
 
 - GLM
   - https://github.com/THUDM/ChatGLM-6B
@@ -107,6 +109,16 @@
   - 基于GPT2的instructGPT
 - https://github.com/HarderThenHarder/transformers_tasks/tree/main/RLHF
   - 基于上面的TRL做的；增加了基于人工打分的Reward模型训练，还提供了Reward数据的标注平台；RM 模型训练：基于 ernie-3.0-base-zh 继续训练的
+
+
+## leaderboard
+
+- https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
+- https://cluebenchmarks.com/superclue.html
+- https://cevalbenchmark.com/static/leaderboard.html
+  - 中文大模型评估排行榜
+- http://115.182.62.166:18000/public
+    - 大模型安全性评估
 
 ## RLHF&RL
 
