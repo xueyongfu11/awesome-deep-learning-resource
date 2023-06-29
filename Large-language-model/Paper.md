@@ -37,10 +37,10 @@
   - <details>
     <summary>阅读笔记: </summary>
     1. GLM使用了自编码和自回归的方式进行预训练  <br>
-    2. 自编码使用blank infilling的方式训练，即提取spans，并替换成mask，使用自回归的方式预测mask，为了使得双向可见，将spans的顺序随机排列  <br>
+    2. 预训练方式1：自编码使用blank infilling的方式训练，即提取spans，并替换成mask，使用自回归的方式预测mask，spans的双向可见性取决于spans的随机排列顺序。每个样本对应唯一一个预训练任务，两种预训练任务使用不同mask token；预训练任务2：使用了多任务指令预训练  <br>
     3. 每个样本对应唯一一个预训练任务，两种预训练任务使用不同mask token <br>
     4. 为了使得LLM的训练稳定，使用了DeepNorm；使用了三种训练策略；使用旋转位置编码，理论上支持无限长；FFN使用Gelu激活函数  <br>
-    5. 训练集的95%使用自回归、自编码任务训练，分别占30%、70%，训练集的另外5%来自于各个NLP任务数据集，通过转化成prompt的方式来构建  <br>
+    5. 训练集的95%使用blank filling任务训练，分别占30%、70%，训练集的另外5%来自于各个NLP任务指令数据集，通过转化成prompt的方式构建  <br>
     6. GLM的int4量化模型performance未明显下降，可以用4*3090运行
     <img src="" align="middle" />
     </details>
@@ -56,5 +56,23 @@
     <img src="assets\instructGPT2.png" align="middle" />
     </details>
 
+- GLM: General Language Model Pretraining with Autoregressive Blank Infilling
+  - ACL  [[code]](https://github.com/THUDM/GLM)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 使用了blank filling的自回归方式来统一所有任务目标。其通过mask spans来自回归的预测被mask的span，非span区域是互见的，span之间的可见性取决于span的随机排列顺序  <br>
+    2. 为了获得更好的生成性能，通过mask更长span，以及对整句进行mask  <br>
+    3. 使用的2D位置编码：被mask的序列绝对位置，非span区域位置为0，span内部位置从1开始编码  <br>
+    <img src="" align="middle" />
+    </details>
 
+### 2021
+- A General Language Assistant as a Laboratory for Alignment
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 偏好模型是在序列的最后一个token上加value head，value head负责预测一个标量值来表示得分；模仿学习是只用good example来微调模型  <br>
+    2. 排序偏好模型相比二进制偏好模型有更好的效果  <br>
+    3. context distillation: prompt会减少输入的长度等缺点，使用了一种基于KL的loss来对prompt微调  <br>
+    4. 偏好模型预训练的第二个阶段，使用二进制判别的预训练方法相比排序偏好方法有更好的收益
+    </details>
 

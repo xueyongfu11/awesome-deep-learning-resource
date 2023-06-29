@@ -9,9 +9,8 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Repo
 
-# Paper
+## mix
 
 - End-To-End Memory Networks
   - year: 2015 NeuralIPS
@@ -21,6 +20,10 @@
     3. 将输出向量和query向量相加后，通过一个线性层softmax计算概率分布
   - code: 
 
+
+## transformer attention
+
+- https://github.com/HazyResearch/flash-attention
 
 
 # Dataset
