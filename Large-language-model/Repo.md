@@ -57,6 +57,7 @@
     - IDEA研究眼
 
 - GLM
+  - https://github.com/THUDM/ChatGLM2-6B
   - https://github.com/THUDM/ChatGLM-6B
   - https://github.com/lich99/ChatGLM-finetune-LoRA
     - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
