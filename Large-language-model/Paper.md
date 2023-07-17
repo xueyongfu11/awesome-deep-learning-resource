@@ -1,14 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Paper](#paper)
-  - [subdomain-1](#subdomain-1)
-  - [subdomain-1](#subdomain-1-1)
-- [Dataset](#dataset)
- 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Paper
@@ -68,3 +57,8 @@
     4. 偏好模型预训练的第二个阶段，使用二进制判别的预训练方法相比排序偏好方法有更好的收益
     </details>
 
+
+# Blog
+
+- [新加坡科技设计大学提出FLACUNA：提高LLMs问题解决能力!](https://mp.weixin.qq.com/s/QwLs9mdfyIwdTtCOwptkbA)
+- [LLM综述全新出炉：51页论文带你盘点LLM领域专业化技术](https://mp.weixin.qq.com/s/bRQ7xjs4ewNJoE2Gug3lSA)
