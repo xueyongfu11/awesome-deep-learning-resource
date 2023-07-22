@@ -43,4 +43,12 @@
     3. 为了防止大模型的过度自信，说了few-shot的自我验证方法，即通过指令描述的方式让大模型回答抽取到的实体是否是相应类别的实体  <br>
     </details>
 
+- Zero-Shot Information Extraction via Chatting with ChatGPT
+  - [[code]](https://github.com/cocacola-lab/ChatIE)
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 基于chatgpt模型，把zero-shot信息抽取分成了两个阶段。第一个阶段：通过prompt的方式得到可能涉及的实体类型  <br>
+    2. 第二个阶段：根据第一个阶段的实体类型和任务相关的schema来提示获取其他的相关信息  <br>
+    </details>
+
 # Dataset
