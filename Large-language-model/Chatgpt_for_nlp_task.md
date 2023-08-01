@@ -11,7 +11,12 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Repo
+# Blog
+
+- [ChatGPT能解决信息抽取吗？一份关于性能、评估标准、鲁棒性和错误的分析](https://mp.weixin.qq.com/s/TeFxseHyqZ96aL6eN6X64g)
+  - Is Information Extraction Solved by ChatGPT? An Analysis of Performance, Evaluation Criteria, Robustness and Errors
+  - code: https://github.com/RidongHan/Evaluation-of-ChatGPT-on-Information-Extraction
+
 
 # Paper
 
