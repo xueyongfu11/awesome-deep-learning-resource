@@ -15,7 +15,9 @@
 
 - https://github.com/adapter-hub/adapter-transformers
 
+# Blog
 
+- [高效组合多个LoRA模块以实现跨任务泛化](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
 
 # Paper
 
