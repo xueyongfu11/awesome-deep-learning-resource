@@ -13,7 +13,9 @@
 
 - https://github.com/sogou/SogouMRCToolkit
 - https://github.com/PaddlePaddle/RocketQA
-- 
+
+- IDEA UniMRC
+  - https://huggingface.co/IDEA-CCNL/Erlangshen-UniMC-DeBERTa-v2-1.4B-Chinese
 
 
 # Dataset

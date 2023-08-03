@@ -21,7 +21,6 @@
 
 ## 汇总
 
-
 - https://github.com/CLUEbenchmark/DataCLUE
   - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
 - https://github.com/lrs1353281004/Chinese_medical_NLP
