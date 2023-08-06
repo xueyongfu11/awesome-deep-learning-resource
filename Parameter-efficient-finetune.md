@@ -1,27 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Repo](#repo)
-- [Paper](#paper)
-  - [subdomain-1](#subdomain-1)
-  - [subdomain-1](#subdomain-1-1)
-- [Dataset](#dataset)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-# Repo
 
 - https://github.com/adapter-hub/adapter-transformers
 
-# Blog
-
 - [高效组合多个LoRA模块以实现跨任务泛化](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
 
-# Paper
+- LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language
+  - 提出大模型微调用的adapter训练系统框架，包含常用的adapter，lora
+  - https://github.com/AGI-Edgerunners/LLM-Adapters
 
-## subdomain-1
 ### 2022
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
   - <details>
@@ -47,7 +33,3 @@
     4. 低秩矩阵与相应的模型层的权重呈现很强的相关性 <br>
     <img src="./assets/lora.jpg" align="middle" />
     </details>
-
-
-
-# Dataset
