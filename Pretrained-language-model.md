@@ -92,6 +92,7 @@
 
 ## tokenizer
 - 基于神经网络的分词模型 https://github.com/google/sentencepiece
+- [tokenizer：BPE、WordPiece、Unigram LM、SentencePiece相关blog](https://zhuanlan.zhihu.com/p/620508648)
 
 
 # Paper
