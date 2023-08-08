@@ -1,5 +1,14 @@
 
 
+- ACL2023关于基于检索来增强大模型的讲习班ppt
+  - https://acl2023-retrieval-lm.github.io/
+  - 陈丹奇组工作
+
+- Lost in the Middle: How Language Models Use Long Contexts
+  - [相关blog](https://zhuanlan.zhihu.com/p/643723202)
+  - 1. 语言模型在长输入上下文的中间使用信息时会带来性能下降，并且随着输入上下文的增长，性能会进一步恶化，其更偏向于头尾两个位置
+    2. 对检索到的文档进行有效的重新排序，将相关信息推向输入上下文的开头或排序列表截断，必要时返回更少的文档，这个是值得深入的方向
+
 - Copy is All You Need
   - ICLR2023  
   - [聊聊我的AI大黄蜂：Copy is All You Need背后的故事](https://zhuanlan.zhihu.com/p/647457020)
