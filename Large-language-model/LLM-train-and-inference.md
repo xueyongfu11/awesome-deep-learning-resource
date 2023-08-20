@@ -19,6 +19,9 @@
   Double Quantization是将额外的量化常数进行量化。
   - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
   - QLora张量使用使，会把张量 反量化 为BF16，然后在16位计算精度下进行矩阵乘法。
+  - https://github.com/artidoro/qlora
+  - https://huggingface.co/blog/4bit-transformers-bitsandbytes
+    - 介绍及使用
 
 - FlashAttention
   - 将频繁HBM内存访问转化为矩阵分片，并在SRAM上一次性计算的方式

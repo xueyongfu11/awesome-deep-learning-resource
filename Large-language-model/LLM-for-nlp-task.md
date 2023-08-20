@@ -1,12 +1,14 @@
 
 
+- UniversalNER: Targeted Distillation from Large Language Models for Open Named Entity Recognition
+  - https://universal-ner.github.io/
+
 - ZeroPrompt: Scaling Prompt-Based Pretraining to 1,000 Tasks Improves
 Zero-shot Generalization
   - [相关blog](https://zhuanlan.zhihu.com/p/461075783)
   - 使用1000个nlp任务构建prompt数据，提升了zero-shot能力，在部分任务上超过了finetune，相比其他zero-shot方法提升了30个点
 
 
-## information extraction
 ### 2023
 
 - InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction
