@@ -1,5 +1,6 @@
 
 - https://github.com/huggingface/peft
+- https://github.com/thunlp/OpenDelta
 - https://github.com/adapter-hub/adapter-transformers
 
 - [高效组合多个LoRA模块以实现跨任务泛化](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
@@ -7,6 +8,17 @@
 - LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language
   - 提出大模型微调用的adapter训练系统框架，包含常用的adapter，lora
   - https://github.com/AGI-Edgerunners/LLM-Adapters
+
+- QLora
+  - [QLoRA：一种高效LLMs微调方法，48G内存可调65B 模型，调优模型Guanaco 堪比Chatgpt的99.3%！](https://zhuanlan.zhihu.com/p/632229856)
+  - 使用4位的NormalFloat（Int4）量化和Double Quantization技术。4位的NormalFloat使用分位数量化，通过估计输入张量的分位数来确保每个区间分配的值相等，
+  Double Quantization是将额外的量化常数进行量化。
+  - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
+  - QLora张量使用时，会把张量 反量化 为BF16，然后在16位计算精度下进行矩阵乘法。
+  - https://github.com/artidoro/qlora
+  - https://huggingface.co/blog/4bit-transformers-bitsandbytes
+    - 介绍及使用
+
 
 ### 2022
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks

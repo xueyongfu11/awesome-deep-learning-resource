@@ -1,4 +1,19 @@
 
+- https://github.com/hiyouga/LLaMA-Efficient-Tuning
+
+- https://github.com/mosaicml/llm-foundry
+
+- https://github.com/RUCAIBox/LLMSurvey
+
+- https://github.com/FlagAI-Open/FlagAI
+
+- https://github.com/jerryjliu/llama_index
+
+- https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
+
+- https://github.com/ssymmetry/BBT-FinCUGE-Applications
+
+- https://github.com/CVI-SZU/Linly
 
 - [新加坡科技设计大学提出FLACUNA：提高LLMs问题解决能力!](https://mp.weixin.qq.com/s/QwLs9mdfyIwdTtCOwptkbA)
 - [LLM综述全新出炉：51页论文带你盘点LLM领域专业化技术](https://mp.weixin.qq.com/s/bRQ7xjs4ewNJoE2Gug3lSA)

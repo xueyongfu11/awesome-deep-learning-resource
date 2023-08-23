@@ -19,6 +19,8 @@
 
 ## 预训练语言模型
 
+- https://github.com/SCHENLIU/longformer-chinese
+
 - T5
   - https://huggingface.co/IDEA-CCNL/Randeng-T5-784M
     - 基于mT5-large，训练了它的中文版

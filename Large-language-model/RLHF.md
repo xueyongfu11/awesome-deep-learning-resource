@@ -6,3 +6,5 @@
 - https://github.com/CarperAI/trlx
 - https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
 - https://github.com/hpcaitech/ColossalAI/tree/main/applications/Chat
+
+- https://github.com/OpenLMLab/MOSS-RLHF
