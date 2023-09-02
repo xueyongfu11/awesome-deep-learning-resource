@@ -155,6 +155,9 @@
     </details>
 
 ### 2022
+
+- FINETUNED LANGUAGE MODELS ARE ZERO-SHOT LEARNERS
+  
 - Training language models to follow instructions with human feedback
   - <details>
     <summary>阅读笔记: </summary>
