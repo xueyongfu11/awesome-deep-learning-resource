@@ -16,3 +16,9 @@
 - https://github.com/openppl-public/ppq
 
 - https://github.com/NVIDIA-AI-IOT/torch2trt
+
+## Post-training quantization
+
+- Up or Down? Adaptive Rounding for Post-Training Quantization
+  - [blog](https://zhuanlan.zhihu.com/p/363941822)
+  - 核心：对weights进行量化时，不再是round to nearest，而是自适应的量化到最近右定点值还是左定点值
