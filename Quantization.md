@@ -12,3 +12,7 @@
 - SmoothQuant和增强型SmoothQuant
   - 增强的SmoothQuant使用了自动化确定alpha值的方法，而原始的SmoothQuant则是固定了alpha值
   - [相关blog](https://zhuanlan.zhihu.com/p/648016909)
+
+- https://github.com/openppl-public/ppq
+
+- https://github.com/NVIDIA-AI-IOT/torch2trt
