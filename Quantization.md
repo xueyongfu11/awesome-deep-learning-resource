@@ -34,9 +34,13 @@
 - LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale
   - W8A8量化，根据激活参数量级大小，从激活中选取outliers，使用fp16*fp16的矩阵乘法，对于激活中的其他行，使用int8*int8的量化矩阵乘法
   - 选取激活中的outliers，同时需要将权重矩阵中相应的列取出，与outliners进行矩阵相乘
+- https://github.com/openppl-public/ppq
+
+- https://github.com/NVIDIA-AI-IOT/torch2trt
 
 ## Post-training quantization
 
 - Up or Down? Adaptive Rounding for Post-Training Quantization
   - [blog](https://zhuanlan.zhihu.com/p/363941822)
+  - 核心：对weights进行量化时，不再是round to nearest，而是自适应的量化到最近右定点值还是左定点值
   - 核心：对weights进行量化时，不再是round to nearest，而是自适应的量化到最近右定点值还是左定点值
