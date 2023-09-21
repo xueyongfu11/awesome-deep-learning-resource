@@ -3,8 +3,34 @@
 
 - https://github.com/wenhuchen/OTT-QA
 
+- https://github.com/microsoft/TUTA_table_understanding
+
+- https://github.com/google-research/tapas
+
+- https://github.com/microsoft/Table-Pretraining
+
+- https://modelscope.cn/models/damo/nlp_convai_text2sql_pretrain_cn/summary
+
+- https://github.com/submissionTmp/TabularNet
+
+- https://github.com/alibaba/AliceMind/tree/main/SDCUP
+
+- https://github.com/facebookresearch/TaBERT
+
+- https://github.com/majidghgol/TabularCellTypeClassification
+
+- https://github.com/kianasun/table-understanding-system
+
 
 # Paper
+
+## survey
+
+- Transformers for Tabular Data Representation: A Survey of Models and Applications
+  - 2021, 重要
+
+- Table understanding approaches for extracting knowledge from heterogeneous tables
+  - 2021，引用内容很旧，质量整体一般
 
 ## table interpretation
 ### 2022
@@ -101,27 +127,13 @@
     <img src="./assets\tapas.png" align="middle" />
     </details>
 
+
 ## table-qa
-### 2022
+
 - Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder
-  - <details>
-    <summary>阅读笔记: </summary>
-    1.   <br>
-    2.   <br>
-    3.   <br>
-    <img src="" align="middle" />
-    </details>
 
 - UniRPG: Unified Discrete Reasoning over Table and Text as Program Generation
-  - <details>
-    <summary>阅读笔记: </summary>
-    1.   <br>
-    2.   <br>
-    3.   <br>
-    <img src="" align="middle" />
-    </details>
 
-### 2021
 - TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance
   -  [[code]](https://nextplusplus.github.io/TAT-QA/)
   - <details>
@@ -132,7 +144,11 @@
     <img src="./assets\tatqa.png" align="middle" />
     </details>
 
-
+- TABERT: Pretraining for Joint Understanding of Textual and Tabular Data
+  1. 该模型只适合DB表格，也就是只有列表头，没有行表头
+  2. 先基于context获取表格中最相近的一些行，然后使用bert将context和每行的拼接进行 encoding
+  3. 使用vertical attention机制，是的同列的cell可以互相注意到，从而建模行之间的关联
+  4. ACL2020
 
 # resource
 
