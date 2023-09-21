@@ -10,7 +10,7 @@
   - https://github.com/AGI-Edgerunners/LLM-Adapters
 
 - QLora
-  - [QLoRA：一种高效LLMs微调方法，48G内存可调65B 模型，调优模型Guanaco 堪比Chatgpt的99.3%！](https://zhuanlan.zhihu.com/p/632229856)
+  - [blog](https://zhuanlan.zhihu.com/p/632229856)
   - 使用4位的NormalFloat（Int4）量化和Double Quantization技术。4位的NormalFloat使用分位数量化，通过估计输入张量的分位数来确保每个区间分配的值相等，
   Double Quantization是将额外的量化常数进行量化。
   - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
@@ -45,3 +45,15 @@
     4. 低秩矩阵与相应的模型层的权重呈现很强的相关性 <br>
     <img src="./assets/lora.jpg" align="middle" />
     </details>
+
+
+## task-related peft
+
+- Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering
+  1. 在freeze的bert的每层添加参数共享的adapter模块来吸收知识
+  2. 知识抽取：根据query中的实体获取三元组，然后将三元组组成句子从图数据库中检索相似的句子片段；直接使用query从图数据库中检索相似的句子片段
+  3. 模型架构：将PLM的第l层的输出和上一层adapter的输出拼接起来，注意PLM的第l层输出要使用一个门函数
+  4. ACL2023
+
+- Infusing Hierarchical Guidance into Prompt Tuning: A Parameter-Efficient Framework for Multi-level Implicit Discourse Relation Recognition
+  - ACL2023
