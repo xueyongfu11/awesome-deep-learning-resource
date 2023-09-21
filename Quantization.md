@@ -21,6 +21,8 @@
 ## llm quantization
 
 - FPTQ: Fine-grained Post-Training Quantization for Large Language Models
+  1. 相比smoothquant，使用了指数函数把激活量化的难度转移到权重量化上
+  2. 相比通道量化，使用了分组量化
 
 - SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models
   1. 使用了alpha增强的将激活量化难度转移到权重量化上，同时保证矩阵乘积不变
