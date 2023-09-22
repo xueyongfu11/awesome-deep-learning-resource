@@ -26,6 +26,10 @@
 
 ## survey
 
+- From tabular data to knowledge graphs: A survey of semantic table interpretation tasks and methods
+
+- Table Pre-training: A Survey on Model Architectures, Pre-training Objectives, and Downstream Tasks
+
 - Transformers for Tabular Data Representation: A Survey of Models and Applications
   - 2021, 重要
 
@@ -33,6 +37,17 @@
   - 2021，引用内容很旧，质量整体一般
 
 ## table interpretation
+
+- MATE: Multi-view Attention for Table Transformer Efficiency
+  - 提出了一种稀疏attention对表格进行建模，具体就是token的一部分注意力头只能attend所在行的其他token，另外一部分注意力头只能attend所在列的其他token
+  - github.com/google-research/tapas
+
+- StruBERT: Structure-aware BERT for Table Search and Matching
+  1. 将表格按照行方向和列方向进行线性化，然后使用bert进行encoding，cell的embedding使用cell内所有token的embedding的average
+  2. 对行方向encoding结果用vertical attention，列方向encoding结果用horizontal attention
+  3. https://github.com/medtray/StruBERT
+
+
 ### 2022
 - Extraction of Product Specifications from the Web - Going Beyond Tables and Lists
   - <details>
@@ -107,9 +122,7 @@
 
 ## table pre-train
 
-- MATE: Multi-view Attention for Table Transformer Efficiency
-  - github.com/google-research/tapas
-  
+- UniTabE: Pretraining a Unified Tabular Encoder for Heterogeneous Tabular Data
 
 - TABBIE: Pretrained Representations of Tabular Data
   1. 使用原始bert模型对cell进行embedding并取平均，得到所有cell的embedding
