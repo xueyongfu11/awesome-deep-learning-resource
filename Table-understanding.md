@@ -106,7 +106,17 @@
     </details>
 
 ## table pre-train
-### 2020
+
+- MATE: Multi-view Attention for Table Transformer Efficiency
+  - github.com/google-research/tapas
+  
+
+- TABBIE: Pretrained Representations of Tabular Data
+  1. 使用原始bert模型对cell进行embedding并取平均，得到所有cell的embedding
+  2. 使用两个transformer模型对行列cell embedding进行建模，并使用corrupt cell detection任务进行预训练
+  3. 下游任务直接获取相应的双向embedding进行合并
+  4. NAACL2021
+
 - TURL: Table Understanding through Representation Learning
   - Proceedings of the VLDB Endowment  [[code]](https://github.com/sunlab-osu/TURL)
   - <details>
@@ -126,6 +136,10 @@
     3. 微调:对于cell selection，不存在聚合函数，损失是column选择的损失+column中cell选择的损失；对于scalar answer，需要预测聚合函数，这块比较复杂，参考论文  <br>
     <img src="./assets\tapas.png" align="middle" />
     </details>
+
+- Tabular Cell Classification Using Pre-Trained Cell Embeddings
+  1. 使用了表格预训练来对cell进行更好的表征：类似CBOW和skipGram的w2v的向量预训练方法，使用target cell来预测surrounding cells和使用surrounding cells来预测target cell
+  2. 单元格分类：使用两个lstm分别建模行和列，将单元格的两个不同方向的隐向量拼接起来做分类
 
 
 ## table-qa
