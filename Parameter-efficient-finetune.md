@@ -19,6 +19,10 @@
   - https://huggingface.co/blog/4bit-transformers-bitsandbytes
     - 介绍及使用
 
+- CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models
+  1. 为了减少模型压缩带来的知识损失，提出了知识继承和知识恢复模块
+  2. 首先使用未压缩的模型基于lora训练，得到lora的权重。然后使用压缩的模型，并使用训练好的lora进行初始化。
+  3. 为了恢复知识损失，对每个线形层添加恢复模块，具体是使用bottleneck结构，并使用sigmoid函数进行信息激活
 
 ### 2022
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks

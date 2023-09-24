@@ -11,6 +11,12 @@ Zero-shot Generalization
 
 ### 2023
 
+- Easy-to-Hard Learning for Information Extraction
+  1. 使用了easy-to-hard来学习信息抽取任务，按顺序学习三个任务：easy stage, hard stage, main stage
+  2. easy stage: 把每个任务分解成多个简单的skill来学习
+  3. hard stage: 把text中包含多个target或者拼接两个text和相应的target作为学习样本
+  4. main stage: 学习一个样本的所有的skill
+
 - InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction
   - <details>
     <summary>阅读笔记: </summary>
