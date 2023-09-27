@@ -5,6 +5,11 @@
 
 - [高效组合多个LoRA模块以实现跨任务泛化](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
 
+- LONGLORA: EFFICIENT FINE-TUNING OF LONGCONTEXT LARGE LANGUAGE MODELS
+  1. 使用了shift short attention来对大模型上下文长度进行扩展
+  2. shift short attention：一半注意力头只在组内进行注意力的计算，另外一半注意力头使用带重叠的滑动，使得不同组可以进行信息交互
+  3. 为了解决长上下文lora微调相比full finetune效果差的问题，对embedding和LN层进行了微调
+
 - LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language
   - 提出大模型微调用的adapter训练系统框架，包含常用的adapter，lora
   - https://github.com/AGI-Edgerunners/LLM-Adapters
@@ -26,6 +31,9 @@
 
 - LORA-FA: MEMORY-EFFICIENT LOW-RANK ADAPTATION FOR LARGE LANGUAGE MODELS FINE-TUNING
   - 对lora改进，通过freeze lora中的A的权重，只对B的权重进行微调，无需存储A输入的激活，存储B输入的激活，从而通过减小激活的方式来减少显存占用
+
+- Composing Parameter-Efficient Modules with Arithmetic Operations
+  - 通过线性组合不同peft模块来研究分布泛化：不同分布数据训练的peft，多任务能力：不同nlp任务训练的peft，去学习能力：减少某种能力，领域泛化：泛化其他领域能力
 
 ### 2022
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
