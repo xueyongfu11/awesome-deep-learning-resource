@@ -24,9 +24,24 @@
 - https://github.com/leodotnet/neural-chinese-address-parsing
   - This page contains the code used in the work "Neural Chinese Address Parsing" published at NAACL 2019.
 
+# survey
 
-# Paper
+- Comprehensive Overview of Named Entity Recognition: Models, Domain-Specific Applications and Challenges
+  - 2023
+
+- A Survey on Deep Learning for Named Entity Recognition
+  - 2022
+
+- A Survey on Recent Advances in Sequence Labeling from Deep Learning Models
+  - 2020
+
+
 ## NER
+
+- NER-to-MRC: Named-Entity Recognition Completely Solving as Machine Reading Comprehension
+  - 2023
+  - 使用mrc的方式解决NER任务；使用HRAC层学习passage、question和option
+
 ### 2022
 - NFLAT: Non-Flat-Lattice Transformer for Chinese Named Entity Recognition
   - <details>

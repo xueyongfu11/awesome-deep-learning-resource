@@ -1,5 +1,9 @@
 
 
+- SeqGPT: An Out-of-the-box Large Language Model for Open Domain Sequence Understanding
+  - 通过提示chatgpt来生成预训练数据，收集了大量中英文的NLU任务数据进一步微调。模型主要使用了BLOOMZ
+  - 探究了数据scale，模型scale，域外数据泛化性、跨语言泛化性、跨任务泛化性
+
 - UniversalNER: Targeted Distillation from Large Language Models for Open Named Entity Recognition
   - https://universal-ner.github.io/
 

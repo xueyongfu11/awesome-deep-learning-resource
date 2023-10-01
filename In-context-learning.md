@@ -2,6 +2,11 @@
 
 - https://github.com/Shark-NLP/OpenICL
 
+## survey
+
+- A Survey on In-context Learning
+  - 2023
+
 
 ### 2023
 

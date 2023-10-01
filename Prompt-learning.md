@@ -21,9 +21,20 @@
 - 刘知远 https://github.com/thu-coai/PPT
 
 
-# Paper
+## survey
+
+- A Practical Survey on Zero-shot Prompt Design for In-context Learning
+  - 2023
+
+- Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing
+  - 2021
 
 ### 2022
+
+- PPT: Pre-trained Prompt Tuning for Few-shot Learning
+  - 软提示，将软提示拼接在句首
+  - 2022
+
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
   - ACL  [[code]](https://github.com/THUDM/P-tuning-v2)
   - <details>
