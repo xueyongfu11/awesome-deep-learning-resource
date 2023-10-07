@@ -1,5 +1,14 @@
 
 
+
+### 2023
+
+- Improving Open Information Extraction with Large Language Models: A Study on Demonstration Uncertainty
+  - 一种基于大模型chatgpt或者llama的多轮的开放信息抽取方法。
+  - 提出错误纠正的trick：通过提问大模型抽取并进行纠正
+  - 使用样例展示的few-shot方法：使用基于指令大模型embedding方法，来检索文本结构组成相似的样本作为展示样本
+  - 提出一种大模型生成不确定性评估方法：基于3的方法采样多组的展示样本，然后统计三元组的概率并使用阈值过滤掉低置信度的样本
+
 - SeqGPT: An Out-of-the-box Large Language Model for Open Domain Sequence Understanding
   - 通过提示chatgpt来生成预训练数据，收集了大量中英文的NLU任务数据进一步微调。模型主要使用了BLOOMZ
   - 探究了数据scale，模型scale，域外数据泛化性、跨语言泛化性、跨任务泛化性
@@ -13,8 +22,6 @@ Zero-shot Generalization
   - [相关blog](https://zhuanlan.zhihu.com/p/461075783)
   - 使用1000个nlp任务构建prompt数据，提升了zero-shot能力，在部分任务上超过了finetune，相比其他zero-shot方法提升了30个点
 
-
-### 2023
 
 - Easy-to-Hard Learning for Information Extraction
   - 使用了easy-to-hard来学习信息抽取任务，按顺序学习三个任务：easy stage, hard stage, main stage

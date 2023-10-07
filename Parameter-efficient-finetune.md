@@ -1,24 +1,23 @@
 
+
+# Repo
+
 - https://github.com/huggingface/peft
 - https://github.com/thunlp/OpenDelta
 - https://github.com/adapter-hub/adapter-transformers
 
 
 
-## survey
+# survey
 
 ### 2023
 - Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning
 
 
-## peft
+
+# peft-llm
 
 ### 2023
-
-- LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
-  - [blog](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
-  - 在不同的任务上训练相应的lora
-  - 将训练好的lora加权起来，权重的计算使用了无梯度的组合优化算法，优化目标是评估集的loss，以及lora权重的正则项
 
 - ConPET: Continual Parameter-Efficient Tuning for Large Language Models
   - 提出基于PET的memory-based大模型持续学习方法
@@ -37,28 +36,32 @@
   - 提出大模型微调用的adapter训练系统框架，包含常用的adapter，lora
   - https://github.com/AGI-Edgerunners/LLM-Adapters
 
-- QLora
-  - [blog](https://zhuanlan.zhihu.com/p/632229856)
-  - 使用4位的NormalFloat（Int4）量化和Double Quantization技术。4位的NormalFloat使用分位数量化，通过估计输入张量的分位数来确保每个区间分配的值相等，
-  Double Quantization是将额外的量化常数进行量化。
-  - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
-  - QLora张量使用时，会把张量 反量化 为BF16，然后在16位计算精度下进行矩阵乘法。
-  - https://github.com/artidoro/qlora
-  - https://huggingface.co/blog/4bit-transformers-bitsandbytes
-    - 介绍及使用
+- LORA-FA: MEMORY-EFFICIENT LOW-RANK ADAPTATION FOR LARGE LANGUAGE MODELS FINE-TUNING
+  - 对lora改进，通过freeze lora中的A的权重，只对B的权重进行微调，无需存储A输入的激活，存储B输入的激活，从而通过减小激活的方式来减少显存占用
+
+
+# peft
+
+### 2023
+
+- LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
+  - [blog](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
+  - 在不同的任务上训练相应的lora
+  - 将训练好的lora加权起来，权重的计算使用了无梯度的组合优化算法，优化目标是评估集的loss，以及lora权重的正则项
+  - 数据集：https://adapterhub.ml/explore/text_task/
 
 - CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models
   - 为了减少模型压缩带来的知识损失，提出了知识继承和知识恢复模块
   - 首先使用未压缩的模型基于lora训练，得到lora的权重。然后使用压缩的模型，并使用训练好的lora进行初始化。
   - 为了恢复知识损失，对每个线形层添加恢复模块，具体是使用bottleneck结构，并使用sigmoid函数进行信息激活
 
-- LORA-FA: MEMORY-EFFICIENT LOW-RANK ADAPTATION FOR LARGE LANGUAGE MODELS FINE-TUNING
-  - 对lora改进，通过freeze lora中的A的权重，只对B的权重进行微调，无需存储A输入的激活，存储B输入的激活，从而通过减小激活的方式来减少显存占用
-
 - Composing Parameter-Efficient Modules with Arithmetic Operations
   - 通过线性组合不同peft模块来研究分布泛化：不同分布数据训练的peft，多任务能力：不同nlp任务训练的peft，去学习能力：减少某种能力，领域泛化：泛化其他领域能力
 
 ### 2022
+
+- AdaMix: Mixture-of-Adaptations for Parameter-efficient Model Tuning
+
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
   - <details>
     <summary>阅读笔记: </summary>
@@ -73,6 +76,11 @@
     </details>
 
 ### 2021
+
+- AdapterFusion: Non-Destructive Task Composition for Transfer Learning
+  - 每个任务训练相应的adapter，使用adapterFusion融合训练好的adapter
+  - adapterFusion：使用FFN的输出作为query，各个adapter的输出作为key和value，然后计算注意力
+
 - LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS
   - [[code]](https://github.com/microsoft/LoRA)
   - <details>
@@ -84,14 +92,19 @@
     <img src="./assets/lora.jpg" align="middle" />
     </details>
 
+### 2019
 
-## task-related peft
+- Parameter-Efficient Transfer Learning for NLP
+  - adapter
 
+# task-related peft
+
+### 2023
 - Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering
   - 在freeze的bert的每层添加参数共享的adapter模块来吸收知识
   - 知识抽取：根据query中的实体获取三元组，然后将三元组组成句子从图数据库中检索相似的句子片段；直接使用query从图数据库中检索相似的句子片段
   - 模型架构：将PLM的第l层的输出和上一层adapter的输出拼接起来，注意PLM的第l层输出要使用一个门函数
-  - ACL2023
+  - ACL
 
 - Infusing Hierarchical Guidance into Prompt Tuning: A Parameter-Efficient Framework for Multi-level Implicit Discourse Relation Recognition
-  - ACL2023
+  - ACL

@@ -1,25 +1,12 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [汇总](#%E6%B1%87%E6%80%BB)
-- [Progress](#progress)
-- [code library](#code-library)
-- [TrustAI(模型可解释性)](#trustai%E6%A8%A1%E5%9E%8B%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7)
-- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
-- [competition](#competition)
-- [Tools](#tools)
-- [编程语言](#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
-- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
-- [leecode](#leecode)
-- [label Tools](#label-tools)
-- [Paper tools](#paper-tools)
-- [non deep learning](#non-deep-learning)
-  - [VPN](#vpn)
+`
+^##\s -> #\s
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+^\s\s\d\. -> \s\s-
+`
 
-## 汇总
+
+# 汇总
 
 - https://github.com/TingFree/NLPer-Arsenal
 - https://github.com/labmlai/annotated_deep_learning_paper_implementations
@@ -48,7 +35,7 @@
     - https://github.com/THUDM/FewNLU
   
 
-## Progress
+# Progress
 - https://github.com/DengBoCong/nlp-paper
 - https://github.com/changwookjun/nlp-paper
 - https://github.com/iwangjian/Paper-Reading
@@ -66,7 +53,7 @@
 - https://github.com/PaddlePaddle/awesome-DeepLearning
 
 
-## code library
+# code library
 
 - https://github.com/alibaba/AliceMind
   - 集成了多种领域的预训练语言模型
@@ -108,7 +95,7 @@
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
 
 
-## PTLM显存分析
+# PTLM显存分析
 
 - [分析transformer模型的参数量、计算量、中间激活、KV cache](https://zhuanlan.zhihu.com/p/624740065)
 - [PyTorch显存分配原理——以BERT为例](https://zhuanlan.zhihu.com/p/527143823)
@@ -121,17 +108,17 @@
   - 如果指定输入向量的shape，可以得到每一层输出的shape，总共占用多少显存
 
 
-## TrustAI(模型可解释性)
+# TrustAI(模型可解释性)
 - https://github.com/PaddlePaddle/TrustAI
   
 
-## 自动添加标点
+# 自动添加标点
 
 - https://github.com/PaddlePaddle/PaddleSpeech
 - https://github.com/yeyupiaoling/PPASR
 - https://github.com/nkrnrnk/BertPunc
 
-## competition
+# competition
 - https://github.com/geekinglcq/CDCS.git 
 - https://github.com/EliotAndres/kaggle-past-solutions.git 
 - https://github.com/HuangCongQing/AI_competitions.git 
@@ -139,7 +126,7 @@
 - https://github.com/Smilexuhc/Data-Competition-TopSolution.git 
   
 
-## Tools
+# Tools
 - https://github.com/yaleimeng/Final_word_Similarity
 - https://github.com/goto456/stopwords
   - 四种语言的相关停用词
@@ -154,7 +141,7 @@
 - https://github.com/yaleimeng/Final_word_Similarity.git
   - 中文近义词
 
-## 编程语言
+# 编程语言
 
 - JAVA
   - https://github.com/gzc426/Java-Interview
@@ -163,7 +150,7 @@
 - https://github.com/Light-City/CPlusPlusThings
   
 
-## 深度学习基础和面试
+# 深度学习基础和面试
 - https://github.com/google-research/tuning_playbook
   - 科学化调参
 - https://github.com/chehongshu/machine-learning-interview-chinese
@@ -196,7 +183,7 @@
   - 
 
 
-## leecode
+# leecode
 - https://github.com/TheAlgorithms/Python
 - https://github.com/labuladong/fucking-algorithm
 - https://github.com/youngyangyang04/leetcode-master
@@ -204,7 +191,7 @@
 - https://github.com/labuladong/fucking-algorithm
 
 
-## label Tools
+# label Tools
 - Labelme标注工具 https://github.com/wkentaro/labelme
 - Doccano https://github.com/doccano/doccano
 - https://github.com/jiesutd/YEDDA
@@ -214,14 +201,14 @@
 - https://github.com/mingx9527/Data_Label_Tools
 - [超强大NLP标注工具——Prodigy](https://zhuanlan.zhihu.com/p/448179133)
 
-## Paper tools
+# Paper tools
 - https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
 - https://mp.weixin.qq.com/s/v64js_pupc7VjjWNq9Kosw
   - 神经网络作图
 - https://www.heywhale.com/mw/project/63c274b8c421c0f295c1c268
   - Matplotlib 最具价值的50个可视化项目
 
-## non deep learning
+# non deep learning
 - https://github.com/soimort/you-get
 - https://github.com/github/gitignore
 - https://github.com/wistbean/learn_python3_spider

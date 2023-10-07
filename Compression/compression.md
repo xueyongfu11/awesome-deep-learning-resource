@@ -30,6 +30,21 @@
 
 # Quantization
 
-- [A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using Hugging Face Transformers, Accelerate and bitsandbytes](https://huggingface.co/blog/hf-bitsandbytes-integration)
+### 2023
+
+- QLora
+  - [blog](https://zhuanlan.zhihu.com/p/632229856)
+  - 使用4位的NormalFloat（Int4）量化和Double Quantization技术。4位的NormalFloat使用分位数量化，通过估计输入张量的分位数来确保每个区间分配的值相等，
+  Double Quantization是将额外的量化常数进行量化。
+  - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
+  - QLora张量使用时，会把张量 反量化 为BF16，然后在16位计算精度下进行矩阵乘法。
+  - https://github.com/artidoro/qlora
+  - https://huggingface.co/blog/4bit-transformers-bitsandbytes
+    - 介绍及使用
+
+### 2022
+
+- LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale
+  - [A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using Hugging Face Transformers, Accelerate and bitsandbytes](https://huggingface.co/blog/hf-bitsandbytes-integration)
   - 量化的基本原理
   - transformers中的8bit的矩阵乘法

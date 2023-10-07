@@ -6,10 +6,11 @@
   - code: https://github.com/RidongHan/Evaluation-of-ChatGPT-on-Information-Extraction
 
 
-# Paper
 
-## information extraction
+# information extraction
+
 ### 2023
+
 - How to Unleash the Power of Large Language Models for Few-shot Relation Extraction?
   - ACL 
   - <details>
@@ -43,5 +44,3 @@
     1. 基于chatgpt模型，把zero-shot信息抽取分成了两个阶段。第一个阶段：通过prompt的方式得到可能涉及的实体类型  <br>
     2. 第二个阶段：根据第一个阶段的实体类型和任务相关的schema来提示获取其他的相关信息  <br>
     </details>
-
-# Dataset
