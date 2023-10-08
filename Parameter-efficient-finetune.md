@@ -44,6 +44,8 @@
 
 ### 2023
 
+- Multi-Head Adapter Routing for Cross-Task Generalization
+
 - LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
   - [blog](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
   - 在不同的任务上训练相应的lora
@@ -59,6 +61,15 @@
   - 通过线性组合不同peft模块来研究分布泛化：不同分布数据训练的peft，多任务能力：不同nlp任务训练的peft，去学习能力：减少某种能力，领域泛化：泛化其他领域能力
 
 ### 2022
+
+- Multi-Head Adapter Routing for Data-Efficient Fine-Tuning
+  - 对前继工作Poly的讨论
+  - 相比Poly对adapter的线性组合，引入类似multi-head attention机制，将adapter中的A/B进行分片，在分片内线性组合，然后再把结果进行concatenate
+
+- Combining Modular Skills in Multitask Learning
+  - 提出一种多任务学习的peft模块组合方法
+  - 预训练阶段：每个task由S个skill组成，每个skill对应一个adapter，同时每个任务对应一个skill selection binary matrix。预训练阶段学习的参数是adapter和skill selection矩阵
+  - 测试阶段：对每个测试任务初始化相应的skill selection binary matrix，同时微调所有skill对应的adapter
 
 - AdaMix: Mixture-of-Adaptations for Parameter-efficient Model Tuning
 
