@@ -1,7 +1,6 @@
 
 
 
-
 # Paper
 
 ### 2023
@@ -16,5 +15,10 @@
 
 
 # Blog
+
+- https://kaiokendev.github.io/context
+  - 综述性blog
+
+- [聊聊拉长LLaMA的一些经验](https://zhuanlan.zhihu.com/p/647145964)
 
 - [大模型位置编码及其外推性](https://mp.weixin.qq.com/s/OGP49dzhXfIudHEGHOVPcw)
