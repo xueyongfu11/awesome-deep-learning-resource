@@ -31,6 +31,13 @@
   - https://github.com/pengxiao-song/awesome-chinese-legal-resources
     - 本仓库致力于收集和整理全面的中国法律数据资源，旨在帮助研究人员及从业者展开工作
 
+
+## 英文数据集
+
+- https://gluebenchmark.com/tasks
+  - GLUE
+
+
 ## 数据平台
 
 - [CLUE](https://www.cluebenchmarks.com/index.html)

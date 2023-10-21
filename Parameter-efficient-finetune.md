@@ -70,8 +70,12 @@
   - 提出一种多任务学习的peft模块组合方法
   - 预训练阶段：每个task由S个skill组成，每个skill对应一个adapter，同时每个任务对应一个skill selection binary matrix。预训练阶段学习的参数是adapter和skill selection矩阵
   - 测试阶段：对每个测试任务初始化相应的skill selection binary matrix，同时微调所有skill对应的adapter
+  - code：https://github.com/microsoft/mttl
 
 - AdaMix: Mixture-of-Adaptations for Parameter-efficient Model Tuning
+
+- Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning
+  - model name: (IA)3
 
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
   - <details>
@@ -91,6 +95,9 @@
 - AdapterFusion: Non-Destructive Task Composition for Transfer Learning
   - 每个任务训练相应的adapter，使用adapterFusion融合训练好的adapter
   - adapterFusion：使用FFN的输出作为query，各个adapter的输出作为key和value，然后计算注意力
+
+- CrossFit: A Few-shot Learning Challenge for Cross-task Generalization in NLP
+  - EMNLP2021
 
 - LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS
   - [[code]](https://github.com/microsoft/LoRA)
