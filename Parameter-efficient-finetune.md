@@ -44,6 +44,9 @@
 
 ### 2023
 
+- π-Tuning: Transferring Multimodal Foundation Models
+with Optimal Multi-task Interpolation
+
 - Multi-Head Adapter Routing for Cross-Task Generalization
 
 - LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
