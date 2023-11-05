@@ -1,4 +1,13 @@
 
+
+- https://github.com/FlagAI-Open/Aquila2
+
+- MindLLM: Pre-training Lightweight Large Language Model from Scratch, Evaluations and Domain Applications
+  - [blog](https://mp.weixin.qq.com/s/nPdll5L4PsPYcjguBD4_rQ)
+
+- https://github.com/SkyworkAI/Skywork
+  - benchmark评估集效果好的很大一部分原因很可能是stage-2的in-domain training
+
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
 
 - https://github.com/mosaicml/llm-foundry

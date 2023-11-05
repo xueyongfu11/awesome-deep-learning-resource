@@ -16,6 +16,14 @@
 
 # Blog
 
+- [NTK-ALiBi：通过插值实现大模型ALiBi位置编码的长文本外推](https://zhuanlan.zhihu.com/p/647628295)
+
+- [浅谈LLM的长度外推](https://zhuanlan.zhihu.com/p/645770522)
+
+- [LLM长度外推研究1——外推结果及原因分析](https://blog.csdn.net/maxsen_jn/article/details/132517811)
+
+- [Transformer升级之路：7、长度外推性与局部注意力](https://spaces.ac.cn/archives/9431)
+
 - https://kaiokendev.github.io/context
   - 综述性blog
 

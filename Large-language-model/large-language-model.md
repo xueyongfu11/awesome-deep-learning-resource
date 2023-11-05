@@ -1,4 +1,9 @@
 
+# Other
+
+- GPT-Fathom: Benchmarking Large Language Models to Decipher the Evolutionary Path towards GPT-4 and Beyond
+  - chatgpt到gpt4的进化路径
+
 
 # leaderboard
 
