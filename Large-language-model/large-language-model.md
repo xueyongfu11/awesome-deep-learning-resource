@@ -7,6 +7,10 @@
 
 # leaderboard
 
+- https://flageval.baai.ac.cn/#/trending
+
+- https://opencompass.org.cn/leaderboard-llm
+
 - https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
 
 - https://cluebenchmarks.com/superclue.html
@@ -29,3 +33,4 @@
 # 并行训练框架
 
 - https://github.com/hpcaitech/ColossalAI
+
