@@ -46,3 +46,8 @@
 - [聊聊拉长LLaMA的一些经验](https://zhuanlan.zhihu.com/p/647145964)
 
 - [大模型位置编码及其外推性](https://mp.weixin.qq.com/s/OGP49dzhXfIudHEGHOVPcw)
+
+- [Transformer升级之路：7、长度外推性与局部注意力](https://spaces.ac.cn/archives/9431)
+  - 函数式位置编码外推行不好的原因是sin和cos不具有光滑性质，属于震荡型函数；另外一方面是因为更长的长度分散了注意力
+  - 推理时使用窗口注意力，即token只和最近窗口的token计算注意力，窗口大小一般使用训练时的长度
+  - 
