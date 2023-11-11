@@ -9,6 +9,13 @@
 
 - Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading
 
+- Randomized Positional Encodings Boost Length Generalization of Transformers
+  - 训练时从[0,L]中随机获取递增的位置编码，而训练的长度N远小于L，推理时使用正常的位置编码
+
+- logn attention scale
+  - 使用logn attention scale，目的时解决当预测长度远远大于训练时的最大长度，attention的值变得比较平缓，有助于解决外推性问题
+  - 窗口注意力和logn attention scale的结合
+  
 - Alibi
   - [ALiBi介绍](https://zhuanlan.zhihu.com/p/632780188)
     - 在原始注意力矩阵上加上相对距离矩阵，q和k近，相对距离小，否则相对距离大
@@ -45,23 +52,12 @@
   - 具体是q和k分别乘上一个旋转矩阵（可以进行简化为两个向量的内积），再进行注意力的计算，这种attention的计算方法可以简化为q和k的乘积中间插入一个矩阵
   - RoPE的总流程：首先对每个token进行embedding，然后根据embedding计算q和k向量，q向量和k向量分别乘上一个旋转矩阵（本质是两两一组应用旋转变换），然后再计算内积得到self-attention结果
 
-
-# Blog
-
 - [浅谈LLM的长度外推](https://zhuanlan.zhihu.com/p/645770522)
 
 - [LLM长度外推研究1——外推结果及原因分析](https://blog.csdn.net/maxsen_jn/article/details/132517811)
-
-- [Transformer升级之路：7、长度外推性与局部注意力](https://spaces.ac.cn/archives/9431)
-
-- https://kaiokendev.github.io/context
-  - 综述性blog
-
-- [聊聊拉长LLaMA的一些经验](https://zhuanlan.zhihu.com/p/647145964)
-
-- [大模型位置编码及其外推性](https://mp.weixin.qq.com/s/OGP49dzhXfIudHEGHOVPcw)
+  - 通过分析attention score的值在训练长度以内以及超过训练长度的分布的不同，提出在训练长度以内，attention score时被bound住的
+  - 解决办法时压制住attention score，核心思想是使得权重矩阵跟位置信息配合起来
 
 - [Transformer升级之路：7、长度外推性与局部注意力](https://spaces.ac.cn/archives/9431)
   - 函数式位置编码外推行不好的原因是sin和cos不具有光滑性质，属于震荡型函数；另外一方面是因为更长的长度分散了注意力
   - 推理时使用窗口注意力，即token只和最近窗口的token计算注意力，窗口大小一般使用训练时的长度
-  - 
