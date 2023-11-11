@@ -5,6 +5,8 @@
 
 ### 2023
 
+- Efficient Streaming Language Models with Attention Sinks
+
 - Scaling Laws of RoPE-based Extrapolation
 
 - Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading

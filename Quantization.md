@@ -18,6 +18,9 @@
 - https://github.com/666DZY666/micronet
   - 剪枝、量化
 
+- [大模型量化概述](https://mp.weixin.qq.com/s/_bF6nQ6jVoj-_fAY8L5RvQ)
+  - 分为量化感知训练、量化感知微调、训练后量化
+
 ## llm quantization
 
 - FPTQ: Fine-grained Post-Training Quantization for Large Language Models
