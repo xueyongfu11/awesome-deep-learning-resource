@@ -1,4 +1,9 @@
 
+- https://github.com/FlagAlpha/Llama2-Chinese
+  - 基于llama-2做中文预训练，词表扩充，推理加速
+
+- https://github.com/OpenBuddy/OpenBuddy/blob/main/README.zh.md
+  - 基于llama的开源多语言大模型，包含3b,7b,34b,70b
 
 - https://github.com/FlagAI-Open/Aquila2
 
@@ -76,6 +81,7 @@
   - https://github.com/zjunlp/CaMA
   - https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
     - IDEA研究眼
+  - https://github.com/wenge-research/YaYi
 
 - GLM
   - https://github.com/THUDM/ChatGLM2-6B

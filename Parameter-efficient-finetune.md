@@ -14,7 +14,6 @@
 - Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning
 
 
-
 # peft-llm
 
 ### 2023
@@ -112,6 +111,21 @@ with Optimal Multi-task Interpolation
     - 低秩矩阵与相应的模型层的权重呈现很强的相关性 <br>
     <img src="./assets/lora.jpg" align="middle" />
     </details>
+
+- Prefix-Tuning: Optimizing Continuous Prompts for Generation
+  - 不同与Prompt Tuning，Prefix-Tuning时在每层添加prompt token，且每层的token embedding是共享同一个参数矩阵P
+  - 直接更新P矩阵的参数会导致优化时不太稳定，因此使用了一个小矩阵P’，并通过一个大的前馈神经网络得到P矩阵
+
+- The power of scale for parameter-efficient prompt tuning
+  - Prompt Tuning方法
+  - 在模型的输入层即embedding层concat上prompt token embedding
+  - 训练时直接对prompt token embedding进行优化
+
+- GPT Understands, Too
+  - P-tuning方法
+  - 将prompt转化成可学习的embedding，并使用mlp+lstm对prompt embedding进行处理
+  - 仅限在模型的输入层
+
 
 ### 2019
 

@@ -1,12 +1,8 @@
 
-`
-^##\s -> #\s
-
-^\s\s\d\. -> \s\s-
-`
-
 
 # 汇总
+
+- https://github.com/HarleysZhang/dl_note
 
 - https://github.com/TingFree/NLPer-Arsenal
 - https://github.com/labmlai/annotated_deep_learning_paper_implementations

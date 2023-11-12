@@ -10,9 +10,22 @@
 
 - https://github.com/ModelTC/lightllm
 
+- Efficient Streaming Language Models with Attention Sinks
+
 - [Multi Query Attention和Group-Query Attention介绍](https://mp.weixin.qq.com/s/wOyDpxcxKATxGrP8W-1w2Q)
 
+- https://github.com/NVIDIA/FasterTransformer
+- https://github.com/NVIDIA/TensorRT-LLM
+
+- https://github.com/Jittor/JittorLLMs
+
+- https://github.com/InternLM/lmdeploy/
+
 - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
+
+- vllm
+  - https://github.com/vllm-project/vllm
+  - 高效的kv-cache管理，基于pageAttention
 
 - flash-attention
   - llama使用flash-attention：https://github.com/lm-sys/FastChat/blob/main/fastchat/train/llama_flash_attn_monkey_patch.py#L79
