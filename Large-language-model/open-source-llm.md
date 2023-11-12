@@ -8,6 +8,14 @@
 - https://github.com/SkyworkAI/Skywork
   - benchmark评估集效果好的很大一部分原因很可能是stage-2的in-domain training
 
+- https://github.com/ymcui/Chinese-LLaMA-Alpaca-2
+  - 基于llama，扩增了词表，预训练时使用了lora，同时对embedding和header进行参数调整，预训练之后进行了指令微调
+  - 支持CFG解码方案：https://github.com/huggingface/transformers/issues/24536
+  - 支持更长文本：插值、ntk等方法
+
+- https://github.com/ymcui/Chinese-LLaMA-Alpaca
+  - 扩充了中文词表，进行了预训练和指令微调
+
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
 
 - https://github.com/mosaicml/llm-foundry
@@ -57,7 +65,6 @@
   - https://chat.lmsys.org/
 
 - LAMMA
-  - https://github.com/ymcui/Chinese-LLaMA-Alpaca
   - https://huggingface.co/blog/trl-peft
   - https://github.com/tatsu-lab/stanford_alpaca
     - 基于自生成的instructions来微雕LLaMA模型
