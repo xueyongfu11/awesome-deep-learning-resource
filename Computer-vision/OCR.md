@@ -22,6 +22,15 @@
   - GUI工具 https://github.com/manisandro/gImageReader
 
 
+# Paper
+
+- OCR-free Document Understanding Transformer
+  - https://github.com/clovaai/donut
+
+- End-to-end object detection with Transformers
+  - https://github.com/facebookresearch/detr
+
+
 # Datasets
 
 - [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=downloads)

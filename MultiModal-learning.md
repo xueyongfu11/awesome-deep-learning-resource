@@ -12,6 +12,9 @@
 
 
 # Repo
+
+- https://gitee.com/zidongtaichu/multi-modal-models
+  - 紫东太初多模态大模型
 - https://github.com/Eurus-Holmes/Awesome-Multimodal-Research
 - https://github.com/thuiar/MMSA
 - https://github.com/pliang279/awesome-multimodal-ml
@@ -21,14 +24,40 @@
   - 太乙：多模态预训练语言模型
 - https://wukong-dataset.github.io/wukong-dataset/benchmark.html
   - WuKong, benchmark, baseline
-- https://github.com/openai/CLIP
+
 
 # Paper
 
+## multi-modal 
+
+### 2023
+
+- BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
+  - https://github.com/salesforce/LAVIS/tree/main/projects/blip2
+
+### 2022
+
+- BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
+  - https://github.com/salesforce/BLIP
+
+### 2021
+
+- Learning Transferable Visual Models From Natural Language Supervision
+  - CLIP模型
+  - https://github.com/openai/CLIP
+
 ## Information extraction
 
+### 2023
+
+- GeoLayoutLM: Geometric Pre-training for Visual Information Extraction
+  - https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/GeoLayoutLM
+
+- Unifying Vision, Text, and Layout for Universal Document Processing
+
+### 2020
+
 - Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
-  - year: 2020
   - 阅读笔记:  
     1. 从产品描述中提取属性和属性值，通过融合产品图片特征，来提高抽取效果
     2. 使用global visual gate对text和image特征进行融合，本质是根据text和image特征生成一个权重（用来加权token-visual），然后得到融合的多模态特征

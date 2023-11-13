@@ -18,7 +18,7 @@
   - 使用logn attention scale，目的时解决当预测长度远远大于训练时的最大长度，attention的值变得比较平缓，有助于解决外推性问题
   - 窗口注意力和logn attention scale的结合
   
-- Alibi
+- Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation
   - [ALiBi介绍](https://zhuanlan.zhihu.com/p/632780188)
     - 在原始注意力矩阵上加上相对距离矩阵，q和k近，相对距离小，否则相对距离大
     - 相对距离矩阵分配一个偏执项系数，平均分布在0-1/(2^8)

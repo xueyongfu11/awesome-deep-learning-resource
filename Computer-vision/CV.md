@@ -21,6 +21,10 @@
 - https://github.com/facebookresearch/detectron2
 - https://github.com/open-mmlab/mmocr
 
+# Paper
+
+- Emerging Properties in Self-Supervised Vision Transformers
+
 
 
 

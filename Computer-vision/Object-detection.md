@@ -10,7 +10,11 @@
 
 # Repo
 
+- https://github.com/tinyvision/damo-yolo
 
 
+# Paper
 
+- DETRs Beat YOLOs on Real-time Object Detection
+  - https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/rtdetr
 
