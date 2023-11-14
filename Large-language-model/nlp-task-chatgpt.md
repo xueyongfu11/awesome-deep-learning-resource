@@ -6,7 +6,6 @@
   - code: https://github.com/RidongHan/Evaluation-of-ChatGPT-on-Information-Extraction
 
 
-
 # information extraction
 
 ### 2023

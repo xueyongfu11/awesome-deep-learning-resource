@@ -8,6 +8,7 @@
 
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)
 
+
 # leaderboard
 
 - https://flageval.baai.ac.cn/#/trending
@@ -31,11 +32,6 @@
   - eval datasets: https://kaiokendev.github.io/context
   - https://github.com/THUDM/LongBench#leaderboard
   - 清华 中英文大模型评估
-
-
-# 并行训练框架
-
-- https://github.com/hpcaitech/ColossalAI
 
 
 # Agent

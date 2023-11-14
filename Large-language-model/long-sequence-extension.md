@@ -1,8 +1,6 @@
 
 
 
-# Paper
-
 ### 2023
 
 - Efficient Streaming Language Models with Attention Sinks
