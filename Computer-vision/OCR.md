@@ -30,6 +30,11 @@
 - End-to-end object detection with Transformers
   - https://github.com/facebookresearch/detr
 
+- An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition
+  - CRNN
+  - 先使用cnn进行特征抽取，得到高度为1的特征图，然后输入到双向lstm中，最后经过一个ctc模块计算loss
+  - ctc loss的计算：关键是计算所有有效的对齐路径的得分总和，一般使用动态规划的方法计算loss
+  - [CTC算法详解](https://zhuanlan.zhihu.com/p/88645033)
 
 # Datasets
 
