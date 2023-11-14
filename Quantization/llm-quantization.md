@@ -23,8 +23,10 @@
 ### 2023
 
 - LLM-QAT: Data-Free Quantization Aware Training for Large Language Models
-   - [LLM-QAT相关blog](https://mp.weixin.qq.com/s/zKndNym9Q7QJWlmn60HmyQ)
-   - https://github.com/facebookresearch/LLM-QAT
+  - https://github.com/facebookresearch/LLM-QAT
+  - 提出了一种data-free的量化感知训练方法
+  - 使用训练好的大模型生成量化感知训练数据，相比使用训练集进行量化感知训练，证明由更好的效果
+  - 使用了MinMax的对称量化，对激活、权重、KV-cache等进行了量化，损失函数使用交叉熵损失
 
 - QLora
   - [blog](https://zhuanlan.zhihu.com/p/632229856)
