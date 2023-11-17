@@ -23,6 +23,11 @@
 
 - BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
   - https://github.com/salesforce/BLIP
+  - 提出了基于自举方法进行多模态预训练的统一多模态理解和生成模型BLIP
+  - 基于双塔的结构，vision-encoder使用ViT，text-encoder使用bert，预训练任务使用了text-image对比损失（同CLIP）
+  - 基于text-encoder构建image-grounded text encoder, 在self-attention和FFN中间添加了cross attention，使用image-text matching的预训练任务
+  - 基于image-grounded text encoder构建image-grounded text decoder, 将self-attention中的双向注意力改为casual attention, 使用基于图像生成描述的预训练任务
+  - 使用了自举法来清洗来自网络数据image-text pairs中的脏数据
 
 - VLMO: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts
   - 提出了基于专家混合模型的多模态语言模型
