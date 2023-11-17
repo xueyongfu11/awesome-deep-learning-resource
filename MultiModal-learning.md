@@ -24,10 +24,22 @@
 - BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
   - https://github.com/salesforce/BLIP
 
+- VLMO: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts
+  - 提出了基于专家混合模型的多模态语言模型
+  - 模型的输入同ViLT，使用可以是单塔模型，也可以是双塔模型。transformer层共享同一个多头self-attention，后面跟三个专家网络FFN，language-FFN、vision-FFN、LN-FFN
+
 ### 2021
+
+- ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision
+  - 相比CLIP使用了单塔网络来建模文本和图像信息
+  - 使用了ViT模型作为backbone，并使用vit模型参数初始化。
+  - 文本输入由token embedding，position embedding，modal-type embedding相加组成，图像输入部分，首先将图像划分成N个C*P*P的patch，然后flatten之后使用线性层投射为visual token embedding，然后再和图像的postion embedding，modal-type embedding相加。最后将两种模态concat成序列输入到网络中
+  - 提出两种预训练任务：MLM，image text matching
 
 - Learning Transferable Visual Models From Natural Language Supervision
   - CLIP模型
+  - 从头训练text encoder和vision encoder，使用了线形层投射到同一个多模态空间，并进行l2 normalize
+  - 使用了对称的对比学习loss
   - https://github.com/openai/CLIP
 
 

@@ -42,6 +42,7 @@
 - NTK-Aware Scaled RoPE
   - https://www.reddit.com/r/LocalLLaMA/comments/14lz7j5/ntkaware_scaled_rope_allows_llama_models_to_have/?rdt=61154
   - 基于NTK的思想改进的RoPE
+  - 实现时是将base乘上一个因子a=scale*(d/d-2)，当i较小时，近似等于未插值情况，当i=d/2-1时，近似等于插值情况
   - 实现：https://colab.research.google.com/drive/1VI2nhlyKvd5cw4-zHvAIk00cAVj2lCCC#scrollTo=fd650d79
 
 - RoPE的线性内插
