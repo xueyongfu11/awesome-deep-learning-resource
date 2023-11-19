@@ -35,6 +35,12 @@
 
 ### 2021
 
+- Align before Fuse: Vision and Language Representation Learning with Momentum Distillation
+  - ALBEF
+  - 使用ViT作为image encoder，使用bert的前6层作为text encoder，后6层作为multi-modal encoder，同时在后6层添加cross-attention层把image融合进来
+  - 基于image encoder 和 text encoder的输出构建对称的对比loss(同CLIP)，在multi-modal encoder构建MLM loss和text-image matching loss，每个image从batch内负样本中采样一个hard负样本，方法是相似度越高（hard），会有更高的概率被采样为负样本
+  - 使用momentum distillation的方式，解决了数据集中存在噪声的问题
+
 - ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision
   - 相比CLIP使用了单塔网络来建模文本和图像信息
   - 使用了ViT模型作为backbone，并使用vit模型参数初始化。
