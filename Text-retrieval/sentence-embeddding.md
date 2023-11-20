@@ -2,6 +2,10 @@
 
 ## sentence embedding
 
+- https://github.com/wangyuxinwhy/uniem
+
+- https://github.com/xlang-ai/instructor-embedding
+
 - https://huggingface.co/spaces/mteb/leaderboard
   - MTEB: Massive Text Embedding Benchmark
 

@@ -9,6 +9,8 @@
 
 - Efficient Streaming Language Models with Attention Sinks
 
+- [Transformer参数量、计算量、显存占用分析](https://mp.weixin.qq.com/s/4_6J7-NZML5pTGTSH1-KMg)
+
 
 
 # 训练框架

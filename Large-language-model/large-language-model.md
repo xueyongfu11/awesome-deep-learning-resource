@@ -12,6 +12,8 @@
   - [blog](https://mp.weixin.qq.com/s/_LQVHMJqPzMzIuM4wsO2Dw)
   - 先是根据chatgpt生成的数据进行模仿学习；基于小模型的生成结果来判别难样本；再生成数据来学习这种难样本
 
+
+
 # leaderboard
 
 - https://flageval.baai.ac.cn/#/trending

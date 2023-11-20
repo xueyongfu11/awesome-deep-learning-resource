@@ -17,3 +17,9 @@
 - In-Context Retrieval-Augmented Language Models
   - [相关blog](https://zhuanlan.zhihu.com/p/647112059)
   - 将已经生成的一些token通过检索的方式获取一些文档，并把这些文档作为prompt加在已经生成文本的前面，然后继续生成后续的token
+
+
+# retrieval-augmented llm 
+
+- [Ziya-Reader：注意力增强的训练方法](https://mp.weixin.qq.com/s/ekAyYT-Fxj5fw8GNk6Rg0g)
+  

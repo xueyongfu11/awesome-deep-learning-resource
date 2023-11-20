@@ -100,6 +100,12 @@
   - code: https://github.com/jd-aig/JAVE
 
 
+## AIGC
+
+- [StableDiffusion原理详细介绍](https://mp.weixin.qq.com/s/-aQt5JgtrdrgapLxo5YVwg)
+
+
+
 # datasets
 
 - https://paperswithcode.com/dataset/flickr30k-cna
