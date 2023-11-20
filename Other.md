@@ -11,6 +11,8 @@
   - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
 - https://github.com/lrs1353281004/Chinese_medical_NLP
 
+- [PolyLoss超越Focal Loss](https://mp.weixin.qq.com/s/4Zig1wXNDHEjmK1afnBw4A)
+
 - https://github.com/IDEA-CCNL/Fengshenbang-LM
   - 封神榜系列模型
   - 官网：https://fengshenbang-lm.com
@@ -175,8 +177,6 @@
   - https://github.com/Ewenwan/ShiYanLou
   - https://github.com/youngyangyang04/TechCPP
 
-- JAVA
-  - 
 
 
 # leecode

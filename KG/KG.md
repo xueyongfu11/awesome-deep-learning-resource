@@ -1,16 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Dataset](#dataset)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 
 # Repo
 
+- LP-BERT: Multi-task Pre-training Knowledge Graph BERT for Link Prediction
 
 - https://github.com/zjukg/neuralkg
 
@@ -50,6 +42,7 @@
 - https://github.com/ownthink/KnowledgeGraphData
 - https://github.com/autoliuweijie/K-BERT
 - https://github.com/WangYueFt/dgcnn
+
 - https://github.com/shenweichen/GraphEmbedding
 - https://github.com/PaddlePaddle/PGL
 - https://github.com/lightaime/deep_gcns_torch
@@ -60,6 +53,7 @@
 - https://github.com/jiangqn/GCN-GAN-pytorch
 - https://github.com/dsgiitr/graph_nets
 - https://github.com/nexuslrf/P2R-GCN
+
 - https://github.com/wgwang/ccks2020-baseline
 - https://github.com/awslabs/dgl-ke
 - https://github.com/mattzheng/DouBanRecommend
@@ -67,6 +61,7 @@
 - https://github.com/graph4ai/graph4nlp
 - https://github.com/malllabiisc/CompGCN
 - https://github.com/muhanzhang/SEAL
+
 - https://github.com/husthuke/awesome-knowledge-graph
 - https://github.com/xyjun/large-scale-GNN
 - https://github.com/GRAND-Lab/Awesome-Graph-Neural-Networks

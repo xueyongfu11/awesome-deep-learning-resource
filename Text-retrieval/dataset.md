@@ -1,6 +1,8 @@
 
 ## datasets
 
+- https://github.com/CLUEbenchmark/SimCLUE
+
 - DuReader-retrieval
 - https://github.com/zejunwang1/CSTS
 

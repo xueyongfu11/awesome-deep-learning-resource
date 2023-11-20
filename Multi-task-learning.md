@@ -29,7 +29,17 @@
 - https://github.com/richardaecn/class-balanced-loss
 - https://github.com/mbs0221/Multitask-Learning
 - https://github.com/vandit15/Class-balanced-loss-pytorch
-- 
+
+
+## Paper
+
+- [多任务学习中的loss平衡](https://mp.weixin.qq.com/s/dSrpDoL8am4bYMUhKNmsZQ)
+  - 每个任务的损失函数的量纲不同，因此可以使用初始任务损失的倒数作为权重
+  - 用先验分布代替初始分布更加合理，因此可以使用先验分布的损失的倒数作为权重
+  - 使用实时的损失值的倒数来作为权重，基于此提出基于广义平均的方法
+  - 为了获取平移不变性，以梯度的模作为调节的权重
+
+- GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks
 
 
 

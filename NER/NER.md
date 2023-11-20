@@ -43,6 +43,12 @@
   - 使用mrc的方式解决NER任务；使用HRAC层学习passage、question和option
 
 ### 2022
+
+- Delving Deep into Regularity: A Simple but Effective Method for Chinese Named Entity Recognition
+
+- MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective
+  - 有效提升模型在未登陆实体词识别上的泛化性和数据扰动下的鲁棒性
+
 - NFLAT: Non-Flat-Lattice Transformer for Chinese Named Entity Recognition
   - <details>
     <summary>阅读笔记: </summary>

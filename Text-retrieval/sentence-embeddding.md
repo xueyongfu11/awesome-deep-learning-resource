@@ -4,6 +4,8 @@
 
 - https://github.com/wangyuxinwhy/uniem
 
+- DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
+
 - https://github.com/xlang-ai/instructor-embedding
 
 - https://huggingface.co/spaces/mteb/leaderboard

@@ -1,20 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [end-to-end](#end-to-end)
-- [NLU](#nlu)
-- [DST](#dst)
-- [DPL](#dpl)
-- [NLG](#nlg)
-- [Retrieval-Base](#retrieval-base)
-- [Other](#other)
-- [Repo](#repo)
-  - [RASA series](#rasa-series)
-- [Tools](#tools)
-- [dataset](#dataset)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## end-to-end
 
@@ -193,7 +177,9 @@
 
 ## Other
 
-* Converse: A Tree-Based Modular Task-Oriented Dialogue System
+- [基于对比学习的多轮对话改写](https://mp.weixin.qq.com/s/YUP3vqXCcC08r-9r7Hzdwg)
+
+- Converse: A Tree-Based Modular Task-Oriented Dialogue System
 
 
 ## Repo
