@@ -1,10 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Repo
@@ -25,6 +18,6 @@
 
 - Emerging Properties in Self-Supervised Vision Transformers
 
-
+- [理解卷积神经网络中的自注意力机制](https://mp.weixin.qq.com/s/-mfCdBTQhu99k4JubOAFAQ)
 
 

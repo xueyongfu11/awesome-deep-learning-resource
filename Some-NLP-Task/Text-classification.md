@@ -1,13 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [document clssification](#document-clssification)
-- [多分类](#%E5%A4%9A%E5%88%86%E7%B1%BB)
-- [few-shot](#few-shot)
-- [Chinese datasets](#chinese-datasets)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Repo
@@ -45,7 +35,15 @@
 - https://github.com/iesl/metanlp
 
 # Paper
+
+### 2021
+
+- AEDA: An Easier Data Augmentation Technique for Text Classification
+
 ### 2020
+
+- Text Classification with Negative Supervision
+
 - PROTOTRANSFORMER: A META-LEARNING APPROACH TO PROVIDING STUDENT FEEDBACK
   -  [[code]](https://github.com/mhw32/prototransformer-public)
   - <details>
@@ -54,7 +52,6 @@
     2. 使用robert对模型encoding，同时使用label embedding mean embedding作为一个token加入input，以此来融合side information  <br>
     3. 使用SMLMT作为self-supervise的训练方式  <br>
     4. details: 对于N-way K-shot C-query，采样时对每个类采样K个样本，然后对每个样本采样C个作为query；SMLMT并非是一个直接的分类问题，而是同一个类的support set和query set使用相同token mask；只希望正样本的距离比负样本的距离大就可以，所以推理时support set要包含真实类
-    
     </details>
 
 - Dynamic Memory Induction Networks for Few-Shot Text Classification
@@ -64,7 +61,6 @@
     1. two stage：pretrained model on train datasets，同时得到记忆权重W  <br>
     2. meta-learning stage：使用动态记忆模块对支持集，记忆权重进行动态信息融合  <br>
     3. 将2得到的embedding和query set进行cos计算  <br>
-    
     </details>
 
 ### 2019
@@ -76,7 +72,6 @@
     2. 多支持集和请求集的样本text都用encoder进行embedding，具体是LSTM，然后使用self-attention加权得到text的句子embedding  <br>
     3. 计算类别embedding：使用胶囊网络对每个样本进行嵌入，然后通过动态路由的方法加权类别的所有样本，得到类别embedding  <br>
     4. 类别embedding和query集样本的两个embedding计算mse得分。
-    
     </details>
 
 - Convolutional Recurrent Neural Networks for Text Classification
@@ -97,6 +92,7 @@
     </details>
 
 # Datasets
+
 ## Chinese datasets
 - 今日头条中文新闻（短文本）分类数据集 ：https://github.com/fateleak/toutiao-text-classfication-dataset
   - 数据规模：共38万条，分布于15个分类中

@@ -24,6 +24,20 @@
 - https://github.com/epfml/sent2vec
 
 
+## unsupervised sentence embedding
+
+- R-Drop: Regularized Dropout for Neural Networks
+
+- ESimCSE: Enhanced Sample Building Method for Contrastive Learning of Unsupervised Sentence Embedding
+
+- ConSERT: A Contrastive Framework for Self-Supervised Sentence Representation Transfer
+
+- SimCSE: Simple Contrastive Learning of Sentence Embeddings
+  - 基于dropout构建正样本
+
+- Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
+
+
 ## vector retrieval database/tools
 
 - milvus https://github.com/milvus-io/milvus

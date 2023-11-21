@@ -16,6 +16,13 @@
   
 ## paper
 
+### 2022
+
+- Context Enhanced Short Text Matching using Clickthrough Data
+
+
+### 2021
+
 - RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering
   - 2021 NAACL
   - 阅读笔记：
@@ -30,6 +37,8 @@
     2. 将双塔的隐层做交互来模拟交互模型的交互表示，然后跟交互模型的交互表示计算L2损失
     3. 双塔模型的输出做双向注意力计算，得到u和v，u、v、|u-v|、max(u,v)拼接后接分类层
   - code: 
+
+### 2020
 
 - ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT
   - 2020 SIGIR
