@@ -24,6 +24,8 @@
 
 # Paper
 
+- [OCR技术发展综述与实践](https://mp.weixin.qq.com/s/Wf6zmy1PNwnrG8G_RMH4qQ)
+
 - OCR-free Document Understanding Transformer
   - https://github.com/clovaai/donut
 
