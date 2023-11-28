@@ -18,8 +18,13 @@
 
 ### 2022
 
+- Pre-training Methods in Information Retrieval
+  - survey
+  - [blog](https://zhuanlan.zhihu.com/p/472950758)
+
 - Context Enhanced Short Text Matching using Clickthrough Data
 
+- [稠密段落检索的发展](https://mp.weixin.qq.com/s/A5Ne-FwcuLjUFjxlWDqeTw)
 
 ### 2021
 

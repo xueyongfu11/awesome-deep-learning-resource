@@ -79,7 +79,7 @@
   - <details>
     <summary>阅读笔记: </summary>
     1. 提出了一种卷积循环神经络，具体是先用两种scale的卷积核，然后用 Max pooing,将两种特征图 concat,然后再通过 Lstm网络  <br>
-    <img src="./assets\CRNN.png" align="middle" />
+    <img src="../assets\CRNN.png" align="middle" />
     </details>
 
 ### 2015
@@ -88,7 +88,7 @@
   - <details>
     <summary>阅读笔记: </summary>
     1. 提出了一种循环卷积神经网络 ，本质是全通过循环神经网络，然后网经输出和输入embedding拼接，使用 tanh激活函数， Max pooling最后接一个线性层分类  <br>
-    <img src="./assets\RCNN.png" align="middle" />
+    <img src="../assets\RCNN.png" align="middle" />
     </details>
 
 # Datasets

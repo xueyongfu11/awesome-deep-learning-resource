@@ -1,17 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Repo](#repo)
-- [Resource](#resource)
-- [Paper](#paper)
-  - [Pretain-multi-modal](#pretain-multi-modal)
-  - [Pretrain-cv-modal](#pretrain-cv-modal)
-  - [Non-pretrained](#non-pretrained)
-  - [Multi-modal document QA](#multi-modal-document-qa)
-- [Dataset](#dataset)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Repo
