@@ -22,6 +22,9 @@
 
 ### 2023
 
+- LLM-FP4: 4-Bit Floating-Point Quantized Transformers
+  - https://github.com/nbasyl/LLM-FP4/tree/main
+
 - LLM-QAT: Data-Free Quantization Aware Training for Large Language Models
   - https://github.com/facebookresearch/LLM-QAT
   - 提出了一种data-free的量化感知训练方法
@@ -32,7 +35,7 @@
   - [blog](https://zhuanlan.zhihu.com/p/632229856)
   - 使用4位的NormalFloat（Int4）量化和Double Quantization技术。4位的NormalFloat使用block-wise量化和分位数量化，
     通过估计输入张量的分位数来确保每个区间分配的值相等，模型参数符合均值为0的正态分布，因此可以直接缩放到
-    指定范围，然后使用正态分布N(0,1)的quatile quantization的量化值；
+    [-1,1]，然后使用正态分布N(0,1)的quatile quantization的量化值；
     Double Quantization是将额外的量化常数进行量化。
   - 梯度检查点会引起显存波动，从而造成显存不足问题。通过使用Paged Optimizers技术，使得在显存不足的情况下把优化器从GPU转义到CPU中。
   - QLora张量使用时，会把张量 反量化 为BF16，然后在16位计算精度下进行矩阵乘法。

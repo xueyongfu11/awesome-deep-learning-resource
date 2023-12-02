@@ -1,24 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-  - [other](#other)
-  - [chinese spelling correction](#chinese-spelling-correction)
-  - [grammatical error correction](#grammatical-error-correction)
-  - [hanzi similar](#hanzi-similar)
-- [Paper](#paper)
-  - [Grammatical Error Correction](#grammatical-error-correction)
-  - [chinese spelling correction](#chinese-spelling-correction-1)
-  - [Post-OCR text correction](#post-ocr-text-correction)
-  - [Post ASR Error correction](#post-asr-error-correction)
-- [Competition](#competition)
-- [Datasets](#datasets)
-  - [chinese](#chinese)
-  - [englist](#englist)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 # Repo
 

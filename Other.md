@@ -11,7 +11,6 @@
   - 不同与传统的以模型为中心的AI，该repo是关于以数据为中心的AI
 - https://github.com/lrs1353281004/Chinese_medical_NLP
 
-- [PolyLoss超越Focal Loss](https://mp.weixin.qq.com/s/4Zig1wXNDHEjmK1afnBw4A)
 
 - https://github.com/IDEA-CCNL/Fengshenbang-LM
   - 封神榜系列模型
@@ -92,18 +91,6 @@
 - https://github.com/tensorflow/models
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
 
-
-# PTLM显存分析
-
-- [分析transformer模型的参数量、计算量、中间激活、KV cache](https://zhuanlan.zhihu.com/p/624740065)
-- [PyTorch显存分配原理——以BERT为例](https://zhuanlan.zhihu.com/p/527143823)
-- [Self Attention 固定激活值显存分析与优化及PyTorch实现](https://zhuanlan.zhihu.com/p/445016136)
-- [BertLarge 中间激活值分析](https://zhuanlan.zhihu.com/p/424180513)
-- [[实践] Sequence Parallel](https://zhuanlan.zhihu.com/p/626553071)
-- https://pytorch.org/tutorials/intermediate/autograd_saved_tensors_hooks_tutorial.html
-- torchinfo
-  - 使用 torchinfo 可以查看模型共有多少参数，比直接print(model)的信息更全，可视化效果更好
-  - 如果指定输入向量的shape，可以得到每一层输出的shape，总共占用多少显存
 
 
 # TrustAI(模型可解释性)

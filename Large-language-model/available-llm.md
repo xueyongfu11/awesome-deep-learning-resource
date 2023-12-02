@@ -1,4 +1,13 @@
 
+
+- Baichuan v1
+  - https://github.com/baichuan-inc/Baichuan-7B
+  - 数据：开源的中英文数据和互联网数据，使用了启发式的数据过滤，然后使用了去重和
+    质量打分策略来进一步筛选数据
+  - 分词：重新训练了BPE模型，更好的压缩率；对数字的每一位分开，避免出现数字不一
+    致问题；支持UTF-8 character的byte编码，对未知词全覆盖
+  - 模型：同LLama，Rope位置编码，SwiGLU，基于RMSNorm的Pre-Norm
+
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速
 
