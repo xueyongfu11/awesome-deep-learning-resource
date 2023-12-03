@@ -1,12 +1,27 @@
 
+- Baichuan 2: Open Large-scale Language Models
+  - 数据处理：数据频率和质量，使用聚类和去重方法，基于LSH和dense embedding方法
+  - tokenizer：更好的压缩率，对数字的每一位分开，添加空格token
+  - 位置编码：7B Rope，13B ALiBi
+  - 使用了SwiGLU激活函数，因为SwiGLU是一个双线性层，多引入一个门控矩阵，参数量
+    更多，hidden_size从4减少到了8/3
+  - 使用了更高效的基于xFormers的attention实现
+  - 使用RMSNorm，对transformer的block输入进行了Layer Norm
+  - 使用了AdamW优化器，为了稳定训练和提高模型性能，对输出embedding进行了归一化
+    即对header进行了归一化；训练中logits值偏大，在推理时，对重复惩罚参数比较
+    敏感，因此加入了max-z loss
+    
 
-- Baichuan v1
+- Baichuan v1 7b
   - https://github.com/baichuan-inc/Baichuan-7B
   - 数据：开源的中英文数据和互联网数据，使用了启发式的数据过滤，然后使用了去重和
     质量打分策略来进一步筛选数据
   - 分词：重新训练了BPE模型，更好的压缩率；对数字的每一位分开，避免出现数字不一
     致问题；支持UTF-8 character的byte编码，对未知词全覆盖
   - 模型：同LLama，Rope位置编码，SwiGLU，基于RMSNorm的Pre-Norm
+
+- Baichuan v1 13b
+  - 使用ALiBi位置编码，更多的训练数据
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速
