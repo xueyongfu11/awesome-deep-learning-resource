@@ -10,7 +10,7 @@
   - 使用了AdamW优化器，为了稳定训练和提高模型性能，对输出embedding进行了归一化
     即对header进行了归一化；训练中logits值偏大，在推理时，对重复惩罚参数比较
     敏感，因此加入了max-z loss
-    
+  - 使用了有监督微调和RLHF
 
 - Baichuan v1 7b
   - https://github.com/baichuan-inc/Baichuan-7B

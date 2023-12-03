@@ -1,4 +1,19 @@
 
+<!-- TOC -->
+
+- [end-to-end](#end-to-end)
+- [NLU](#nlu)
+- [DST](#dst)
+- [DPL](#dpl)
+- [NLG](#nlg)
+- [Retrieval-Base](#retrieval-base)
+- [Other](#other)
+- [Repo](#repo)
+    - [RASA series](#rasa-series)
+- [Tools](#tools)
+- [dataset](#dataset)
+
+<!-- /TOC -->
 
 ## end-to-end
 
@@ -64,6 +79,8 @@
   - code: https://github.com/yizhen20133868/Awesome-SLU-Survey
   - slot filling and intert detection survey
 
+**2021**
+
 - A Co-interactive Transformer for joint Slot Filling and Intent Detection
   - year: 2021 
   - 阅读笔记：
@@ -92,20 +109,31 @@
     4. 使用带温度系数的softmax函数，损失使用交叉熵损失
   - code：https://github.com/liam0949/DCLOOS
 
+**2020**
+
 - SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
   - year: 2020 EMNLP
   - 阅读笔记:
     1. 提出了一个非自回归但是拥有自回归性能的ID-SF联合模型
     2. bert未使用绝对位置编码，而是使用相对位置编码
     3. 使用two-pass组件替代CRF，解决了非自回归的输出标签独立的问题。方法是将上一次迭代的标签作为下次模型迭代的输入，起始时全O，需要对tag进行embedding。目的是为了学习标签的边界或者依赖问题。
-  - code:
-  
+
+- DIET: Lightweight Language Understanding for Dialogue Systems
+  1. 输入特征：稀疏特征如one-hot, n-gram等，并通过一个全连接层得到相应的embedding，可选特征：bert/glove embedding，
+     将两个特征concatenate起来；每个句子都一个__cls__ token
+  2. 使用2层的带相对位置attention的transformer网络
+  3. NER使用CRF进行抽取；意图分类：将意图label进行embedding，计算__cls__和label的点积，即最大化正样本的相似度，最小化负样本的相似度
+  4. 使用masked language model训练目标，选用15%的token进行mask。最后loss是三种loss的加和
+  5. https://github.com/RasaHQ/DIET-paper
+
+**2020**
+
 - BERT for Joint Intent Classification and Slot Filling
   - year: 2019
   - 阅读笔记：
     1. 基于bert进行联合意图和槽位抽取
     2. 使用[CLS] token进行意图分类，sequence output + softmax/CRF进行槽位抽取
-  - code：
+
 
 ## DST
 
@@ -151,8 +179,15 @@
 
 ## DPL
 
-- https://github.com/RasaHQ/DIET-paper
-- rasa对话策略学习模型 https://github.com/RasaHQ/TED-paper
+**2020**
+
+- Dialogue Transformers
+  - rasa对话策略学习模型 https://github.com/RasaHQ/TED-paper
+  - 对意图，行为，slot进行one-hot向量化，然后进行embedding
+  - 各个特征的embedding之后concat，送入transformer
+
+**2019**
+
 - Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog
   - 2019 EMNLP-IJCNLP
   - 学习笔记：
@@ -163,7 +198,7 @@
 ## NLG
 
 - Semantically Conditioned LSTM-based Natural Language Generation for Spoken Dialogue Systems
-- - 2015, EMNLP
+  - 2015, EMNLP
   - 阅读笔记：
     1. LSTM单元中加入DM门控单元，对action进行编码
     2. 两个基于seq2seq模型生成，前向模型生成候选结果，后向模型对候选再排序（基于损失）
