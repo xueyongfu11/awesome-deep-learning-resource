@@ -48,24 +48,32 @@
   
   - https://github.com/THUDM/ChatGLM-6B
     - 1T token; 监督微调、反馈自助、人类反馈强化学习
-    - Rope；GLUE激活函数；prefix模型的mask方式
+    - Rope; Layer Norm; GLUE激活函数; prefix模型的mask方式
     - 使用2d的position_id和block_position_id：block_position_id是把input的pos_id全部置为0；计算attention时需要把query和key chunk成2块
     
   - https://github.com/THUDM/ChatGLM2-6B
+    - 1.4T; 人类偏好对; 使用GLM的混合目标函数
+    - 更长的上下文；使用multi-query attention
+    - Rope; RMSNorm; SwiGLU激活函数
+
+  - https://github.com/THUDM/ChatGLM3
+    - 更多样的训练数据、更充分的训练步数和更合理的训练策略；采用了全新设计的Prompt格式，支持工具调用、代码执行、Agent
+    - 模型配置与chatglm2相同
   
-  - https://github.com/lich99/ChatGLM-finetune-LoRA
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/mymusise/ChatGLM-Tuning
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/liangwq/Chatglm_lora_multi-gpu
-    - 支持多机多卡训练
-  - https://huggingface.co/silver/chatglm-6b-slim
-    - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
-  
-  - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
-    - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
-  - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
-  - glm10B: https://huggingface.co/THUDM/glm-10b
+  - 其他开源项目
+    - https://github.com/lich99/ChatGLM-finetune-LoRA
+      - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+    - https://github.com/mymusise/ChatGLM-Tuning
+      - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+    - https://github.com/liangwq/Chatglm_lora_multi-gpu
+      - 支持多机多卡训练
+    - https://huggingface.co/silver/chatglm-6b-slim
+      - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
+    
+    - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
+      - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
+    - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
+    
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速
