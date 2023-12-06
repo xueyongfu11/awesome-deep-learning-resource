@@ -1,7 +1,7 @@
 <!-- TOC -->
 
-    - [llm technology report](#llm-technology-report)
-    - [领域大模型](#%E9%A2%86%E5%9F%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B)
+- [llm technology report](#llm-technology-report)
+- [领域大模型](#%E9%A2%86%E5%9F%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B)
 - [paper](#paper)
 
 <!-- /TOC -->
@@ -210,7 +210,7 @@
   - 基于中文法律知识的大语言模型
   - 预训练+指令微调
 
-# paper
+## paper
 
 **2023**
 
