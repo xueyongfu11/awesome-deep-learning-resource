@@ -1,12 +1,9 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<!-- TOC -->
 
 - [Repo](#repo)
 - [ABSA](#absa)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
+<!-- /TOC -->
 
 ## Repo
 
@@ -24,7 +21,7 @@
 - https://github.com/lixin4ever/BERT-E2E-ABSA
 - https://github.com/davidsbatista/Aspect-Based-Sentiment-Analysis
 - https://github.com/Diego999/SemEval-2014-Task-4-ABSA
-- 
+
 
 
 ## ABSA

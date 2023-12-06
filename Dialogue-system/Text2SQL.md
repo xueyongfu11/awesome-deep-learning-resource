@@ -1,14 +1,13 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<!-- TOC -->
 
 - [Repo](#repo)
+- [Paper](#paper)
+        - [1](#1)
+- [Datasets](#datasets)
+        - [0](#0)
+        - [8](#8)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-
-# Repo
+<!-- /TOC -->
 - https://github.com/yechens/NL2SQL
 - https://github.com/wangpinggl/TREQS
 
@@ -16,7 +15,6 @@
 # Paper
 ### 2021
 - SDCUP: Schema Dependency-Enhanced Curriculum Pre-Training for Table Semantic Parsing
-  -  
   - <details>
     <summary>阅读笔记: </summary>
     1. 通过探索question和schema的关系，提出了table pre-train的两个预训练方法：schema依赖预测任务和实体扰动恢复任务  <br>

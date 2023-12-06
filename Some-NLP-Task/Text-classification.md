@@ -1,4 +1,15 @@
+<!-- TOC -->
 
+- [Repo](#repo)
+    - [document clssification](#document-clssification)
+    - [多分类](#%E5%A4%9A%E5%88%86%E7%B1%BB)
+    - [few-shot](#few-shot)
+- [Paper](#paper)
+- [Datasets](#datasets)
+    - [Chinese datasets](#chinese-datasets)
+
+<!-- /TOC -->
+<!-- /TOC -->
 
 # Repo
 ## document clssification
@@ -34,13 +45,16 @@
   - 未开放paper，测试发现Induction network loss并不收敛，acc始终是20%
 - https://github.com/iesl/metanlp
 
+
 # Paper
 
-### 2021
+
+**2021**
 
 - AEDA: An Easier Data Augmentation Technique for Text Classification
 
-### 2020
+
+**2020**
 
 - Text Classification with Negative Supervision
 
@@ -55,7 +69,6 @@
     </details>
 
 - Dynamic Memory Induction Networks for Few-Shot Text Classification
-  - 
   - <details>
     <summary>阅读笔记: </summary>
     1. two stage：pretrained model on train datasets，同时得到记忆权重W  <br>
@@ -63,7 +76,9 @@
     3. 将2得到的embedding和query set进行cos计算  <br>
     </details>
 
-### 2019
+
+**2019**
+
 - Induction Networks for Few-Shot Text Classification
   -  [[code]](https://github.com/wuzhiye7/Induction-Network-on-FewRel；https://github.com/zhongyuchen/few-shot-text-classification)
   - <details>
@@ -82,7 +97,21 @@
     <img src="../assets\CRNN.png" align="middle" />
     </details>
 
-### 2015
+**2018**
+
+- Hierarchical Multi-Label Classification Networks
+  - <details>
+    <summary>阅读笔记: </summary>
+    1. 提出了一种融合了局部层次类别信息和全局类别信息的层次标签分类模型 <br>
+    2. HMCN-F每层都对应一个权重，当类别层级较多时会引起权重过多。HMCN-R相比HMCN-F，使用了lstm思想来共享权重 <br>
+    3. 全局信息输出是所有类别的sigmoid输出，每层对应一个经过sigmoid的局部信息输出，预测时将二者加权起来 <br>
+    4. 对于子类概率大于父类概率的不规范问题，引入了正则损失   <br>
+    <img src="../assets/HMCN-F.png">
+    </details>
+  
+
+**2015**
+
 - Recurrent Convolutional Neural Networks for Text Classification
   - AAAI  
   - <details>
