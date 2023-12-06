@@ -1,27 +1,71 @@
+<!-- TOC -->
 
-- Baichuan 2: Open Large-scale Language Models
-  - 数据处理：数据频率和质量，使用聚类和去重方法，基于LSH和dense embedding方法
-  - tokenizer：更好的压缩率，对数字的每一位分开，添加空格token
-  - 位置编码：7B Rope，13B ALiBi
-  - 使用了SwiGLU激活函数，因为SwiGLU是一个双线性层，多引入一个门控矩阵，参数量
-    更多，hidden_size从4减少到了8/3
-  - 使用了更高效的基于xFormers的attention实现
-  - 使用RMSNorm，对transformer的block输入进行了Layer Norm
-  - 使用了AdamW优化器，为了稳定训练和提高模型性能，对输出embedding进行了归一化
-    即对header进行了归一化；训练中logits值偏大，在推理时，对重复惩罚参数比较
-    敏感，因此加入了max-z loss
-  - 使用了有监督微调和RLHF
+    - [llm technology report](#llm-technology-report)
+    - [领域大模型](#%E9%A2%86%E5%9F%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B)
+- [paper](#paper)
 
-- Baichuan v1 7b
-  - https://github.com/baichuan-inc/Baichuan-7B
-  - 数据：开源的中英文数据和互联网数据，使用了启发式的数据过滤，然后使用了去重和
-    质量打分策略来进一步筛选数据
-  - 分词：重新训练了BPE模型，更好的压缩率；对数字的每一位分开，避免出现数字不一
-    致问题；支持UTF-8 character的byte编码，对未知词全覆盖
-  - 模型：同LLama，Rope位置编码，SwiGLU，基于RMSNorm的Pre-Norm
+<!-- /TOC -->
 
-- Baichuan v1 13b
-  - 使用ALiBi位置编码，更多的训练数据
+## llm technology report
+
+- Baichuan
+
+  - Baichuan 2: Open Large-scale Language Models
+    - 数据处理：数据频率和质量，使用聚类和去重方法，基于LSH和dense embedding方法
+    - tokenizer：更好的压缩率，对数字的每一位分开，添加空格token
+    - 位置编码：7B Rope，13B ALiBi
+    - 使用了SwiGLU激活函数，因为SwiGLU是一个双线性层，多引入一个门控矩阵，参数量
+      更多，hidden_size从4减少到了8/3
+    - 使用了更高效的基于xFormers的attention实现
+    - 使用RMSNorm，对transformer的block输入进行了Layer Norm
+    - 使用了AdamW优化器，为了稳定训练和提高模型性能，对输出embedding进行了归一化
+      即对header进行了归一化；训练中logits值偏大，在推理时，对重复惩罚参数比较
+      敏感，因此加入了max-z loss
+    - 使用了有监督微调和RLHF
+
+  - Baichuan v1 7b
+    - https://github.com/baichuan-inc/Baichuan-7B
+    - 数据：开源的中英文数据和互联网数据，使用了启发式的数据过滤，然后使用了去重和
+      质量打分策略来进一步筛选数据
+    - 分词：重新训练了BPE模型，更好的压缩率；对数字的每一位分开，避免出现数字不一
+      致问题；支持UTF-8 character的byte编码，对未知词全覆盖
+    - 模型：同LLama，Rope位置编码，SwiGLU，基于RMSNorm的Pre-Norm
+
+  - Baichuan v1 13b
+    - 使用ALiBi位置编码，更多的训练数据
+
+- chatglm
+  - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
+  
+  - GLM
+    - GLM: General Language Model Pretraining with Autoregressive Blank Infilling
+    - 使用了blank filling的自回归方式来统一所有任务目标。其通过mask spans来自回归的预测被mask的span，非span区域是互见的，span之间的可见性取决于span的随机排列顺序
+    - 为了获得更好的生成性能，通过mask更长span，以及对整句进行mask
+    - 使用的2D位置编码：被mask的序列绝对位置; 非span区域位置为0，span内部位置从1开始编码
+    - https://github.com/THUDM/GLM
+      
+  - https://github.com/THUDM/GLM-130B
+  
+  - https://github.com/THUDM/ChatGLM-6B
+    - 1T token; 监督微调、反馈自助、人类反馈强化学习
+    - Rope；GLUE激活函数；prefix模型的mask方式
+    - 使用2d的position_id和block_position_id：block_position_id是把input的pos_id全部置为0；计算attention时需要把query和key chunk成2块
+    
+  - https://github.com/THUDM/ChatGLM2-6B
+  
+  - https://github.com/lich99/ChatGLM-finetune-LoRA
+    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+  - https://github.com/mymusise/ChatGLM-Tuning
+    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
+  - https://github.com/liangwq/Chatglm_lora_multi-gpu
+    - 支持多机多卡训练
+  - https://huggingface.co/silver/chatglm-6b-slim
+    - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
+  
+  - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
+    - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
+  - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
+  - glm10B: https://huggingface.co/THUDM/glm-10b
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速
@@ -109,25 +153,7 @@
     - IDEA研究眼
   - https://github.com/wenge-research/YaYi
 
-- GLM
-  - https://github.com/THUDM/ChatGLM2-6B
-  - https://github.com/THUDM/ChatGLM-6B
-  - https://github.com/lich99/ChatGLM-finetune-LoRA
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/mymusise/ChatGLM-Tuning
-    - 基于alpaca数据集，使用Lora技术微调ChatGLM-6B
-  - https://github.com/liangwq/Chatglm_lora_multi-gpu
-    - 支持多机多卡训练
-  - https://huggingface.co/silver/chatglm-6b-slim
-    - 是在ChatGLM-6B的基础上通过裁剪词表构建的。因为ChatGLM-6B使用了icetk，在其词表中，前20000个token是预留给图片的
-  - https://github.com/THUDM/GLM-130B/
-  - https://github.com/THUDM/GLM
-    - [ChatGLM内测](https://chatglm.cn/login)
-    - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
-  - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
-    - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
-  - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
-  - glm10B: https://huggingface.co/THUDM/glm-10b
+
 
 - BLOOM
   - https://github.com/bigscience-workshop/xmtf
@@ -178,7 +204,7 @@
 
 # paper
 
-### 2023
+**2023**
 
 - Language Is Not All You Need: Aligning Perception with Language Models
   - [[code]](https://github.com/microsoft/unilm)
@@ -202,7 +228,7 @@
     <img src="" align="middle" />
     </details>
 
-### 2022
+**2022**
 
 - FINETUNED LANGUAGE MODELS ARE ZERO-SHOT LEARNERS
   
@@ -226,7 +252,7 @@
     <img src="" align="middle" />
     </details>
 
-### 2021
+**2021**
 - A General Language Assistant as a Laboratory for Alignment
   - <details>
     <summary>阅读笔记: </summary>
