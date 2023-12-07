@@ -11,6 +11,17 @@
 
 - [Transformer参数量、计算量、显存占用分析](https://mp.weixin.qq.com/s/4_6J7-NZML5pTGTSH1-KMg)
 
+**2022**
+
+- SELF-ATTENTION DOES NOT NEED O(n2) MEMORY
+  - 将self-attention的内存占用优化到了O(logn)
+  - 考虑一个query和长度为n的key、value列表。attention的计算可以表示为分子和分母的迭代计算，而不需要保存中间计算结果，即i=i+1
+  - 传统attention的计算会减去一个最大值防止溢出，新的懒计算的方法无法使用该方法。维护一个当前时刻的最大值，来更新计算结果
+  - <details>
+    <summary>Image </summary>
+    <img src="../assets/xFormer.png" align="middle" />
+    </details>
+
 
 
 # 推理框架

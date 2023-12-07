@@ -34,7 +34,9 @@
   - Baichuan v1 13b
     - 使用ALiBi位置编码，更多的训练数据
 
-- chatglm
+
+- ChatGLM
+
   - [ChatGLM：千亿基座的对话模型开启内测⸺对应单卡版本开源](https://chatglm.cn/blog)
   
   - GLM
@@ -54,7 +56,7 @@
   - https://github.com/THUDM/ChatGLM2-6B
     - 1.4T; 人类偏好对; 使用GLM的混合目标函数
     - 更长的上下文；使用multi-query attention
-    - Rope; RMSNorm; SwiGLU激活函数
+    - Rope; preNorm; RMSNorm; SwiGLU激活函数(与LLama相同)
 
   - https://github.com/THUDM/ChatGLM3
     - 更多样的训练数据、更充分的训练步数和更合理的训练策略；采用了全新设计的Prompt格式，支持工具调用、代码执行、Agent
@@ -73,6 +75,17 @@
     - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
       - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
     - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
+    
+- LLaMA
+  - LLaMA: Open and Efficient Foundation Language Models
+    - 数据处理：质量过滤，重复过滤
+    - 共1.4T tokens，除了高质量的book和wikipedia数据训练两个epoch，其他数据都训练1个epoch
+    - 模型：Rope; preNorm; RMSNorm; SwiGLU激活函数
+
+  - Llama 2: Open Foundation and Fine-Tuned Chat Models
+    - 相比llama1，数据增加40%，长度增加一倍，使用了group-query attention
+    - llama2-chat是在llama2基础版本的基础上使用有监督微调和RLHF
+    - llama2-chat使用3w条高质量SFT数据，更小学习率，2epoch，user_prompt不计算loss
     
 
 - https://github.com/FlagAlpha/Llama2-Chinese
