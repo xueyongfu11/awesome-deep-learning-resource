@@ -86,7 +86,22 @@
     - 相比llama1，数据增加40%，长度增加一倍，使用了group-query attention
     - llama2-chat是在llama2基础版本的基础上使用有监督微调和RLHF
     - llama2-chat使用3w条高质量SFT数据，更小学习率，2epoch，user_prompt不计算loss
+    - llama-chat的RLHF训练
+       - 使用二分比较模式；为了最大化生成数据的多样性，对同一个prompt，使用不同的模型、使用不同的温度参数；新模型迭代需要使用新模型生成的偏好数据
+       - 奖励模型：使用两个奖励模型，helpfulness和safety，使用chat model checkpoint来初始化；奖励模型与chat model不同地方就是分类header替换成regression header，
+         损失使用的是binary ranking loss，使用了margin进一步优化
+       - 为了提高多轮对话的一致性，提出可Ghost Attention
     
+- Qwen
+  - 3T tokens；语言判别工具；去重工具；低质量数据过滤（rule-based & machine-learning-based）；上采样部分数据；在预训练阶段添加部分指令数据
+  - BPE tokenizer（基于tiktoken）；使用常用chinese token增强；数字细粒度切分
+  - 基础模型：主要基于llama，改进的地方：embedding和output project不在共享权重；使用FP32的Rope；移去所有的bias，但是QKV添加了bias；
+    使用Pre-Norm & RMSNorm；SwiGLU激活函数
+  - 推理长度扩展：NTK-Rope；LogN-Scaling；window attention（lower layer对window size更加敏感，因此lower layer使用更小的window size）
+  - SFT finetune and RLHF: 为了提高泛化性，去掉了固定prompt格式的数据；使用了OpenAI的chatML-style format；RLHF基本同llama2
+  - TOOL USE, CODE INTERPRETER, AND AGENT：使用了self-instruce+人工纠正，训练时也添加了其他通用目的的SFT数据
+  - Code-Qwen：基于基础模型用code data进一步预训练，然后使用Code SFT数据微调
+
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速

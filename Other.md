@@ -204,6 +204,9 @@
 - https://github.com/xiaoming-ssr/FanQiang-Book
 - https://github.com/sglfree/freesky
 
+- https://github.com/zzzgydi/clash-verge
+  - 全平台clash客户端
+
 ### other
 
 - https://github.com/tickstep/aliyunpan
