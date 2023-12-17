@@ -37,3 +37,19 @@
 - https://github.com/HoyTta0/KnowledgeDistillation
 
 - https://github.com/airaria/TextBrewer
+
+
+# CUDA
+
+- cuda在线文档：https://developer.nvidia.com/cuda-toolkit-archive
+
+- CUDA C++ Programming Guide
+  - https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
+
+- [《CUDA C 编程指南》导读](https://mp.weixin.qq.com/s/0wFD5Q_U0TT32NIxy45y0g)
+
+## cuda基础
+
+- [显卡，显卡驱动,nvcc, cuda driver,cudatoolkit,cudnn介绍](https://zhuanlan.zhihu.com/p/91334380)
+  - 多版本cuda管理
+- [详解PyTorch编译并调用自定义CUDA算子的三种方式](https://mp.weixin.qq.com/s/rG43pnWY8fBjyIX-mFWTqQ)
