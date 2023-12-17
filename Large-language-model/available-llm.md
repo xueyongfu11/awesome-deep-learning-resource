@@ -102,6 +102,7 @@
   - TOOL USE, CODE INTERPRETER, AND AGENT：使用了self-instruce+人工纠正，训练时也添加了其他通用目的的SFT数据
   - Code-Qwen：基于基础模型用code data进一步预训练，然后使用Code SFT数据微调
 
+- https://github.com/IEIT-Yuan/Yuan-2.0
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速

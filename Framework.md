@@ -11,6 +11,7 @@
   - [blog2](https://mp.weixin.qq.com/s/OXKg4f6bEso8E-Rp-m7scg)
 
 - https://github.com/NVIDIA/Megatron-LM
+  - [图解大模型训练之：张量模型并行(TP)，Megatron-LM](https://zhuanlan.zhihu.com/p/622212228?utm_campaign=shareopn&utm_medium=social&utm_oi=615941546193850368&utm_psn=1631231489340559360&utm_source=wechat_session)
 
 
 # Train

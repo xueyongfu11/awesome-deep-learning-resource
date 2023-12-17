@@ -36,6 +36,9 @@
 
 - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
 
+- Deepspeed Inference
+  - https://www.deepspeed.ai/tutorials/inference-tutorial/
+
 - vllm
   - https://github.com/vllm-project/vllm
   - 高效的kv-cache管理，基于pageAttention

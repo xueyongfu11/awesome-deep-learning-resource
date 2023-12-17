@@ -1,4 +1,10 @@
+<!-- TOC -->
 
+- [支持更长的序列](#%E6%94%AF%E6%8C%81%E6%9B%B4%E9%95%BF%E7%9A%84%E5%BA%8F%E5%88%97)
+    - [train](#train)
+    - [inference](#inference)
+
+<!-- /TOC -->
 
 # 支持更长的序列
 

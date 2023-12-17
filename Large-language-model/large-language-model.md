@@ -1,3 +1,15 @@
+<!-- TOC -->
+
+- [Other](#other)
+- [leaderboard](#leaderboard)
+- [Agent](#agent)
+        - [3](#3)
+- [table-llm](#table-llm)
+- [LLM和知识图谱](#llm%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1)
+- [Datasets](#datasets)
+
+<!-- /TOC -->
+
 
 # Other
 
@@ -14,6 +26,7 @@
 
 - https://github.com/yanqiangmiffy/how-to-train-tokenizer
 
+- [大模型的涌现能力介绍](https://mp.weixin.qq.com/s/Jymq2ho3VQx7-o6y-JHxeg)
 
 # leaderboard
 
@@ -53,7 +66,7 @@
 
 
 - [机器人自学停不下来！具身智能被革命](https://mp.weixin.qq.com/s/2bQTuwE-k6ukp--XHXIzMg)
-
+- [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)
 
 # table-llm
 
@@ -61,6 +74,12 @@
 
 - TableGPT: Towards Unifying Tables, Nature Language and Commands into One GPT
   - [浙大团队推出TableGPT：可分析数据、作图和建模](https://zhuanlan.zhihu.com/p/643198387)
+
+
+# LLM和知识图谱
+- [万字长文讲述大模型与知识图谱的关系](https://zhuanlan.zhihu.com/p/626433991)
+- [LLM 时代的金融知识图谱实践](https://zhuanlan.zhihu.com/p/623104680)
+  - 比较基础
 
 
 # Datasets
