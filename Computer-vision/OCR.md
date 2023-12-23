@@ -1,4 +1,10 @@
+<!-- TOC -->
 
+- [Repo](#repo)
+- [Paper](#paper)
+- [Datasets](#datasets)
+
+<!-- /TOC -->
 
 # Repo
 
@@ -12,6 +18,10 @@
 - https://github.com/tesseract-ocr/tesseract
   - GUI工具 https://github.com/manisandro/gImageReader
 
+- https://github.com/JiaquanYe/TableMASTER-mmocr
+  - 平安产险提出TableMASTER
+
+- [竞赛总结：科大讯飞2023 表格结构识别挑战赛](https://mp.weixin.qq.com/s/tXDmOi-K7So_XWvvZHKkxQ)
 
 # Paper
 

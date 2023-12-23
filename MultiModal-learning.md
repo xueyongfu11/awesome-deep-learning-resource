@@ -1,10 +1,13 @@
+<!-- TOC -->
 
+- [Paper](#paper)
+    - [multi-modal](#multi-modal)
+    - [multi-modal-llm](#multi-modal-llm)
+    - [Information extraction](#information-extraction)
+    - [AIGC](#aigc)
+- [datasets](#datasets)
 
-# Repo
-
-- https://gitee.com/zidongtaichu/multi-modal-models
-  - 紫东太初多模态大模型
-- https://github.com/Eurus-Holmes/Awesome-Multimodal-Research
+<!-- /TOC -->
 - https://github.com/thuiar/MMSA
 - https://github.com/pliang279/awesome-multimodal-ml
 - https://github.com/Paranioar/Cross-modal_Retrieval_Tutorial
@@ -19,7 +22,7 @@
 
 ## multi-modal 
 
-### 2022
+**2022**
 
 - BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
   - https://github.com/salesforce/BLIP
@@ -33,7 +36,7 @@
   - 提出了基于专家混合模型的多模态语言模型
   - 模型的输入同ViLT，使用可以是单塔模型，也可以是双塔模型。transformer层共享同一个多头self-attention，后面跟三个专家网络FFN，language-FFN、vision-FFN、LN-FFN
 
-### 2021
+**2021**
 
 - Align before Fuse: Vision and Language Representation Learning with Momentum Distillation
   - ALBEF
@@ -60,7 +63,8 @@
 - https://github.com/THUDM/VisualGLM-6B
 - https://github.com/THUDM/CogVLM
 
-### 2023
+
+**2023**
 
 - BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
   - https://github.com/salesforce/LAVIS/tree/main/projects/blip2
@@ -79,14 +83,14 @@
 
 ## Information extraction
 
-### 2023
+**2023**
 
 - GeoLayoutLM: Geometric Pre-training for Visual Information Extraction
   - https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/GeoLayoutLM
 
 - Unifying Vision, Text, and Layout for Universal Document Processing
 
-### 2020
+**2020**
 
 - Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
   - 阅读笔记:  
@@ -108,6 +112,8 @@
 
 # datasets
 
+- https://rloganiv.github.io/mae/
+  - 电商领域多模态信息抽取数据集
 - https://paperswithcode.com/dataset/flickr30k-cna
   - 中文数据集
 - [多模态分析数据集（Multimodal Dataset）整理](https://zhuanlan.zhihu.com/p/189876288)

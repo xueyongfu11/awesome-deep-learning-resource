@@ -1,7 +1,6 @@
 <!-- TOC -->
 
 - [llm technology report](#llm-technology-report)
-- [领域大模型](#%E9%A2%86%E5%9F%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B)
 - [paper](#paper)
 
 <!-- /TOC -->
@@ -101,6 +100,14 @@
   - SFT finetune and RLHF: 为了提高泛化性，去掉了固定prompt格式的数据；使用了OpenAI的chatML-style format；RLHF基本同llama2
   - TOOL USE, CODE INTERPRETER, AND AGENT：使用了self-instruce+人工纠正，训练时也添加了其他通用目的的SFT数据
   - Code-Qwen：基于基础模型用code data进一步预训练，然后使用Code SFT数据微调
+
+- Yi
+  - https://github.com/01-ai/Yi
+  - [Yi-34b模型训练和微调对齐介绍](https://mp.weixin.qq.com/s/cPjioApwlx711pNIPpB24w)
+
+- MistralAI
+  
+
 
 - https://github.com/IEIT-Yuan/Yuan-2.0
 
@@ -227,17 +234,6 @@
 - https://github.com/HarderThenHarder/transformers_tasks/tree/main/RLHF
   - 基于上面的TRL做的；增加了基于人工打分的Reward模型训练，还提供了Reward数据的标注平台；RM 模型训练：基于 ernie-3.0-base-zh 继续训练的
 
-
-## 领域大模型
-
-- https://github.com/scir-hi/huatuo-llama-med-chinese
-
-- https://github.com/BioFM/OpenBioMed
-  - 多模态生物医疗领域大模型
-
-- https://github.com/pengxiao-song/LawGPT
-  - 基于中文法律知识的大语言模型
-  - 预训练+指令微调
 
 ## paper
 

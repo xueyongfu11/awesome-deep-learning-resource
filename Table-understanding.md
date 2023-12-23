@@ -1,3 +1,16 @@
+<!-- TOC -->
+
+- [Repo](#repo)
+- [Paper](#paper)
+    - [survey](#survey)
+    - [table interpretation](#table-interpretation)
+    - [table pre-train](#table-pre-train)
+    - [table-qa](#table-qa)
+- [resource](#resource)
+- [Datasets](#datasets)
+
+<!-- /TOC -->
+
 
 # Repo
 
@@ -38,6 +51,9 @@
 
 ## table interpretation
 
+- [表格解析挑战赛--冠军方案分享](https://zhuanlan.zhihu.com/p/632436613)
+  - 该表格解析任务旨在从一张给定表格中判断其表头和数据，并判断表头间的层级关系，从而实现对表格的要素抽取任务
+
 - MATE: Multi-view Attention for Table Transformer Efficiency
   - 提出了一种稀疏attention对表格进行建模，具体就是token的一部分注意力头只能attend所在行的其他token，另外一部分注意力头只能attend所在列的其他token
   - github.com/google-research/tapas
@@ -48,7 +64,7 @@
   3. https://github.com/medtray/StruBERT
 
 
-### 2022
+**2022**
 - Extraction of Product Specifications from the Web - Going Beyond Tables and Lists
   - <details>
     <summary>阅读笔记: </summary>
@@ -90,7 +106,7 @@
     3. 预训练任务：获取cell的text embedding、该cell被mask后通过context得到的mask位置的embedding，使用contrastive learning来拉近二者的空间距离；cell-level masked-language-model  <br>
     </details>
 
-### 2021
+**2021**
 - TabularNet: A Neural Network Architecture for Understanding Semantic Structures of Tabular Data
   - KDD
   - <details>
