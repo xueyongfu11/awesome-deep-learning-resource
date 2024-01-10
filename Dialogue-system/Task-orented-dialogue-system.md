@@ -1,19 +1,4 @@
-
-<!-- TOC -->
-
-- [end-to-end](#end-to-end)
-- [NLU](#nlu)
-- [DST](#dst)
-- [DPL](#dpl)
-- [NLG](#nlg)
-- [Retrieval-Base](#retrieval-base)
-- [Other](#other)
-- [Repo](#repo)
-    - [RASA series](#rasa-series)
-- [Tools](#tools)
-- [dataset](#dataset)
-
-<!-- /TOC -->
+[[TOC]]
 
 ## end-to-end
 
@@ -257,9 +242,3 @@
 - 生成对话数据集 https://github.com/rodrigopivi/Chatito
   - 移动电信数据集 https://github.com/GaoQ1/chatito_gen_nlu_data
 
-## dataset
-
-- 中文任务型对话系统数据集 https://github.com/thu-coai/CrossWOZ
-- 任务型对话数据集 https://github.com/sz128/NLU_datasets_with_task_oriented_dialogue
-- 任务型对话数据集 https://github.com/alexa/dialoglue
-- end to end dialogue dataset https://github.com/yizhen20133868/Retriever-Dialogue

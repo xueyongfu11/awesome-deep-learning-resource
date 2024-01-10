@@ -1,44 +1,11 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Chinese](#chinese)
-  - [通用数据](#%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE)
-  - [Task-oriented dialogue system](#task-oriented-dialogue-system)
-  - [chitchat dataset](#chitchat-dataset)
-  - [FAQ](#faq)
-  - [CQA(社区问答)](#cqa%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%94)
-  - [NL2SQL](#nl2sql)
-  - [Other](#other)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[[TOC]]
 
 
 # Chinese
 
 ## 通用数据
 
-- 维基百科json版(wiki2019zh) 
-  - [google](https://drive.google.com/file/d/1EdHUZIDpgcBoSqbjlfNKJ3b1t0XIUjbt/view?usp=sharing)
-  - [baidu](https://pan.baidu.com/s/1uPMlIY3vhusdnhAge318TA)
-  - 可以做为通用中文语料，做预训练的语料或构建词向量，也可以用于构建知识问答。
 
-- 新闻语料json版(news2016zh)
-  - [google](https://drive.google.com/file/d/1TMKu1FpTr6kcjWXWlQHX7YJsMfhhcVKp/view?usp=sharing)
-  - [baidu pw:k265](https://pan.baidu.com/s/1MLLM-CdM6BhJkj8D0u3atA)
-  - 可以用于训练【标题生成】模型，或训练【关键词生成】模型（选关键词内容不同于标题的数据）；亦可以通过新闻渠道区分出新闻的类型。
-  - 包含了250万篇新闻。新闻来源涵盖了6.3万个媒体，含标题、关键词、描述、正文。( 原始数据9G，压缩文件3.6G；新闻内容跨度：2014-2016年)
-
-- 百科类问答json版(baike2018qa)
-  - [google](https://drive.google.com/open?id=1_vgGQZpfSxN_Ng9iTAvE7hM3Z7NVwXP2)
-  - [baidu pw:fu45](https://pan.baidu.com/s/12TCEwC_Q3He65HtPKN17cA)
-  - 含有150万个预先过滤过的、高质量问题和答案，每个问题属于一个类别。总共有492个类别，其中频率达到或超过10次的类别有434个。
-  - 可以做为通用中文语料，训练词向量或做为预训练的语料；也可以用于构建百科类问答；其中类别信息比较有用，可以用于做监督训练，从而构建更好句子表示的模型、句子相似性任务等。
-
-- 百度百科
-  - 只能自己爬，爬取得链接：`https://pan.baidu.com/share/init?surl=i3wvfil` 提取码 neqs 。 
-
-- https://dumps.wikimedia.org/zhwiki/
 - https://github.com/candlewill/Dialog_Corpus
 
 ## Task-oriented dialogue system
@@ -66,7 +33,10 @@
   - 中文对话意图识别数据集，官方git和数据: [https://github.com/HITlilingzhi/SMP2017ECDT-DATA](https://github.com/HITlilingzhi/SMP2017ECDT-DATA)
   - 论文：[https://arxiv.org/abs/1709.10217  ](https://arxiv.org/abs/1709.10217)
   
-
+- 中文任务型对话系统数据集 https://github.com/thu-coai/CrossWOZ
+- 任务型对话数据集 https://github.com/sz128/NLU_datasets_with_task_oriented_dialogue
+- 任务型对话数据集 https://github.com/alexa/dialoglue
+- end to end dialogue dataset https://github.com/yizhen20133868/Retriever-Dialogue
   
 
 ## chitchat dataset
@@ -136,14 +106,18 @@
 ## NL2SQL
 
 - NL2SQL 
-  - 单表，简单 [NL2SQL](https://arxiv.org/abs/2006.06434)                   |
+  - 单表，简单 [NL2SQL](https://arxiv.org/abs/2006.06434)          
   
 - CSpider 
-  - 多表 复杂 [CSpider](https://arxiv.org/abs/1909.13293)                  |
+  - 多表 复杂 [CSpider](https://arxiv.org/abs/1909.13293)                  
   
 - DuSQL  
-  - 多表 复杂 [DuSQL](https://www.aclweb.org/anthology/2020.emnlp-main.562.pdf) |
+  - 多表 复杂 [DuSQL](https://www.aclweb.org/anthology/2020.emnlp-main.562.pdf) 
 
+- SQUALL数据集：https://blog.csdn.net/weixin_43413013/article/details/126859147
+
+
+- Spider数据集:https://juejin.cn/post/7085557671528660999
 
 ## Other
 
@@ -152,3 +126,9 @@
   
 - [CATSLU](https://dl.acm.org/doi/10.1145/3340555.3356098)
   - 之前的一些对话数据集集中于语义理解，而工业界真实情况ASR也会有错误，往往被忽略。而是一个中文语音+NLU文本理解的对话数据集，可以从语音信号到理解端到端进行实验，例如直接从音素建模语言理解（而非word or token）
+
+
+- 训练中文对话系统的语料库 https://github.com/candlewill/Dialog_Corpus
+
+- 中文聊天语料库 https://github.com/codemayq/chinese_chatbot_corpus
+

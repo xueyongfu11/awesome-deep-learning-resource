@@ -1,3 +1,11 @@
+<!-- TOC -->
+
+- [Repo](#repo)
+- [survey](#survey)
+- [Paper](#paper)
+
+<!-- /TOC -->
+
 
 ## Repo
 
@@ -10,7 +18,7 @@
 
 ## Paper
 
-### 2023
+**2023**
 
 - Few-shot Fine-tuning vs. In-context Learning: A Fair Comparison and Evaluation
   - 探究了在同等模型参数条件下few-shot ICL和few-shot微调的跨领域泛化效果对比，二者取得了相近的性能
@@ -24,7 +32,7 @@
   - 提出了一个新颖的框架去迭代性的训练向量检索工具，目的是为了识别高质量的in-context样本
 
 
-### 2022
+**2022**
 
 - Improving In-Context Few-Shot Learning via Self-Supervised Training
   - Meta Ai; NAACL-HLT 2022

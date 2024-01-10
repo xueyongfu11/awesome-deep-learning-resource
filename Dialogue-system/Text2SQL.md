@@ -1,19 +1,14 @@
-<!-- TOC -->
+[[TOC]]
 
-- [Repo](#repo)
-- [Paper](#paper)
-        - [1](#1)
-- [Datasets](#datasets)
-        - [0](#0)
-        - [8](#8)
 
-<!-- /TOC -->
 - https://github.com/yechens/NL2SQL
 - https://github.com/wangpinggl/TREQS
 
 
 # Paper
-### 2021
+
+**2021**
+
 - SDCUP: Schema Dependency-Enhanced Curriculum Pre-Training for Table Semantic Parsing
   - <details>
     <summary>阅读笔记: </summary>
@@ -24,13 +19,4 @@
     <img src="../assets\SDCUP1.png" align="middle" />
     <img src="../assets\SDCUP2.png" align="middle" />
     </details>
-
-
-# Datasets
-
-### 2020
-- SQUALL数据集：https://blog.csdn.net/weixin_43413013/article/details/126859147
-
-### 2018
-- Spider数据集:https://juejin.cn/post/7085557671528660999
 

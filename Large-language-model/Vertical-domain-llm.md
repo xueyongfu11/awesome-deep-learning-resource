@@ -15,6 +15,7 @@
 - https://github.com/scir-hi/huatuo-llama-med-chinese
   - 经过中文医学指令精调/指令微调
 
-
 - [对行业大模型的思考](https://zhuanlan.zhihu.com/p/643805698)
   - 垂直领域预训练：10%-15%的领域数据
+
+

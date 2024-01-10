@@ -1,14 +1,12 @@
+<!-- TOC -->
 
-# Blog
+- [information extraction](#information-extraction)
 
-- [ChatGPT能解决信息抽取吗？一份关于性能、评估标准、鲁棒性和错误的分析](https://mp.weixin.qq.com/s/TeFxseHyqZ96aL6eN6X64g)
-  - Is Information Extraction Solved by ChatGPT? An Analysis of Performance, Evaluation Criteria, Robustness and Errors
-  - code: https://github.com/RidongHan/Evaluation-of-ChatGPT-on-Information-Extraction
-
+<!-- /TOC -->
 
 # information extraction
 
-### 2023
+**2023**
 
 - How to Unleash the Power of Large Language Models for Few-shot Relation Extraction?
   - ACL 
@@ -29,6 +27,7 @@
     </details>
 
 - GPT-NER: Named Entity Recognition via Large Language Models
+  - [code](https://github.com/ShuheWang1998/GPT-NER)
   - <details>
     <summary>阅读笔记: </summary>
     1. 为了减少生成大模型和抽取任务的gap，将原始文本的实体前后添加special token并作为label。然后使用任务指令+few-shot学习的方式用大模型进行预测  <br>
