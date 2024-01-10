@@ -1,26 +1,26 @@
-<!-- TOC -->
+[[TOC]]
 
-- [中文数据集](#%E4%B8%AD%E6%96%87%E6%95%B0%E6%8D%AE%E9%9B%86)
-    - [通用语料](#%E9%80%9A%E7%94%A8%E8%AF%AD%E6%96%99)
-- [英文数据集](#%E8%8B%B1%E6%96%87%E6%95%B0%E6%8D%AE%E9%9B%86)
-- [数据平台](#%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0)
 
-<!-- /TOC -->
 ## 中文数据集
 
 - https://github.com/InsaneLife/ChineseNLPCorpus
+  - 中文各个nlp任务数据集
+
 - https://github.com/brightmart/nlp_chinese_corpus
-- https://github.com/nonamestreet/weixin_public_corpus
+
 - https://github.com/CLUEbenchmark/CLUEDatasetSearch
   - CLUE：搜索所有中文NLP数据集，附常用英文NLP数据集
+
 - https://github.com/liucongg/NLPDataSet
-- https://github.com/SophonPlus/ChineseNlpCorpus
-- https://github.com/brightmart/nlp_chinese_corpus
+  - 中文各个nlp任务数据集
+
 - THUOCL：清华大学开放中文词库:http://thuocl.thunlp.org/
-- 中文财报数据网站：http://www.cninfo.com.cn/new/index
 
 
 ### 通用语料
+
+- https://github.com/nonamestreet/weixin_public_corpus
+  - 微信公众号语料库
 
 - 超对称：https://bbt.ssymmetry.com/data.html
   - 通用语料、金融语料
@@ -48,37 +48,43 @@
   - 可以做为通用中文语料，训练词向量或做为预训练的语料；也可以用于构建百科类问答；其中类别信息比较有用，可以用于做监督训练，从而构建更好句子表示的模型、句子相似性任务等。
 
 - 百度百科
-  - 只能自己爬，爬取得链接：`https://pan.baidu.com/share/init?surl=i3wvfil` 提取码 neqs 。 
+  - 只能自己爬，爬取得链接：`https://pan.baidu.com/share/init?surl=i3wvfil` 提取码 neqs
 
-- https://dumps.wikimedia.org/zhwiki/
+- 维基百科数据集
+  - https://dumps.wikimedia.org/
+
 
 ## 英文数据集
 
 - https://gluebenchmark.com/tasks
   - GLUE
 
+- [GLUE](https://gluebenchmark.com/)
+
+
 
 ## 数据平台
 
 - [CLUE](https://www.cluebenchmarks.com/index.html)
+
 - [千言中文数据集](https://www.luge.ai/#/)
+
 - [智源指数CUGE](http://cuge.baai.ac.cn/#/)
+
 - [天池数据集](https://tianchi.aliyun.com/dataset)
-- [格物钛](https://gas.graviti.cn/open-datasets)
+
 - [超神经](https://hyper.ai/datasets)
-- [GLUE](https://gluebenchmark.com/)
+
 - [Huggingface dataset](https://huggingface.co/datasets)
+
 - [Kaggle dataset](https://www.kaggle.com/datasets)
+
 - [Paper With Code 数据集](https://www.paperswithcode.com/datasets)
-- [LinDat](https://lindat.mff.cuni.cz/)
+
 - [Google dataset](https://datasetsearch.research.google.com/)
-- 搜狗实验室
-  - 搜狗实验室提供了一些高质量的中文文本数据集，时间比较早，多为2012年以前的数据。
-  - [https://www.sogou.com/labs/resource/list_pingce.php](https://link.zhihu.com/?target=https%3A//www.sogou.com/labs/resource/list_pingce.php)
-- 中科大自然语言处理与信息检索共享平台
-  - [http://www.nlpir.org/?action-category-catid-28](https://link.zhihu.com/?target=http%3A//www.nlpir.org/%3Faction-category-catid-28)
+
 - 中文语料小数据
   - 包含了中文命名实体识别、中文关系识别、中文阅读理解等一些小量数据。
   - https://github.com/crownpku/Small-Chinese-Corpus
-- 维基百科数据集
-  - https://dumps.wikimedia.org/
+
+

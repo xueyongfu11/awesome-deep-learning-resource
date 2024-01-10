@@ -3,11 +3,6 @@
 
 # Chinese
 
-## 通用数据
-
-
-- https://github.com/candlewill/Dialog_Corpus
-
 ## Task-oriented dialogue system
 
 - Medical DS
@@ -40,6 +35,33 @@
   
 
 ## chitchat dataset
+
+- DuLeMon中文长时记忆对话数据集
+  - Chatbot可以基于记住的用户画像信息进行深入聊天，体现长期记忆的能力；用途：提高对话系统的长期记忆能力
+  - https://www.luge.ai/#/luge/dataDetail?id=60
+
+- Diamante中文开放域闲聊数据集
+  - 机器辅助人工标注的中文闲聊数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=52
+
+- CDConv中文对话一致性检测数据集
+  - 可用作闲聊数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=65
+
+- Tencent中文开放域对话数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=36
+
+- LUGE-Dialogue开放域对话数据集合
+  - https://www.luge.ai/#/luge/dataDetail?id=26
+
+- LCCC开放域短文本对话数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=34
+
+- 豆瓣中文开放域对话数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=33
+
+- DuRecDial对话推荐数据集
+  - https://www.luge.ai/#/luge/dataDetail?id=31
 
 - https://github.com/rustch3n/dgk_lost_conv 
   - 中文电影对白语料，噪音比较大，许多对白问答关系没有对应好
@@ -131,4 +153,3 @@
 - 训练中文对话系统的语料库 https://github.com/candlewill/Dialog_Corpus
 
 - 中文聊天语料库 https://github.com/codemayq/chinese_chatbot_corpus
-
