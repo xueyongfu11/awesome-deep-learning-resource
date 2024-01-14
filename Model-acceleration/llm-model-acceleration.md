@@ -3,6 +3,7 @@
 # 显存优化
 
 - flash-attention
+  - https://github.com/Dao-AILab/flash-attention
   - llama使用flash-attention：https://github.com/lm-sys/FastChat/blob/main/fastchat/train/llama_flash_attn_monkey_patch.py#L79
 
 - [Multi Query Attention和Group-Query Attention介绍](https://mp.weixin.qq.com/s/wOyDpxcxKATxGrP8W-1w2Q)

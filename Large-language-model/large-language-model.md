@@ -1,14 +1,4 @@
-<!-- TOC -->
-
-- [Other](#other)
-- [leaderboard](#leaderboard)
-- [Agent](#agent)
-        - [3](#3)
-- [table-llm](#table-llm)
-- [LLM和知识图谱](#llm%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1)
-- [Datasets](#datasets)
-
-<!-- /TOC -->
+[[TOC]]
 
 
 # Other
@@ -112,6 +102,8 @@
   - v2
     - https://huggingface.co/datasets/BAAI/COIG-PC
     - 312M
+    - 轻量级数据集，每个任务采样200条
+      https://huggingface.co/datasets/BAAI/COIG-PC-Lite
 
 - BBT-FinCUGE-Applications
   - 通用金融语料，以及金融相关的qa、分类、ner、re等数据
@@ -174,8 +166,3 @@
 - AlpacaDataCleaned
   - 50k，基于gpt4的模型以self-instuct方式生成，质量更高
   - https://github.com/gururise/AlpacaDataCleaned
-
-
-## pretrain datasets
-
-- https://github.com/dbiir/UER-py/wiki/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE

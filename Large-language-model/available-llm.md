@@ -1,15 +1,11 @@
-<!-- TOC -->
-
-- [llm technology report](#llm-technology-report)
-- [paper](#paper)
-
-<!-- /TOC -->
+[[TOC]]
 
 ## llm technology report
 
 - Baichuan
 
   - Baichuan 2: Open Large-scale Language Models
+    - https://github.com/baichuan-inc/Baichuan2
     - 数据处理：数据频率和质量，使用聚类和去重方法，基于LSH和dense embedding方法
     - tokenizer：更好的压缩率，对数字的每一位分开，添加空格token
     - 位置编码：7B Rope，13B ALiBi
@@ -92,6 +88,7 @@
        - 为了提高多轮对话的一致性，提出可Ghost Attention
     
 - Qwen
+  - https://github.com/QwenLM/Qwen
   - 3T tokens；语言判别工具；去重工具；低质量数据过滤（rule-based & machine-learning-based）；上采样部分数据；在预训练阶段添加部分指令数据
   - BPE tokenizer（基于tiktoken）；使用常用chinese token增强；数字细粒度切分
   - 基础模型：主要基于llama，改进的地方：embedding和output project不在共享权重；使用FP32的Rope；移去所有的bias，但是QKV添加了bias；
@@ -117,7 +114,7 @@
 - https://github.com/InternLM/InternLM/blob/main/README-zh-Hans.md
 
 - https://github.com/OpenBuddy/OpenBuddy/blob/main/README.zh.md
-  - 基于llama的开源多语言大模型，包含3b,7b,34b,70b
+  - 基于开源大模型微调，如llama、chatglm、baichuan，多轮对话，包含3b,7b,34b,70b
 
 - https://github.com/FlagAI-Open/Aquila2
 
