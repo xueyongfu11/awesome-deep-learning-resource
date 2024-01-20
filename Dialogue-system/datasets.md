@@ -1,4 +1,14 @@
-[[TOC]]
+<!-- TOC -->
+
+- [Chinese](#chinese)
+    - [Task-oriented dialogue system](#task-oriented-dialogue-system)
+    - [chitchat dataset](#chitchat-dataset)
+    - [FAQ](#faq)
+    - [CQA社区问答](#cqa%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%94)
+    - [NL2SQL](#nl2sql)
+    - [Other](#other)
+
+<!-- /TOC -->
 
 
 # Chinese
@@ -153,3 +163,6 @@
 - 训练中文对话系统的语料库 https://github.com/candlewill/Dialog_Corpus
 
 - 中文聊天语料库 https://github.com/codemayq/chinese_chatbot_corpus
+
+- https://github.com/thu-coai/KdConv
+  - 基于知识图谱构建的多轮对话数据集

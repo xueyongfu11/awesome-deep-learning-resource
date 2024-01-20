@@ -98,6 +98,9 @@
 
 ## chinese dataset
 
+- https://huggingface.co/datasets/Suprit/CMtMedQA
+  - 医疗多轮对话数据集
+
 - alpaca_chinese_dataset
   - 52K，将Alpaca数据集进行机器翻译+人工校验，并补充一些对话数据
   - https://github.com/hikariming/alpaca_chinese_dataset
@@ -154,11 +157,9 @@
   - https://huggingface.co/datasets/fnlp/moss-002-sft-data
     - 1.16M，类似self-instruct，人工编写一些seed
   - https://huggingface.co/datasets/fnlp/moss-003-sft-data
-    - 包含写作、代码、角色扮演、无害等类型数据集
-
-- InstructionWild
-  - 110k，基于chatgpt用户共享出的指令构建，不同与self-instruct，多样性、真实性更高
-  - https://github.com/XueFuzhao/InstructionWild
+    - 多轮对话数据集，包含写作、代码、角色扮演、无害等类型数据集
+    - https://huggingface.co/datasets/YeungNLP/moss-003-sft-data  
+      官方数据的简化版本
 
 - Guanaco
   - 1.17M，对alpaca self-instruct随机种子进行扩充
@@ -166,6 +167,10 @@
 
 ## english datasets
 
+- InstructionWild
+  - 110k，基于chatgpt用户共享出的指令构建，不同与self-instruct，多样性、真实性更高
+  - https://github.com/XueFuzhao/InstructionWild
+  
 - HC3
   - 24k，human-chatgpt对比数据集
   - https://huggingface.co/datasets/Hello-SimpleAI/HC3
@@ -181,3 +186,6 @@
 - AlpacaDataCleaned
   - 50k，基于gpt4的模型以self-instuct方式生成，质量更高
   - https://github.com/gururise/AlpacaDataCleaned
+
+- ultrachat
+  - https://huggingface.co/datasets/YeungNLP/ultrachat
