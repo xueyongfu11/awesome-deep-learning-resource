@@ -110,8 +110,6 @@
 
 - MistralAI
   
-
-
 - https://github.com/IEIT-Yuan/Yuan-2.0
 
 - https://github.com/FlagAlpha/Llama2-Chinese
