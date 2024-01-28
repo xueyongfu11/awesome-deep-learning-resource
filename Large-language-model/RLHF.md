@@ -25,3 +25,5 @@
 
 - https://github.com/SupritYoung/Zhongjing
   - 医疗领域，使用了rlhf
+
+- https://huggingface.co/blog/trl-peft
