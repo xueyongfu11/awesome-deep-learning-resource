@@ -1,3 +1,39 @@
+<!-- TOC -->
+
+- [汇总](#%E6%B1%87%E6%80%BB)
+- [Paper writing](#paper-writing)
+- [Progress](#progress)
+- [code library](#code-library)
+- [TrustAI模型可解释性](#trustai%E6%A8%A1%E5%9E%8B%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7)
+- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
+- [competition](#competition)
+- [Tools](#tools)
+- [编程语言](#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
+- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
+- [leecode](#leecode)
+- [label Tools](#label-tools)
+- [Paper tools](#paper-tools)
+- [non deep learning](#non-deep-learning)
+        - [VPN](#vpn)
+        - [other](#other)
+
+<!-- /TOC -->
+- [code library](#code-library)
+- [TrustAI模型可解释性](#trustai%E6%A8%A1%E5%9E%8B%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7)
+- [自动添加标点](#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%82%B9)
+- [competition](#competition)
+- [Tools](#tools)
+- [编程语言](#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
+- [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
+- [leecode](#leecode)
+- [label Tools](#label-tools)
+- [Paper tools](#paper-tools)
+- [non deep learning](#non-deep-learning)
+        - [VPN](#vpn)
+        - [other](#other)
+
+<!-- /TOC -->
+
 
 
 # 汇总
@@ -30,7 +66,28 @@
     - 英文榜单
     - https://fewnlu.github.io/
     - https://github.com/THUDM/FewNLU
+
+# Paper writing
+
+- https://github.com/tuna/thuthesis
+  - LaTex模板
   
+- https://github.com/guanyingc/latex_paper_writing_tips
+  - Tips for Writing a Research Paper using LaTeX
+
+- https://github.com/dair-ai/ml-visuals
+  - 包含100多个常用的神经网络的图，是google在线PPT的形式
+
+- [那些漂亮的sci论文图一般用什么软件制作的](https://www.zhihu.com/question/27474094/answer/2874059464)
+
+- [同学们在写论文的时候发现了哪些神仙级网站](https://www.zhihu.com/question/361477416/answer/1771109544)
+
+- [深度学习神经网络结构设计及可视化开源工具整理分享](https://mp.weixin.qq.com/s/SEPgJFXeEtGZabFe44thSA)
+
+- [如何以初学者角度写好一篇国际学术论文](https://mp.weixin.qq.com/s/H_j4oi5siag8RECCr-C9Xg)
+
+
+
 
 # Progress
 - https://github.com/DengBoCong/nlp-paper

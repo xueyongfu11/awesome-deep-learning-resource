@@ -1,23 +1,8 @@
-**content**
 <!-- TOC -->
 
-- [RLHF](#rlhf)
 - [Blog](#blog)
 
 <!-- /TOC -->
-
-
-# RLHF
-
-- https://github.com/OpenLLMAI/OpenRLHF
-
-- [MIT哈佛等32人研究天团揭露RLHF最大弱点，囊括250+论文成果，挑战大模型机制](https://mp.weixin.qq.com/s/BCdX6PuEdSR7D3WJ4ffonA)
-- [RLHF几大常用框架实践对比（trlx、deepspeedchat、colossalaichat）](https://zhuanlan.zhihu.com/p/626046758?utm_campaign=shareopn&utm_medium=social&utm_oi=615941546193850368&utm_psn=1646992448919416832&utm_source=wechat_session)
-
-- https://github.com/GanjinZero/RRHF
-
-- https://github.com/CarperAI/trlx
-
 - https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
 
 - https://github.com/hpcaitech/ColossalAI/tree/main/applications/Chat
@@ -62,5 +47,7 @@
 - [无需训练实现价值观实时动态对齐：上交开源价值观对齐方法，闭源与开源大模型均适用](https://mp.weixin.qq.com/s/_CB0LBQVI_2NBiX63pyYSA)
 
 - [使用KTO进行更好、更便宜、更快速的LLM对齐](https://mp.weixin.qq.com/s/vFrcW43jhraZT8ZaDBxl7A)
+
+- [使用RLlib框架搭建大语言模型RLHF流程](https://zhuanlan.zhihu.com/p/648215474)
 
 
