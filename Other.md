@@ -184,6 +184,8 @@
 - https://github.com/mingx9527/Data_Label_Tools
 - [超强大NLP标注工具——Prodigy](https://zhuanlan.zhihu.com/p/448179133)
 
+- https://github.com/kooryan/reward-annotation-tool
+
 # Paper tools
 - https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
 - https://mp.weixin.qq.com/s/v64js_pupc7VjjWNq9Kosw

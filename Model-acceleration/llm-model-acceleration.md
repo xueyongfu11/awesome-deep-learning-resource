@@ -1,13 +1,10 @@
 **Content**
-
 <!-- TOC -->
 
 - [显存优化](#%E6%98%BE%E5%AD%98%E4%BC%98%E5%8C%96)
 - [推理框架](#%E6%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
 
 <!-- /TOC -->
-
-# 显存优化
 
 - flash-attention
   - https://github.com/Dao-AILab/flash-attention
@@ -33,6 +30,9 @@
 
 
 # 推理框架
+
+- https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen
+
 - https://github.com/ModelTC/lightllm
 
 - https://github.com/NVIDIA/FasterTransformer

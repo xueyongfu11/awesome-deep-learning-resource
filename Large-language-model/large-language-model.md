@@ -1,7 +1,7 @@
-**Content**
+**content**
 <!-- TOC -->
 
-- [Other](#other)
+- [llm](#llm)
 - [Training/Inference Framework](#traininginference-framework)
 - [leaderboard](#leaderboard)
 - [Agent](#agent)
@@ -10,12 +10,7 @@
 
 <!-- /TOC -->
 
-# Other
-
-- https://github.com/Hannibal046/Awesome-LLM
-
-- GPT-Fathom: Benchmarking Large Language Models to Decipher the Evolutionary Path towards GPT-4 and Beyond
-  - chatgpt到gpt4的进化路径
+# llm
 
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)
 
@@ -27,6 +22,8 @@
 
 - [大模型的涌现能力介绍](https://mp.weixin.qq.com/s/Jymq2ho3VQx7-o6y-JHxeg)
 
+- https://github.com/huggingface/datatrove
+  - 大规模处理、过滤和删除重复文本
 
 # Training/Inference Framework
 
