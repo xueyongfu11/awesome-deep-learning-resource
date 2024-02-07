@@ -92,7 +92,27 @@
        - 奖励模型：使用两个奖励模型，helpfulness和safety，使用chat model checkpoint来初始化；奖励模型与chat model不同地方就是分类header替换成regression header，
          损失使用的是binary ranking loss，使用了margin进一步优化
        - 为了提高多轮对话的一致性，提出可Ghost Attention
-    
+
+- llama open source repo
+  - https://github.com/tatsu-lab/stanford_alpaca
+    - 基于自生成的instructions来微雕LLaMA模型
+  - https://github.com/tloen/alpaca-lora
+    - 基于low-rank adaption训练的alpaca
+    - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
+  - https://github.com/Neutralzz/BiLLa
+  - https://github.com/starmpcc/CAMEL
+  - https://github.com/zjunlp/CaMA
+  - https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
+    - IDEA研究眼
+  - https://github.com/wenge-research/YaYi
+  - https://github.com/ymcui/Chinese-LLaMA-Alpaca-2
+      - 基于llama，扩增了词表，预训练时使用了lora，同时对embedding和header进行参数调整，预训练之后进行了指令微调
+      - 支持CFG解码方案：https://github.com/huggingface/transformers/issues/24536
+      - 支持更长文本：插值、ntk等方法
+  - https://github.com/ymcui/Chinese-LLaMA-Alpaca
+    - 扩充了中文词表，进行了预训练和指令微调
+  - https://github.com/hiyouga/LLaMA-Factory
+
 - Qwen
   - https://github.com/QwenLM/Qwen
   - 3T tokens；语言判别工具；去重工具；低质量数据过滤（rule-based & machine-learning-based）；上采样部分数据；在预训练阶段添加部分指令数据
@@ -127,16 +147,6 @@
 
 - https://github.com/SkyworkAI/Skywork
   - benchmark评估集效果好的很大一部分原因很可能是stage-2的in-domain training
-
-- https://github.com/ymcui/Chinese-LLaMA-Alpaca-2
-  - 基于llama，扩增了词表，预训练时使用了lora，同时对embedding和header进行参数调整，预训练之后进行了指令微调
-  - 支持CFG解码方案：https://github.com/huggingface/transformers/issues/24536
-  - 支持更长文本：插值、ntk等方法
-
-- https://github.com/ymcui/Chinese-LLaMA-Alpaca
-  - 扩充了中文词表，进行了预训练和指令微调
-
-- https://github.com/hiyouga/LLaMA-Efficient-Tuning
 
 - https://github.com/mosaicml/llm-foundry
 
@@ -183,21 +193,6 @@
   - https://vicuna.lmsys.org/
   - https://github.com/lm-sys/FastChat
   - https://chat.lmsys.org/
-
-- LAMMA
-  - https://huggingface.co/blog/trl-peft
-  - https://github.com/tatsu-lab/stanford_alpaca
-    - 基于自生成的instructions来微雕LLaMA模型
-  - https://github.com/tloen/alpaca-lora
-    - 基于low-rank adaption训练的alpaca
-    - 即使用了自生成的instruction和low-rank adaption微调/训练的LLaMA
-  - https://github.com/Neutralzz/BiLLa
-  - https://github.com/starmpcc/CAMEL
-  - https://github.com/zjunlp/CaMA
-  - https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
-    - IDEA研究眼
-  - https://github.com/wenge-research/YaYi
-
 
 
 - BLOOM
