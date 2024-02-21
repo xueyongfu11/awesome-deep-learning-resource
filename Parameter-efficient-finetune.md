@@ -1,4 +1,13 @@
+**Content**
+<!-- TOC -->
 
+- [Repo](#repo)
+- [survey](#survey)
+- [peft-llm](#peft-llm)
+- [peft](#peft)
+- [task-related peft](#task-related-peft)
+
+<!-- /TOC -->
 
 # Repo
 
@@ -6,17 +15,15 @@
 - https://github.com/thunlp/OpenDelta
 - https://github.com/adapter-hub/adapter-transformers
 
-
-
 # survey
 
-### 2023
+**2023**
 - Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning
 
 
 # peft-llm
 
-### 2023
+**2023**
 
 - ConPET: Continual Parameter-Efficient Tuning for Large Language Models
   - 提出基于PET的memory-based大模型持续学习方法
@@ -41,7 +48,7 @@
 
 # peft
 
-### 2023
+**2023**
 
 - π-Tuning: Transferring Multimodal Foundation Models
 with Optimal Multi-task Interpolation
@@ -62,7 +69,7 @@ with Optimal Multi-task Interpolation
 - Composing Parameter-Efficient Modules with Arithmetic Operations
   - 通过线性组合不同peft模块来研究分布泛化：不同分布数据训练的peft，多任务能力：不同nlp任务训练的peft，去学习能力：减少某种能力，领域泛化：泛化其他领域能力
 
-### 2022
+**2022**
 
 - Multi-Head Adapter Routing for Data-Efficient Fine-Tuning
   - 对前继工作Poly的讨论
@@ -92,7 +99,7 @@ with Optimal Multi-task Interpolation
     <img src="" align="middle" />
     </details>
 
-### 2021
+**2021**
 
 - AdapterFusion: Non-Destructive Task Composition for Transfer Learning
   - 每个任务训练相应的adapter，使用adapterFusion融合训练好的adapter
@@ -127,14 +134,14 @@ with Optimal Multi-task Interpolation
   - 仅限在模型的输入层
 
 
-### 2019
+**2019**
 
 - Parameter-Efficient Transfer Learning for NLP
   - adapter
 
 # task-related peft
 
-### 2023
+**2023**
 - Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering
   - 在freeze的bert的每层添加参数共享的adapter模块来吸收知识
   - 知识抽取：根据query中的实体获取三元组，然后将三元组组成句子从图数据库中检索相似的句子片段；直接使用query从图数据库中检索相似的句子片段
