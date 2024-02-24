@@ -63,12 +63,12 @@
 # Paper
 
 
-**2021**
+
 
 - AEDA: An Easier Data Augmentation Technique for Text Classification
 
 
-**2020**
+
 
 - Text Classification with Negative Supervision
 
@@ -91,7 +91,7 @@
     </details>
 
 
-**2019**
+
 
 - Induction Networks for Few-Shot Text Classification
   -  [[code]](https://github.com/wuzhiye7/Induction-Network-on-FewRel；https://github.com/zhongyuchen/few-shot-text-classification)
@@ -111,7 +111,7 @@
     <img src="../assets\CRNN.png" align="middle" />
     </details>
 
-**2018**
+
 
 - Hierarchical Multi-Label Classification Networks
   - <details>
@@ -124,7 +124,7 @@
     </details>
   
 
-**2015**
+
 
 - Recurrent Convolutional Neural Networks for Text Classification
   - AAAI  

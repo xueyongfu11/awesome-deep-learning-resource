@@ -242,7 +242,7 @@
 
 ## paper
 
-**2023**
+
 
 - Language Is Not All You Need: Aligning Perception with Language Models
   - [[code]](https://github.com/microsoft/unilm)
@@ -266,7 +266,7 @@
     <img src="" align="middle" />
     </details>
 
-**2022**
+
 
 - FINETUNED LANGUAGE MODELS ARE ZERO-SHOT LEARNERS
   
@@ -290,7 +290,7 @@
     <img src="" align="middle" />
     </details>
 
-**2021**
+
 - A General Language Assistant as a Laboratory for Alignment
   - <details>
     <summary>阅读笔记: </summary>

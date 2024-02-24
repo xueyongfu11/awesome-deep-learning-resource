@@ -79,7 +79,7 @@
   3. https://github.com/medtray/StruBERT
 
 
-**2022**
+
 - Extraction of Product Specifications from the Web - Going Beyond Tables and Lists
   - <details>
     <summary>阅读笔记: </summary>
@@ -121,7 +121,7 @@
     3. 预训练任务：获取cell的text embedding、该cell被mask后通过context得到的mask位置的embedding，使用contrastive learning来拉近二者的空间距离；cell-level masked-language-model  <br>
     </details>
 
-**2021**
+
 - TabularNet: A Neural Network Architecture for Understanding Semantic Structures of Tabular Data
   - KDD
   - <details>

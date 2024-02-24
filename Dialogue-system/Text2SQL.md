@@ -15,7 +15,7 @@
 
 # Paper
 
-**2021**
+
 
 - SDCUP: Schema Dependency-Enhanced Curriculum Pre-Training for Table Semantic Parsing
   - <details>

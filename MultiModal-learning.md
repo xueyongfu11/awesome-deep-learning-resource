@@ -35,7 +35,7 @@
 
 ## multi-modal 
 
-**2022**
+
 
 - BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
   - https://github.com/salesforce/BLIP
@@ -49,7 +49,7 @@
   - 提出了基于专家混合模型的多模态语言模型
   - 模型的输入同ViLT，使用可以是单塔模型，也可以是双塔模型。transformer层共享同一个多头self-attention，后面跟三个专家网络FFN，language-FFN、vision-FFN、LN-FFN
 
-**2021**
+
 
 - Align before Fuse: Vision and Language Representation Learning with Momentum Distillation
   - ALBEF
@@ -77,7 +77,7 @@
 - https://github.com/THUDM/CogVLM
 
 
-**2023**
+
 
 - BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
   - https://github.com/salesforce/LAVIS/tree/main/projects/blip2
@@ -96,14 +96,14 @@
 
 ## Information extraction
 
-**2023**
+
 
 - GeoLayoutLM: Geometric Pre-training for Visual Information Extraction
   - https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/GeoLayoutLM
 
 - Unifying Vision, Text, and Layout for Universal Document Processing
 
-**2020**
+
 
 - Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
   - 阅读笔记:  

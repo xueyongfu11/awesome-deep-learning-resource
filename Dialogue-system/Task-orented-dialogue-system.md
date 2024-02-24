@@ -81,7 +81,7 @@
   - code: https://github.com/yizhen20133868/Awesome-SLU-Survey
   - slot filling and intert detection survey
 
-**2021**
+
 
 - A Co-interactive Transformer for joint Slot Filling and Intent Detection
   - year: 2021 
@@ -111,7 +111,7 @@
     4. 使用带温度系数的softmax函数，损失使用交叉熵损失
   - code：https://github.com/liam0949/DCLOOS
 
-**2020**
+
 
 - SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling
   - year: 2020 EMNLP
@@ -128,7 +128,7 @@
   4. 使用masked language model训练目标，选用15%的token进行mask。最后loss是三种loss的加和
   5. https://github.com/RasaHQ/DIET-paper
 
-**2020**
+
 
 - BERT for Joint Intent Classification and Slot Filling
   - year: 2019
@@ -181,14 +181,14 @@
 
 ## DPL
 
-**2020**
+
 
 - Dialogue Transformers
   - rasa对话策略学习模型 https://github.com/RasaHQ/TED-paper
   - 对意图，行为，slot进行one-hot向量化，然后进行embedding
   - 各个特征的embedding之后concat，送入transformer
 
-**2019**
+
 
 - Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog
   - 2019 EMNLP-IJCNLP

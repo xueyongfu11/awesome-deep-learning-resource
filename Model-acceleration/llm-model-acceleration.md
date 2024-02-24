@@ -24,7 +24,7 @@
 
 - [Transformer参数量、计算量、显存占用分析](https://mp.weixin.qq.com/s/4_6J7-NZML5pTGTSH1-KMg)
 
-**2022**
+
 
 - SELF-ATTENTION DOES NOT NEED O(n2) MEMORY
   - 将self-attention的内存占用优化到了O(logn)
