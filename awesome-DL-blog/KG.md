@@ -11,6 +11,7 @@
   - [规则增强的表示学习](#%E8%A7%84%E5%88%99%E5%A2%9E%E5%BC%BA%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0)
   - [GNN-based KGEs](#gnn-based-kges)
 - [实体链接](#%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5)
+- [知识图谱构建](#%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E6%9E%84%E5%BB%BA)
 - [事理图谱](#%E4%BA%8B%E7%90%86%E5%9B%BE%E8%B0%B1)
 - [多模态知识图谱](#%E5%A4%9A%E6%A8%A1%E6%80%81%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1)
 

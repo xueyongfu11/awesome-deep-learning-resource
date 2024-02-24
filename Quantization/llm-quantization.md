@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Quantization-aware train/finetune](#quantization-aware-trainfinetune)
+  - [2023](#2023)
+  - [2022](#2022)
+- [Post-training quantization](#post-training-quantization)
+  - [2023](#2023-1)
+  - [2022](#2022-1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 - https://github.com/openppl-public/ppq

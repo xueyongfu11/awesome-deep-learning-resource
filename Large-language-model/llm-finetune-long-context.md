@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [支持更长的序列](#%E6%94%AF%E6%8C%81%E6%9B%B4%E9%95%BF%E7%9A%84%E5%BA%8F%E5%88%97)
+  - [train](#train)
+  - [inference](#inference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- TOC -->
 
 - [支持更长的序列](#%E6%94%AF%E6%8C%81%E6%9B%B4%E9%95%BF%E7%9A%84%E5%BA%8F%E5%88%97)

@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [训练框架](#%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6)
+- [Train](#train)
+  - [pipline parallelism](#pipline-parallelism)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 # 训练框架

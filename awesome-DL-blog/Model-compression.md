@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [加速与量化](#%E5%8A%A0%E9%80%9F%E4%B8%8E%E9%87%8F%E5%8C%96)
 - [KD](#kd)
   - [bert](#bert)
 - [Survey](#survey)

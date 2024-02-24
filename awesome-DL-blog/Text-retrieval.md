@@ -7,6 +7,7 @@
 - [交互模型](#%E4%BA%A4%E4%BA%92%E6%A8%A1%E5%9E%8B)
 - [交互和双塔结合](#%E4%BA%A4%E4%BA%92%E5%92%8C%E5%8F%8C%E5%A1%94%E7%BB%93%E5%90%88)
 - [Vector retrieval](#vector-retrieval)
+- [评估指标](#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

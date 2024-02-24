@@ -2,8 +2,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [电商搜索](#%E7%94%B5%E5%95%86%E6%90%9C%E7%B4%A2)
+- [行业搜索](#%E8%A1%8C%E4%B8%9A%E6%90%9C%E7%B4%A2)
 - [term权重计算](#term%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97)
+- [dense retrieval](#dense-retrieval)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

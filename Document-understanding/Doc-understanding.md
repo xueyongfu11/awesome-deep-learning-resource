@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Repo](#repo)
+- [Resource](#resource)
+- [Paper](#paper)
+  - [Pretain-multi-modal](#pretain-multi-modal)
+    - [2022](#2022)
+    - [2021](#2021)
+    - [2020](#2020)
+  - [Pretrain-cv-modal](#pretrain-cv-modal)
+    - [2022](#2022-1)
+  - [Non-pretrained](#non-pretrained)
+    - [2022](#2022-2)
+    - [2021](#2021-1)
+    - [2020](#2020-1)
+  - [Multi-modal document QA](#multi-modal-document-qa)
+- [Dataset](#dataset)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 # Repo

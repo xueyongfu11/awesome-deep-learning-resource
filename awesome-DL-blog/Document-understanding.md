@@ -4,6 +4,7 @@
 
 - [综述](#%E7%BB%BC%E8%BF%B0)
 - [文档信息抽取](#%E6%96%87%E6%A1%A3%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96)
+- [阅读顺序](#%E9%98%85%E8%AF%BB%E9%A1%BA%E5%BA%8F)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
