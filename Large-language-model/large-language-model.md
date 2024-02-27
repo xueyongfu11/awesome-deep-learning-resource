@@ -11,17 +11,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**content**
-<!-- TOC -->
-
-- [llm](#llm)
-- [Training/Inference Framework](#traininginference-framework)
-- [leaderboard](#leaderboard)
-- [Agent](#agent)
-- [table-llm](#table-llm)
-- [LLM和知识图谱](#llm%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1)
-
-<!-- /TOC -->
 
 # llm
 
