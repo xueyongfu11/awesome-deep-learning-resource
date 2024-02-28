@@ -8,8 +8,6 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-
-
 ### 2023
 
 - Improving Open Information Extraction with Large Language Models: A Study on Demonstration Uncertainty

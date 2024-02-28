@@ -1,6 +1,5 @@
 
 
-
 - https://github.com/BioFM/OpenBioMed
   - 多模态生物医疗领域大模型
 

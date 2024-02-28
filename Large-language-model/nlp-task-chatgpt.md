@@ -7,10 +7,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-
 # information extraction
-
-
 
 - How to Unleash the Power of Large Language Models for Few-shot Relation Extraction?
   - ACL 

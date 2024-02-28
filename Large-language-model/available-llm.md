@@ -7,13 +7,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**Content**
-<!-- TOC -->
-
-- [llm technology report](#llm-technology-report)
-- [paper](#paper)
-
-<!-- /TOC -->
 
 ## llm technology report
 

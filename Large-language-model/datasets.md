@@ -10,16 +10,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**content**
-<!-- TOC -->
-
-- [Datasets](#datasets)
-    - [各类数据集收集repo](#%E5%90%84%E7%B1%BB%E6%95%B0%E6%8D%AE%E9%9B%86%E6%94%B6%E9%9B%86repo)
-    - [chinese dataset](#chinese-dataset)
-    - [multi-language datasets](#multi-language-datasets)
-    - [english datasets](#english-datasets)
-
-<!-- /TOC -->
 
 # Datasets
 

@@ -7,14 +7,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**Content**
-<!-- TOC -->
-
-- [Repo](#repo)
-- [Blog](#blog)
-
-<!-- /TOC -->
-
 
 # Repo
 
