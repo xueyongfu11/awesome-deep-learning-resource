@@ -73,6 +73,10 @@
 
 - [如何以初学者角度写好一篇国际学术论文](https://mp.weixin.qq.com/s/H_j4oi5siag8RECCr-C9Xg)
 
+- 翻译
+  - https://www.deepl.com/translator
+  - chatgpt的翻译不错
+
 
 
 
