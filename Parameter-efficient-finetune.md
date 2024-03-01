@@ -26,13 +26,10 @@
 
 # peft-llm
 
-
-
 - LoRA+: Efficient Low Rank Adaptation of Large Models
+  - 2024
   - https://github.com/nikhil-ghosh-berkeley/loraplus
   - lora_A和lora_B使用不同的学习率
-
-
 
 - ConPET: Continual Parameter-Efficient Tuning for Large Language Models
   - 提出基于PET的memory-based大模型持续学习方法

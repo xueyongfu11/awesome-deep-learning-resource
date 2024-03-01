@@ -21,9 +21,18 @@
 
 - https://huggingface.co/blog/trl-peft
 
-# Blog
 
-- [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
+# Paper
+
+- Self-Rewarding Language Models
+  - year：2024
+  - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
+  - 基于打分结果筛选得分最高和最低的回复作为偏好数据对，然后使用DPO进行训练，相比直接用最高分数据微调的模型效果要好
+  - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
+  - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
+
+
+# Blog
 
 - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
 
@@ -32,8 +41,6 @@
 - [大模型免微调解锁对话能力，RLHF没必要了](https://zhuanlan.zhihu.com/p/670682075)
 
 - [DEITA-大模型指令微调的数据高效筛选方法](https://zhuanlan.zhihu.com/p/675928711)
-
-- [Meta AI 重磅推出LIMA！媲美GPT-4、无需RLHF就能对齐](https://mp.weixin.qq.com/s/sbIa-fIHvMlp-2aYtCtVLQ)
 
 - [大模型人类对齐方法综述](https://mp.weixin.qq.com/s/Hzi5MtjsS6dk1br7DzJOGQ)
 
