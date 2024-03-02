@@ -17,6 +17,10 @@
   - code: https://github.com/CASIA-LM/MoDS
   - [高质量指令数据筛选方法-MoDS](https://zhuanlan.zhihu.com/p/671183709)
 
+- Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models
+  - 总共两步：生成（E-step）：语言模型为每个输入上下文生成多个输出样本，然后使用二元奖励过滤这些样本以收集训练数据集.
+  - 改进（M-step）：原始语言模型在来自前一个 E-step 的训练数据集上进行监督微调，然后在下一个 E-step 中使用。
+
 - From Quantity to Quality: Boosting LLM Performance with Self-Guided Data Selection for Instruction Tuning
   - year: 2023
   - 指令数据筛选：首先基于聚类的方法筛选出多样性比较高的少量样本，然后对模型进行微调

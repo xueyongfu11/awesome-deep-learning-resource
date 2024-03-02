@@ -6,13 +6,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**Content**
-<!-- TOC -->
-
-- [显存优化](#%E6%98%BE%E5%AD%98%E4%BC%98%E5%8C%96)
-- [推理框架](#%E6%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
-
-<!-- /TOC -->
 
 - flash-attention
   - https://github.com/Dao-AILab/flash-attention
