@@ -16,10 +16,6 @@
 
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)
 
-- Lion: Adversarial Distillation of Closed-Source Large Language Model
-  - [blog](https://mp.weixin.qq.com/s/_LQVHMJqPzMzIuM4wsO2Dw)
-  - 先是根据chatgpt生成的数据进行模仿学习；基于小模型的生成结果来判别难样本；再生成数据来学习这种难样本
-
 - https://github.com/yanqiangmiffy/how-to-train-tokenizer
 
 - [大模型的涌现能力介绍](https://mp.weixin.qq.com/s/Jymq2ho3VQx7-o6y-JHxeg)

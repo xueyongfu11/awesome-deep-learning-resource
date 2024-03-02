@@ -17,13 +17,15 @@
   - code: https://github.com/CASIA-LM/MoDS
   - [高质量指令数据筛选方法-MoDS](https://zhuanlan.zhihu.com/p/671183709)
 
-
 - From Quantity to Quality: Boosting LLM Performance with Self-Guided Data Selection for Instruction Tuning
   - year: 2023
   - 指令数据筛选：首先基于聚类的方法筛选出多样性比较高的少量样本，然后对模型进行微调
   - 基于微调的大模型计算样本的指令跟随难度，即模型预测答案的概率越小，对模型来说难度越高，使用这样的样本继续训练能够带来更好的效果
   - code：https://github.com/MingLiiii/Cherry_LLM
-  
+
+- Lion: Adversarial Distillation of Closed-Source Large Language Model
+  - 先是根据chatgpt生成的数据进行模仿学习；基于小模型的生成结果来判别难样本；再生成数据来学习这种难样本
+  - [blog](https://mp.weixin.qq.com/s/_LQVHMJqPzMzIuM4wsO2Dw)
 
 - LIMA: Less Is More for Alignment
   - year: 2023
