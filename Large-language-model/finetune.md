@@ -3,6 +3,12 @@
 
 # 数据筛选
 
+- LESS: Selecting Influential Data for Targeted Instruction Tuning
+  - year: 2024
+  - 利用梯度信息来筛选少量训练集
+  - codes: https://github.com/princeton-nlp/LESS
+  - [Less is More](https://mp.weixin.qq.com/s/8KYNYvKCWhRJ3BWJxe0-Qw)
+
 - What Makes Good Data for Alignment? A Comprehensive Study of Automatic Data Selection in Instruction Tuning
   - year: 2023
   - 先对数据进行复杂性和质量评分，再通过多样性进行数据筛选

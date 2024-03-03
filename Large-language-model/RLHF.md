@@ -31,6 +31,10 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
 
+- Unveiling the Implicit Toxicity in Large Language Models
+  - year: 2023
+  - 提出了一种基于强化学习的方法，诱导LLM中的隐形毒性
+
 
 # Blog
 
