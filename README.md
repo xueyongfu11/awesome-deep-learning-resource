@@ -18,7 +18,7 @@
 - [大模型相关内容](Large-language-model/)
   - 开源大模型、微调、反馈学习、长上下文扩展、领域大模型、llm数据集等
 
-- [模型加速](Large-language-model)
+- [模型加速](Model-acceleration)
   - 大模型llm加速：llm训练加速、llm推理框架
   - 模型加速
 
