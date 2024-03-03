@@ -18,7 +18,6 @@
 - [Transformer参数量、计算量、显存占用分析](https://mp.weixin.qq.com/s/4_6J7-NZML5pTGTSH1-KMg)
 
 
-
 - SELF-ATTENTION DOES NOT NEED O(n2) MEMORY
   - 将self-attention的内存占用优化到了O(logn)
   - 考虑一个query和长度为n的key、value列表。attention的计算可以表示为分子和分母的迭代计算，而不需要保存中间计算结果，即i=i+1
@@ -32,29 +31,35 @@
 
 # 推理框架
 
-- https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen
+- vllm
+  - https://github.com/vllm-project/vllm
+  - 高效的kv-cache管理，基于pageAttention
+
+- https://github.com/bentoml/OpenLLM
+  - 支持multi-lora, 本质是peft的api调用
+
+- https://github.com/huggingface/text-generation-inference
+
+- DeepSpeed-FastGen
+  - https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen
+
+- Deepspeed Inference
+  - https://www.deepspeed.ai/tutorials/inference-tutorial/
 
 - https://github.com/ModelTC/lightllm
 
 - https://github.com/NVIDIA/FasterTransformer
+
 - https://github.com/NVIDIA/TensorRT-LLM
 
 - https://github.com/Jittor/JittorLLMs
 
 - https://github.com/InternLM/lmdeploy/
 
-- [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
+- Blog
+  - 大模型部署的方案：https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA
 
-- Deepspeed Inference
-  - https://www.deepspeed.ai/tutorials/inference-tutorial/
-
-- vllm
-  - https://github.com/vllm-project/vllm
-  - 高效的kv-cache管理，基于pageAttention
-
-- 大模型部署的方案
-  - https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA
-
+  - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
 
 
 

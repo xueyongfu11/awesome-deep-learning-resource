@@ -30,6 +30,13 @@
 
 
 
+# 模型并发推理
+
+- https://github.com/ShannonAI/service-streamer
+
+- https://github.com/thuwyh/InferLight
+
+
 # PTLM显存分析
 
 - [分析transformer模型的参数量、计算量、中间激活、KV cache](https://zhuanlan.zhihu.com/p/624740065)

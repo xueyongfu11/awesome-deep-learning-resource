@@ -131,8 +131,6 @@
   - [Yi-34b模型训练和微调对齐介绍](https://mp.weixin.qq.com/s/cPjioApwlx711pNIPpB24w)
 
 - MistralAI
-  
-- https://github.com/IEIT-Yuan/Yuan-2.0
 
 - https://github.com/FlagAlpha/Llama2-Chinese
   - 基于llama-2做中文预训练，词表扩充，推理加速

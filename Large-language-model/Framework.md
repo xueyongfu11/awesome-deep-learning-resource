@@ -36,4 +36,7 @@
     deepspeed提供了train_batch()
   - LayerSpec可以极大的节约内存占用
   - 使用TiedLayerSpec可以通过指定key来公用同一层的参数
-  - ChatGLM pipline并行demo：https://github.com/liucongg/ChatGLM-Finetuning
+  - demo
+    - https://github.com/HuangLK/transpeeder
+    - https://github.com/CoinCheung/gdGPT
+    - https://github.com/liucongg/ChatGLM-Finetuning
