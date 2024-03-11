@@ -36,6 +36,9 @@
 
 - https://github.com/thuwyh/InferLight
 
+- [Flask+Gunicorn的web服务](https://zhuanlan.zhihu.com/p/460235764)
+  - Gunicorn采用多进程的方式处理请求，通过辅助工作进程的方式提高应用的并发能力
+
 
 # PTLM显存分析
 

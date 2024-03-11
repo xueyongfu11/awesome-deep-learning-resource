@@ -1,5 +1,12 @@
 
 
+# 指令微调
+
+- Exploring the Impact of Instruction Data Scaling on Large Language Models: An Empirical Study on Real-World Use Cases
+  - year: 2023
+  - 主要探索了指令数据集的数据量对模型效果的影响，总的来说，仅仅通过增加指令数据的数量，可以连续的提升模型的性能
+  - 随着数据量的增加，在不同数据集上的表现有所不同，在Extract, Classification, Closed QA, 和Summarization任务上，增加数据带来的效果提升并未到达天花板；在Math, Code, 和COT任务上，继续增加数据，效果出现下降；在Translation, Rewrite, 和Brainstorming任务上，少量的数据就可以获得不错的效果，继续增加数据，模型提升非常有限。
+
 
 # 数据筛选
 
