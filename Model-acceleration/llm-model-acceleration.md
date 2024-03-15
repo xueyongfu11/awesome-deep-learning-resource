@@ -6,6 +6,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+# llm-model-acceleration
 
 - flash-attention
   - https://github.com/Dao-AILab/flash-attention
