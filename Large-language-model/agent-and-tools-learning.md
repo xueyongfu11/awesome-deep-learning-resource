@@ -17,6 +17,8 @@
 
 # Agent 
 
+- [agent微调：为 llms 提供通用agent能力](https://zhuanlan.zhihu.com/p/679126416)
+
 - [大模型agent学习探索](https://zhuanlan.zhihu.com/p/674630135)
 
 - [大模型agent](https://zhuanlan.zhihu.com/p/662239288)

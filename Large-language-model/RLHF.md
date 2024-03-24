@@ -40,6 +40,8 @@
 
 # Blog
 
+- [《大模型对齐方法》最新综述](https://zhuanlan.zhihu.com/p/686257781)
+
 - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
 
 - [一些RLHF的平替汇总](https://zhuanlan.zhihu.com/p/667152180)
