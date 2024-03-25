@@ -5,8 +5,6 @@
 - [llm](#llm)
 - [Training/Inference Framework](#traininginference-framework)
 - [leaderboard](#leaderboard)
-- [Agent](#agent)
-- [table-llm](#table-llm)
 - [LLM和知识图谱](#llm%E5%92%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -51,29 +49,6 @@
   - eval datasets: https://kaiokendev.github.io/context
   - https://github.com/THUDM/LongBench#leaderboard
   - 清华 中英文大模型评估
-
-
-# Agent
-
-
-
-- https://github.com/Paitesanshi/LLM-Agent-Survey
-
-- The Rise and Potential of Large Language Model Based Agents: A Survey
-
-- AgentTuning: Enabling Generalized Agent Abilities for LLMs
-  - https://github.com/THUDM/AgentTuning
-
-
-- [机器人自学停不下来！具身智能被革命](https://mp.weixin.qq.com/s/2bQTuwE-k6ukp--XHXIzMg)
-- [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)
-
-# table-llm
-
-- https://github.com/SpursGoZmy/Paper-List-about-LLM-and-Table
-
-- TableGPT: Towards Unifying Tables, Nature Language and Commands into One GPT
-  - [浙大团队推出TableGPT：可分析数据、作图和建模](https://zhuanlan.zhihu.com/p/643198387)
 
 
 # LLM和知识图谱

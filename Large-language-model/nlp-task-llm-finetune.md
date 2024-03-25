@@ -8,7 +8,9 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-### 2023
+# Information Extraction
+
+**2023**
 
 - Improving Open Information Extraction with Large Language Models: A Study on Demonstration Uncertainty
   - 一种基于大模型chatgpt或者llama的多轮的开放信息抽取方法。
@@ -73,7 +75,7 @@ Zero-shot Generalization
     - 基于GPT2模型微调，将多方面情感分析人物转化为instruction方式  <br>
     </details>
 
-### 2022
+**2022**
 
 - InstructionNER: A Multi-Task Instruction-Based Generative Framework for Few-shot NER
   - <details>
@@ -82,4 +84,19 @@ Zero-shot Generalization
     </details>
 
 
+# Table understanding
+
+- https://github.com/SpursGoZmy/Paper-List-about-LLM-and-Table
+
+- TableGPT: Towards Unifying Tables, Nature Language and Commands into One GPT
+  - [浙大团队推出TableGPT：可分析数据、作图和建模](https://zhuanlan.zhihu.com/p/643198387)
+
+- [综述：大型模型在表格数据上的应用](https://zhuanlan.zhihu.com/p/684981680)
+  - 包括传统的小模型和大模型在表格数据上的应用
+
+- [大模型技术在表格数据任务上的应用进展](https://mp.weixin.qq.com/s/VLOqVXoOO81arJuBkIO6Jw)
+  - 部分paper并非是LLM相关的
+
+- [面向表格数据的大模型推理综述](https://mp.weixin.qq.com/s/sXeyH2Ob8-CbGwHHBYOYfQ)
+  - 微调、ICL、使用工具、鲁棒性
 
