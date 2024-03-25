@@ -35,6 +35,7 @@
 - vllm
   - https://github.com/vllm-project/vllm
   - 高效的kv-cache管理，基于pageAttention
+  - [vLLM 源代码分析](https://zhuanlan.zhihu.com/p/641999400)
 
 - https://github.com/bentoml/OpenLLM
   - 支持multi-lora, 本质是peft的api调用
