@@ -26,6 +26,13 @@
 
 # Paper
 
+- Secrets of RLHF in Large Language Models
+Part II: Reward Modeling
+  - 2024
+
+- ORPO: Monolithic Preference Optimization without Reference Model
+  - 2024, ORPO
+
 - Self-Rewarding Language Models
   - year：2024
   - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
@@ -33,10 +40,16 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
 
+- Aligning Large Language Models with Human Preferences
+through Representation Engineering
+  - 2023
+
 - Unveiling the Implicit Toxicity in Large Language Models
   - year: 2023
   - 提出了一种基于强化学习的方法，诱导LLM中的隐形毒性
 
+- Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+  - 2023, DPO
 
 # Blog
 
@@ -46,8 +59,6 @@
 
 - [一些RLHF的平替汇总](https://zhuanlan.zhihu.com/p/667152180)
 
-- [大模型免微调解锁对话能力，RLHF没必要了](https://zhuanlan.zhihu.com/p/670682075)
-
 - [DEITA-大模型指令微调的数据高效筛选方法](https://zhuanlan.zhihu.com/p/675928711)
 
 - [大模型人类对齐方法综述](https://mp.weixin.qq.com/s/Hzi5MtjsS6dk1br7DzJOGQ)
@@ -56,20 +67,6 @@
 
 - [无需人类反馈即可对齐！田渊栋团队新作RLCD](https://mp.weixin.qq.com/s/sQolnpmBdCufVVR8q6GG8w)
 
-- [RRTF：通过反馈提高代码生成的能力](https://mp.weixin.qq.com/s/3lgztkBGlfCdHwygDggBbw)
-
-- [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
-
-- [深挖RLHF潜力，复旦语言和视觉团队创新奖励模型优化，让大模型更对齐](https://mp.weixin.qq.com/s/BSaGLikARlvM8yitYtlA3w)
-
-- [RLHF 和 DPO：简化和增强语言模型的微调](https://mp.weixin.qq.com/s/-5nzriCsoZIL3FKZxzbONw)
-
 - [大模型reward model的trick](https://mp.weixin.qq.com/s/G69w-Y2Jb_SgtvLcjCs_3g)
-
-- [无需训练实现价值观实时动态对齐：上交开源价值观对齐方法，闭源与开源大模型均适用](https://mp.weixin.qq.com/s/_CB0LBQVI_2NBiX63pyYSA)
-
-- [使用KTO进行更好、更便宜、更快速的LLM对齐](https://mp.weixin.qq.com/s/vFrcW43jhraZT8ZaDBxl7A)
-
-- [使用RLlib框架搭建大语言模型RLHF流程](https://zhuanlan.zhihu.com/p/648215474)
 
 
