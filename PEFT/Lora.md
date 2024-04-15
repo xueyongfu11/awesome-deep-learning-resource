@@ -2,6 +2,12 @@
 
 # Lora-related
 
+- PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large
+  - 2024
+
+- PRoLoRA: Partial Rotation Empowers More Parameter-Efficient LoRA
+  - 2024
+
 - RoSA: Accurate Parameter-Efficient Fine-Tuning via Robust Adaptation
   - 2024
   - RoSA同时训练两种类型的组件，即低秩组件和稀疏组件。低秩组件旨在捕获微调更新的主要结构，而稀疏组件则用于捕获更新中的重要但不那么显著的方向
@@ -36,8 +42,8 @@ Low-Rank Adaptation of Large Pre-trained Models
 - Navigating Text-To-Image Customization:
 From LyCORIS Fine-Tuning to Model Evaluation
   - 2024
-  - LoHa (Low-rank adaptation with Hadamard product): 这是LoRA的扩展，它使用Hadamard乘积（逐元素乘积）来进一步增加权重更新的秩，同时保持了与原始LoRA方法相同的可训练参数数量。
-  - LoKr (Low-rank adaptation with Kronecker product): 这是另一种扩展方法，使用Kronecker乘积来增加权重更新的秩。这种方法允许更大的矩阵秩，从而可能提高微调的性能
+  - LoHa: 这是LoRA的扩展，它使用Hadamard乘积（逐元素乘积）来进一步增加权重更新的秩，同时保持了与原始LoRA方法相同的可训练参数数量。
+  - LoKr: 这是另一种扩展方法，使用Kronecker乘积来增加权重更新的秩。这种方法允许更大的矩阵秩，从而可能提高微调的性能
 
 - LoDA: Low-Dimensional Adaptation of Large
 Language Models
