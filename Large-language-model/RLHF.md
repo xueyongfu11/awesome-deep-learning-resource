@@ -8,7 +8,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Repo
+# Resource
 
 - https://github.com/lucidrains/self-rewarding-lm-pytorch
 
@@ -23,8 +23,25 @@
 
 - https://huggingface.co/blog/trl-peft
 
+- DPO 
+  - [Fine-tune a Mistral-7b model with Direct Preference Optimization](https://towardsdatascience.com/fine-tune-a-mistral-7b-model-with-direct-preference-optimization-708042745aac)
 
 # Paper
+
+- PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models
+  - 2024
+  - 核心思想是，通过对模型权重矩阵进行SVD低秩分解，取前r个奇异值和奇异向量来作为A、B向量（奇异值分解为三个向量，若分别为A和B，需要把中间向量开方，然后乘到两个奇异向量上）
+  - 剩余的奇异值和奇异向量来构造残差矩阵
+  - 微调是只对A和B向量进行微调
+
+- RLCD: REINFORCEMENT LEARNING FROM CONTRASTIVE DISTILLATION FOR LM ALIGNMENT
+  - 2024，ICML，RLCD
+
+- Black-Box Prompt Optimization: Aligning Large Language Models without Model Training
+  - 2024, BPO
+
+- LARGE LANGUAGE MODELS AS OPTIMIZERS
+  - 2024, OPRO
 
 - Secrets of RLHF in Large Language Models
 Part II: Reward Modeling
@@ -51,22 +68,10 @@ through Representation Engineering
 - Direct Preference Optimization: Your Language Model is Secretly a Reward Model
   - 2023, DPO
 
-# Blog
 
-- [《大模型对齐方法》最新综述](https://zhuanlan.zhihu.com/p/686257781)
 
-- [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
 
-- [一些RLHF的平替汇总](https://zhuanlan.zhihu.com/p/667152180)
 
-- [DEITA-大模型指令微调的数据高效筛选方法](https://zhuanlan.zhihu.com/p/675928711)
 
-- [大模型人类对齐方法综述](https://mp.weixin.qq.com/s/Hzi5MtjsS6dk1br7DzJOGQ)
-
-- [CML2023开会了！RLHF技术究竟是什么？167页HuggingFace等《通过人类反馈的强化学习（RLHF）》教程讲解](https://mp.weixin.qq.com/s/BX3m0c0NSuG6hesb_3gguw)
-
-- [无需人类反馈即可对齐！田渊栋团队新作RLCD](https://mp.weixin.qq.com/s/sQolnpmBdCufVVR8q6GG8w)
-
-- [大模型reward model的trick](https://mp.weixin.qq.com/s/G69w-Y2Jb_SgtvLcjCs_3g)
 
 

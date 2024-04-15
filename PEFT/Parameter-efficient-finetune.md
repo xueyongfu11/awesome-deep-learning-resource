@@ -48,9 +48,7 @@
 
 # peft
 
-
-- π-Tuning: Transferring Multimodal Foundation Models
-with Optimal Multi-task Interpolation
+- π-Tuning: Transferring Multimodal Foundation Models with Optimal Multi-task Interpolation
 
 - Multi-Head Adapter Routing for Cross-Task Generalization
 
@@ -68,8 +66,6 @@ with Optimal Multi-task Interpolation
 - Composing Parameter-Efficient Modules with Arithmetic Operations
   - 通过线性组合不同peft模块来研究分布泛化：不同分布数据训练的peft，多任务能力：不同nlp任务训练的peft，去学习能力：减少某种能力，领域泛化：泛化其他领域能力
 
-
-
 - Multi-Head Adapter Routing for Data-Efficient Fine-Tuning
   - 对前继工作Poly的讨论
   - 相比Poly对adapter的线性组合，引入类似multi-head attention机制，将adapter中的A/B进行分片，在分片内线性组合，然后再把结果进行concatenate
@@ -83,9 +79,13 @@ with Optimal Multi-task Interpolation
 - AdaMix: Mixture-of-Adaptations for Parameter-efficient Model Tuning
 
 - Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning
-  - model name: (IA)3
+  - 2022, (IA)3
+  - 为了使微调更有效，IA3（通过抑制和放大内部激活注入适配器）使用学习向量重新调整内部激活
+  - IA3 权重被添加到 Transformer 模型的 key， value 和 feedforward 层
+  - IA3 不会增加任何推理延迟，因为适配器（adapter）权重可以与基础模型合并
 
 - P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
+  - 2021
   - <details>
     <summary>阅读笔记: </summary>
     - 相比P-tuning v1只在输入部分添加连续的prompt token，v2在每一层添加prompt token  <br>
@@ -98,8 +98,6 @@ with Optimal Multi-task Interpolation
     <img src="" align="middle" />
     </details>
 
-
-
 - AdapterFusion: Non-Destructive Task Composition for Transfer Learning
   - 每个任务训练相应的adapter，使用adapterFusion融合训练好的adapter
   - adapterFusion：使用FFN的输出作为query，各个adapter的输出作为key和value，然后计算注意力
@@ -108,6 +106,7 @@ with Optimal Multi-task Interpolation
   - EMNLP2021
 
 - LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS
+  - 2021
   - [[code]](https://github.com/microsoft/LoRA)
   - <details>
     <summary>阅读笔记: </summary>
@@ -132,20 +131,18 @@ with Optimal Multi-task Interpolation
   - 将prompt转化成可学习的embedding，并使用mlp+lstm对prompt embedding进行处理
   - 仅限在模型的输入层
 
-
-
-
 - Parameter-Efficient Transfer Learning for NLP
   - adapter
 
+
 # task-related peft
 
-
 - Knowledgeable Parameter Efficient Tuning Network for Commonsense Question Answering
+  - ACL
   - 在freeze的bert的每层添加参数共享的adapter模块来吸收知识
   - 知识抽取：根据query中的实体获取三元组，然后将三元组组成句子从图数据库中检索相似的句子片段；直接使用query从图数据库中检索相似的句子片段
   - 模型架构：将PLM的第l层的输出和上一层adapter的输出拼接起来，注意PLM的第l层输出要使用一个门函数
-  - ACL
+  
 
 - Infusing Hierarchical Guidance into Prompt Tuning: A Parameter-Efficient Framework for Multi-level Implicit Discourse Relation Recognition
   - ACL
