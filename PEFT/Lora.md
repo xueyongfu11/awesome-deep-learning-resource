@@ -33,21 +33,18 @@
   - LoTR是LoRA的扩展和泛化，旨在通过张量分解来改进微调过程，特别是在深度模型中
   - LoTR通过将每个层的低秩适配器构建为三个矩阵的乘积，从而在Transformer块中共享左右乘数，从而实现了更好的参数效率
 
-- BiLoRA: A Bi-level Optimization Framework for Overfitting-Resilient
-Low-Rank Adaptation of Large Pre-trained Models
+- BiLoRA: A Bi-level Optimization Framework for Overfitting-Resilient Low-Rank Adaptation of Large Pre-trained Models
   - 2024
   - 这篇论文提出了一个名为BiLoRA的新方法，旨在解决大型预训练模型在下游任务中微调时的过拟合问题，高模型在测试数据上的泛化能力
   - 双层次优化（BLO）：BiLoRA采用BLO框架，将参数分为两个层次进行优化。在较低层次，优化伪奇异向量矩阵（P和Q），而在较高层次，优化伪奇异值矩阵（Λ）
   - 正则化：为了保持P和Q的正交性，BiLoRA应用了正则化项R1。此外，还可以使用R2来鼓励Λ中的伪奇异值接近二值（0或1），进一步约束模型的复杂度
 
-- Navigating Text-To-Image Customization:
-From LyCORIS Fine-Tuning to Model Evaluation
+- Navigating Text-To-Image Customization:From LyCORIS Fine-Tuning to Model Evaluation
   - 2024
   - LoHa: 这是LoRA的扩展，它使用Hadamard乘积（逐元素乘积）来进一步增加权重更新的秩，同时保持了与原始LoRA方法相同的可训练参数数量。
   - LoKr: 这是另一种扩展方法，使用Kronecker乘积来增加权重更新的秩。这种方法允许更大的矩阵秩，从而可能提高微调的性能
 
-- LoDA: Low-Dimensional Adaptation of Large
-Language Models
+- LoDA: Low-Dimensional Adaptation of Large Language Models
   - 2024
   - 通过将传统的低秩线性适应（LoRA）推广为低维非线性适应（LoDA），提出了一种在参数效率方面具有竞争力的微调方法，本质是在A/B之间添加具有残差结构的非线性层。
   - LoDA和LoDA+方法可以提高非线性适应的表达能力，并且与LoRA相比，所需的可调参数数量几乎相同。
