@@ -26,23 +26,28 @@
 # peft-llm
 
 - ConPET: Continual Parameter-Efficient Tuning for Large Language Models
+  - 2023
   - 提出基于PET的memory-based大模型持续学习方法
   - Static ConPET：使用一个PET模块，历史数据的获取使用了动态的历史数据重现的方法
   - Dynamic ConPET：使用多个PET模块，基于一个选择模块选取topk的PET模块，然后合并预测结果，为了减少计算负担，将pet模块的预测结果cache起来
   - 选择模块从支持k-1个schema到支持k个schema，涉及到分类类别维度的扩展
 
 - LONGLORA: EFFICIENT FINE-TUNING OF LONGCONTEXT LARGE LANGUAGE MODELS
+  - 2023
   - 使用了shift short attention来对大模型上下文长度进行扩展
   - shift short attention：一半注意力头只在组内进行注意力的计算，另外一半注意力头使用带重叠的滑动，使得不同组可以进行信息交互
   - 为了解决长上下文lora微调相比full finetune效果差的问题，对embedding和LN层进行了微调
 
 - Bayesian low-rank adaptation for large language models
+  - 2023
 
 - LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language
+  - 2023
   - 提出大模型微调用的adapter训练系统框架，包含常用的adapter，lora
   - https://github.com/AGI-Edgerunners/LLM-Adapters
 
 - LORA-FA: MEMORY-EFFICIENT LOW-RANK ADAPTATION FOR LARGE LANGUAGE MODELS FINE-TUNING
+  - 2023
   - 对lora改进，通过freeze lora中的A的权重，只对B的权重进行微调，无需存储A输入的激活，存储B输入的激活，从而通过减小激活的方式来减少显存占用
 
 

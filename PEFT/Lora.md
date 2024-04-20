@@ -4,6 +4,8 @@
 
 - PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large
   - 2024
+  - 通过将模型权重分解用SVD分解，将主要的特征值和特征向量用lora进行微调，其余的特征值和特征向量保持不变
+  - 实验证明了对主要的特征值和特征向量进行微调，相比微调中间或者次要特征值和特征向量，可以获得更好的效果
 
 - PRoLoRA: Partial Rotation Empowers More Parameter-Efficient LoRA
   - 2024
@@ -21,8 +23,7 @@
   - 在每个PEFT模块前引入一个sigmoid门控层，并训练一个门控向量，该向量决定了是否将给定序列位置的激活传递到模块中。这个门控向量是在模型的所有序列位置共享的
   - 在推理阶段，PHATGOOSE使用标准的“top-k”路由策略，根据门控向量与给定激活的点积最高来选择模块
 
-- AFLoRA: Adaptive Freezing of Low Rank Adaptation in Parameter
-Efficient Fine-Tuning of Large Models
+- AFLoRA: Adaptive Freezing of Low Rank Adaptation in Parameter Efficient Fine-Tuning of Large Models
   - 2024
   - AFLoRA的核心思想是在微调过程中适应性地冻结低秩适应路径中的投影矩阵，以减少计算成本和缓解过拟合
   - 自适应冻结：AFLoRA引入了一个新颖的冻结得分（freezing score）机制，根据这个得分在微调过程中逐步冻结投影矩阵。这个得分基于权重在训练过程中的变化程度，当权重的变化变得可以忽略时，就可以将它们冻结
