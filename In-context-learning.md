@@ -8,13 +8,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- TOC -->
-
-- [Repo](#repo)
-- [survey](#survey)
-- [Paper](#paper)
-
-<!-- /TOC -->
 
 
 ## Repo
