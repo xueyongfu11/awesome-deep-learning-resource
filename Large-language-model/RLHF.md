@@ -36,6 +36,8 @@
 
 - RLCD: REINFORCEMENT LEARNING FROM CONTRASTIVE DISTILLATION FOR LM ALIGNMENT
   - 2024，ICML，RLCD
+  - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
+  - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
 
 - Black-Box Prompt Optimization: Aligning Large Language Models without Model Training
   - 2024, BPO
