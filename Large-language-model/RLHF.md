@@ -28,13 +28,7 @@
 
 # Paper
 
-- PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models
-  - 2024
-  - 核心思想是，通过对模型权重矩阵进行SVD低秩分解，取前r个奇异值和奇异向量来作为A、B向量（奇异值分解为三个向量，若分别为A和B，需要把中间向量开方，然后乘到两个奇异向量上）
-  - 剩余的奇异值和奇异向量来构造残差矩阵
-  - 微调是只对A和B向量进行微调
-
-- RLCD: REINFORCEMENT LEARNING FROM CONTRASTIVE DISTILLATION FOR LM ALIGNMENT
+- RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
   - 2024，ICML，RLCD
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
   - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
