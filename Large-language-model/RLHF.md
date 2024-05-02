@@ -63,6 +63,13 @@
   - 与RLHF相比，DPO算法更稳定、性能更好，且计算成本更低。它不需要在微调期间从LM中采样，也不需要进行大量的超参数调整
   - DPO方法背后的理论基础是，存在一个从奖励函数到最优策略的解析映射，这使得研究者能够将基于奖励的损失函数转换为直接针对策略的损失函数
 
+- A General Language Assistant as a Laboratory for Alignment
+  - 2021, Anthropic
+  - 偏好模型是在序列的最后一个token上加value head，value head负责预测一个标量值来表示得分；模仿学习是只用good example来微调模型
+  - 排序偏好模型相比二进制偏好模型有更好的效果
+  - context distillation: prompt会减少输入的长度等缺点，使用了一种基于KL的loss来对prompt微调
+  - 偏好模型预训练的第二个阶段，使用二进制判别的预训练方法相比排序偏好方法有更好的收益
+
 ## reward model
 
 - RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
