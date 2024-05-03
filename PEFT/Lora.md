@@ -23,6 +23,11 @@
   - 提出了lora系列变体的统一框架，通过控制不同的超参，可以得到不同的lora变体
   - 基于统一框架，得到了一些新的lora变体
 
+- LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning
+  - 2024.03
+  - 观察到lora训练的weight norm存在严重倾斜问题，只在token embedding层和lm header层有较大的值，中间层则有很小的值，因此lora训练时模型中间层有很少的权重更新（weight norm是否可以衡量？）
+  - 基于该观测，提出了一种基于重要性采样的方法来更新模型的中间层，对大部分中间层进行freeze
+
 - GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection
   - 2024,03, 
   - 从理论上证明了梯度是低秩的，可以使用类似lora的方法进行低秩分解

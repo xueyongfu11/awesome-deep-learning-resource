@@ -28,7 +28,7 @@
   - 大模型llm量化：训练后量化、量化感知训练
   - 量化
 
-- [参数有效性微调](Parameter-efficient-finetune.md)
+- [参数有效性微调](PEFT)
 
 - [多模态](MultiModal-learning.md)
 
@@ -40,4 +40,3 @@
   - 其它内容汇总
   - paper写作、paper工具
   - leecode、编程语言、各种工具
-  - 
