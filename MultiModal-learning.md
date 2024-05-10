@@ -11,16 +11,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- TOC -->
 
-- [Paper](#paper)
-    - [multi-modal](#multi-modal)
-    - [multi-modal-llm](#multi-modal-llm)
-    - [Information extraction](#information-extraction)
-    - [AIGC](#aigc)
-- [datasets](#datasets)
-
-<!-- /TOC -->
 - https://github.com/thuiar/MMSA
 - https://github.com/pliang279/awesome-multimodal-ml
 - https://github.com/Paranioar/Cross-modal_Retrieval_Tutorial

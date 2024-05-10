@@ -7,12 +7,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- TOC -->
-
-- [Repo](#repo)
-- [reference material](#reference-material)
-
-<!-- /TOC -->
 
 ## Repo
 - https://github.com/google/dopamine

@@ -13,18 +13,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<!-- TOC -->
-
-- [Repo](#repo)
-- [Paper](#paper)
-    - [survey](#survey)
-    - [table interpretation](#table-interpretation)
-    - [table pre-train](#table-pre-train)
-    - [table-qa](#table-qa)
-- [resource](#resource)
-- [Datasets](#datasets)
-
-<!-- /TOC -->
 
 
 # Repo
