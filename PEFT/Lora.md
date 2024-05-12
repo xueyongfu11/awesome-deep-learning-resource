@@ -2,10 +2,18 @@
 
 # Lora-related
 
+- Random Masking Finds Winning Tickets for Parameter Efficient Fine-tuning
+  - 2024.05, ICML 2024
+  - 提出一种基于参数随机mask的参数有效性微调方法，即随机对模型参数进行mask，只对未进行mask的参数进行调整
+  - 该方法随着微调参数的减少，使用更大的学习率，达到更好的效果，如1e-1
+
 - PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large
   - 2024.04, 
   - 通过将模型权重分解用SVD分解，将主要的特征值和特征向量用lora进行微调，其余的特征值和特征向量保持不变
   - 实验证明了对主要的特征值和特征向量进行微调，相比微调中间或者次要特征值和特征向量，可以获得更好的效果
+
+- ALoRA: Allocating Low-Rank Adaptation for Fine-tuning Large Language Models
+  - 2024.03, NAACL 2024
 
 - AFLoRA: Adaptive Freezing of Low Rank Adaptation in Parameter Efficient Fine-Tuning of Large Models
   - 2024.03,

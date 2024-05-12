@@ -13,8 +13,6 @@
 - [编程语言](#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80)
 - [深度学习基础和面试](#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E5%92%8C%E9%9D%A2%E8%AF%95)
 - [leecode](#leecode)
-- [label Tools](#label-tools)
-- [Paper tools](#paper-tools)
 - [non deep learning](#non-deep-learning)
     - [VPN](#vpn)
     - [other](#other)
@@ -53,31 +51,6 @@
     - 英文榜单
     - https://fewnlu.github.io/
     - https://github.com/THUDM/FewNLU
-
-# Paper writing
-
-- https://github.com/tuna/thuthesis
-  - LaTex模板
-  
-- https://github.com/guanyingc/latex_paper_writing_tips
-  - Tips for Writing a Research Paper using LaTeX
-
-- https://github.com/dair-ai/ml-visuals
-  - 包含100多个常用的神经网络的图，是google在线PPT的形式
-
-- [那些漂亮的sci论文图一般用什么软件制作的](https://www.zhihu.com/question/27474094/answer/2874059464)
-
-- [同学们在写论文的时候发现了哪些神仙级网站](https://www.zhihu.com/question/361477416/answer/1771109544)
-
-- [深度学习神经网络结构设计及可视化开源工具整理分享](https://mp.weixin.qq.com/s/SEPgJFXeEtGZabFe44thSA)
-
-- [如何以初学者角度写好一篇国际学术论文](https://mp.weixin.qq.com/s/H_j4oi5siag8RECCr-C9Xg)
-
-- 翻译
-  - https://www.deepl.com/translator
-  - chatgpt的翻译不错
-
-
 
 
 # Progress
@@ -126,10 +99,8 @@
   - https://github.com/HIT-SCIR/ltp
     - LTP（Language Technology Platform） 提供了一系列中文自然语言处理工具，用户可以使用这些工具对于中文文本进行分词、词性标注、句法分析等等工作。
 
-
 - https://github.com/alibaba/EasyTransfer
 - https://github.com/jindongwang/transferlearning
-
 
 - https://github.com/PaddlePaddle/PaddleHub
 - https://github.com/PaddlePaddle/models
@@ -138,7 +109,6 @@
 - https://github.com/princewen/tensorflow_practice
 - https://github.com/tensorflow/models
 - https://github.com/huseinzol05/NLP-Models-Tensorflow
-
 
 
 # TrustAI(模型可解释性)
@@ -213,7 +183,6 @@
   - https://github.com/youngyangyang04/TechCPP
 
 
-
 # leecode
 - https://github.com/TheAlgorithms/Python
 - https://github.com/labuladong/fucking-algorithm
@@ -222,41 +191,11 @@
 - https://github.com/labuladong/fucking-algorithm
 
 
-# label Tools
-- Labelme标注工具 https://github.com/wkentaro/labelme
-- Doccano https://github.com/doccano/doccano
-- https://github.com/jiesutd/YEDDA
-- https://github.com/SophonPlus/ChineseAnnotator
-- [构想：中文文本标注工具（内附多个开源文本标注工具）](https://zhuanlan.zhihu.com/p/31149817)
-- https://github.com/heartexlabs/awesome-data-labeling
-- https://github.com/mingx9527/Data_Label_Tools
-- [超强大NLP标注工具——Prodigy](https://zhuanlan.zhihu.com/p/448179133)
-
-- https://github.com/kooryan/reward-annotation-tool
-
-# Paper tools
-- https://github.com/yizhen20133868/Plot-Pictures-Tutorial-for-Paper
-- https://mp.weixin.qq.com/s/v64js_pupc7VjjWNq9Kosw
-  - 神经网络作图
-- https://www.heywhale.com/mw/project/63c274b8c421c0f295c1c268
-  - Matplotlib 最具价值的50个可视化项目
-
 # non deep learning
 - https://github.com/soimort/you-get
 - https://github.com/github/gitignore
 - https://github.com/wistbean/learn_python3_spider
   
-
-### VPN
-- https://github.com/Elegycloud/clash-for-linux-backup
-- https://github.com/PandaVPN/panda
-- https://github.com/it-andy-hou/fq
-- https://github.com/bannedbook/fanqiang
-- https://github.com/xiaoming-ssr/FanQiang-Book
-- https://github.com/sglfree/freesky
-
-- https://github.com/zzzgydi/clash-verge
-  - 全平台clash客户端
 
 ### other
 
