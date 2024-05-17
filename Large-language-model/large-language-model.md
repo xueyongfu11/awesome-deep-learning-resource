@@ -56,3 +56,15 @@
 - [LLM 时代的金融知识图谱实践](https://zhuanlan.zhihu.com/p/623104680)
   - 比较基础
 
+# 大模型幻觉
+
+- https://eecs.berkeley.edu/research/colloquium/230419-2/
+  - Reinforcement Learning from Human Feedback: Progress and Challenges
+
+- R-Tuning: Instructing Large Language Models to Say ‘I Don’t Know’
+  - 2023.11，NAACL 2024
+  - 提出了一种解决大模型幻觉现象的方法，即通过训练的方式让大模型拒答或者表示不确定性
+  - 拒答数据生成：首先用native模型生成指令集的预测结果，与ground truth对比，确定哪些指令集是native模型可回答的，哪些是不能回答的。使用一个prompt将指令集组合起来，并根据指令集的分类结果，以“I am sure” or “I am not sure”作为回复
+  - 使用拒答数据来微调模型，注意，只计算answer和“I am sure” or “I am not sure”的loss
+  - 推理时，先用native模型生成answer，然后用prompt组合起来，送入微调好的模型，得到模型的置信输出
+  - 不太适合用在在线对话模型上
