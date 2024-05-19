@@ -33,6 +33,11 @@
 - [NLP领域，你推荐哪些综述性的文章？](https://www.zhihu.com/question/355125622/answer/1143360427)
 
 
+## 基础知识
+
+- [大部分的大模型(LLM)采用左填充(left-padding)的原因](https://zhuanlan.zhihu.com/p/646852375)
+
+- [LLM padding 细节](https://zhuanlan.zhihu.com/p/675273498)
 
 ## 迁移学习
 - [多核最大均值差异（MK-MMD）与深度适应网络（DAN）](https://blog.csdn.net/qq_42983182/article/details/127430650)

@@ -24,6 +24,15 @@
 - [pytorch导出torchscript记录](https://blog.csdn.net/zysss_/article/details/128222610)
 
 
+## 模型加速
+
+- [【CUDA编程】Faster Transformer v1.0 源码详解](https://mp.weixin.qq.com/s/VzDCfKUMZBB_cO7uLjOUig)
+
+- [推荐几个不错的CUDA入门教程](https://godweiyang.com/2021/01/25/cuda-reading/)
+
+
+
+
 ## 官网
 
 - https://pytorch.org/docs/master/onnx.html

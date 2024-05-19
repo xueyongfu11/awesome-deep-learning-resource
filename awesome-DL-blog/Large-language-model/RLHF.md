@@ -28,7 +28,8 @@
 
 - [RAFT：玩不起RLHF？港科大开源高效对齐算法RAFT「木筏」，GPT扩散模型都能用 - 知乎](https://zhuanlan.zhihu.com/p/623069114)
 
-- [[大语言模型之RRHF]RRHF](https://zhuanlan.zhihu.com/p/622198781)
+- [大语言模型之RRHF](https://zhuanlan.zhihu.com/p/622198781)
+  - RRHF
 
 - [LLM RLHF 2024论文（三）RSO](https://zhuanlan.zhihu.com/p/690198669)
 
