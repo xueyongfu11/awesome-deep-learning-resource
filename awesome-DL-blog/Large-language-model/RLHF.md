@@ -30,6 +30,7 @@
 - [RLCD：无需人类反馈即可对齐！田渊栋团队新作RLCD：无害型、有益性、大纲写作全面超越基线模型](https://mp.weixin.qq.com/s/sQolnpmBdCufVVR8q6GG8w)
 
 - [RAFT：玩不起RLHF？港科大开源高效对齐算法RAFT「木筏」，GPT扩散模型都能用 - 知乎](https://zhuanlan.zhihu.com/p/623069114)
+  - RAFT
 
 - [大语言模型之RRHF](https://zhuanlan.zhihu.com/p/622198781)
   - RRHF

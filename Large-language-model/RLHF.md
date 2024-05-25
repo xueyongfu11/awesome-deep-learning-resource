@@ -53,6 +53,19 @@
   - 与RLHF相比，RAHF方法计算成本更低，因为它不需要额外训练奖励模型和价值网络
   - RAHF包含两种方法来控制表示和提取活动模式：单一LLM方法和双LLM方法。单一LLM方法通过对比指令来微调单一模型，而双LLM方法则分别对偏好和不偏好的响应进行监督训练
 
+- Preference Ranking Optimization for Human Alignment
+  - 2023.06，AAAI 2024
+  - 出了一种偏好排序方法，即采样不同源的回复并使用reward打分，并基于打分结果排序，然后计算首个最佳回复与其余回复的InfoNEC loss，然后drop掉最佳回复，然后使用第二位最佳回复与其余回复的InfoNCE loss，然后drop第二位最佳回复，重复过程，知道drop掉所有回复。将所有的infoNCE loss相加，作为loss1。
+  - 选择首个最佳回复计算SFT loss，作为loss2。总loss未loss1和loss2的和。
+
+- RRHF: Rank Responses to Align Language Models with Human Feedback without tears
+  - 2023.04， NeurIPS 2023
+  - 采样不同源的回复，并用reward打分。使用ranking loss + best response sft loss最为total loss
+
+- RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment
+  - 2023.04， TMLT
+  - 使用reward模型过滤出高质量样本，然后使用高质量的样本微调模型
+
 - Unveiling the Implicit Toxicity in Large Language Models
   - year: 2023
   - 研究者们提出了一种基于强化学习的攻击方法，旨在进一步诱导LLMs生成隐性有毒的文本
