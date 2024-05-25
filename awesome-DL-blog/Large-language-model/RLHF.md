@@ -3,12 +3,15 @@
 # 基于强化学习的对齐方法
 
 - [大模型的PPO、DPO偏好优化算法玩不起？那建议你看一下ORPO](https://zhuanlan.zhihu.com/p/688583797)
+  - ORPO
 
 - [RLHF 和 DPO：简化和增强语言模型的微调](https://mp.weixin.qq.com/s/-5nzriCsoZIL3FKZxzbONw)
 
 - [大模型免微调解锁对话能力，RLHF没必要了！节省大量成本和时间，一作上交大校友](https://zhuanlan.zhihu.com/p/670682075)
+  - URIAL, base model的免微调方法
 
 - [BPO：灵活的 Prompt 对齐优化技术](https://zhuanlan.zhihu.com/p/667767805)
+  - BPO，主要是优化prompt
 
 - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
 
