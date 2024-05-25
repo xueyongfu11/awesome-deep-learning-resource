@@ -5,15 +5,8 @@
 - [大模型的PPO、DPO偏好优化算法玩不起？那建议你看一下ORPO](https://zhuanlan.zhihu.com/p/688583797)
   - ORPO
 
-- [RLHF 和 DPO：简化和增强语言模型的微调](https://mp.weixin.qq.com/s/-5nzriCsoZIL3FKZxzbONw)
-
-- [大模型免微调解锁对话能力，RLHF没必要了！节省大量成本和时间，一作上交大校友](https://zhuanlan.zhihu.com/p/670682075)
-  - URIAL, base model的免微调方法
-
-- [BPO：灵活的 Prompt 对齐优化技术](https://zhuanlan.zhihu.com/p/667767805)
-  - BPO，主要是优化prompt
-
 - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
+  - PPO原理解读，非常详细
 
 - [使用KTO进行更好、更便宜、更快速的LLM对齐](https://mp.weixin.qq.com/s/vFrcW43jhraZT8ZaDBxl7A)
 
@@ -41,6 +34,25 @@
 
 - [Preference Tuning LLMs with Direct Preference Optimization Methods](https://huggingface.co/blog/pref-tuning)
 
+- [一些RLHF的平替汇总](https://blog.csdn.net/m0_37310036/article/details/134453906)
+
+
+## reward模型
+
 - [RLHF 中的SOTA奖励函数的训练](https://zhuanlan.zhihu.com/p/688636894)
+  - 基于iterative DPO训练
+  - 模型在 AlpacaEval 榜单上排名第二
+  - 报告url：https://efficient-unicorn-451.notion.site/Reward-Modeling-for-RLHF-abe03f9afdac42b9a5bee746844518d0
 
 - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
+
+- [【手撕RLHF-LLaMA2】 Reward Model PyTorch实现](https://zhuanlan.zhihu.com/p/679012951)
+
+
+## 免微调对齐
+
+- [大模型免微调解锁对话能力，RLHF没必要了！节省大量成本和时间，一作上交大校友](https://zhuanlan.zhihu.com/p/670682075)
+  - URIAL, base model的免微调方法
+
+- [BPO：灵活的 Prompt 对齐优化技术](https://zhuanlan.zhihu.com/p/667767805)
+  - BPO，主要是优化prompt
