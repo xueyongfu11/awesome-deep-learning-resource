@@ -21,7 +21,7 @@
 
    使用上述1和2中的方式计算奖励值，然后基于下面的公式计算loss：
 
-   ![](D:\Codes\02-Synchronize-repo\awesome-deep-learning-resource\assets\reward.png)
+   ![](../assets/reward.png)
 
 4. token-level pairwise reward loss：**本质是accept response和reject response的token-wise的reward的差值的sigmoid（尽可能的去掉pad token loss，并且去掉prompt token loss）**
 
