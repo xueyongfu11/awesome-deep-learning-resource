@@ -9,7 +9,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-
 # llm
 
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)

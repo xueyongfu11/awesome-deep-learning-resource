@@ -1,11 +1,4 @@
-<!-- TOC -->
-
-- [llm-model-acceleration](#llm-model-acceleration)
-- [推理框架](#%E6%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
-
-<!-- /TOC -->%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 # llm-model-acceleration
 
@@ -34,39 +27,22 @@
 # 推理框架
 
 - https://github.com/alibaba/rtp-llm
-
-- vllm
-  - https://github.com/vllm-project/vllm
-  - 高效的kv-cache管理，基于pageAttention
-  - [vLLM 源代码分析](https://zhuanlan.zhihu.com/p/641999400)
-  - [大模型推理框架 vLLM 源码解析（一）：框架概览](https://zhuanlan.zhihu.com/p/681402162)
-  - [大模型推理框架 vLLM 源码解析（二）：Block 模块分配和管理](https://zhuanlan.zhihu.com/p/688660090)
-
 - https://github.com/bentoml/OpenLLM
   - 支持multi-lora, 本质是peft的api调用
-
 - https://github.com/huggingface/text-generation-inference
-
 - DeepSpeed-FastGen
   - https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen
-
 - Deepspeed Inference
   - https://www.deepspeed.ai/tutorials/inference-tutorial/
-
 - https://github.com/ModelTC/lightllm
-
 - https://github.com/NVIDIA/FasterTransformer
-
 - https://github.com/NVIDIA/TensorRT-LLM
-
 - https://github.com/Jittor/JittorLLMs
-
 - https://github.com/InternLM/lmdeploy/
-
 - Blog
   - 大模型部署的方案：https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA
 
   - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
 
-
+1. - - 
 

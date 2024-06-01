@@ -1,11 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Blog](#blog)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 # Resource
@@ -26,6 +19,8 @@
 
 - DPO 
   - [Fine-tune a Mistral-7b model with Direct Preference Optimization](https://towardsdatascience.com/fine-tune-a-mistral-7b-model-with-direct-preference-optimization-708042745aac)
+
+- https://github.com/CarperAI/trlx
 
 # Paper
 
@@ -107,7 +102,6 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
   - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
-
 
 
 
