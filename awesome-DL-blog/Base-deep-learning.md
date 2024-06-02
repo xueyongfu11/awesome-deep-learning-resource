@@ -1,21 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [类别不平衡问题](#%E7%B1%BB%E5%88%AB%E4%B8%8D%E5%B9%B3%E8%A1%A1%E9%97%AE%E9%A2%98)
-- [LSTM](#lstm)
-- [卷积](#%E5%8D%B7%E7%A7%AF)
-- [梯度消失和梯度爆炸](#%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8)
-- [BN LN](#bn-ln)
-- [鲁棒性](#%E9%B2%81%E6%A3%92%E6%80%A7)
-- [Attention](#attention)
-- [损失函数](#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0)
-- [优化器](#%E4%BC%98%E5%8C%96%E5%99%A8)
-- [激活函数](#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0)
-- [评价指标](#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
-- [算法基础](#%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 

@@ -1,18 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [NER](#ner)
-  - [2022](#2022)
-  - [2021](#2021)
-- [少样本NER](#%E5%B0%91%E6%A0%B7%E6%9C%ACner)
-  - [2023](#2023)
-  - [2022](#2022-1)
-  - [2021](#2021-1)
-- [地址解析](#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)
-  - [2021](#2021-2)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## NER
@@ -57,5 +45,4 @@
 ### 2021
 - [天池中文NLP地址要素解析大赛Top方案总结](https://mp.weixin.qq.com/s/bjbcT0Yt-Q-4KjQSg-3mFQ)
 - [BERT+Biaffine结构中文NLP地址要素解析](https://mp.weixin.qq.com/s/o5BZ8-l-rjyJmF0V_G1cNg)
-
 

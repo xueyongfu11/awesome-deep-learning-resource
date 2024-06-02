@@ -1,10 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [综述性](#%E7%BB%BC%E8%BF%B0%E6%80%A7)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 - [few-shot learning/one-shot learning 小样本/零样本学习 学习笔记](https://zhuanlan.zhihu.com/p/491874355)

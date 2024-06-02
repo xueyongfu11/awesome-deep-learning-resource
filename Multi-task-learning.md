@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [Repo](#repo)
-- [Paper](#paper)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Repo
@@ -49,7 +44,6 @@
   - 为了获取平移不变性，以梯度的模作为调节的权重
 
 - GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks
-
 
 
 

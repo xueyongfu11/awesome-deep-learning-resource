@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [NLP](#nlp)
-  - [文本分类增强](#%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%A2%9E%E5%BC%BA)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # NLP
@@ -20,5 +15,4 @@
 ## 文本分类增强
 - [文本分类冷启动和低资源？文本增强了解一下](https://zhuanlan.zhihu.com/p/112877845)
 - [EMNLP2021之AEDA：一种更简单的文本分类数据增强技术](https://mp.weixin.qq.com/s?__biz=Mzg5MTU1NTE1OQ==&mid=2247484975&idx=1&sn=7d721053b41cb0dbb0826960b1716c2a&chksm=cfcada17f8bd5301beb33f5920c53814441d413cc9513cfc469d5a2da0e4282b19514f1b0384&mpshare=1&scene=24&srcid=09092sEMgIHmBJdK0P9be1kR&sharer_sharetime=1631200609463&sharer_shareid=9d627645afe156ff11b0a8519d982bcd&exportkey=A74373Mmwx6ksraYoF8dM9o%3D&pass_ticket=3YSLQZ0%2BFGkSbSLIxeI5ld3daRcSE5x5m%2FqFag47PCWFTeogIXft8nu1uI5rJumG&wx_header=0#rd)
-
 

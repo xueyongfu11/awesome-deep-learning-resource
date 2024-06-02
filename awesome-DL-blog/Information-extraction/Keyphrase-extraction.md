@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [关键短语抽取](#%E5%85%B3%E9%94%AE%E7%9F%AD%E8%AF%AD%E6%8A%BD%E5%8F%96)
-- [新词发现](#%E6%96%B0%E8%AF%8D%E5%8F%91%E7%8E%B0)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 

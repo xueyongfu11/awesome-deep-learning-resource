@@ -1,13 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [Repo](#repo)
-- [Paper](#paper)
-  - [航班行程排序](#%E8%88%AA%E7%8F%AD%E8%A1%8C%E7%A8%8B%E6%8E%92%E5%BA%8F)
-    - [2020](#2020)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Repo

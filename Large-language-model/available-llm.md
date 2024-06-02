@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [llm technology report](#llm-technology-report)
-- [paper](#paper)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## llm technology report
@@ -48,7 +43,7 @@
     - 为了获得更好的生成性能，通过mask更长span，以及对整句进行mask
     - 使用的2D位置编码：被mask的序列绝对位置; 非span区域位置为0，span内部位置从1开始编码
     - https://github.com/THUDM/GLM
-      
+    
   - https://github.com/THUDM/GLM-130B
   
   - https://github.com/THUDM/ChatGLM-6B
@@ -78,7 +73,7 @@
     - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
       - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
     - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
-    
+  
 - LLaMA
   - LLaMA: Open and Efficient Foundation Language Models
     - 数据处理：质量过滤，重复过滤
@@ -290,5 +285,4 @@
     3. context distillation: prompt会减少输入的长度等缺点，使用了一种基于KL的loss来对prompt微调  <br>
     4. 偏好模型预训练的第二个阶段，使用二进制判别的预训练方法相比排序偏好方法有更好的收益
     </details>
-
 

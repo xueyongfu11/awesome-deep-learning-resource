@@ -1,22 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [Blog](#blog)
-- [Survey](#survey)
-- [问答系统方案](#%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88)
-- [Retrieval-based dialogue system](#retrieval-based-dialogue-system)
-- [FAQ](#faq)
-- [Open-domain dialogue system](#open-domain-dialogue-system)
-- [Dialogue generation](#dialogue-generation)
-- [Task-oriented dialogue system](#task-oriented-dialogue-system)
-  - [end2end](#end2end)
-  - [DST](#dst)
-  - [DPL](#dpl)
-  - [RASA](#rasa)
-- [KBQA](#kbqa)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Blog
 

@@ -1,12 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [Repo](#repo)
-- [survey](#survey)
-- [Paper](#paper)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 
@@ -40,7 +34,7 @@
 - Improving In-Context Few-Shot Learning via Self-Supervised Training
   - Meta Ai; NAACL-HLT 2022
   - 为了提高in-context few-shot能力，提出了在预训练和下游few-shot学习这两个阶段之间添加自监督训练，目的是为了减少预训练模型预训练目标和in-context
-few-shot学习目标的差异
+  few-shot学习目标的差异
 
 - What Makes Good In-Context Examples for GPT-3?
   - Duke & microsoft; DeeLIO 2022

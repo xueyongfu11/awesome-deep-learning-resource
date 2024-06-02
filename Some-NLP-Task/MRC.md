@@ -1,15 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Dataset](#dataset)
-  - [english datasts](#english-datasts)
-    - [抽取式阅读理解](#%E6%8A%BD%E5%8F%96%E5%BC%8F%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3)
-    - [其他QA数据集](#%E5%85%B6%E4%BB%96qa%E6%95%B0%E6%8D%AE%E9%9B%86)
-  - [chinese datasets](#chinese-datasets)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 

@@ -1,17 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Paper](#paper)
-  - [survey](#survey)
-  - [table interpretation](#table-interpretation)
-  - [table pre-train](#table-pre-train)
-  - [table-qa](#table-qa)
-- [resource](#resource)
-- [Datasets](#datasets)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 
@@ -203,5 +190,4 @@
 # Datasets
 - https://nextplusplus.github.io/TAT-QA/
 - https://nextplusplus.github.io/TAT-HQA/
-
 

@@ -1,16 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [paper](#paper)
-  - [2022](#2022)
-  - [2021](#2021)
-  - [2020](#2020)
-- [term weight](#term-weight)
-- [ES](#es)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 
@@ -87,5 +75,4 @@
   - 中文分词器
 - https://github.com/medcl/elasticsearch-analysis-pinyin
 - https://github.com/NLPchina/elasticsearch-analysis-ansj
-
 

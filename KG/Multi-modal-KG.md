@@ -1,12 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [survey](#survey)
-- [KG Completion](#kg-completion)
-- [KG Alignment](#kg-alignment)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # survey
@@ -24,7 +18,7 @@
 - Paper: 
   - year: 
   - 阅读笔记:  
-     
+    
   - code: https://github.com/zjunlp/MKGformer/
   
 
