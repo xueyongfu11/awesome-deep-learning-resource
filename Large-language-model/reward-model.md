@@ -13,6 +13,8 @@
 
    一个基于该方式的实现：https://github.com/CarperAI/autocrit/tree/main
 
+2. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，
+
 2. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，然后使用MES等计算loss。要求训练数据的标签是一个标量值（打分值）。  
 
    存在的问题：不同标注人员的打分标准很难保持一致，如标注员A：0.8 VS 0.7，标注员B：0.6 VS 0.5

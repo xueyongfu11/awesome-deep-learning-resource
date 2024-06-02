@@ -1,9 +1,11 @@
 [TOC]
 
+
+
 ## 作图
 
 - 常用
-	- SciencePlots
+	- SciencePlots: 只支持折线图和散点图
 	- matplotlib: 科研论文绘图实操干货！11类Matplotlib图表，含代码
 	- seaborn
 	- https://hiplot.cn/
