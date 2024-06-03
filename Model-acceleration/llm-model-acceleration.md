@@ -1,11 +1,4 @@
-<!-- TOC -->
 
-- [llm-model-acceleration](#llm-model-acceleration)
-- [推理框架](#%E6%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
-
-<!-- /TOC -->%8E%A8%E7%90%86%E6%A1%86%E6%9E%B6)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # llm-model-acceleration
 
@@ -62,6 +55,7 @@
 - https://github.com/Jittor/JittorLLMs
 
 - https://github.com/InternLM/lmdeploy/
+  - 中文文档：https://lmdeploy.readthedocs.io/zh-cn/latest/serving/api_server.html
 
 - Blog
   - 大模型部署的方案：https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA
