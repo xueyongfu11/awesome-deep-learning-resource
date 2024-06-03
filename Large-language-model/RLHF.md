@@ -4,11 +4,13 @@
 # Resource
 
 - https://github.com/huggingface/alignment-handbook
+  - DPO，IPO，KTO，excluding PPO and reward model
 
 - https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
   - reward model realted codes from trlx
 
 - https://github.com/hpcaitech/ColossalAI/tree/main/applications/ColossalChat
+  - 提及两种reward loss计算方法
 
 - https://github.com/OpenLMLab/MOSS-RLHF
 

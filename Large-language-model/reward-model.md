@@ -1,9 +1,13 @@
-
 # RLHF中reward model的模型选型？奖励值如何计算？Loss如何计算？
 
-## reward model可以使用哪些模型？模型如何输出相应的奖励值？
+reward 模型的训练涉及到几个问题：
 
-### decoder-only模型
+- 奖励值如何输出？（注意不是reward model loss）
+- reward model的常见loss有哪些？
+- 针对不同的奖励值的输出方法、不同的loss计算，相应的reward model训练数据样式是怎么样的？
+- 可以使用的模型结构有哪些？
+
+## decoder-only模型
 
 如常见的GPT-1/2/3，Llama，Qwen，gemma等模型可以作为reward model的基座模型。
 
@@ -13,19 +17,44 @@
 
    一个基于该方式的实现：https://github.com/CarperAI/autocrit/tree/main
 
-2. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，
-
 2. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，然后使用MES等计算loss。要求训练数据的标签是一个标量值（打分值）。  
 
    存在的问题：不同标注人员的打分标准很难保持一致，如标注员A：0.8 VS 0.7，标注员B：0.6 VS 0.5
 
-3. Rank打分的方法（InstructGPT方法）
+3. token-level pairwise reward loss：有两种实现方式
 
-   使用上述1和2中的方式计算奖励值，然后基于下面的公式计算loss：
+   1. OpenAI的实现方式：
 
-   ![](../assets/reward.png)
+      ```python
+      class LogSigLoss(nn.Module):
+          """
+          Pairwise Loss for Reward Model
+          Details: https://arxiv.org/abs/2203.02155
+          """
+      
+          def forward(self, chosen_reward: torch.Tensor, reject_reward: torch.Tensor) -> torch.Tensor:
+              return -torch.nn.functional.logsigmoid(chosen_reward - reject_reward).mean()
+      ```
 
-4. token-level pairwise reward loss：**本质是accept response和reject response的token-wise的reward的差值的sigmoid（尽可能的去掉pad token loss，并且去掉prompt token loss）**
+   2. Anthropic的实现方式
+
+      ```python
+      class LogExpLoss(nn.Module):
+          """
+          Pairwise Loss for Reward Model
+          Details: https://arxiv.org/abs/2204.05862
+          """
+      
+          def forward(self, chosen_reward: torch.Tensor, reject_reward: torch.Tensor) -> torch.Tensor:
+              loss = torch.log(1 + torch.exp(reject_reward - chosen_reward)).mean()
+              return loss
+      ```
+
+   其中reject_reward和chosen_reward是一维列表，response中的每个token输出一个reward值
+
+4. token-level pairwise reward loss的具体实现方法
+
+   **本质是accept response和reject response的token-wise的reward的差值的sigmoid（尽可能的去掉pad token loss，并且去掉prompt token loss）**
 
    具体的实现方式参考：[url](https://github.com/CarperAI/trlx/blob/main/examples/summarize_rlhf/reward_model/reward_model.py)
 
@@ -76,7 +105,7 @@
        return loss
    ```
 
-   ### encoder-only模型
+   ## encoder-only模型
 
    主要是使用传统的bert、deberta等模型，作为reward model的基座模型。
 
@@ -89,7 +118,7 @@
 
    
 
-
+[**点击查看我的更多AI学习笔记github**](https://github.com/xueyongfu11/awesome-deep-learning-resource)
 
 
 
