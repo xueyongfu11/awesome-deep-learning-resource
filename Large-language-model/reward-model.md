@@ -1,4 +1,4 @@
-# RLHF中reward model的模型选型？奖励值如何计算？Loss如何计算？
+# RLHF中reward model的奖励值有哪些计算方法？Loss如何计算？
 
 reward 模型的训练涉及到几个问题：
 
