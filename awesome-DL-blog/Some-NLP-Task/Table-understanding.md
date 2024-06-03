@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [表格预训练](#%E8%A1%A8%E6%A0%BC%E9%A2%84%E8%AE%AD%E7%BB%83)
-  - [2021](#2021)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 

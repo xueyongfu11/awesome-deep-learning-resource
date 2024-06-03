@@ -1,23 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-  - [地址解析](#%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)
-- [survey](#survey)
-  - [NER](#ner)
-    - [2022](#2022)
-    - [2019](#2019)
-  - [few-shot ner](#few-shot-ner)
-    - [2022](#2022-1)
-    - [2021](#2021)
-  - [data-augmentation](#data-augmentation)
-    - [2022](#2022-2)
-- [Dataset](#dataset)
-  - [english datasets](#english-datasets)
-  - [chinese datasets](#chinese-datasets)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 

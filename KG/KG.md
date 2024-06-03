@@ -1,16 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Dataset](#dataset)
-  - [KG](#kg)
-  - [知识图谱构建](#%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E6%9E%84%E5%BB%BA)
-  - [图神经网络训练](#%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
+[TOC]
 
 # Repo
 

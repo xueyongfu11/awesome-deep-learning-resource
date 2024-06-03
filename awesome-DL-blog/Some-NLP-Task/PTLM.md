@@ -1,18 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [汇总](#%E6%B1%87%E6%80%BB)
-- [Transformer](#transformer)
-- [tokenizer](#tokenizer)
-- [BERT](#bert)
-- [中文大模型](#%E4%B8%AD%E6%96%87%E5%A4%A7%E6%A8%A1%E5%9E%8B)
-- [BERT fimaly](#bert-fimaly)
-- [长序列预训练模型](#%E9%95%BF%E5%BA%8F%E5%88%97%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B)
-- [Parameter-efficient](#parameter-efficient)
-- [BERT前预训练](#bert%E5%89%8D%E9%A2%84%E8%AE%AD%E7%BB%83)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 

@@ -1,10 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [概念、基础](#%E6%A6%82%E5%BF%B5%E5%9F%BA%E7%A1%80)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## 概念、基础
@@ -24,4 +20,3 @@
   - off policy:把数据收集当作一个单独的任务，行为策略和目标策略是不同的。
   比如在Q-learning的网络更新公式中，(S, A, R, S', A'), A使用探索贪心策略,而
   A’则使用贪心策略。SARSA中，A和A‘都是使用探索贪心策略
-  

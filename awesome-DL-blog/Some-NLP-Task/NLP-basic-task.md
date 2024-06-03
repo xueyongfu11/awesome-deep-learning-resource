@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+[TOC]
 
-- [分词](#%E5%88%86%E8%AF%8D)
-- [语义角色分析](#%E8%AF%AD%E4%B9%89%E8%A7%92%E8%89%B2%E5%88%86%E6%9E%90)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # 分词
 

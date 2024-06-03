@@ -1,22 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-  - [预训练语言模型](#%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)
-  - [蒸馏](#%E8%92%B8%E9%A6%8F)
-  - [长文本PTLM](#%E9%95%BF%E6%96%87%E6%9C%ACptlm)
-  - [tokenizer](#tokenizer)
-- [Paper](#paper)
-    - [2023](#2023)
-    - [2021](#2021)
-    - [2020](#2020)
-    - [2019](#2019)
-- [词向量](#%E8%AF%8D%E5%90%91%E9%87%8F)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
+[TOC]
 
 # Repo
 - Transformer升级之路：2、博采众长的旋转式位置编码 https://github.com/ZhuiyiTechnology/roformer

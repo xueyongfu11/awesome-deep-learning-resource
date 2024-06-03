@@ -1,14 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [关系抽取](#%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96)
-- [综述](#%E7%BB%BC%E8%BF%B0)
-- [知识图谱构建](#%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E6%9E%84%E5%BB%BA)
-- [少样本](#%E5%B0%91%E6%A0%B7%E6%9C%AC)
-- [比赛](#%E6%AF%94%E8%B5%9B)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # 关系抽取

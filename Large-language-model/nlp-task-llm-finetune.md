@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [2023](#2023)
-- [2022](#2022)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # Information Extraction
@@ -27,7 +22,7 @@
   - https://huggingface.co/Universal-NER
 
 - ZeroPrompt: Scaling Prompt-Based Pretraining to 1,000 Tasks Improves
-Zero-shot Generalization
+  Zero-shot Generalization
   - [相关blog](https://zhuanlan.zhihu.com/p/461075783)
   - 使用1000个nlp任务构建prompt数据，提升了zero-shot能力，在部分任务上超过了finetune，相比其他zero-shot方法提升了30个点
 

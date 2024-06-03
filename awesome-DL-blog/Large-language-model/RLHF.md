@@ -1,6 +1,11 @@
+[TOC]
 
 
-# 基于强化学习的对齐方法
+
+## 基于强化学习的对齐方法
+
+- [大模型偏好对齐-ODPO](https://mp.weixin.qq.com/s/FT4XUDDKO4e_aEiq0aqgzA)
+  - 将accept和reject的reward差值考虑了进去
 
 - [大模型的PPO、DPO偏好优化算法玩不起？那建议你看一下ORPO](https://zhuanlan.zhihu.com/p/688583797)
   - ORPO
@@ -37,7 +42,7 @@
 - [一些RLHF的平替汇总](https://blog.csdn.net/m0_37310036/article/details/134453906)
 
 
-## reward模型
+### reward模型
 
 - [RLHF 中的SOTA奖励函数的训练](https://zhuanlan.zhihu.com/p/688636894)
   - 基于iterative DPO训练
@@ -49,7 +54,7 @@
 - [【手撕RLHF-LLaMA2】 Reward Model PyTorch实现](https://zhuanlan.zhihu.com/p/679012951)
 
 
-## 免微调对齐
+### 免微调对齐
 
 - [大模型免微调解锁对话能力，RLHF没必要了！节省大量成本和时间，一作上交大校友](https://zhuanlan.zhihu.com/p/670682075)
   - URIAL, base model的免微调方法

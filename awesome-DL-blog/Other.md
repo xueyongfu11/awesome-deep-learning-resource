@@ -1,23 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [other](#other)
-- [NLP综述](#nlp%E7%BB%BC%E8%BF%B0)
-  - [迁移学习](#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0)
-- [Text2SQL](#text2sql)
-- [Key-word抽取](#key-word%E6%8A%BD%E5%8F%96)
-- [异常检测](#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B)
-  - [分级算法](#%E5%88%86%E7%BA%A7%E7%AE%97%E6%B3%95)
-- [知识标注和挖掘](#%E7%9F%A5%E8%AF%86%E6%A0%87%E6%B3%A8%E5%92%8C%E6%8C%96%E6%8E%98)
-- [主动学习](#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0)
-- [多实例学习](#%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0)
-- [弱标签](#%E5%BC%B1%E6%A0%87%E7%AD%BE)
-- [对抗学习](#%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0)
-- [面试](#%E9%9D%A2%E8%AF%95)
-  - [其他算法](#%E5%85%B6%E4%BB%96%E7%AE%97%E6%B3%95)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 # other

@@ -1,15 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [Repo-keyphrase](#repo-keyphrase)
-- [Repo-新词发现](#repo-%E6%96%B0%E8%AF%8D%E5%8F%91%E7%8E%B0)
-- [keyphrase](#keyphrase)
-- [datasets](#datasets)
-  - [english](#english)
-  - [chinese](#chinese)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 

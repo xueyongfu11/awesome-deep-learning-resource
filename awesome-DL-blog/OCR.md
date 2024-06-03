@@ -1,11 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [OCR](#ocr)
-- [表格识别](#%E8%A1%A8%E6%A0%BC%E8%AF%86%E5%88%AB)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 

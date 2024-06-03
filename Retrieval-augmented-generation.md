@@ -1,10 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [retrieval-augmented llm](#retrieval-augmented-llm)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 
@@ -30,4 +24,3 @@
 # retrieval-augmented llm 
 
 - [Ziya-Reader：注意力增强的训练方法](https://mp.weixin.qq.com/s/ekAyYT-Fxj5fw8GNk6Rg0g)
-  

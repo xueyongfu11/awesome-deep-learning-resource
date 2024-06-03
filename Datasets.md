@@ -1,15 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [中文数据集](#%E4%B8%AD%E6%96%87%E6%95%B0%E6%8D%AE%E9%9B%86)
-  - [通用语料](#%E9%80%9A%E7%94%A8%E8%AF%AD%E6%96%99)
-- [英文数据集](#%E8%8B%B1%E6%96%87%E6%95%B0%E6%8D%AE%E9%9B%86)
-- [数据平台](#%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-[[TOC]]
 
 
 ## 中文数据集
@@ -97,5 +88,4 @@
 - 中文语料小数据
   - 包含了中文命名实体识别、中文关系识别、中文阅读理解等一些小量数据。
   - https://github.com/crownpku/Small-Chinese-Corpus
-
 

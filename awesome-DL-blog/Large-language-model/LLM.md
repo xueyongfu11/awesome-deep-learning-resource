@@ -1,13 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [LLM](#llm)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
-# LLM
+
+## LLM
 
 
 - [清华ACL 2023最新长文 | WebCPM：首个联网支持中文问答开源模型](https://mp.weixin.qq.com/s/WSzJpQBxQQKdMRRrDObICQ)
@@ -23,8 +18,12 @@
 - [ChatGPT等GPT-3.5系列大模型的鲁棒性如何？](https://mp.weixin.qq.com/s/LGf3Y_k8IokG1rqiX_4YpQ)
 - [斯坦福等学者对ChatGPT做了在NLP几乎所有任务上的优劣势分析](https://mp.weixin.qq.com/s/xH89ENEMW6fWRoApLvgRZg)
 
+## 指令微调
 
-# 大模型幻觉
+[如何完成一次成功的对齐(1)：SFT篇](https://zhuanlan.zhihu.com/p/687926037)
+
+
+## 大模型幻觉
 
 - [怎么阻止大模型说瞎话？](https://zhuanlan.zhihu.com/p/676530275)
   - 列举了缓解大模型幻觉的几个方法
@@ -36,7 +35,7 @@
   - 一篇综述性质的文章
 
 
-# 大模型对齐（RLHF）
+## 大模型对齐（RLHF）
 
 - [RLHF中，为什么计算了两次actor_prob？](https://www.zhihu.com/question/654282515/answer/3481039875)
 

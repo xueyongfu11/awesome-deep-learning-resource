@@ -1,13 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+[TOC]
 
-- [文本纠错](#%E6%96%87%E6%9C%AC%E7%BA%A0%E9%94%99)
-- [中文拼写纠错](#%E4%B8%AD%E6%96%87%E6%8B%BC%E5%86%99%E7%BA%A0%E9%94%99)
-- [语法错误](#%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF)
-- [ASR纠错](#asr%E7%BA%A0%E9%94%99)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## 文本纠错

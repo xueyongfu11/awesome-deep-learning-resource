@@ -1,20 +1,14 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Repo](#repo)
-- [Blog](#blog)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[TOC]
 
 
 # Resource
 
-- https://github.com/lucidrains/self-rewarding-lm-pytorch
+- https://github.com/huggingface/alignment-handbook
 
 - https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
+  - reward model realted codes from trlx
 
-- https://github.com/hpcaitech/ColossalAI/tree/main/applications/Chat
+- https://github.com/hpcaitech/ColossalAI/tree/main/applications/ColossalChat
 
 - https://github.com/OpenLMLab/MOSS-RLHF
 
@@ -25,6 +19,8 @@
 
 - DPO 
   - [Fine-tune a Mistral-7b model with Direct Preference Optimization](https://towardsdatascience.com/fine-tune-a-mistral-7b-model-with-direct-preference-optimization-708042745aac)
+
+- https://github.com/CarperAI/trlx
 
 # Paper
 
@@ -100,12 +96,12 @@
   - 从数据角度出发，通过提出的方法来减轻错误和模糊偏好对的影响，并充分利用高质量偏好数据。从算法角度出发，通过对比学习和元学习方法来提高奖励模型的泛化能力
 
 - Self-Rewarding Language Models
-  - year：2024
+  - year：2024.01
   - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
   - 基于打分结果筛选得分最高和最低的回复作为偏好数据对，然后使用DPO进行训练，相比直接用最高分数据微调的模型效果要好
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
-
+  - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
 
 
 
