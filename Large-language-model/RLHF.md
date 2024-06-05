@@ -24,6 +24,10 @@
 
 - https://github.com/CarperAI/trlx
 
+- https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/
+  - reward model的训练是通过构建多个aspect的回归loss
+
+
 # Paper
 
 ## rlhf-related-algorithm
