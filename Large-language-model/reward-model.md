@@ -13,15 +13,21 @@ reward 模型的训练涉及到几个问题：
 
 使用decoder-only模型有多种输出奖励值的方式：
 
-1. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到2分类（accept和reject），然后使用交叉熵损失计算loss。  
+### point wise
 
-   一个基于该方式的实现：https://github.com/CarperAI/autocrit/tree/main
+1. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到2分类（accept和reject），然后使用交叉熵损失计算loss。  
 
 2. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，然后使用MES等计算loss。要求训练数据的标签是一个标量值（打分值）。  
 
    存在的问题：不同标注人员的打分标准很难保持一致，如标注员A：0.8 VS 0.7，标注员B：0.6 VS 0.5
 
-3. token-level pairwise reward loss：有两种实现方式
+3. https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/
+
+   - reward model的训练是通过构建多个aspect的回归loss
+
+### pair wise
+
+1. 获取输入序列的最后一个token的hidden state，然后接一个线性层映射到一个标量值，将accept和reject的奖励差值作为loss进行优化，有两种具体实现方式：
 
    1. OpenAI的实现方式：
 
@@ -52,7 +58,7 @@ reward 模型的训练涉及到几个问题：
 
    其中reject_reward和chosen_reward是一维列表，response中的每个token输出一个reward值
 
-4. token-level pairwise reward loss的具体实现方法
+2. token-level pairwise reward loss的具体实现方法
 
    **本质是accept response和reject response的token-wise的reward的差值的sigmoid（尽可能的去掉pad token loss，并且去掉prompt token loss）**
 
