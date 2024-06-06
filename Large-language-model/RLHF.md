@@ -24,6 +24,10 @@
 
 - https://github.com/CarperAI/trlx
 
+- reward model benchmark
+  - https://huggingface.co/spaces/allenai/reward-bench
+
+
 # Paper
 
 ## rlhf-related-algorithm
