@@ -29,6 +29,11 @@
   
 - https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/
   - reward model的训练是通过构建多个aspect的回归loss
+- https://huggingface.co/blog/pref-tuning
+  - DPO/IPO/KTO等模型的对比实验
+  - 经过bug修复的IPO实现的最好的效果。其次是KTO相比DPO/IPO-src相关更好，当时在一定的超参设置下，DPO/IPO也能取得相比KTO更好的效果
+  - 经过实验验证，DPO仍然是鲁棒性比较强的模型，KTO不需要成对的偏好数据，因此也具有一定的竞争优势
+  
 
 
 # Paper
@@ -58,6 +63,17 @@
   - 与RLHF相比，RAHF方法计算成本更低，因为它不需要额外训练奖励模型和价值网络
   - RAHF包含两种方法来控制表示和提取活动模式：单一LLM方法和双LLM方法。单一LLM方法通过对比指令来微调单一模型，而双LLM方法则分别对偏好和不偏好的响应进行监督训练
 
+- KTO: Model Alignment as Prospect Theoretic Optimization
+  - 2024.02,
+  
+  - 相比DPO，KTO不需要成对的偏好数据，而是直接使用point wise的数据微调
+  
+  - 在一个batch中需要同时包含accept样本和reject样本
+  
+  - KTO之所以有效，是因为如果模型提高了accept样本奖励，那么KL惩罚也会上升，而在损失上就不会取得进展。这迫使模型学习究竟是什么使得输出变得理想，以便在保持KL项不变（甚至减少它）的同时增加奖励
+  
+  - <img src="../assets/KTO.png" style="zoom: 67%;" />
+  
 - Preference Ranking Optimization for Human Alignment
   - 2023.06，AAAI 2024
   - 出了一种偏好排序方法，即采样不同源的回复并使用reward打分，并基于打分结果排序，然后计算首个最佳回复与其余回复的InfoNEC loss，然后drop掉最佳回复，然后使用第二位最佳回复与其余回复的InfoNCE loss，然后drop第二位最佳回复，重复过程，知道drop掉所有回复。将所有的infoNCE loss相加，作为loss1。
