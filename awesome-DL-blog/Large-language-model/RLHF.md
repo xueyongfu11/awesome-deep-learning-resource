@@ -24,6 +24,7 @@
 - [探索最优POST-TRAINING方案](https://zhuanlan.zhihu.com/p/661323551)
 - [Preference Tuning LLMs with Direct Preference Optimization Methods](https://huggingface.co/blog/pref-tuning)
 - [一些RLHF的平替汇总](https://blog.csdn.net/m0_37310036/article/details/134453906)
+- [RLHF中，为什么计算了两次actor_prob？](https://www.zhihu.com/question/654282515/answer/3481039875)
 
 
 ### reward模型

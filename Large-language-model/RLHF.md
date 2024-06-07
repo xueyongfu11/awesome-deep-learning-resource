@@ -3,6 +3,8 @@
 
 # Resource
 
+- https://github.com/huggingface/trl
+  
 - https://github.com/huggingface/alignment-handbook
   - DPO，IPO，KTO，excluding PPO and reward model
 

@@ -34,8 +34,3 @@
 - [大模型「幻觉」，看这一篇就够了 | 哈工大华为出品](https://zhuanlan.zhihu.com/p/667478955)
   - 一篇综述性质的文章
 
-
-## 大模型对齐（RLHF）
-
-- [RLHF中，为什么计算了两次actor_prob？](https://www.zhihu.com/question/654282515/answer/3481039875)
-

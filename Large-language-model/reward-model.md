@@ -56,8 +56,6 @@ reward 模型的训练涉及到几个问题：
               return loss
       ```
 
-   其中reject_reward和chosen_reward是一维列表，response中的每个token输出一个reward值
-
 2. token-level pairwise reward loss的具体实现方法
 
    **本质是accept response和reject response的token-wise的reward的差值的sigmoid（尽可能的去掉pad token loss，并且去掉prompt token loss）**
@@ -119,9 +117,14 @@ reward 模型的训练涉及到几个问题：
 
    1. 基于传统的文本分类的方法，如使用cls的hidden state，或者对sequence hidden state进行pooling操作，接线形层进行分类
    2. 直接接一个线形层，使用MSE或者RMSE计算loss，要求训练数据的标签是标量值
-
+   3. PairRM方法：基于deberta/roberta等模型实现
    
-
+      codes: https://github.com/yuchenlin/LLM-Blender
+   
+      ![](../assets/RMRank.png)
+   
+   4. Stanford SteamSHP: https://huggingface.co/stanfordnlp/SteamSHP-flan-t5-xl
+   
    
 
 [**点击查看我的更多AI学习笔记github**](https://github.com/xueyongfu11/awesome-deep-learning-resource)
