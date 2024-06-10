@@ -115,20 +115,11 @@
 
 ## reward model
 
-- RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
-  - 2024，ICML，RLCD
-  - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
-  - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
-
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
-  - 2024, 复旦大学
-  - 提出了一种基于多奖励模型投票机制的方法来衡量数据中偏好的强度。这有助于区分数据集中的错误、模糊和正常偏好，并相应地调整标签，以减少模型对低质量数据的过度拟合
-  - 引入对比学习来增强奖励模型区分被选择和被拒绝响应的能力，从而提高模型的泛化能力
-  - 使用元学习来保持奖励模型对分布外（OOD）样本的微妙差异的区分能力，这可以用于迭代的RLHF优化
-  - 基于偏好强度，引入自适应边界到奖励模型的损失函数中，使得模型更容易区分相似的响应
-  - 为了减轻数据集中噪声的影响，提出了标签翻转和标签平滑技术，这些技术可以有效地减轻偏好噪声，并提高性能
-  - 从数据角度出发，通过提出的方法来减轻错误和模糊偏好对的影响，并充分利用高质量偏好数据。从算法角度出发，通过对比学习和元学习方法来提高奖励模型的泛化能力
-
+  - 2024.01, 复旦大学
+  - 提出了一种基于多个奖励模型投票机制的方法来衡量数据中偏好的强度。这有助于区分数据集中的错误、模糊和正常偏好，并据此对错误的偏好标签进行纠正以及label smoothing
+  - 引入了对比学习来增强奖励模型区分被选择和被拒绝响应的能力，从而提高模型的泛化能力
+  - 采用元学习来使奖励模型保持对分布外样本的微妙差异的区分能力，这可以用于迭代的RLHF优化
 - Self-Rewarding Language Models
   - year：2024.01
   - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
@@ -136,6 +127,10 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
   - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
+- RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
+  - 2023.07，ICML2024，RLCD
+  - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
+  - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
 
 
 
