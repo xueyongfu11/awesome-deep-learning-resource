@@ -60,3 +60,21 @@
   - 使用拒答数据来微调模型，注意，只计算answer和“I am sure” or “I am not sure”的loss
   - 推理时，先用native模型生成answer，然后用prompt组合起来，送入微调好的模型，得到模型的置信输出
   - 不太适合用在在线对话模型上
+
+# RolePlay
+
+- RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models
+
+  - https://github.com/InteractiveNLP-Team/RoleLLM-public
+
+- https://github.com/LC1332/Chat-Haruhi-Suzumiya
+
+  - trick: 动作、表情、心理以及对应的场景描写，通常中文放在（）里
+
+- [角色扮演大模型技术分享](https://zhuanlan.zhihu.com/p/685823865)
+
+- https://github.com/thu-coai/CharacterGLM-6B
+
+- [论文阅读_训练大模型用于角色扮演](https://zhuanlan.zhihu.com/p/678889518)
+
+  

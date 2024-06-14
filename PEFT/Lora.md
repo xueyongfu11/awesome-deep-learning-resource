@@ -13,7 +13,8 @@
   - 2024.04, 
   - 通过将模型权重分解用SVD分解，将主要的特征值和特征向量用lora进行微调，其余的特征值和特征向量保持不变
   - 实验证明了对主要的特征值和特征向量进行微调，相比微调中间或者次要特征值和特征向量，可以获得更好的效果
-
+  - code: https://github.com/GraphPKU/PiSSA
+  
 - ALoRA: Allocating Low-Rank Adaptation for Fine-tuning Large Language Models
   - 2024.03, NAACL 2024
 

@@ -7,6 +7,7 @@
 - https://github.com/huggingface/peft
 - https://github.com/thunlp/OpenDelta
 - https://github.com/adapter-hub/adapter-transformers
+- https://github.com/Chaos96/fourierft
 
 # survey
 
