@@ -34,3 +34,6 @@
 - [大模型「幻觉」，看这一篇就够了 | 哈工大华为出品](https://zhuanlan.zhihu.com/p/667478955)
   - 一篇综述性质的文章
 
+## Agent
+
+[小米公司 Con 2024-Agent 技术在语音助手场景中的应用](https://mp.weixin.qq.com/s/HDWd-VpbC9jdiNYCvMLTPA)
