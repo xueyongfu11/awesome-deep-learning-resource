@@ -55,22 +55,6 @@
 - [使用KTO进行更好、更便宜、更快速的LLM对齐](https://mp.weixin.qq.com/s/vFrcW43jhraZT8ZaDBxl7A)
   - KTO
 
-## reward模型
-
-- [深挖RLHF潜力，复旦语言和视觉团队创新奖励模型优化，让大模型更对齐](https://mp.weixin.qq.com/s/BSaGLikARlvM8yitYtlA3w)
-  - Secrets of RLHF II：大模型的reward
-  
-- [RLHF 中的SOTA奖励函数的训练](https://zhuanlan.zhihu.com/p/688636894)
-  - 基于iterative DPO训练
-  - 模型在 AlpacaEval 榜单上排名第二
-  - 报告url：https://efficient-unicorn-451.notion.site/Reward-Modeling-for-RLHF-abe03f9afdac42b9a5bee746844518d0
-
-- [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
-
-- [【手撕RLHF-LLaMA2】 Reward Model PyTorch实现](https://zhuanlan.zhihu.com/p/679012951)
-
-- [Secrets of RLHF II：大模型reward model的trick](https://mp.weixin.qq.com/s/G69w-Y2Jb_SgtvLcjCs_3g)
-
 
 ## 免微调对齐
 

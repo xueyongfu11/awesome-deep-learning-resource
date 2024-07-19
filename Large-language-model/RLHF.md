@@ -1,7 +1,8 @@
 [TOC]
 
 
-# Resource
+
+## resource
 
 - https://github.com/huggingface/trl
   
@@ -36,9 +37,6 @@
   - 经过bug修复的IPO实现的最好的效果。其次是KTO相比DPO/IPO-src相关更好，当时在一定的超参设置下，DPO/IPO也能取得相比KTO更好的效果
   - 经过实验验证，DPO仍然是鲁棒性比较强的模型，KTO不需要成对的偏好数据，因此也具有一定的竞争优势
   
-
-
-# Paper
 
 ## rlhf-related-algorithm
 
@@ -115,11 +113,23 @@
 
 ## reward model
 
+- [Reward Modeling for RLHF](https://efficient-unicorn-451.notion.site/Reward-Modeling-for-RLHF-abe03f9afdac42b9a5bee746844518d0)
+  - 收集了几乎所有的开源偏好数据进行reward model的训练
+
+  - 模型在 AlpacaEval 榜单上排名第二
+- [Llama2的reward model](https://zhuanlan.zhihu.com/p/679012951)
+  - reward model的损失函数中加入了margin
+  - reward model的推理结果进行了WHITEN，即归一化操作，减去均值，除标准差
+
+
+### paper
+
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
   - 2024.01, 复旦大学
   - 提出了一种基于多个奖励模型投票机制的方法来衡量数据中偏好的强度。这有助于区分数据集中的错误、模糊和正常偏好，并据此对错误的偏好标签进行纠正以及label smoothing
   - 引入了对比学习来增强奖励模型区分被选择和被拒绝响应的能力，从而提高模型的泛化能力
   - 采用元学习来使奖励模型保持对分布外样本的微妙差异的区分能力，这可以用于迭代的RLHF优化
+  - [深挖RLHF潜力，复旦语言和视觉团队创新奖励模型优化，让大模型更对齐](https://mp.weixin.qq.com/s/BSaGLikARlvM8yitYtlA3w)
 - Self-Rewarding Language Models
   - year：2024.01
   - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
@@ -127,6 +137,12 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
   - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
+- Adversarial Preference Optimization: Enhancing Your Alignment via RM-LLM Game
+  - 2023.11, ACL findings2024
+  - LLM模型需要不断提高回复质量，使得自己的回复和金标数据之间的得分差距减小，而RM模型需要不断将LLM回复和金标回复的得分差距拉大
+  - 同时两个KL正则项会约束RM和LLM不要对抗得过于离谱。通过这种博弈，RM可以跟随LLM的变化而迭代，模型分布偏移的问题也就得到缓解了
+  - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
+  - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
 - RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
   - 2023.07，ICML2024，RLCD
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
