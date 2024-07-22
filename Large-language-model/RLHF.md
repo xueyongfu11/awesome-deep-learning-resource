@@ -108,6 +108,12 @@
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
   - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
   - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。
+- Preference Learning Algorithms Do Not Learn Preference Rankings
+  - 2024.05，google，
+  - 现有的模型很难实现高的ranking accuracy，一般低于60%
+  - 现有的模型的ranking accuracy低于理想的ranking accuracy，19%-51%的gap
+  - DPO这种偏好学习方法很少会纠正数据中的标签，更多是增大偏好回复与非偏好回复的log-prob
+  - 在policy model和reference model未偏离太多的条件下，ranking accuracy和win rate两种评价指标是接近的
 
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
   - 2024.01, 复旦大学
