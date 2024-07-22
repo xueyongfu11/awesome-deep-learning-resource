@@ -121,8 +121,14 @@
   - reward model的损失函数中加入了margin
   - reward model的推理结果进行了WHITEN，即归一化操作，减去均值，除标准差
 
-
 ### paper
+
+- Preference Learning Algorithms Do Not Learn Preference Rankings
+  - 2024.05，google，
+  - 现有的模型很难实现高的ranking accuracy，一般低于60%
+  - 现有的模型的ranking accuracy低于理想的ranking accuracy，19%-51%的gap
+  - DPO这种偏好学习方法很少会纠正数据中的标签，更多是增大偏好回复与非偏好回复的log-prob
+  - 在policy model和reference model未偏离太多的条件下，ranking accuracy和win rate两种评价指标是接近的
 
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
   - 2024.01, 复旦大学
