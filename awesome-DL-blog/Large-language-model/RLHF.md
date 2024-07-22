@@ -16,13 +16,6 @@
   - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
     - PPO原理解读，非常详细
 - [Secrets of RLHF I：大模型RLHF的trick](https://zhuanlan.zhihu.com/p/646385336)
-- [RLCD：无需人类反馈即可对齐！田渊栋团队新作RLCD：无害型、有益性、大纲写作全面超越基线模型](https://mp.weixin.qq.com/s/sQolnpmBdCufVVR8q6GG8w)
-  - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
-  - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
-- [LLM RLHF 2024论文（三）RSO](https://zhuanlan.zhihu.com/p/690198669)
-  - DPO算法所使用的数据是SFT或者其他算法采样出来的，而不是最优策略采样出来的
-  - 想要估计某一个分布，需要用这个分布下采样出来的数据才能很好地对分布进行估计
-  - DPO使用其他策略采样出的数据计算MLE去估计最优策略，会导致数据和最优策略之间的不匹配
 - [探索最优POST-TRAINING方案](https://zhuanlan.zhihu.com/p/661323551)
   - 对齐LLMs的对比后训练包括SLic 、DPO 、RLHF 、RLAIF以及结合课程学习不同组合方法的收益对比以及优缺点分析
 
