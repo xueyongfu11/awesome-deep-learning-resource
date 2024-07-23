@@ -4,8 +4,6 @@
 
 ## 大模型对齐
 
-- [Alignment 最新进展](https://zhuanlan.zhihu.com/p/650788172)
-- [OpenAI前对齐团队「遗作」：RLHF不够用了！用GPT-4训练GPT-4](https://zhuanlan.zhihu.com/p/705989405)
 - [有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
 - [深度解析DPO及其变体在多种任务上的表现如何，该如何选择](https://mp.weixin.qq.com/s/DwBpfMiSbGJ8N07e6zN4eg)
 - [剑桥提出RLHF平替方案：在SFT以外，我们还能拿SFT数据做什么？](https://mp.weixin.qq.com/s/Sbu1-EA6gCKsyUdGpRTuRg)
