@@ -78,14 +78,10 @@
 
 ## Information extraction
 
-
-
 - GeoLayoutLM: Geometric Pre-training for Visual Information Extraction
   - https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/GeoLayoutLM
 
 - Unifying Vision, Text, and Layout for Universal Document Processing
-
-
 
 - Multimodal Joint Attribute Prediction and Value Extraction for E-commerce Product
   - 阅读笔记:  
@@ -102,8 +98,6 @@
 ## AIGC
 
 - [StableDiffusion原理详细介绍](https://mp.weixin.qq.com/s/-aQt5JgtrdrgapLxo5YVwg)
-
-
 
 # datasets
 
