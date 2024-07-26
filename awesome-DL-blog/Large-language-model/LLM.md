@@ -16,7 +16,6 @@
 - [ChatGPT应用端的Prompt解析：从概念、基本构成、常见任务、构造策略到开源工具与数据集](https://mp.weixin.qq.com/s/QJhqN6tn1FffDKdzWHuCAw)
 - [ChatGPT等GPT-3.5系列大模型的鲁棒性如何？](https://mp.weixin.qq.com/s/LGf3Y_k8IokG1rqiX_4YpQ)
 - [斯坦福等学者对ChatGPT做了在NLP几乎所有任务上的优劣势分析](https://mp.weixin.qq.com/s/xH89ENEMW6fWRoApLvgRZg)
-- [如何完成一次成功的对齐(1)：SFT篇](https://zhuanlan.zhihu.com/p/687926037)
 - [小米公司 Con 2024-Agent 技术在语音助手场景中的应用](https://mp.weixin.qq.com/s/HDWd-VpbC9jdiNYCvMLTPA)
 
 
