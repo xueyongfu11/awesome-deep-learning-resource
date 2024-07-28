@@ -2,7 +2,7 @@
 
 
 
-# llm
+## llm
 
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)
 
@@ -13,12 +13,12 @@
 - https://github.com/huggingface/datatrove
   - 大规模处理、过滤和删除重复文本
 
-# Training/Inference Framework
+## Training/Inference Framework
 
 - https://github.com/hpcaitech/ColossalAI
 
 
-# leaderboard
+## leaderboard
 
 - https://flageval.baai.ac.cn/#/trending
 
@@ -43,12 +43,12 @@
   - 清华 中英文大模型评估
 
 
-# LLM和知识图谱
+## LLM和知识图谱
 - [万字长文讲述大模型与知识图谱的关系](https://zhuanlan.zhihu.com/p/626433991)
 - [LLM 时代的金融知识图谱实践](https://zhuanlan.zhihu.com/p/623104680)
   - 比较基础
 
-# 大模型幻觉
+## 大模型幻觉
 
 - https://eecs.berkeley.edu/research/colloquium/230419-2/
   - Reinforcement Learning from Human Feedback: Progress and Challenges
@@ -61,20 +61,42 @@
   - 推理时，先用native模型生成answer，然后用prompt组合起来，送入微调好的模型，得到模型的置信输出
   - 不太适合用在在线对话模型上
 
-# RolePlay
+## RolePlay
 
 - RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models
 
   - https://github.com/InteractiveNLP-Team/RoleLLM-public
-
 - https://github.com/LC1332/Chat-Haruhi-Suzumiya
 
   - trick: 动作、表情、心理以及对应的场景描写，通常中文放在（）里
-
 - [角色扮演大模型技术分享](https://zhuanlan.zhihu.com/p/685823865)
-
 - https://github.com/thu-coai/CharacterGLM-6B
-
 - [论文阅读_训练大模型用于角色扮演](https://zhuanlan.zhihu.com/p/678889518)
 
-  
+## 大模型个性化
+
+- Understanding the Role of User Profile in the Personalization of Large Language Models
+  - 2024.06，
+  - 验证了user profile对LLM个性化的影响是个性化信息而非语义内容信息
+  - 文章中的profile是历史对话信息，不包含其他信息
+  - 检索到的user profile放在开始位置对效果有更大的影响
+- HYDRA: Model Factorization Framework for Black-Box LLM Personalization
+  - 2024.06
+  - 方法：不仅用到了历史用户行为模式数据，而且也用到了所有用户共享通用知识
+- Optimization Methods for Personalizing Large Language Models through Retrieval Augmentation
+  - 2024.04
+  - 基于检索的方法
+- Personalized Large Language Models
+  - 2024.02
+- Integrating summarization and retrieval for enhanced personalization via large language models
+  - 2023.10，Amazon Alexa AI
+  - 将对话检索和对话摘要结合在了一起
+  - employ instruction-tuned LLMs to generate abstract summaries of user history data, integrating summarization for enhanced personalization
+- Once: Boosting content-based recommendation with both open-and closed-source large language models
+  - creates user profiles by summarizing topics and regions of interest from their browsing history
+- When Large Language Models Meet Personalization: Perspectives of Challenges and Opportunities
+  - 2023.07，survey
+  - 11.3节提及了长对话历史建模的三种方法：检索、摘要、使用层次模型或者记忆增强模型
+- LaMP: When Large Language Models Meet Personalization
+  - 2023.04，google
+  - 提出了个性化语言模型评估的benchmark，以及用户的多条profile相关数据集（对话历史数据）
