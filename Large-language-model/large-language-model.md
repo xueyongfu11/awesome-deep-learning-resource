@@ -41,6 +41,9 @@
   - eval datasets: https://kaiokendev.github.io/context
   - https://github.com/THUDM/LongBench#leaderboard
   - 清华 中英文大模型评估
+- 偏好数据标注工具
+  - https://github.com/SupritYoung/RLHF-Label-Tool
+
 
 
 ## LLM和知识图谱
