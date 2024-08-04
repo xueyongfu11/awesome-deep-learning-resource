@@ -35,3 +35,6 @@
 
 - [机器人自学停不下来！具身智能被革命](https://mp.weixin.qq.com/s/2bQTuwE-k6ukp--XHXIzMg)
 - [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)
+- 李宏毅agent介绍
+
+  - https://www.youtube.com/watch?v=bJZTJ7MjYqg
