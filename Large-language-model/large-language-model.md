@@ -13,10 +13,6 @@
 - https://github.com/huggingface/datatrove
   - 大规模处理、过滤和删除重复文本
 
-## Training/Inference Framework
-
-- https://github.com/hpcaitech/ColossalAI
-
 
 ## leaderboard
 
@@ -78,6 +74,22 @@
 
 ## 大模型个性化
 
+### 个性化记忆
+
+- langchain
+  - https://github.com/langchain-ai/langchain
+  - 支持检索和摘要两种记忆方式
+
+- mem0
+  - https://github.com/mem0ai/mem0
+  - 通过LLM+制定的metadata，抽取记忆信息，重点是定制一个合适的prompt来抽取有效信息
+  - 相关记忆信息通过向量化存储，因此可以支持记忆信息检索
+  - 记忆支持更新
+- MemGPT
+  - https://github.com/cpacker/MemGPT
+
+### paper
+
 - Understanding the Role of User Profile in the Personalization of Large Language Models
   - 2024.06，
   - 验证了user profile对LLM个性化的影响是个性化信息而非语义内容信息
@@ -89,6 +101,8 @@
 - Optimization Methods for Personalizing Large Language Models through Retrieval Augmentation
   - 2024.04
   - 基于检索的方法
+- A Survey on the Memory Mechanism of Large Language Model based Agents
+  - 2024.04
 - Personalized Large Language Models
   - 2024.02
 - Integrating summarization and retrieval for enhanced personalization via large language models
