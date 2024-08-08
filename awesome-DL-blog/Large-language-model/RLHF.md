@@ -12,6 +12,7 @@
   - [ChatGPT 背后的“功臣”——RLHF 技术详解](https://huggingface.co/blog/zh/rlhf)
   - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
     - PPO原理解读，非常详细
+  - [详解大模型RLHF过程（配代码解读）](https://blog.csdn.net/qq_27590277/article/details/132614226)
 - [如何完成一次成功的对齐(1)：SFT篇](https://zhuanlan.zhihu.com/p/687926037)
 
 ## offline-rlhf

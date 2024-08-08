@@ -4,6 +4,7 @@
 
 ## resource
 
+- [The N Implementation Details of RLHF with PPO](https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo)
 - https://github.com/huggingface/trl
 - https://github.com/huggingface/alignment-handbook
   - DPO，IPO，KTO，excluding PPO and reward model

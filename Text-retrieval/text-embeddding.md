@@ -51,4 +51,3 @@
 - macrosoft https://github.com/microsoft/SPTAG
 - https://github.com/Hironsan/bertsearch
 - https://github.com/milvus-io/bootcamp
-- 

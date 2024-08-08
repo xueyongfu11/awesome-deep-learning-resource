@@ -15,7 +15,6 @@
 - https://github.com/seatgeek/fuzzywuzzy
 - https://github.com/DengBoCong/text-similarity
   
-  
 ## paper
 
 ### 2022
@@ -68,11 +67,20 @@
 ## term weight
 - https://github.com/AdeDZY/DeepCT
 
+## 类ES的全文检索框架
 
-## ES
+### ES
+
 - https://github.com/elastic/elasticsearch
 - https://github.com/medcl/elasticsearch-analysis-ik
   - 中文分词器
 - https://github.com/medcl/elasticsearch-analysis-pinyin
 - https://github.com/NLPchina/elasticsearch-analysis-ansj
 
+### other
+
+1. **TinySearchEngine**：这是一个开源的轻量级全文搜索引擎，它使用Lucene库作为基础，易于部署且资源占用低，适合个人博客、小型网站或内部应用的搜索需求。它提供了RESTful API接口，方便集成多种编程语言，并且具有易用性、灵活性、高性能和轻量化的特点。
+2. **Manticore Search**：这是一个用C++开发的高性能搜索引擎，它在功能上是Elasticsearch的良好替代品。Manticore Search基于Sphinx Search，提供了改进的功能和更高的性能。它在某些场景中比Elasticsearch快15倍，并且具有成本低、全文搜索能力强、支持多种数据集大小和多种客户端语言的特点。
+3. **MeiliSearch**：这是一个功能强大、快速、开源、易于使用和部署的搜索引擎。MeiliSearch的搜索和索引都是高度可定制的，支持拼写纠正、同义词替换、近义词搜索等功能，特别适合需要支持中文搜索的场景。它还提供了易于使用的Web界面和CLI工具，适合中小型企业使用。
+4. **Zinc**：Zinc是一个轻量级的全文搜索引擎，作为Elasticsearch的替代品，它运行在不到100MB的RAM中，使用bluge作为底层索引库。Zinc简单易操作，提供了全文索引功能、一个用于安装和运行的单个二进制文件、Web UI以及与Elasticsearch API兼容的数据摄取方式。不过，它缺少集群和高可用性的功能。
+5. **Lucene**：虽然Lucene不是一个框架而是一个库，但它是许多搜索引擎的基础，包括Solr和Elasticsearch。Lucene适合轻量级的全文搜索，并且资源占用较少，适合服务器资源有限的情况。使用Lucene可以自定义搜索引擎的功能，包括创建索引、更新文档、删除文档和索引以及执行搜索
