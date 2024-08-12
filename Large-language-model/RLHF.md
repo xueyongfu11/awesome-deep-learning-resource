@@ -110,6 +110,20 @@
 
 ### paper
 
+- Boosting Reward Model with Preference-Conditional Multi-Aspect Synthetic Data Generation
+  - 2024.07，
+  - 方法基于RLCD的改进，探索了基于条件生成偏好数据的方法
+  - 具体是模型先生成回复，然后基于该回复生成另外一条回复
+
+- Exploring Domain Robust Lightweight Reward Models based on Router Mechanism
+  - 2024.07
+  - 核心方法是探索基于路由器机制的领域鲁棒轻量级奖励模型
+
+- Learning Goal-Conditioned Representations for Language Reward Models
+  - 2024.07
+  
+  - 对比学习目标条件化：通过增加未来状态沿着采样的偏好轨迹的表示相似度，并减少沿着随机采样的不受欢迎轨迹的相似度，来训练奖励模型
+  
 - Fine-Tuning Language Models with Reward Learning on Policy
   - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model

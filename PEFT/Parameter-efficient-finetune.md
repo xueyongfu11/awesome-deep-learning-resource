@@ -47,7 +47,17 @@
 
 # peft
 
+- Learning to Route Among Specialized Experts for Zero-Shot Generalization	
+  
+  - 2024.02
+  
+  - PHATGOOSE旨在通过参数高效微调后的专门化模块中进行路由，以改善对未见任务的零样本泛化能力。
+  
+  - 与以往学习在专门化模型间路由的方法同，PHATGOOSE探索了一种可能性，即如果能够针对模型中的每一层和每个token自适应地选择不同的专家，可能会提高零样本泛化能力。
+  - 这种方法是后处理的（post-hoc），它不需要同时访问用于创建专门化模型的数据集，且在每个专家模型训练后只需要适度的额外计算。
+  
 - LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
+
   - 2023.07, 
   - [blog](https://mp.weixin.qq.com/s/QlTxcwdtOt8NizqqBzo6yg)
   - 在不同的任务上训练相应的lora
