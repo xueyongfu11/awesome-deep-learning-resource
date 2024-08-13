@@ -17,7 +17,10 @@
   
 - ALoRA: Allocating Low-Rank Adaptation for Fine-tuning Large Language Models
   - 2024.03, NAACL 2024
-
+  - ALoRA的模型机构类似SVD分解的结构
+  - 动态调整内在秩：与传统的低秩适应（LoRA）方法不同，ALoRA 允许在微调过程中动态调整每个Transformer模块的内在秩，而不是使用固定的秩设置
+  - 在微调过程中，ALoRA 通过逐步修剪丰富且可能产生负面影响的LoRA秩，并将这些修剪掉的秩预算分配给需要更高秩的重要Transformer模块
+  
 - AFLoRA: Adaptive Freezing of Low Rank Adaptation in Parameter Efficient Fine-Tuning of Large Models
   - 2024.03,
   - AFLoRA的核心思想是在微调过程中适应性地冻结低秩适应路径中的投影矩阵，以减少计算成本和缓解过拟合

@@ -110,6 +110,13 @@
 
 ### paper
 
+- HAF-RM: A Hybrid Alignment Framework for Reward Model Training
+  - 2024.07
+  
+  - 提出了一种reward model的混合对齐框架，通过共享backbone，header由value header（奖励模型的header）和prob header组成（生成的header）
+
+  - 具体实现是由DPO的loss和奖励模型的loss组成
+  
 - Boosting Reward Model with Preference-Conditional Multi-Aspect Synthetic Data Generation
   - 2024.07，
   - 方法基于RLCD的改进，探索了基于条件生成偏好数据的方法
@@ -121,9 +128,9 @@
 
 - Learning Goal-Conditioned Representations for Language Reward Models
   - 2024.07
-  
+
   - 对比学习目标条件化：通过增加未来状态沿着采样的偏好轨迹的表示相似度，并减少沿着随机采样的不受欢迎轨迹的相似度，来训练奖励模型
-  
+
 - Fine-Tuning Language Models with Reward Learning on Policy
   - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
