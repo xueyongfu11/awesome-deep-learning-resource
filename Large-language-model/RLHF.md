@@ -136,6 +136,17 @@
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
   - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
   - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。
+- Interpretable Preferences via Multi-Objective Reward Modeling  and Mixture-of-Experts
+  - 2024.06
+  - 为了解决reward model不可解释行的问题，提出了ArmoRM模型，具体是在last token接一个多目标回归的header层，多目标对应偏好判断的不同方面
+  - 为了将多方面的偏好值加权，提出了一种门控网络，该门控网络的输入是prompt的last token的hidden  state，输出是经过softmax的加和为1的权重值，与多方面的偏好值相乘之后得到总奖励值。门控网络的训练是冻结除了门控网络的其他所有权重，使用bradley-terry目标函数进行简介训练
+  
+- Regularizing Hidden States Enables Learning Generalizable Reward Model for LLMs
+  - 2024.06
+  - 提出了通过正则化hidden state的方法来提高reward model的泛化能力
+  - 该正则化的提出背景：传统的reward model的训练通常随机初始化分类header，这种方式会扭曲预训练权重特征
+  - 该正则化的具体实现：计算reward model loss的同时，添加sft的loss同时训练，训练时对sft的header进行freeze，对backbone以及reward model header进行训练
+  
 - Preference Learning Algorithms Do Not Learn Preference Rankings
   - 2024.05，google，
   - 现有的模型很难实现高的ranking accuracy，一般低于60%

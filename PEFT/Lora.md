@@ -28,10 +28,11 @@
 
 - BiLoRA: A Bi-level Optimization Framework for Overfitting-Resilient Low-Rank Adaptation of Large Pre-trained Models
   - 2024.03
-  - 这篇论文提出了一个名为BiLoRA的新方法，旨在解决大型预训练模型在下游任务中微调时的过拟合问题，高模型在测试数据上的泛化能力
+  - 这篇论文提出了一个名为BiLoRA的新方法，旨在解决大型预训练模型在下游任务中微调时的过拟合问题，提高模型在测试数据上的泛化能力
   - 双层次优化（BLO）：BiLoRA采用BLO框架，将参数分为两个层次进行优化。在较低层次，优化伪奇异向量矩阵（P和Q），而在较高层次，优化伪奇异值矩阵（Λ）
   - 正则化：为了保持P和Q的正交性，BiLoRA应用了正则化项R1。此外，还可以使用R2来鼓励Λ中的伪奇异值接近二值（0或1），进一步约束模型的复杂度
-
+  - <img src="../assets/BiLoRA.png" style="zoom:50%;" />
+  
 - SuperLoRA: Parameter-Efficient Unified Adaptation of Multi-Layer Attention Modules
   - 2024.03, 
   - 提出了lora系列变体的统一框架，通过控制不同的超参，可以得到不同的lora变体
