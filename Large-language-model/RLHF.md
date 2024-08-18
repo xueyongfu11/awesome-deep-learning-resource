@@ -116,43 +116,45 @@
   - 提出了一种reward model的混合对齐框架，通过共享backbone，header由value header（奖励模型的header）和prob header组成（生成的header）
 
   - 具体实现是由DPO的loss和奖励模型的loss组成
-  
 - Boosting Reward Model with Preference-Conditional Multi-Aspect Synthetic Data Generation
   - 2024.07，
   - 方法基于RLCD的改进，探索了基于条件生成偏好数据的方法
   - 具体是模型先生成回复，然后基于该回复生成另外一条回复
-
 - Exploring Domain Robust Lightweight Reward Models based on Router Mechanism
   - 2024.07
   - 核心方法是探索基于路由器机制的领域鲁棒轻量级奖励模型
-
 - Learning Goal-Conditioned Representations for Language Reward Models
   - 2024.07
 
   - 对比学习目标条件化：通过增加未来状态沿着采样的偏好轨迹的表示相似度，并减少沿着随机采样的不受欢迎轨迹的相似度，来训练奖励模型
-
-- Fine-Tuning Language Models with Reward Learning on Policy
-  - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
-  - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
-  - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
-  - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。
+- Bootstrapping Language Models with DPO Implicit Rewards
+  - 2024.06
+  - 方法与我的想法不谋而合，是对iterative DPO的改进，reward信号使用DPO的隐式奖励来对采样的数据进行标注
+  - 为了减少响应的长度，添加了长度的正则loss
+  
 - Interpretable Preferences via Multi-Objective Reward Modeling  and Mixture-of-Experts
   - 2024.06
   - 为了解决reward model不可解释行的问题，提出了ArmoRM模型，具体是在last token接一个多目标回归的header层，多目标对应偏好判断的不同方面
   - 为了将多方面的偏好值加权，提出了一种门控网络，该门控网络的输入是prompt的last token的hidden  state，输出是经过softmax的加和为1的权重值，与多方面的偏好值相乘之后得到总奖励值。门控网络的训练是冻结除了门控网络的其他所有权重，使用bradley-terry目标函数进行简介训练
-  
 - Regularizing Hidden States Enables Learning Generalizable Reward Model for LLMs
   - 2024.06
   - 提出了通过正则化hidden state的方法来提高reward model的泛化能力
   - 该正则化的提出背景：传统的reward model的训练通常随机初始化分类header，这种方式会扭曲预训练权重特征
   - 该正则化的具体实现：计算reward model loss的同时，添加sft的loss同时训练，训练时对sft的header进行freeze，对backbone以及reward model header进行训练
-  
 - Preference Learning Algorithms Do Not Learn Preference Rankings
   - 2024.05，google，
   - 现有的模型很难实现高的ranking accuracy，一般低于60%
   - 现有的模型的ranking accuracy低于理想的ranking accuracy，19%-51%的gap
   - DPO这种偏好学习方法很少会纠正数据中的标签，更多是增大偏好回复与非偏好回复的log-prob
   - 在policy model和reference model未偏离太多的条件下，ranking accuracy和win rate两种评价指标是接近的
+- Fine-Tuning Language Models with Reward Learning on Policy
+  - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
+  - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
+  - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
+  - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。
+- WARM: On the Benefits of Weight Averaged Reward Models
+  - 2024.01
+  - 简单的说，训练多个reward model，然后将模型权重进行平均
 
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
   - 2024.01, 复旦大学
@@ -173,6 +175,11 @@
   - 同时两个KL正则项会约束RM和LLM不要对抗得过于离谱。通过这种博弈，RM可以跟随LLM的变化而迭代，模型分布偏移的问题也就得到缓解了
   - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
   - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
+- RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
+  - 2023.09
+  - 方法旨在解决传统通过人类反馈进行强化学习中的一个关键瓶颈问题：获取高质量的人类偏好标签
+  - 偏好标记：使用现成的LLM为一对候选摘要打上偏好标签。然后，使用对比损失训练一个奖励模型，最后使用RM提供的奖励进行策略模型的强化学习微调
+
 - RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
   - 2023.07，ICML2024，RLCD
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
