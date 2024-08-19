@@ -52,6 +52,12 @@
   - RAHF通过识别和操作LLMs内部与高级人类偏好相关的表示和活动模式，来实现对模型行为的精确控制
   - 与RLHF相比，RAHF方法计算成本更低，因为它不需要额外训练奖励模型和价值网络
   - RAHF包含两种方法来控制表示和提取活动模式：单一LLM方法和双LLM方法。单一LLM方法通过对比指令来微调单一模型，而双LLM方法则分别对偏好和不偏好的响应进行监督训练
+- Some things are more CRINGE than others:  Iterative Preference Optimization with the Pairwise Cringe Loss
+  - 2023.12
+  - 基于Cringe Loss改进对偏好数据进行训练，是一种DPO方法平替
+  - Binary Cringe Loss：对chosen样本计算似然损失，对与rejected样本计算token-wise的对比loss，具体是基于LLM的top-k token与rejected样本的token计算对比损失
+  - Pair Cringe Loss：是对2的改进，增加了一项基于门控的margin loss
+  
 - Unveiling the Implicit Toxicity in Large Language Models
   - 2023.11, EMNLP2024
   - 研究者们提出了一种基于强化学习的攻击方法，旨在进一步诱导LLMs生成隐性有毒的文本
