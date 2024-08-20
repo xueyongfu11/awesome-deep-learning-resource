@@ -69,8 +69,16 @@
 
   - trick: 动作、表情、心理以及对应的场景描写，通常中文放在（）里
 - [角色扮演大模型技术分享](https://zhuanlan.zhihu.com/p/685823865)
-- https://github.com/thu-coai/CharacterGLM-6B
 - [论文阅读_训练大模型用于角色扮演](https://zhuanlan.zhihu.com/p/678889518)
+
+- leaderboard
+  - https://github.com/boson-ai/RPBench-Auto
+  - https://github.com/morecry/CharacterEval
+  - https://github.com/InteractiveNLP-Team/RoleLLM-public
+  - https://github.com/CLUEbenchmark/SuperCLUE-Role
+- Open-source LLM
+  - https://huggingface.co/bosonai/Higgs-Llama-3-70B
+  - https://github.com/thu-coai/CharacterGLM-6B
 
 ## 大模型个性化
 
