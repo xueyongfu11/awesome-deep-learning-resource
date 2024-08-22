@@ -113,6 +113,7 @@
 - [Llama2的reward model](https://zhuanlan.zhihu.com/p/679012951)
   - reward model的损失函数中加入了margin
   - reward model的推理结果进行了WHITEN，即归一化操作，减去均值，除标准差
+- https://github.com/OpenLMLab/MOSS-RLHF
 
 ### paper
 
@@ -190,6 +191,11 @@
   - 2023.07，ICML2024，RLCD
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
   - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
+- Scaling Laws for Reward Model Overoptimization
+  - 2022.10
+  - 主要研究了RM model的size，Policy model 的size，RM的训练集size等对reward model overoptimization的影响
+  - 评估方法是随着KL的增加，计算RM model的score与Gold RM model的score的差异。KL增加，表明policy model与initial model差异更大，采样到的数据标注时，越容易hacking RM model
+  
 
 
 
