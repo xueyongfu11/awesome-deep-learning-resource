@@ -158,7 +158,7 @@
   - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
   - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
-  - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。
+  - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。然后基于这两种方法微调reward model
 - WARM: On the Benefits of Weight Averaged Reward Models
   - 2024.01
   - 简单的说，训练多个reward model，然后将模型权重进行平均
