@@ -197,5 +197,11 @@
   - 评估方法是随着KL的增加，计算RM model的score与Gold RM model的score的差异。KL增加，表明policy model与initial model差异更大，采样到的数据标注时，越容易hacking RM model
   
 
+## self improving
 
+- self-Play Fine-Tuning Converts Weak Language Models  to Strong Language Models
+  - 2024.01
+  - 提出了一种自我博弈的方法提升弱模型到强模型，具体思路是main player的目标是最大化human  response与生成response的差值，而opponent player的目标是减小生成回复和human  response的差值，然后以一种对抗的方式进行提升，注意main player想比opponent player多一个iteration
+  - 这种方法可以形式化为类DPO的公式描述，policy model相比reference model多一个iteration
+  - 实验证明，SPIN相比DPO，不需要偏好数据，仅需要SFT数据，并且效果更好
 
