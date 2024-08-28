@@ -182,6 +182,12 @@
   - 同时两个KL正则项会约束RM和LLM不要对抗得过于离谱。通过这种博弈，RM可以跟随LLM的变化而迭代，模型分布偏移的问题也就得到缓解了
   - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
   - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
+- REWARD MODEL ENSEMBLES HELP MITIGATE  OVEROPTIMIZATION
+  - 2023.10，ICML2024
+  - 提出使用多个模型组合的方式来缓解reward model的过优化问题
+  - 多个reward model的组合，使用WCO和UWO，相比计算均值的方式效果更好
+  - 论文也研究了RM的size、数据size、组合模型的数据等对效果的影响
+
 - RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
   - 2023.09
   - 方法旨在解决传统通过人类反馈进行强化学习中的一个关键瓶颈问题：获取高质量的人类偏好标签
@@ -195,7 +201,7 @@
   - 2022.10
   - 主要研究了RM model的size，Policy model 的size，RM的训练集size等对reward model overoptimization的影响
   - 评估方法是随着KL的增加，计算RM model的score与Gold RM model的score的差异。KL增加，表明policy model与initial model差异更大，采样到的数据标注时，越容易hacking RM model
-  
+
 
 ## self improving
 
