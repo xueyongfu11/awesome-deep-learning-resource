@@ -42,7 +42,34 @@
 
 
 
+## MoE
+
+- https://github.com/TUDB-Labs/MoE-PEFT
+- MIXLORA: Enhancing Large Language Models Fine-Tuning with LoRA-based Mixture of Experts
+  - 2024.04
+  - 提出了MixLoRA，不同于其他方法，MixLoRA中的每个专家都由原始模型结构和LoRA组成。
+  - MixLoRA使用top-k router策略，训练时也加入了expert balance loss，MixLoRA也探索了对self-attention使用MoE，进一步提升了整体效果
+  - ![](../assets/mixlora.png)
+
+- LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin
+  - 2023.12
+  - 实验发现在SFT阶段显著增加指令数据量会损害LLMs中的世界知识
+  - 引入了LoRAMoE框架，通过集成LoRAs和路由器来增强模型处理下游任务的能力，同时减轻世界知识遗忘。具体是提出局部平衡约束，以鼓励专家之间的合作，并在不同类型的任务上实现专家的专业化。
+- When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
+  - 2023.10
+  - 主要为了解决任务多样性问题和高昂的调优成本，提出的方法主要应用的医疗领域
+  - MOELoRA：结合了MoE和LoRA，核心是门控的设计，具体是不同层共享门控，构建任务类型的embedding，通过一个线性层输出专家权重，这里可以使用稀疏和非稀疏的加权方式。
+  - 推理时，可以恢复出每个任务类型的微调权重，并将微调权重与原始模型合并，避免的MoE带来的额外推理成本
+- Pushing Mixture of Experts to the Limit:  Extremely Parameter Efficient MoE for  Instruction Tuning
+  - 2023.09
+  - 提出了结合peft和MoE的两种方法MoV和MoLoRA
+  - 结论1：上一层网络输出x作为门控网络的输入相比sentence embedding效果更好
+  - 结论2：专家数量达到10时，效果开始区域稳定
+  - 结论3：soft merging策略相比离散路由策略效果更好
+
+
 ## LLM和知识图谱
+
 - [万字长文讲述大模型与知识图谱的关系](https://zhuanlan.zhihu.com/p/626433991)
 - [LLM 时代的金融知识图谱实践](https://zhuanlan.zhihu.com/p/623104680)
   - 比较基础
