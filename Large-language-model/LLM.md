@@ -47,10 +47,20 @@
 - https://github.com/TUDB-Labs/MoE-PEFT
 - MIXLORA: Enhancing Large Language Models Fine-Tuning with LoRA-based Mixture of Experts
   - 2024.04
-  - 提出了MixLoRA，不同于其他方法，MixLoRA中的每个专家都由原始模型结构和LoRA组成。
-  - MixLoRA使用top-k router策略，训练时也加入了expert balance loss，MixLoRA也探索了对self-attention使用MoE，进一步提升了整体效果
+  - 提出了MixLoRA，不同于其它方法，MixLoRA的每个专家都由原始模型层结构和LoRA组成，与传统的MoE模型更加相似。
+  - MixLoRA使用top-k router策略，训练时加入了expert balance loss，MixLoRA也探索了对self-attention使用MoE-LoRA，结果是进一步提升了整体效果。整体结构与PESC非常相似。
   - ![](../assets/mixlora.png)
 
+- Higher Layers Need More LoRA Experts
+  - 2024.02
+  - 论文验证了模型的较低层的expert之间相似性更大，存在参数冗余
+  - 论文提出了MoLA，从对比实验中可以得出，固定expert的总数，模型较高层相比较低层设置更多的expert，效果表现最好
+  
+- Parameter-Efficient Sparsity Crafting from Dense to Mixture-of-Experts for  Instruction Tuning on General Tasks
+  - 2024.01，PESC
+  
+  - 提出了一种MoE-LoRA架构模型PESC，该方法使用了串行结构的adapter-MoE，并在损失中添加了expert balance loss
+  
 - LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin
   - 2023.12
   - 实验发现在SFT阶段显著增加指令数据量会损害LLMs中的世界知识
