@@ -176,6 +176,11 @@
   - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
   - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
   - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
+- Helping or Herding?  Reward Model Ensembles Mitigate but do not Eliminate Reward Hacking
+  - 2023.12, COLM
+  - reward model overoptimization可以使用reward model组合的方式进行缓解
+  - 使用不同预训练seed的ensemble方法相比使用不同微调seed的ensemble方法的效果更好，但是仍然不能消除reward model  hacking问题，经过实验探究，ensemble的reward model展示除了一些相似的错误pattern
+
 - Adversarial Preference Optimization: Enhancing Your Alignment via RM-LLM Game
   - 2023.11, ACL findings2024
   - LLM模型需要不断提高回复质量，使得自己的回复和金标数据之间的得分差距减小，而RM模型需要不断将LLM回复和金标回复的得分差距拉大
