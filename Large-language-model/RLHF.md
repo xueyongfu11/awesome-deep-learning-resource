@@ -156,18 +156,34 @@
   - 在policy model和reference model未偏离太多的条件下，ranking accuracy和win rate两种评价指标是接近的
 - Fine-Tuning Language Models with Reward Learning on Policy
   - 2024.03, NAACL2024, RLP, 解决reward model hacking问题
-  - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
+  - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标注，训练新的reward model
   - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
   - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。然后基于这两种方法微调reward model
-- ODIN: Disentangled Reward Mitigates Hacking in RLHF
+- InfoRM: Mitigating Reward Hacking in RLHF via Information-Theoretic Reward Modeling
   - 2024.02
   
-  - 本文主要研究reward hacking中最常见的回复长度问题，提出了一种公平的权衡score和response length的评估方法，本质是基于改进prompt的模型评估方法
+  - 信息瓶颈（Information Bottleneck, IB）目标：通过引入变分信息瓶颈目标，InfoRM能够在保留与人类偏好相关的信息的同时，过滤掉与偏好无关的冗余信息
   
+  - 奖励过度优化检测：论文发现奖励过度优化与IB潜在空间中的异常值之间存在相关性，并基于此提出了簇分离指数，用于量化IB潜在空间中的偏差，作为奖励过度优化的指标。
+  
+- ODIN: Disentangled Reward Mitigates Hacking in RLHF
+  - 2024.02
+
+  - 本文主要研究reward hacking中最常见的回复长度问题，提出了一种公平的权衡score和response length的评估方法，本质是基于改进prompt的模型评估方法
+
   - 通过大量的实验，验证了几个超参设置对长度偏置的影响，比如KL loss系数、长度惩罚项、RM clip、PPO clip、从old policy采样数据等
   - 提出了一种改进的RM算法，ODIN，即使用length header和content header，推理时，只使用content header的奖励值
   - ODIN如何训练：首先可以容易构建Length Loss和Rank Loss，为了解耦出content  Loss，构建了一个正交Loss，即length header和content header权重的乘积，来间接的训练content  header。为了防止header权重为0，使用了weight norm。
-  
+
+- Improving Reinforcement Learning from Human Feedback with Efficient Reward Model Ensemble
+  - 2024.01
+
+  - 现有reward ensemble方法计算成本和资源消耗成本较高，因此提出了两个方法linear-layer ensemble和lora-based ensemble
+
+  - linear-layer ensemble是使用共享的backbone，组合中的每个模型使用自己的reward header；
+  - lora-based ensemble是组合中的每个模型使用自己的lora层，训练时先用部分数据基于linear-layer ensemble方法训练，然后再使用剩下的数据基于lora-based ensemble方法训练
+  - 使用时提出了两种方法，一种是对奖励值取平均，第二种是计算lower confidence bound (LCB)
+
 - Iterative Data Smoothing: Mitigating Reward Overfitting and  Overoptimization in RLHF
   - 2024.01
 
