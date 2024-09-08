@@ -159,9 +159,27 @@
   - reward model的效果随着policy model的优化出现不准确的分布偏移，常用的方法是从policy model中重新采样、标准，训练新的reward model
   - RLP方法不需要重新采样数据训来练新reward model，提出了一种无监督的reward model微调方法，从而避免的分布偏移
   - 具体是使用了无监督的multi-view表示学习方法，来学习policy model的采样样本。二是提出了合成偏好数据的生成方法，进一步微调reward model。然后基于这两种方法微调reward model
+- ODIN: Disentangled Reward Mitigates Hacking in RLHF
+  - 2024.02
+  
+  - 本文主要研究reward hacking中最常见的回复长度问题，提出了一种公平的权衡score和response length的评估方法，本质是基于改进prompt的模型评估方法
+  
+  - 通过大量的实验，验证了几个超参设置对长度偏置的影响，比如KL loss系数、长度惩罚项、RM clip、PPO clip、从old policy采样数据等
+  - 提出了一种改进的RM算法，ODIN，即使用length header和content header，推理时，只使用content header的奖励值
+  - ODIN如何训练：首先可以容易构建Length Loss和Rank Loss，为了解耦出content  Loss，构建了一个正交Loss，即length header和content header权重的乘积，来间接的训练content  header。为了防止header权重为0，使用了weight norm。
+  
+- Iterative Data Smoothing: Mitigating Reward Overfitting and  Overoptimization in RLHF
+  - 2024.01
+
+  - 为了缓解reward overoptimization，从理论视角设计了改进版的RM算法，即IDS
+
+  - IDS的核心思想是，在每一个epoch训练期间，不仅用数据更新模型，还要用模型来更新数据，即使用soft labels来替代hard labels
+  - 悲观最大似然估计（pessimistic MLE）通过降低对较少被选择的数据的估计奖励，有助于缓解奖励过度优化的问题。而IDS通过更新我们所训练数据的标签来实现这一点
+
 - WARM: On the Benefits of Weight Averaged Reward Models
   - 2024.01
-  - 简单的说，训练多个reward model，然后将模型权重进行平均
+  - 引入了权重平均奖励建模的首个实例 WARM，可缓解奖励破解、提高分布变化下的可靠性和对标签损坏的鲁棒性。
+  - 发现权重平均和预测平均的关键差异，权重平均能保持不变的预测机制，减少记忆（比如标签错误的训练样本），更关注可泛化特征
 
 - Secrets of RLHF in Large Language Models Part II: Reward Modeling
   - 2024.01, 复旦大学
@@ -192,6 +210,14 @@
   - 提出使用多个模型组合的方式来缓解reward model的过优化问题
   - 多个reward model的组合，使用WCO和UWO，相比计算均值的方式效果更好
   - 论文也研究了RM的size、数据size、组合模型的数据等对效果的影响
+
+- Confronting Reward Model Overoptimization with Constrained RLHF
+  - 2023.10
+
+  - 论文通过实验确定了复合奖励模型的过度优化问题，这些组成部分之间的相关性对优化点的位置有显著影响。优化点是超过了该位置之后，proxy reward上升，ground truth reward下降。
+
+  - 为了解决过度优化问题，论文提出了一种使用约束强化学习的方法。这种方法通过防止代理超过每个奖励模型的有用性阈值，来防止过度优化。论文提出的方法通过学习动态权重来解决组成部分奖励模型的权重问题，这些权重自然由拉格朗日乘数表示。
+  - 为了在单次运行中识别和优化这些点，论文引入了一种使用无梯度优化的方法。这种方法可以在训练过程中动态地找到这些代理点，显著节省计算资源
 
 - RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
   - 2023.09
