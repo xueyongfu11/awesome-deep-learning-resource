@@ -4,6 +4,15 @@
 
 # Lora-related
 
+- MELoRA: Mini-Ensemble Low-Rank Adapters  for Parameter-Efficient Fine-Tuning
+  - 2024.06, ACL2024
+  
+  - 提出了MELoRA方法，具体是构建n个mini LoRA，通过对角线concat的方式将这n个mini LoRA拼接，一定程度上类似sparse LoRA的思想，但是计算方式是不同的。
+
+  - 从理论上证明了MELoRA的秩可以表示为n个mini LoRA秩的加和，因此该方式在保持秩不变的同时可以减少训练参数量
+  
+  - <img src="../assets/MELoRA.png" alt="image-20240913114520590" style="zoom:67%;" />
+  
 - Random Masking Finds Winning Tickets for Parameter Efficient Fine-tuning
   - 2024.05, ICML 2024
   - 提出一种基于参数随机mask的参数有效性微调方法，即随机对模型参数进行mask，只对未进行mask的参数进行调整
@@ -14,13 +23,13 @@
   - 通过将模型权重分解用SVD分解，将主要的特征值和特征向量用lora进行微调，其余的特征值和特征向量保持不变
   - 实验证明了对主要的特征值和特征向量进行微调，相比微调中间或者次要特征值和特征向量，可以获得更好的效果
   - code: https://github.com/GraphPKU/PiSSA
-  
+
 - ALoRA: Allocating Low-Rank Adaptation for Fine-tuning Large Language Models
   - 2024.03, NAACL 2024
   - ALoRA的模型机构类似SVD分解的结构
   - 动态调整内在秩：与传统的低秩适应（LoRA）方法不同，ALoRA 允许在微调过程中动态调整每个Transformer模块的内在秩，而不是使用固定的秩设置
   - 在微调过程中，ALoRA 通过逐步修剪丰富且可能产生负面影响的LoRA秩，并将这些修剪掉的秩预算分配给需要更高秩的重要Transformer模块
-  
+
 - AFLoRA: Adaptive Freezing of Low Rank Adaptation in Parameter Efficient Fine-Tuning of Large Models
   - 2024.03,
   - AFLoRA的核心思想是在微调过程中适应性地冻结低秩适应路径中的投影矩阵，以减少计算成本和缓解过拟合
@@ -32,7 +41,7 @@
   - 双层次优化（BLO）：BiLoRA采用BLO框架，将参数分为两个层次进行优化。在较低层次，优化伪奇异向量矩阵（P和Q），而在较高层次，优化伪奇异值矩阵（Λ）
   - 正则化：为了保持P和Q的正交性，BiLoRA应用了正则化项R1。此外，还可以使用R2来鼓励Λ中的伪奇异值接近二值（0或1），进一步约束模型的复杂度
   - <img src="../assets/BiLoRA.png" style="zoom:50%;" />
-  
+
 - SuperLoRA: Parameter-Efficient Unified Adaptation of Multi-Layer Attention Modules
   - 2024.03, 
   - 提出了lora系列变体的统一框架，通过控制不同的超参，可以得到不同的lora变体
