@@ -140,7 +140,7 @@
   - 为了减少响应的长度，添加了长度的正则loss
 - Interpretable Preferences via Multi-Objective Reward Modeling  and Mixture-of-Experts
   - 2024.06
-  - 为了解决reward model不可解释行的问题，提出了ArmoRM模型，具体是在last token接一个多目标回归的header层，多目标对应偏好判断的不同方面
+  - 为了解决reward model不可解释性的问题，提出了ArmoRM模型，具体是在last token接一个多目标回归的header层，多目标对应偏好判断的不同方面
   - 为了将多方面的偏好值加权，提出了一种门控网络，该门控网络的输入是prompt的last token的hidden  state，输出是经过softmax的加和为1的权重值，与多方面的偏好值相乘之后得到总奖励值。门控网络的训练是冻结除了门控网络的其他所有权重，使用bradley-terry目标函数进行简介训练
 - Preference Learning Algorithms Do Not Learn Preference Rankings
   - 2024.05，google，
