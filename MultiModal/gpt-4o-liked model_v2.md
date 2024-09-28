@@ -4,8 +4,6 @@
 
 ## gpt-4o-liked models
 
-- Moshi
-  - [Code](https://github.com/kyutai-labs/moshi), [Paper: Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf)
 - Mini-Omni
   - [Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
 - LLaMA-Omni
@@ -35,4 +33,47 @@
   - 使用了VAD模型SileroVAD，确定音频内容是否构成人类的声音
   - 噪声过滤：使用了状态token <2> 来判断输入音频是否时有效的query
   - 声音打断交互：同时部署两个模型，生成模型用来回复用户的query，而监测模型同时监测环境声音，当监测到有效的query时，生成模型终止回复，并将上下文提供给监测模型，监测模型开始对新query进行回复，而生成模型对环境生成进行监测，二者完成了身份的互换。
+
+### Moshi
+
+- [Code](https://github.com/kyutai-labs/moshi), [Paper: Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf)
+- 整体概述
+  - Moshi是一个多流语音到语音Transformer模型，能够实现与用户的全双工语音对话。它基于Helium构建，是一个从零开始创建的文本大型语言模型（LLM）
+  - 引入了“Inner Monologue”，使得在训练和推断过程，该过程中同时处理文本和音频标记，使模型可以利用文本模态的知识，但仍保持为一个语音到语音系统
+  - 设计为多流架构，允许模型同时进行说话和聆听，不需要明确地控制讲话轮次，以支持实时对话
+  - 提出了Mimi，一种神经音频编码器，通过残差向量量化（RVQ）和知识蒸馏技术将语义和声学信息整合进单一tokenizer中，以高效且高质量地捕捉用户输入音频并输出声音
+- Helium大语言模型
+  - Helium是基于Transformer的自回归语言模型，做了如下改进：在attention block，feed-forward block以及output layer之前使用了RMS Norm；使用RoPE旋转位置编码；在feed-forward block中，使用门控线性单元GLU；tokenizer使用了unigram model（from sentencepiece）
+  - 预训练数据只保留了英文数据，做了数据去重和质量过滤
+- Audio Tokenization
+  - 背景：
+    - 声学token表征了音频细节信息，可以用来重建高质量的音频。声学token一般有下面几个用处：与text结合生成语音（即ASR），与text结合生成音乐，与语义token结合进行无条件的音频生成。
+    - 声学token无法重建高质量的音频，而是与人类语言内容相关，因此与语言模型的token更加相似。语义token主流是使用双向transfomer模型建模，无法支持流式任务。
+  - 基于背景介绍中存在的问题，文章提出了Mimi音频编解码器，核心是将支持语义token编码的双向模型蒸馏到单向因果模型中。
+  - Mimi编码器使用了时序卷积网络对输入音频进行encoding，得到隐式表征。接着使用残差向量量化RVQ将隐式表征离散化为codebook中的向量（RVQ具体方法可以学习相关论文）
+  - 在量化前和量化后添加了8层的casual transformer层，为了稳定训练，使用了LayerScalue初始化方法
+  - 如何蒸馏？论文将WavLM语义信息蒸馏到了RVQ的第一层中，方法是计算RVQ首次量化输出的embedding和WavLM的embedding的cosine举例，作为训练loss的一部分。因此第一个量化层得到的是语义token，而声学token则在RVQ的其他量化层进行了保留。
+  - ![image-20240928174746137](../assets/Mini.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

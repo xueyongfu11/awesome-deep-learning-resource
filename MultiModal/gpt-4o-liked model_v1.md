@@ -87,8 +87,9 @@
   - https://github.com/facebookresearch/encodec
 - SoundStream: An End-to-End Neural Audio Codec
   - 2021.07，
-  - 提出了RVQ，
-  - https://blog.csdn.net/Fire_to_cheat_/article/details/138307141
+  - VQ面临一个问题，如果要更加准确的表征音频片段，那就是它需要一个庞大的码本(codebook)来进行工作
+  - 本工作提出了RVQ，RVQ是VQ的一个变种，它在多级量化过程中被使用。
+  - 在第一级，使用标准的VQ过程来量化信号，然后计算出原始信号与第一级量化后的信号之间的残差，对这个残差再进行一次或多次量化，以进一步减小量化误差，每一级都会产生一个新的残差，然后对新的残差继续量化，这样做可以逐步细化量化结果，提高最终的重建质量。
 - Neural Discrete Representation Learning
   - 2017，VQ-VAE，
   - 将输入x编码为离散的向量，计算离散向量，映射到离散潜在嵌入空间e中的最近向量，映射结果输入到decoder解码出x'
