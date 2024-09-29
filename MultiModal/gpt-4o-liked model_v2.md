@@ -4,8 +4,6 @@
 
 ## gpt-4o-liked models
 
-- Mini-Omni
-  - [Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
 - LLaMA-Omni
   - [Code](https://github.com/ictnlp/LLaMA-Omni), [Paper: LLaMA-Omni: Seamless Speech Interaction with Large Language Models](https://arxiv.org/pdf/2409.06666)
 
@@ -100,9 +98,23 @@
 
   <img src="../assets/Moshi_loss.png" alt="image-20240929140720667" style="zoom: 50%;" />
 
+### Mini-Omni
 
+- [Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
 
+- Mini-Omni概述
 
+  - Mini-Omni的基本思想是通过文本来指导音频的生成
+  - 这种方法基于假设：text token有更高的信息密度，可以使用更少的token表示相同的信息。
+  - 生成音频token时以对应文本token为条件，类似在线语音合成系统，且生成音频前用 N 个标记填充确保先产生对应文本标记，可作为超参数调整
+  - 模型可依据说话者和风格的embedding，控制说话者特征和风格元素
+  - ![image-20240930002650651](../assets/Mini_Omni.png)
+
+- 将audio token和text token合并成新的词表，生成时同时预测audio token和text token，Loss如下
+
+  <img src="../assets/mini_omni_loss.png " style="zoom:67%;" />
+
+- 
 
 
 
