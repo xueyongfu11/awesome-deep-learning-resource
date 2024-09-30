@@ -104,19 +104,39 @@
 
 - Mini-Omni概述
 
-  - Mini-Omni的基本思想是通过文本来指导音频的生成
-  - 这种方法基于假设：text token有更高的信息密度，可以使用更少的token表示相同的信息。
-  - 生成音频token时以对应文本token为条件，类似在线语音合成系统，且生成音频前用 N 个标记填充确保先产生对应文本标记，可作为超参数调整
+  - Mini-Omni的基本思想是通过文本来指导音频的生成，这种方法基于假设：text token有更高的信息密度，可以使用更少的token表示相同的信息。
+  - 生成音频token时以对应文本token为条件，类似在线语音合成系统，且生成音频前用 N 个pad token填充，确保先产生文本token
   - 模型可依据说话者和风格的embedding，控制说话者特征和风格元素
   - ![image-20240930002650651](../assets/Mini_Omni.png)
-
+  
 - 将audio token和text token合并成新的词表，生成时同时预测audio token和text token，Loss如下
 
   <img src="../assets/mini_omni_loss.png " style="zoom:67%;" />
 
-- 
+- 音频解码策略
+
+  - 理解这部分之前，首先要熟悉audio token。音频编解码器一般使用残差向量量化RVQ对音频特征进行离散化，经过多层量化之后，audio token由Q个向量组成，Q是codebook的数量。
+
+  - 解码时可以顺序进行，但是对于实时音频生成任务来说，并行解码是一种更合适的方案。建议看下MusicGen这篇论文，能够对并行解码有更深刻的理解。
+
+  - **Text-delay Parallel Decoding**：Mini-Omni概述部分提及到，使用了文本知道音频生成的方法。具体实现是对text token和audio token同时解码，并加入delay机制，使得text token先生成，来指导音频的生成
+
+  - **Batch Parallel Decoding**
+
+    - 进一步增强模型在对话中的推理能力，最大化其基于文本的能力转移，研究人员尝试使用Batch Parallel Decoding
+    - 鉴于模型在文本模态中表现更强，他们将单个输入的推理任务扩展到批次大小为2：一个样本同时需要文本和音频响应，另一个样本只需要文本响应，重点放在基于文本的音频合成上。
+    - 第一个样本的文本标记输出被丢弃，而第二个样本的文本输出则嵌入到第一个样本相应的文本标记位置。与此同时，第一个样本的音频流使用了第二个样本纯文本响应的内容；这一过程被称为批处理并行解码。
+    - 通过这种方法，几乎可以完全以最小资源开销将模型基于文本的能力转移到音频模态，显著增强了它在新模态下的推理能力。
+
+  - Parallel Decoding和Batch Parallel Decoding的图解
+
+    ![image-20241001001201128](../assets/omni_parallel_decoding.png)
 
 
+- 训练
+  - 模态对齐：对模型进行freeze，主要训练两个adapter，训练任务有ASR和TTS
+  - 适应性训练：主要训练模型的文本生成能力，因为音频的生成主要依赖于生成的文本。训练的任务有：speech recognition, spoken question answering, and text response tasks
+  - 多模态微调：使用更加全面的数据，对模型的所有参数进行微调
 
 
 
