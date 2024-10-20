@@ -2,6 +2,25 @@
 
 
 
+## 论文检索
+
+- [google学术检索](https://scholar.google.com/)
+  - 主要基于关键词检索；论文资源比较完整
+  - [google学术国内镜像](https://gg.xueshu5.com/)
+- [Semantic Scholar](https://www.semanticscholar.org/me/research)
+  - 主要基于语义检索；太新的文章可能检索不到；适合与Google Scholar配合使用
+- [Arxiv](https://arxiv.org/search/)
+- [dblp](https://dblp.org/)
+  - 包含了大多数会议或者期刊，适合基于会议或者期刊查找论文
+- [ACL Anthology](https://aclanthology.org/)
+  - 主要是自然语言处理相关的会议论文
+- [Sci-Hub中文社区](https://discuss.sci-hub.org.cn/)
+  - 论文获取网站
+- [connected paper](https://www.connectedpapers.com/)
+  - 基于可视化图谱的论文检索，方便查找论文之间的引用关系
+- [Aminer](https://www.aminer.cn/)
+- [Paper Digest](https://www.paperdigest.org/)
+
 ## 作图
 
 - 常用
