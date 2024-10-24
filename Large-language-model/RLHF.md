@@ -117,6 +117,10 @@
 
 ### paper-reward model
 
+- Critique-out-Loud Reward Models
+  - 2024.08
+  - 提出了CLoud，首先训练模型生成回复的评论信息，然后将prompt，response，回复的评论信息作为输入，输出reward value
+  
 - HAF-RM: A Hybrid Alignment Framework for Reward Model Training
   - 2024.07
 
@@ -134,10 +138,6 @@
   - 2024.07
 
   - 对比学习目标条件化：通过增加未来状态沿着采样的偏好轨迹的表示相似度，并减少沿着随机采样的不受欢迎轨迹的相似度，来训练奖励模型
-- Bootstrapping Language Models with DPO Implicit Rewards
-  - 2024.06
-  - 方法与我的想法不谋而合，是对iterative DPO的改进，reward信号使用DPO的隐式奖励来对采样的数据进行标注
-  - 为了减少响应的长度，添加了长度的正则loss
 - Interpretable Preferences via Multi-Objective Reward Modeling  and Mixture-of-Experts
   - 2024.06
   - 为了解决reward model不可解释性的问题，提出了ArmoRM模型，具体是在last token接一个多目标回归的header层，多目标对应偏好判断的不同方面
@@ -154,19 +154,9 @@
   - 引入了对比学习来增强奖励模型区分被选择和被拒绝响应的能力，从而提高模型的泛化能力
   - 采用元学习来使奖励模型保持对分布外样本的微妙差异的区分能力，这可以用于迭代的RLHF优化
   - [深挖RLHF潜力，复旦语言和视觉团队创新奖励模型优化，让大模型更对齐](https://mp.weixin.qq.com/s/BSaGLikARlvM8yitYtlA3w)
-- Self-Rewarding Language Models
-  - 2024.01
-  - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
-  - 基于打分结果筛选得分最高和最低的回复作为偏好数据对，然后使用DPO进行训练，相比直接用最高分数据微调的模型效果要好
-  - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
-  - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
-  - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
-- Adversarial Preference Optimization: Enhancing Your Alignment via RM-LLM Game
-  - 2023.11, ACL findings2024
-  - LLM模型需要不断提高回复质量，使得自己的回复和金标数据之间的得分差距减小，而RM模型需要不断将LLM回复和金标回复的得分差距拉大
-  - 同时两个KL正则项会约束RM和LLM不要对抗得过于离谱。通过这种博弈，RM可以跟随LLM的变化而迭代，模型分布偏移的问题也就得到缓解了
-  - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
-  - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
+- SALMON: Self-Alignment with Instructable Reward Models
+  - 2023.10, ICLR2024
+  - 提出了指令性reward model，可以基于任意的人类准则来生成相应的奖励得分
 - RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
   - 2023.09
   - 方法旨在解决传统通过人类反馈进行强化学习中的一个关键瓶颈问题：获取高质量的人类偏好标签
@@ -270,11 +260,28 @@
   - 评估方法是随着KL的增加，计算RM model的score与Gold RM model的score的差异。KL增加，表明policy model与initial model差异更大，采样到的数据标注时，越容易hacking RM model
 
 
-## self improving
+## self-improving
 
+- Bootstrapping Language Models with DPO Implicit Rewards
+  - 2024.06
+  - 方法与我的想法不谋而合，是对iterative DPO的改进，reward信号使用DPO的隐式奖励来对采样的数据进行标注
+  - 为了减少响应的长度，添加了长度的正则loss
 - self-Play Fine-Tuning Converts Weak Language Models  to Strong Language Models
   - 2024.01
   - 提出了一种自我博弈的方法提升弱模型到强模型，具体思路是main player的目标是最大化human  response与生成response的差值，而opponent player的目标是减小生成回复和human  response的差值，然后以一种对抗的方式进行提升，注意main player想比opponent player多一个iteration
   - 这种方法可以形式化为类DPO的公式描述，policy model相比reference model多一个iteration
   - 实验证明，SPIN相比DPO，不需要偏好数据，仅需要SFT数据，并且效果更好
+- Self-Rewarding Language Models
+  - 2024.01
+  - 通过大模型生成回复，并用大模型自身对生成的回复进行打分
+  - 基于打分结果筛选得分最高和最低的回复作为偏好数据对，然后使用DPO进行训练，相比直接用最高分数据微调的模型效果要好
+  - 以上训练过程会经过多次迭代，每次迭代会用到之前创建的数据
+  - [Meta发布自我奖励机制，Llama在3轮训练后超越GPT-4](https://zhuanlan.zhihu.com/p/680274984)
+  - code: https://github.com/lucidrains/self-rewarding-lm-pytorch
+- Adversarial Preference Optimization: Enhancing Your Alignment via RM-LLM Game
+  - 2023.11, ACL findings2024
+  - LLM模型需要不断提高回复质量，使得自己的回复和金标数据之间的得分差距减小，而RM模型需要不断将LLM回复和金标回复的得分差距拉大
+  - 同时两个KL正则项会约束RM和LLM不要对抗得过于离谱。通过这种博弈，RM可以跟随LLM的变化而迭代，模型分布偏移的问题也就得到缓解了
+  - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
+  - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
 
