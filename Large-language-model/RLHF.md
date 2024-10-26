@@ -117,16 +117,30 @@
 
 ### paper-reward model
 
+- Beyond Scalar Reward Model: Learning Generative Judge from Preference Data
+  - 2024.10
+  
+  - 这篇文章的思路与我之前实验的思路一样，使用LLM来生成自然语言的可解释性判断，我之前是在reward bench上做的实验，相比DPO或者reward model的准确率要低一些
+  
 - Critique-out-Loud Reward Models
   - 2024.08
   - 提出了CLoud，首先训练模型生成回复的评论信息，然后将prompt，response，回复的评论信息作为输入，输出reward value
-  
+
+- Generative Verifiers: Reward Modeling as Next-Token Prediction
+  - 2024.08
+
+  - 以SFT和CoT-SFT的方式，在prompt+response基础上添加如“Is the answer correct (Yes/No)?”的问题片段，然后以next-token prediction的推理方式，计算Yes/No的概率值，作为奖励值
+
 - HAF-RM: A Hybrid Alignment Framework for Reward Model Training
   - 2024.07
 
   - 提出了一种reward model的混合对齐框架，通过共享backbone，header由value header（奖励模型的header）和prob header组成（生成的header）
 
   - 具体实现是由DPO的loss和奖励模型的loss组成
+- DogeRM: Equipping Reward Models with Domain Knowledge through Model Merging
+  - 2024.07
+  - 提出了DogeRM，将通用的reward model与领域模型进行权重加权，从而使得通用reward model表现出领域reward model的效果
+
 - Boosting Reward Model with Preference-Conditional Multi-Aspect Synthetic Data Generation
   - 2024.07，
   - 方法基于RLCD的改进，探索了基于条件生成偏好数据的方法
