@@ -4,6 +4,7 @@
 
 ## gpt-4o-liked models
 
+- https://github.com/huggingface/speech-to-speech
 - LLaMA-Omni
   - [Code](https://github.com/ictnlp/LLaMA-Omni), [Paper: LLaMA-Omni: Seamless Speech Interaction with Large Language Models](https://arxiv.org/pdf/2409.06666)
 

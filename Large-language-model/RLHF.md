@@ -4,6 +4,9 @@
 
 ## resource
 
+- https://github.com/RLHFlow/Online-RLHF
+- https://github.com/RLHFlow/RLHF-Reward-Modeling
+- https://github.com/PKU-Alignment/safe-rlhf
 - [The N Implementation Details of RLHF with PPO](https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo)
 - https://github.com/huggingface/trl
 - https://github.com/huggingface/alignment-handbook

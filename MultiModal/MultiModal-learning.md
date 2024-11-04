@@ -2,6 +2,8 @@
 
 
 
+- https://github.com/HITsz-TMG/UMOE-Scaling-Unified-Multimodal-LLMs
+
 
 - https://github.com/thuiar/MMSA
 - https://github.com/pliang279/awesome-multimodal-ml
@@ -17,8 +19,6 @@
 
 ## multi-modal 
 
-
-
 - BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
   - https://github.com/salesforce/BLIP
   - 提出了基于自举方法进行多模态预训练的统一多模态理解和生成模型BLIP
@@ -30,8 +30,6 @@
 - VLMO: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts
   - 提出了基于专家混合模型的多模态语言模型
   - 模型的输入同ViLT，使用可以是单塔模型，也可以是双塔模型。transformer层共享同一个多头self-attention，后面跟三个专家网络FFN，language-FFN、vision-FFN、LN-FFN
-
-
 
 - Align before Fuse: Vision and Language Representation Learning with Momentum Distillation
   - ALBEF
@@ -57,8 +55,6 @@
 - https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models
 - https://github.com/THUDM/VisualGLM-6B
 - https://github.com/THUDM/CogVLM
-
-
 
 
 - BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
