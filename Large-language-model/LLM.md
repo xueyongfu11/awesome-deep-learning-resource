@@ -138,6 +138,12 @@
 
 ### 个性化记忆
 
+- https://github.com/modelscope/MemoryScope
+  - idea: 异步地对对话信息总结，并更新system prompt中的个性化信息
+  
+- https://github.com/liyongqi2002/Awesome-Personalized-Alignment
+  - A curated list of personalized alignment resources
+
 - langchain
   - https://github.com/langchain-ai/langchain
   - 支持检索和摘要两种记忆方式
