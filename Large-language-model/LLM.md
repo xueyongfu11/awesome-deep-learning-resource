@@ -4,6 +4,23 @@
 
 ## llm
 
+- https://github.com/OpenBMB/BMPrinciples
+  - A collection of phenomenons observed during the scaling of big foundation models, which may be developed into consensus, principles, or laws in the future
+
+- https://github.com/modelscope/data-juicer
+  - A one-stop data processing system to make data higher-quality, juicier, and more digestible for (multimodal) LLMs
+
+  - 为大模型提供更高质量、更丰富、更易”消化“的数据
+
+- https://github.com/wdndev/llm_interview_note
+  - 主要记录大语言大模型（LLMs） 算法（应用）工程师相关的知识及面试题
+
+- https://github.com/open-compass/opencompass
+  - OpenCompass is an LLM evaluation platform, supporting a wide range of models
+
+- https://github.com/modelscope/evalscope
+  - A streamlined and customizable framework for efficient large model evaluation and performance benchmarking
+
 - [从头预训练大模型实践经验](https://mp.weixin.qq.com/s/LvOsS25mSRFWAHYv9IqTyQ)
 
 - https://github.com/yanqiangmiffy/how-to-train-tokenizer

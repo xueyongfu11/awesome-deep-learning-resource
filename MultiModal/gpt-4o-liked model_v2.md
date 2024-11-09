@@ -4,6 +4,11 @@
 
 ## gpt-4o-liked models
 
+- https://github.com/gpt-omni/mini-omni2
+- https://github.com/gpt-omni/mini-omni
+- https://github.com/facebookresearch/spiritlm
+- https://github.com/Standard-Intelligence/hertz-dev
+- https://github.com/THUDM/GLM-4-Voice
 - https://github.com/huggingface/speech-to-speech
 - LLaMA-Omni
   - [Code](https://github.com/ictnlp/LLaMA-Omni), [Paper: LLaMA-Omni: Seamless Speech Interaction with Large Language Models](https://arxiv.org/pdf/2409.06666)

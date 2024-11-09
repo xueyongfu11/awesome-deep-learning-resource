@@ -1,4 +1,17 @@
+[TOC]
 
+
+
+## 垂域大模型
+
+- https://github.com/luban-agi/Awesome-Domain-LLM
+  - 收集和梳理垂直领域的开源模型、数据集及评测基准
+
+- https://github.com/SmartFlowAI/EmoLLM
+  - 心理健康大模型、LLM、The Big Model of Mental Health、Finetune、InternLM2、InternLM2.5、Qwen、ChatGLM...
+
+- https://github.com/qiuhuachuan/smile
+  - 中文领域心理健康对话大模型MeChat
 
 - https://github.com/BioFM/OpenBioMed
   - 多模态生物医疗领域大模型
@@ -16,5 +29,4 @@
 
 - [对行业大模型的思考](https://zhuanlan.zhihu.com/p/643805698)
   - 垂直领域预训练：10%-15%的领域数据
-
 

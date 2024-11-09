@@ -123,6 +123,11 @@
 - https://github.com/yaleimeng/Final_word_Similarity.git
   - 中文近义词
 
+### label tools
+
+- https://github.com/opendatalab/LabelLLM
+- https://github.com/HumanSignal/label-studio
+
 # 编程语言
 
 - JAVA
@@ -181,4 +186,5 @@
 - https://github.com/tickstep/aliyunpan
 - https://github.com/karpathy/arxiv-sanity-preserver
 
-- - 
+- https://github.com/ShadowWhisperer/Remove-MS-Edge
+  - 卸载
