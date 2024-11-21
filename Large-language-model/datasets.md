@@ -11,6 +11,44 @@
 
 - https://github.com/FreedomIntelligence/InstructionZoo
 
+## Preference Data
+
+- openbmb/UltraFeedback
+  - https://huggingface.co/datasets/openbmb/UltraFeedback
+  - 使用不同的模型生成多回复，然后使用细粒度的偏好标注指令进行gpt-4自动标注
+- HuggingFaceH4/ultrafeedback_binarized
+
+  - https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized
+  - UltraFeedback数据处理好的版本
+- Anthropic/hh-rlhf
+  - https://huggingface.co/datasets/Anthropic/hh-rlhf
+  - 人工标注，可能含有噪声
+- fnlp/hh-rlhf-strength-cleaned
+  - https://huggingface.co/datasets/fnlp/hh-rlhf-strength-cleaned
+- stanfordnlp/SHP
+  - https://huggingface.co/datasets/stanfordnlp/SHP
+- Intel/orca_dpo_pairs
+  - https://huggingface.co/datasets/Intel/orca_dpo_pairs
+- HannahRoseKirk/prism-alignment
+  - https://huggingface.co/datasets/HannahRoseKirk/prism-alignment
+- lmsys/chatbot_arena_conversations
+  - https://huggingface.co/datasets/lmsys/chatbot_arena_conversations
+- xiaodongguaAIGC/CValues
+  - https://huggingface.co/datasets/xiaodongguaAIGC/CValues
+  - 中文safe偏好数据
+- liyucheng/zhihu_rlhf_3k
+  - 中文偏好数据
+  - https://huggingface.co/datasets/liyucheng/zhihu_rlhf_3k
+- lmsys/mt_bench_human_judgments
+  - https://huggingface.co/datasets/lmsys/mt_bench_human_judgments
+  - 非偏好数据
+- tasksource/oasst1_pairwise_rlhf_reward
+  - https://huggingface.co/datasets/tasksource/oasst1_pairwise_rlhf_reward
+- Birchlabs/openai-prm800k-stepwise-critic
+  - https://huggingface.co/datasets/Birchlabs/openai-prm800k-stepwise-critic
+- PKU-Alignment/BeaverTails-single-dimension-preference
+  - https://huggingface.co/datasets/PKU-Alignment/BeaverTails-single-dimension-preference
+
 
 ## chinese dataset
 
