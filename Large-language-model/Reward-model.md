@@ -25,15 +25,19 @@
 
 - Beyond Scalar Reward Model: Learning Generative Judge from Preference Data
   - 2024.10
-  - 提出了生成性的判别模型，具体是让大模型输出比较的依据，以及偏好的回复。
-  - 构造DPO训练数据时，比较依据存在正确的比较依据以及错误的比较依据，基于这种偏好对使用DPO模型进行训练
+  - Con-J是一种生成性评判模型，通过让LLM生成带有理由的正负评判，利用这些对比性评判对进行DPO训练，提高了模型的可解释性和对数据偏见的鲁棒性
 - Generative Verifiers: Reward Modeling as Next-Token Prediction
   - 2024.10
   - 以SFT和CoT-SFT的方式，在prompt+response基础上添加如“Is the answer correct (Yes/No)?”的问题片段，然后以next-token prediction的推理方式，计算Yes/No的概率值，作为奖励值
 - Generative Reward Models
   - 2024.10
+  - 论文提出了GenRM和CoT-GenRM。GenRM使用”下一个token预测“的方式，计算偏好选项的概率。相比传统添加value header的方法，GenRM未改变模型结构，而是以大模型自生成的方式。
+  2. GenRM以DPO方法进行训练。CoT-GenRM是在推理出偏好选项之前，先生成偏好对比的思维链依据。
 - Direct Judgement Preference Optimization
   - 2024.9
+  - 通过结合正面和负面的偏好数据优化生成型评估模型的评估能力
+  2. 三种训练任务：Chain-of-Thought Critique：通过逐步推理来生成详细的语言反馈和最终判断；Standard Judgement：仅生成最终判断，剔除语言反馈，以提供更直接的监督信号；Response Deduction：通过模型的评估推断原始的模型输出，以加深对高质量和低质量响应的理解
+  3. 综合采用DPO和SFT损失函数，在构造数据时，利用强大的教师模型生成高质量的偏好数据，并使用弱模型生成负例
 - Critique-out-Loud Reward Models
   - 2024.8
   - 提出了CLoud，首先训练模型生成回复的评论信息，然后将prompt，response，回复的评论信息作为输入，输出reward value
