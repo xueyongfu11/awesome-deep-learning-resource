@@ -27,6 +27,10 @@
   - https://huggingface.co/datasets/fnlp/hh-rlhf-strength-cleaned
 - stanfordnlp/SHP
   - https://huggingface.co/datasets/stanfordnlp/SHP
+- PKU-SafeRLHF
+  - 安全对齐数据集
+  - https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF
+
 - Intel/orca_dpo_pairs
   - https://huggingface.co/datasets/Intel/orca_dpo_pairs
 - HannahRoseKirk/prism-alignment
@@ -45,9 +49,11 @@
 - tasksource/oasst1_pairwise_rlhf_reward
   - https://huggingface.co/datasets/tasksource/oasst1_pairwise_rlhf_reward
 - Birchlabs/openai-prm800k-stepwise-critic
+  - 过程监督数据集
   - https://huggingface.co/datasets/Birchlabs/openai-prm800k-stepwise-critic
-- PKU-Alignment/BeaverTails-single-dimension-preference
-  - https://huggingface.co/datasets/PKU-Alignment/BeaverTails-single-dimension-preference
+  - 多步推理：数据集中每个示例通常包含需要逐步分解的复杂任务或问题；通过将问题分解为子问题，模型可以逐步构建最终的答案
+  - 批判性评估：包含对不同推理步骤的“评估”机制；训练过程中，模型可以学习在每个推理步骤中如何自我评估和调整
+
 
 
 ## chinese dataset
