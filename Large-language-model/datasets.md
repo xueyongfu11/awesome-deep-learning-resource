@@ -3,13 +3,16 @@
 
 
 
-# Datasets
+# LLM Datasets
 
 ## 各类数据集收集repo
 - https://github.com/yaodongC/awesome-instruction-dataset
   - 多模态数据集、文本指令集、RLHF数据集
 
 - https://github.com/FreedomIntelligence/InstructionZoo
+
+- 
+
 
 ## Preference Data
 
@@ -27,34 +30,44 @@
   - https://huggingface.co/datasets/fnlp/hh-rlhf-strength-cleaned
 - stanfordnlp/SHP
   - https://huggingface.co/datasets/stanfordnlp/SHP
+- orca_dpo_pairs
+  - https://huggingface.co/datasets/Intel/orca_dpo_pairs
+  - 无数据集相关介绍
+- HannahRoseKirk/prism-alignment
+  - https://huggingface.co/datasets/HannahRoseKirk/prism-alignment
+- orca_dpo_pairs
+  - https://huggingface.co/datasets/Intel/orca_dpo_pairs
+  
+- summarize_from_feedback
+  - 摘要偏好数据，from openai
+  - https://huggingface.co/datasets/openai/summarize_from_feedback
+
+
 - PKU-SafeRLHF
   - 安全对齐数据集
   - https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF
-
-- Intel/orca_dpo_pairs
-  - https://huggingface.co/datasets/Intel/orca_dpo_pairs
-- HannahRoseKirk/prism-alignment
-  - https://huggingface.co/datasets/HannahRoseKirk/prism-alignment
-- lmsys/chatbot_arena_conversations
-  - https://huggingface.co/datasets/lmsys/chatbot_arena_conversations
-- xiaodongguaAIGC/CValues
+- CValues
   - https://huggingface.co/datasets/xiaodongguaAIGC/CValues
   - 中文safe偏好数据
-- liyucheng/zhihu_rlhf_3k
+- zhihu_rlhf_3k
   - 中文偏好数据
   - https://huggingface.co/datasets/liyucheng/zhihu_rlhf_3k
-- lmsys/mt_bench_human_judgments
-  - https://huggingface.co/datasets/lmsys/mt_bench_human_judgments
-  - 非偏好数据
-- tasksource/oasst1_pairwise_rlhf_reward
+- oasst1_pairwise_rlhf_reward
   - https://huggingface.co/datasets/tasksource/oasst1_pairwise_rlhf_reward
-- Birchlabs/openai-prm800k-stepwise-critic
+
+- openai-prm800k-stepwise-critic
   - 过程监督数据集
   - https://huggingface.co/datasets/Birchlabs/openai-prm800k-stepwise-critic
   - 多步推理：数据集中每个示例通常包含需要逐步分解的复杂任务或问题；通过将问题分解为子问题，模型可以逐步构建最终的答案
   - 批判性评估：包含对不同推理步骤的“评估”机制；训练过程中，模型可以学习在每个推理步骤中如何自我评估和调整
 
+- lmsys/chatbot_arena_conversations
+  - 多轮偏好数据，基于从两个模型采样出来的多轮对话，对话上下文可能不同
+  - https://huggingface.co/datasets/lmsys/chatbot_arena_conversations
 
+- lmsys/mt_bench_human_judgments
+  - https://huggingface.co/datasets/lmsys/mt_bench_human_judgments
+  - 多轮偏好数据，基于从两个模型采样出来的多轮对话，对话上下文可能不同，使用大模型/人工判断哪一个多轮对话效果更好
 
 ## chinese dataset
 
