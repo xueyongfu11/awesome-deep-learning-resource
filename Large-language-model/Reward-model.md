@@ -20,6 +20,7 @@
   - reward model的损失函数中加入了margin
   - reward model的推理结果进行了WHITEN，即归一化操作，减去均值，除标准差
 - https://github.com/OpenLMLab/MOSS-RLHF
+- Towards Understanding the Influence of Reward Margin on Preference Model Performance
 
 ### generative reward model
 

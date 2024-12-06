@@ -4,6 +4,8 @@
 
 ## llm
 
+- 
+  
 - https://github.com/OpenBMB/BMPrinciples
   - A collection of phenomenons observed during the scaling of big foundation models, which may be developed into consensus, principles, or laws in the future
 
@@ -29,6 +31,7 @@
 
 - https://github.com/huggingface/datatrove
   - 大规模处理、过滤和删除重复文本
+- An Empirical Study of Catastrophic Forgetting in Large Language Models During Continual Fine-tuning
 
 
 ## leaderboard

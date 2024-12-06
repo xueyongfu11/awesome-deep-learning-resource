@@ -5,6 +5,7 @@
 ## LLM
 
 
+- [在embedding上添加噪声提升泛化性](https://zhuanlan.zhihu.com/p/661962656)
 - [清华ACL 2023最新长文 | WebCPM：首个联网支持中文问答开源模型](https://mp.weixin.qq.com/s/WSzJpQBxQQKdMRRrDObICQ)
   - 提出模仿人类使用搜索引擎搜索复杂问题并与搜索引擎多次交互的中文数据集
 - [如何大幅度延长语言模型输入长度](https://mp.weixin.qq.com/s/Jymq2ho3VQx7-o6y-JHxeg)
