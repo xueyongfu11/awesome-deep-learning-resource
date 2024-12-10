@@ -5,6 +5,11 @@
 ## LLM
 
 
+- OpenAI的强化微调技术
+
+  - [被OpenAI带火的强化微调RFT技术解析](https://blog.csdn.net/AIBigModel/article/details/144350849)
+  - [OpenAI Day2：支持微调o1, 核心技术竟更早来自字节跳动！「强化微调」技术分析](https://news.qq.com/rain/a/20241207A00U9M00)
+
 - [在embedding上添加噪声提升泛化性](https://zhuanlan.zhihu.com/p/661962656)
 - [清华ACL 2023最新长文 | WebCPM：首个联网支持中文问答开源模型](https://mp.weixin.qq.com/s/WSzJpQBxQQKdMRRrDObICQ)
   - 提出模仿人类使用搜索引擎搜索复杂问题并与搜索引擎多次交互的中文数据集
