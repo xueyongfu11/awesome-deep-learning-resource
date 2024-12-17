@@ -54,7 +54,7 @@
 - 手写Letex字符识别; https://detexify.kirelabs.org/classify.html
 - 模型取名：https://acronymify.com/
 - 对被检测为chatgpt的文章进行重写：https://undetectable.ai/
-- Consensus: 
+- [Consensus:]() 
   - Consensus 是一个由 AI 驱动的搜索引擎，专门用于从 2 亿多篇经过同行评审的科学论文中提取和汇总关键信息。该平台旨在帮助用户快速找到基于科学证据的答案
 
 
