@@ -36,7 +36,6 @@
 - 哈工大开源预训练语言模型
   - https://huggingface.co/hfl
   - https://github.com/ymcui/Chinese-BERT-wwm
-
 - https://github.com/CLUEbenchmark/CLUEPretrainedModels
 - https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
   - 收集了一些高质量 中文 预训练语言模型
@@ -54,7 +53,6 @@
 - https://github.com/CLUEbenchmark/LightLM
 - https://github.com/google-research/electra
 - https://github.com/yizhen20133868/BERT-related-papers
-- 
 
 ## 蒸馏
 - https://github.com/kevinmtian/distill-bert
