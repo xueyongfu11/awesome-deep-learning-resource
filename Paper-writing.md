@@ -60,7 +60,9 @@
 
 ## 其他
 
-- AI 论文倒计时：https://aideadlin.es/
 - Conference Partner（会伴）：https://www.myhuiban.com/
+- MindGuide 人工智能会议：https://www.aihomecaring.com/?conference/
+- AI 论文倒计时：https://aideadlin.es/
+  - 好像已经停更
 - https://github.com/acl-org/acl-style-files
   - Official style files for papers submitted to venues of the Association for Computational Linguistics
