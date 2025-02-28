@@ -43,6 +43,9 @@
 
 - https://github.com/Mintplex-Labs/anything-llm
   - 一个一体化的桌面和Docker人工智能应用程序，内置了RAG（Retrieval-Augmented Generation，检索增强生成）、人工智能代理以及更多功能。
+- https://github.com/langflow-ai/langflow
+  - Langflow 是一个低代码应用程序构建器，用于构建检索增强型生成（RAG）和多智能体人工智能应用。它是基于 Python 的，并且对任何模型、API 或数据库都具有不可知性。
+
 
 
 # Blog
