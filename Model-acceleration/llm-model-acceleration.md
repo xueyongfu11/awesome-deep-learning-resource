@@ -4,12 +4,10 @@
 
 - flash-attention
   - https://github.com/Dao-AILab/flash-attention
-  - llama使用flash-attention：https://github.com/lm-sys/FastChat/blob/main/fastchat/train/llama_flash_attn_monkey_patch.py#L79
-
+  - 原理介绍：[FlashAttention V1 学习笔记](https://blog.csdn.net/weixin_43378396/article/details/137635161)
+  - [flash attention triton视频视频讲解](https://www.bilibili.com/video/BV1j59tY1EFt)：[my code](https://github.com/xueyongfu11/flash-attention/blob/main/flash_attn/flash_attn_triton.py)
 - [Multi Query Attention和Group-Query Attention介绍](https://mp.weixin.qq.com/s/wOyDpxcxKATxGrP8W-1w2Q)
-
 - Efficient Streaming Language Models with Attention Sinks
-
 - [Transformer参数量、计算量、显存占用分析](https://mp.weixin.qq.com/s/4_6J7-NZML5pTGTSH1-KMg)
 
 
@@ -40,9 +38,11 @@
 - https://github.com/Jittor/JittorLLMs
 - https://github.com/InternLM/lmdeploy/
 - Blog
-  - 大模型部署的方案：https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA
+  - [大模型部署的方案](https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA)
 
   - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
-
-1. - - 
+  
+  - [推理部署工程师面试题库](https://zhuanlan.zhihu.com/p/673046520)
+  
+  - [triton中文站](https://triton.hyper.ai/)
 
