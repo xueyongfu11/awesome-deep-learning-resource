@@ -52,6 +52,8 @@
 
 - [The Rise and Evolution of RAG in 2024 A Year in Review](https://ragflow.io/blog/the-rise-and-evolution-of-rag-in-2024-a-year-in-review#agentic-and-memory)
 
+- [RAPTOR 一种基于树的RAG方法，RAG的准确率提高 20%](https://www.cnblogs.com/xiaoqi/p/18060281/RAPTOR)
+
 - https://www.anthropic.com/news/contextual-retrieval
 
 - [RAG实战全解析：一年探索之路](https://zhuanlan.zhihu.com/p/682253496)
