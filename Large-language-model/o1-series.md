@@ -23,7 +23,7 @@
 
     - 使用GRPO RL算法：摒弃了critic model，估计baseline使用了group scores（对于一个输出x，采样多个输出并计算rewards）
 
-      ![GRPO](D:\Codes\03-Synchronize-repo\awesome-deep-learning-resource\assets\GRPO.png)
+      ![GRPO](../assets/GRPO.png)
 
     - 奖励模型：未使用神经网络的奖励模型，具体使用两个rule-based的奖励方法：准确性方法（答案是否准确，code是否执行通过）；格式遵循方法（生成内容是否遵循要求的格式）
 
@@ -67,7 +67,7 @@
 
     - 使用了长度惩罚，对于problem x，采样k个responses，计算min_length和max_length
 
-      ![](D:\Codes\03-Synchronize-repo\awesome-deep-learning-resource\assets\kimi1_5_len_reward.png)
+      ![](../assets/kimi1_5_len_reward.png)
 
     - RL算法本身具有相对好的采样属性，也就是困难样本提供更大的梯度，论文引入了课程采样和优先采样算法，目的是为了获取更加高效的训练样本
 

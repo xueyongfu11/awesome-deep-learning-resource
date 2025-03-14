@@ -62,13 +62,13 @@
   - 基于背景介绍中存在的问题，文章提出了Mimi音频编解码器，核心是将支持语义token编码的双向模型蒸馏到单向因果模型中。
   - Mimi编码器使用了时序卷积网络对输入音频进行encoding，得到隐式表征。接着使用残差向量量化RVQ将隐式表征离散化为codebook中的向量（RVQ具体方法可以学习相关论文）
   - 在量化前和量化后添加了8层的casual transformer层，为了稳定训练，使用了LayerScalue初始化方法
-  - 如何蒸馏？论文将WavLM语义信息蒸馏到了RVQ的第一层中，方法是计算RVQ首次量化输出的embedding和WavLM的embedding的cosine举例，作为训练loss的一部分。因此第一个量化层保留语义token信息，而声学token则在RVQ的其他量化层进行了保留。![image-20240928174746137](../assets/Mini.png)
+  - 如何蒸馏？论文将WavLM语义信息蒸馏到了RVQ的第一层中，方法是计算RVQ首次量化输出的embedding和WavLM的embedding的cosine举例，作为训练loss的一部分。因此第一个量化层保留语义token信息，而声学token则在RVQ的其他量化层进行了保留。![image-20240928174746137](../../assets/Mini.png)
 
 - **音频生成建模**
 
   - 首先论文尝试说明了Mimi编解码器的audio token相比text token的压缩率很低。对于codebook为8的12.5Hz的音频，1秒的音频生成需要模型生成100个audio token，这在推理时是不可接受的。相反，每秒钟的音频只需要3-4个text token。
   - 根据前文我们知道，音频编码之后的每个step有Q个量化向量组成（Q是codebook的数量），论文使用RQ-Transformer来建模。
-  - RQ-Transformer：同时在时序方向和深度方向对数据进行建模。在Moshi中，时序方向对应时间步，而深度方向对应RVQ模块的多层量化向量<img src="../assets/RQ-Transformer.png" alt="image-20240929112456655" style="zoom:67%;" />
+  - RQ-Transformer：同时在时序方向和深度方向对数据进行建模。在Moshi中，时序方向对应时间步，而深度方向对应RVQ模块的多层量化向量<img src="../../assets/RQ-Transformer.png" alt="image-20240929112456655" style="zoom:67%;" />
   - 前面已经提及，Q为8的codebook中，第一个codebook对应语义token信息，其他的codebook对应着声学token信息。论文发现，对声学token信息进行delay可以提供更稳定的语音生成效果。
   - 将Moshi和用户的音频同时建模，并且对每个音频流都使用了声学token信息delay。两个音频流的audio token直接进行拼接，如果使用了Q个codebook，那么量化向量的数量为2Q，此时RQ-Transformer的每个step输入时2Q个量化向量
   - **论文提出了”Inner Monologue“方法**
@@ -78,7 +78,7 @@
 
     - 通过在text token和audio token引入delay，这种delay可以将一个模型被另外一个模态支配。如果text token在audio token的前面，那么text便由audio决定，此时可以衍生出ASR系统；反之，如果audio token在text token的前面，那么audio便由text决定，此时可以衍生出TTS系统。因此只需要改变delay的方向，可以支持不同的系统，而不需要改变训练的Loss。
 
-    - 由于引入了”Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：![image-20240929124229465](../assets/Moshi-input.png)
+    - 由于引入了”Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：![image-20240929124229465](../../assets/Moshi-input.png)
 
   - **Moshi的联合多个sequence的表征**，如下图：<img src="../assets/Moshi_joint_repre.png" alt="image" style="zoom: 40%;" />
 
@@ -102,7 +102,7 @@
   - 计算ground-truth离散token的$V_{s,k}$和估计的logits$l_{s,k}$的交叉熵损失
   - 给与text token同等的重要性，对于语义token给与的重要性系数是100，对于声学token给与的重要性系数是1
 
-  <img src="../assets/Moshi_loss.png" alt="image-20240929140720667" style="zoom: 50%;" />
+  <img src="../../assets/Moshi_loss.png" alt="image-20240929140720667" style="zoom: 50%;" />
 
 ### Mini-Omni
 
@@ -113,11 +113,11 @@
   - Mini-Omni的基本思想是通过文本来指导音频的生成，这种方法基于假设：text token有更高的信息密度，可以使用更少的token表示相同的信息。
   - 生成音频token时以对应文本token为条件，类似在线语音合成系统，且生成音频前用 N 个pad token填充，确保先产生文本token
   - 模型可依据说话者和风格的embedding，控制说话者特征和风格元素
-  - ![image-20240930002650651](../assets/Mini_Omni.png)
+  - ![image-20240930002650651](../../assets/Mini_Omni.png)
   
 - 将audio token和text token合并成新的词表，生成时同时预测audio token和text token，Loss如下
 
-  <img src="../assets/mini_omni_loss.png " style="zoom:67%;" />
+  <img src="../../assets/mini_omni_loss.png " style="zoom:67%;" />
 
 - 音频解码策略
 
@@ -136,7 +136,7 @@
 
   - Parallel Decoding和Batch Parallel Decoding的图解
 
-    ![image-20241001001201128](../assets/omni_parallel_decoding.png)
+    ![image-20241001001201128](../../assets/omni_parallel_decoding.png)
 
 
 - 训练

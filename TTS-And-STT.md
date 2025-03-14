@@ -90,6 +90,12 @@ two-stage是从文本生成音频需要经过两个阶段，第一个是使用�
 
 ## STT
 
+- CrisperWhisper: Accurate Timestamps on Verbatim Speech Transcriptions
+
+  - 2024.08
+  
+  - CrisperWhisper 通过改进 Whisper 的 tokenizer 和引入 DTW 算法，显著提高了逐字转录的准确性和词级时间戳的精度。该模型在不流畅性检测和噪声鲁棒性方面表现出色，并且能够有效减少幻觉现象。
+  
 - SenseVoice
 
   - https://github.com/FunAudioLLM/SenseVoice
