@@ -31,8 +31,91 @@
     - https://fewnlu.github.io/
     - https://github.com/THUDM/FewNLU
 
+# Automated-machine-learning
+
+- https://github.com/EpistasisLab/tpot
+
+- https://github.com/microsoft/nni
+
+- https://github.com/keras-team/autokeras
+
+- https://github.com/ZhuiyiTechnology/AutoIE
+
+# Active Learning
+
+- https://github.com/SupeRuier/awesome-active-learning
+
+- https://github.com/yongjin-shin/awesome-active-learning
+
+# Data augmentation
+
+- https://github.com/prakhar21/TextAugmentation-GPT2
+- https://github.com/makcedward/nlpaug 
+
+- https://github.com/dsfsi/textaugment 
+- https://github.com/QData/TextAttack 
+
+- https://github.com/joke2k/faker 
+- https://github.com/benkeen/generatedata 
+- https://github.com/Belval/TextRecognitionDataGenerator 
+- https://github.com/snorkel-team/snorkel 
+
+- https://github.com/GEM-benchmark/NL-Augmenter
+- https://github.com/zhanlaoban/EDA_NLP_for_Chinese
+
+- https://github.com/quincyliang/nlp-data-augmentation
+- https://github.com/huggingface/adversarialnlp
+
+- https://github.com/akkarimi/aeda_nlp
+- https://github.com/jasonwei20/eda_nlp
+
+# Cluster
+
+- https://github.com/murray-z/text_clustering
+
+- https://github.com/milesgranger/gap_statistic
+
+# Few shot learning
+
+- https://github.com/Duan-JM/awesome-papers-fewshot
+
+- https://github.com/jiangxinyang227/few_shot_learning
+
+# Seq2seq
+
+- GPT2 https://github.com/openai/gpt-2
+- https://github.com/pltrdy/rouge
+
+- https://github.com/pytorch/fairseq
+
+- 中文GPT2 https://github.com/Morizeyao/GPT2-Chinese
+
+- 苏剑林，基于keras https://github.com/xueyongfu/bert4keras-seq2seq
+
+- https://github.com/bojone/SPACES
+
+# Transformers
+
+- https://github.com/facebookresearch/xformers
+
+- [Transformer中[CLS]符号和其他tokens分别进行正则化](https://mp.weixin.qq.com/s/uAkisEPtE5ij07NpZOt1MA)
+
+# Time series prediction
+
+- https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction
+
+- https://github.com/cuge1995/awesome-time-series
+
+- https://github.com/Alro10/deep-learning-time-series
+
+- https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection
+
+- https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction
+
+- https://github.com/huseinzol05/Stock-Prediction-Models
 
 # Progress
+
 - https://github.com/DengBoCong/nlp-paper
 - https://github.com/changwookjun/nlp-paper
 - https://github.com/iwangjian/Paper-Reading

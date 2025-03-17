@@ -2,11 +2,7 @@
 
 
 
-## Resource
 
-- Conversational speech generation
-  - https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice#demo
-  - https://github.com/SesameAILabs/csm
 
 ## Paper
 
@@ -47,6 +43,7 @@
   - version2
     - 为了减少计算负担，只训练音频帧的1/16，注意需要对每帧的第0个codebook进行训练
     - 在训练过程中，该方法的decoder loss未出现显著变化
+    - ![image-20250314202817284](../../assets/csm02.png)
   
 - LLaMA-Omni: Seamless Speech Interaction with Large Language Models
 

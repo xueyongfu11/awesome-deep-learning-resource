@@ -2,6 +2,17 @@
 
 # llm-model-acceleration
 
+- flashMLA
+  - 个人注释版：https://github.com/xueyongfu11/FlashMLA
+
+  - CUDA C代码分析
+    - [FlashMLA源码解析](https://zhuanlan.zhihu.com/p/27722399792)
+    - [深度解析FlashMLA: 一文读懂大模型加速新利器](https://zhuanlan.zhihu.com/p/27976368445)
+    - [flashMLA 深度解析](https://zhuanlan.zhihu.com/p/26080342823)
+
+  - Triton代码分析
+    - [FlashMLA 源码分析](https://zhuanlan.zhihu.com/p/27257803590)
+
 - flash-attention
   - https://github.com/Dao-AILab/flash-attention
   - 原理介绍：[FlashAttention V1 学习笔记](https://blog.csdn.net/weixin_43378396/article/details/137635161)
