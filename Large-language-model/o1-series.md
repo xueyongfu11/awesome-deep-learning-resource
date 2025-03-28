@@ -4,14 +4,25 @@
 
 ## Resource
 
+- https://github.com/OpenManus/OpenManus-RL
+  - 基于强化学习优化大模型智能体（类似R1算法）
+
 - [复现和改进 DeepSeek-R1 的一些 tips](https://mp.weixin.qq.com/s/xqWYdf2c9frWbznKNGiagA)
   - 2025.03
 - [浅谈 DeepSeek-R1 和 Kimi k1.5 论文中的思维链 + 强化学习](https://weaxsey.org/articels/2025-02-01/)
   - 2025.02
 - GRPO复现代码
+  - https://github.com/huggingface/open-r1
   - https://github.com/aburkov/theLMbook/blob/main/GRPO_From_Scratch_Multi_GPU_DataParallel_Qwen_2_5_1_5B_Instruct.ipynb
 
+
 ## Paper
+
+- QwQ-32B-Preview
+
+  - [Blog](https://qwenlm.github.io/zh/blog/qwq-32b/)
+
+  - 训练的方法与Deepseek-R1相同
 
 - DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
 
