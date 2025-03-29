@@ -145,6 +145,39 @@ $\mathcal{L}(\omega)=\frac{1}{2}(r+\gamma V_\omega(s_{t+1})-V_\omega(s_t))^2$
     - 更新策略参数$\theta=\theta+\alpha_{\theta}\sum_t\delta_t\nabla_{\theta}\log\pi_{\theta}(a_t|s_t)$
  - end for 
 
+## DQN及其改进
+
+### DQN的基本改进
+
+- 经验回放
+  - 从buffer中采样一个batch的数据对DQN进行网络更新，buffer的大小通常在1w~10w之间，需要根据实际应用进行调参
+  - 新采样的数据放入buffer中，并将最老的数据从buffer中删除
+- 消除相关性
+  - $s_t$和$s_{t+1}$通常有很强的相关性，这种相关性不利用DQN的学习。比如在超级玛丽游戏中，紧挨的两帧游戏页面的状态s是非常接近的。
+- 优先经验回放
+  - 不同的transition（一条训练数据）有不同的重要性，比如游戏中的第一关和boss关，重要性越高的transition，被抽到的概率也该越高
+  - 可以TD error来衡量一个transition的重要性，TD error表示的是实际值和预测值的差异，TD error越大，说明模型在这个transition上的预测效果差，那么就赋予更高的采样概率
+  - 由于采样概率不同，为了效果DQN的预测偏差，应该使用不同的学习率，高采样率的transition使用较低的学习率
+
+### DQN高估的改进
+
+- 高估如何产生
+  - 回顾DQN中TD target的计算：$y_t = r_t + \gamma\cdot\max_{a}Q(s_{t + 1}, a; \mathbf{w})$，max操作使得TD target高估。假设$x_i$是真实值，$Q_i$是在$x_i$上加上了均值为0的噪声，那么$\mathbb{E}[\text{mean}_i(Q_i)] = \text{mean}_i(x_i)$，然而$\mathbb{E}[\max_i(Q_i)] \geq \max_i(x_i)$
+  - DQN所使用的TD Learning算法是一种bootstrapping方法，根据DQN的梯度更新公式可知，TD target进一步用来更新$Q(s_t, a; \mathbf{w})$，最后使得$Q(s_{t+1}, a; \mathbf{w})$是高估的
+- 高估的危害
+  - 上述中的高估是非均匀的，均匀的高估是无害的。非均匀的高估使得错误的action被选择
+- Target Network算法
+  - 使用一个target network来计算TD target，target network的参数与DQN的参数不同，通常是来自于DQN，或者是target network和DQN参数的加权
+- Double Network算法
+  - 是对Target Network的改进，仍然使用target network计算TD target，但是计算TD target所使用的action是由DQN计算得到的最优action
+  - 使用DQN选择最优action: $a^*=\underset{a}{\mathrm{argmax}}Q(s_{t + 1},a;w)$
+  - 使用target network计算TD target: $y_t = r_t+\gamma\cdot Q(s_{t + 1},a^*;w^-)$
+  -  $Q(s_{t + 1},a^*;w^-)\leq\underset{a}{\max}Q(s_{t + 1},a;w^-)$，其中$Q(s_{t + 1},a^*;w^-)$是Double network计算出来的，$\underset{a}{\max}Q(s_{t + 1},a;w^-)$是由Target network计算的，Double network计算的值更小，所以相比Target network缓解了高估问题
+
+### Dueling network
+
+
+
 ## AlphaGo和AlphaGo Zero
 
 - AlphaGo的策略网络架构
