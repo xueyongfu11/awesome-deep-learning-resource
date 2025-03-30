@@ -74,7 +74,7 @@ $\nabla_\theta J(\theta)\propto \mathbb{E}_{\pi_\theta}[Q^{\pi_\theta}(s,a)\nabl
 
 ### REINFORCE
 
-REINFORCE算法使用蒙特卡洛算法估计$Q^{\pi_\theta}(s, a)$
+REINFORCE是一种policy gradient算法，使用蒙特卡洛算法估计$Q^{\pi_\theta}(s, a)$
 
 即：$Q^{\pi_\theta}(s_t, a_t) \approx \sum_{t^{\prime}=t}^T\gamma^{t^{\prime}-t}r_{t^{\prime}}$
 
@@ -176,7 +176,112 @@ $\mathcal{L}(\omega)=\frac{1}{2}(r+\gamma V_\omega(s_{t+1})-V_\omega(s_t))^2$
 
 ### Dueling network
 
+- 几个定义
+  - 最优动作价值函数：$Q^*(s, a)=\max_{\pi}Q_{\pi}(s, a)$
+  - 最优状态价值函数：$V^*(s)=\max_{\pi}V_{\pi}(s)$
+  - 最优优势函数：$A^*(s, a)=Q^*(s, a)-V^*(s)$
+- 两个定理
+  - 定理1：$V^*(s)=\max_{a}Q^*(s, a)$
+    - 不难推理出: $max_{a} A^*(s, a)=\max_{a} Q^*(s, a)-V^*(s)=0$
+  - 定理2：$Q^*(s, a)=V^*(s)+A^*(s, a)-\max_{a} A^*(s, a)$
+    - 最后一项为0，这一项不能省略
+    - 在Dueling network中，$V^*(s)$和$A^*(s, a)$都使用神经网络来近似，当两个神经网络波动幅度相同，当时方向相反，那么$Q^*(s, a)$将没有差别，因此无法学习。
+- Dueling network
+  - Dueling network主要由定理2给出
+  - 使用神经网络$V(s; \mathbf{w}^V)$近似$V^*(s)$，使用神经网络$A(s, a; \mathbf{w}^A)$近似$A^*(s, a)$，两个神经网络共享同一个特征提取主干网络
+  - 可以得到：$Q(s, a; \mathbf{w}^A, \mathbf{w}^V)=V(s; \mathbf{w}^V)+A(s, a; \mathbf{w}^A)-\max_{a}A(s, a; \mathbf{w}^A)$
+  - Dueling network除了网络结构与DQN不同，其他都相同，因此可以使用前面提及的优化手段如优化经验回放、Double network等
 
+## Policy gradient相关算法
+
+### Baseline
+
+回顾policy gradient的梯度公式：
+$$
+\frac{\partial V_{\pi}(s)}{\partial \boldsymbol{\theta}} = \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot Q_{\pi}(s,A)\right]
+$$
+令b是独立于$A$的，那么：
+$$
+\begin{align*}
+\mathbb{E}_{A\sim\pi}\left[b\cdot\frac{\partial\ln\pi(A\mid s;\boldsymbol{\theta})}{\partial\boldsymbol{\theta}}\right]&=b\cdot\mathbb{E}_{A\sim\pi}\left[\frac{\partial\ln\pi(A\mid s;\boldsymbol{\theta})}{\partial\boldsymbol{\theta}}\right]\\
+&=b\cdot\sum_{a}\pi(a\mid s;\boldsymbol{\theta})\cdot\left[\frac{1}{\pi(a\mid s;\boldsymbol{\theta})}\cdot\frac{\partial\pi(a\mid s;\boldsymbol{\theta})}{\partial\boldsymbol{\theta}}\right]\\
+&=b\cdot\sum_{a}\frac{\partial\pi(a\mid s;\boldsymbol{\theta})}{\partial\boldsymbol{\theta}}\\
+&=b\cdot\frac{\partial\sum_{a}\pi(a\mid s;\boldsymbol{\theta})}{\partial\boldsymbol{\theta}}\\
+&=b\cdot\frac{\partial 1}{\partial\boldsymbol{\theta}} = 0.
+\end{align*}
+$$
+那么，policy gradient的梯度公式可以写为：
+$$
+\begin{align*}
+\frac{\partial V_{\pi}(s)}{\partial \boldsymbol{\theta}} 
+&= \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot Q_{\pi}(s,A)\right] \\
+&= \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot Q_{\pi}(s,A)\right] - \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot b\right] \\
+&= \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot (Q_{\pi}(s,A) - b)\right].
+\end{align*}
+$$
+因此，添加baseline不会改变策略梯度，但是会减小方差，使得训练更加稳定
+
+### REINFORCE with baseline
+
+回顾policy gradient with baseline的梯度公式：
+$$
+\begin{align*}
+\frac{\partial V_{\pi}(s)}{\partial \boldsymbol{\theta}} 
+&= \mathbb{E}_{A\sim\pi}\left[\frac{\partial \ln \pi(A\mid s;\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\cdot (Q_{\pi}(s,A) - b)\right]
+\end{align*}
+$$
+REINFORCE使用蒙特卡洛模拟计算$Q_\pi(s, A)$，即：$Q^{\pi}(s_t, a_t) \approx \sum_{t^{\prime}=t}^T\gamma^{t^{\prime}-t}r_{t^{\prime}}$
+
+baseline的选择要求独立与$A$，而$V_\pi(s_t)$是与$A$无关的，并且$V_\pi(s_t)$是比较接近于$Q_\pi(s_t, a_t)$，因此可以使用$V_\pi(s_t)$作为baseline，实际使用时$V_\pi$使用价值网络$v(s; \boldsymbol{w})$来近似。
+
+虽然带基线的 REINFORCE 有一个策略网络和一个价值网络，但是这种方法不是actor-critic。价值网络没有起到“评委”的作用，只是作为基线而已，目的在于降低方差，加速收敛。真正帮助策略网络（演员）改进参数 θ（演员的演技）的不是价值网络，而是实际观测到的回报$Q_\pi(s, A)$。  
+
+### Advantage Actor-Critic（A2C）
+
+1. A2C的训练流程如下：
+
+   - Observe a transition ($s_t$, $a_t$, $r_t$, $s_{t + 1}$)
+
+   - TD target: $y_t = r_t+\gamma\cdot v(s_{t + 1};\mathbf{w})$
+
+   - TD error: $\delta_t = v(s_t;\mathbf{w}) - y_t$
+
+   - Update the policy network (actor) by:
+     $\mathbf{\theta}\leftarrow\mathbf{\theta}-\beta\cdot\delta_t\cdot\frac{\partial\ln\pi(a_t|s_t;\mathbf{\theta})}{\partial\mathbf{\theta}}$
+
+   - Update the value network (critic) by:
+     $\mathbf{w}\leftarrow\mathbf{w}-\alpha\cdot\delta_t\cdot\frac{\partial v(s_t;\mathbf{w})}{\partial\mathbf{w}}$
+
+2. A2C算法原理
+
+   A2C是加入了baseline的actor-critic算法，在 A2C 中，通常使用时序差分（TD）误差来近似优势函数：
+
+   $A(s,a)=r + \gamma V(s') - V(s)$
+
+   价值网络的更新公式：
+
+   $\omega \leftarrow \omega - \alpha_{v} \nabla_{\omega}L_{v}(\omega)$，其中$L_{v}(\omega)=\frac{1}{2}(r + \gamma V_{\omega}(s') - V_{\omega}(s))^2$
+
+   策略网络的更新公式：
+
+   $\theta \leftarrow \theta + \alpha_{a} \nabla_{\theta}\log\pi_{\theta}(a|s)A^{\pi}(s,a)$
+
+3. A2C和REINFORCE with baseline的区别
+
+   - A2C的one step TD target的计算公式：$y_t = r_t + \gamma \cdot v(s_{t + 1} ; \mathbf{w})$
+   - A2C的multi steps TD target的计算公式：$y_t = \sum_{i = 0}^{m - 1} \gamma^i \cdot r_{t + i} + \gamma^m \cdot v(s_{t + m} ; \mathbf{w})$
+   - REINFORCE with baseline TD target的计算公式：$y_t = \sum_{i = t}^{n} \gamma^{i - t} \cdot r_i$
+
+### Deterministic Policy Gradient（DPG）
+
+算法流程：
+
+- 使用策略网络选择一个动作: $a = \pi(s; \theta)$
+- 更新策略网络: $\theta \leftarrow \theta+\beta\cdot\frac{\partial a}{\partial\theta}\cdot\frac{\partial q(s,a;w)}{\partial a}$
+- 使用价值网络计算 $q_t = q(s,a;w)$
+- 使用Target networks, $\pi(s; \theta^-)$ and $q(s,a; w^-)$, 来计算$q_{t + 1}$
+- TD error: $\delta_t=q_t-(r_t + \gamma\cdot q_{t + 1})$ 
+- 更新价值网络: $w \leftarrow w-\alpha\cdot\delta_t\cdot\frac{\partial q(s,a;w)}{\partial w}$
 
 ## AlphaGo和AlphaGo Zero
 
@@ -210,19 +315,159 @@ $\mathcal{L}(\omega)=\frac{1}{2}(r+\gamma V_\omega(s_{t+1})-V_\omega(s_t))^2$
   - 使用了MCTS来训练策略网络
   - ![image-20250328190425737](./assets/alphago_zero.png)
 
-  
+
+## 多智能体RL
+
+### 多智能体RL的基本概念
+
+使用纳什均衡来衡量多智能体系统是否收敛：在保持其他agent的策略不变的情况下，任何一个agent通过改变策略无法获得更好的期望回报，此时这个多agent系统达到收敛状态
+
+多智能体之间存在的关系：
+
+- 合作关系：比如工业机器人，每个agent共同合作，才能完成整个任务
+- 竞争关系：捕食者和被捕食者之间的关系，一个agent获取正收益的同时，另外一个agent一定获取负收益
+- 合作竞争关系：足球比赛
+- 利己主义：自动化股票交易系统
+
+### 多智能体系统类型
+
+| 系统类型                 | Policy（Actor）         | Value（Critic）  |                                                 |
+| ------------------------ | ----------------------- | ---------------- | ----------------------------------------------- |
+| 去中心化                 | $\pi(a^i|o^i;\theta^i)$ | $q(o^i,a^i;w^i)$ | 同单agent系统，效果不好                         |
+| 中心化                   | $\pi(a^i|o; \theta^i)$  | $q(o,a;w^i)$     | 由中心系统计算每个agent的动作，比较慢           |
+| 中心化训练，去中心化执行 | $\pi(a^i|o^i;\theta^i)$ | $q(o,a;w^i)$     | 训练时依赖中心系统，执行时每个agent自己计算动作 |
+
+其中：
+
+- i表示第i个agent，$a^i$表示第i个agent的动作，$o^i$表示第i个agent的部分观察（不同于全局观察s）
+- $\theta^i$表示第i个agent的策略网络参数，$w^i$表示第i个agent的动作价值网络参数
+- $o$和$a$表示全部agent的部分观测和全部agent的动作
 
 
 
+## 一些公式的证明
+
+### 动作价值函数 $Q(s, a)$ 与状态价值函数 $V(s)$ 的关系
+
+动作价值函数$Q^{\pi}(s, a)$可以通过状态价值函数$V^{\pi}(s)$来表示，即:
+
+$Q^{\pi}(s,a)=R(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V^{\pi}(s')$。
+
+其中，$R(s, a)$是在状态s下采取动作a所获得的即时奖励，$\gamma$是折扣因子，$P(s'|s, a)$是从状态s采取动作a后转移到状态$s'$的概率，S是状态空间。
 
 
 
+### $Q_{\pi}(s_t, a_t) = \mathbb{E}_{s_{t + 1}, a_{t + 1}}[R_t + \gamma \cdot Q_{\pi}(s_{t + 1}, a_{t + 1})]$
 
+以下是对贝尔曼方程 $Q_{\pi}(s_t, a_t) = \mathbb{E}_{s_{t + 1}, a_{t + 1}}[R_t + \gamma \cdot Q_{\pi}(s_{t + 1}, a_{t + 1})]$ 的证明：
 
+1. 定义与符号说明
 
+- **策略**：$\pi(a|s)$ 表示在状态 $s$ 下采取动作 $a$ 的概率。
+- **状态转移概率**：$p(s_{t + 1}|s_t, a_t)$ 表示在状态 $s_t$ 采取动作 $a_t$ 后转移到状态 $s_{t + 1}$ 的概率 。
+- **即时奖励**：$R_t$ 是在时刻 $t$ 采取动作 $a_t$ 后从状态 $s_t$ 转移到 $s_{t + 1}$ 所获得的奖励。
+- **折扣因子**：$\gamma \in [0, 1]$ ，用于权衡即时奖励和未来奖励 。
+- **动作 - 价值函数**：$Q_{\pi}(s, a)$ 表示在策略 $\pi$ 下，从状态 $s$ 采取动作 $a$ 后，后续能获得的期望折扣累积奖励。
 
+2. 期望折扣累积奖励的定义
 
+期望折扣累积奖励 $G_t$ 从时刻 $t$ 开始定义为：
+$G_t = R_t + \gamma R_{t + 1} + \gamma^2 R_{t + 2} + \cdots = \sum_{k = 0}^{\infty} \gamma^k R_{t + k}$
+动作 - 价值函数 $Q_{\pi}(s_t, a_t)$ 是在策略 $\pi$ 下，从状态 $s_t$ 采取动作 $a_t$ 后 $G_t$ 的期望值，即：
+$Q_{\pi}(s_t, a_t) = \mathbb{E}_{\pi}[G_t | s_t, a_t]$
 
+3. 展开期望
+
+将 $G_t$ 展开，根据期望的线性性质：
+$$
+\begin{align*}
+Q_{\pi}(s_t, a_t) &= \mathbb{E}_{\pi}[R_t + \gamma R_{t + 1} + \gamma^2 R_{t + 2} + \cdots | s_t, a_t]\\
+&= \mathbb{E}_{\pi}[R_t | s_t, a_t] + \gamma\mathbb{E}_{\pi}[R_{t + 1} + \gamma R_{t + 2} + \cdots | s_t, a_t]
+\end{align*}
+$$
+由于 $R_t$ 只与 $s_t$ 和 $a_t$ 有关，所以 $\mathbb{E}_{\pi}[R_t | s_t, a_t] = R_t$ 。
+
+对于 $\mathbb{E}_{\pi}[R_{t + 1} + \gamma R_{t + 2} + \cdots | s_t, a_t]$ ，在时刻 $t + 1$ ，系统处于状态 $s_{t + 1}$ ，此时从 $t + 1$ 时刻开始的期望折扣累积奖励就是 $Q_{\pi}(s_{t + 1}, a_{t + 1})$ 。
+
+根据全概率公式，考虑从状态 $s_t$ 采取动作 $a_t$ 转移到不同状态 $s_{t + 1}$ 以及在 $s_{t + 1}$ 下采取不同动作 $a_{t + 1}$ 的情况：
+$$
+\begin{align*}
+\mathbb{E}_{\pi}[R_{t + 1} + \gamma R_{t + 2} + \cdots | s_t, a_t]&=\sum_{s_{t + 1}}\sum_{a_{t + 1}}p(s_{t + 1}|s_t, a_t)\pi(a_{t + 1}|s_{t + 1})Q_{\pi}(s_{t + 1}, a_{t + 1})\\
+&=\mathbb{E}_{s_{t + 1}, a_{t + 1}}[Q_{\pi}(s_{t + 1}, a_{t + 1})]
+\end{align*}
+$$
+
+4. 得出贝尔曼方程
+
+将上述结果代入 $Q_{\pi}(s_t, a_t)$ 的表达式中，可得：
+$$
+Q_{\pi}(s_t, a_t) = R_t + \gamma\mathbb{E}_{s_{t + 1}, a_{t + 1}}[Q_{\pi}(s_{t + 1}, a_{t + 1})]=\mathbb{E}_{s_{t + 1}, a_{t + 1}}[R_t + \gamma \cdot Q_{\pi}(s_{t + 1}, a_{t + 1})]
+$$
+这就完成了贝尔曼方程的证明，它描述了当前状态 - 动作对的价值与下一时刻状态 - 动作对价值之间的递归关系，是强化学习中求解最优策略的重要基础 。
+
+### 贝尔曼方程：基于动作价值
+
+$$
+Q_{\pi}(s_t, a_t)=\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,a_t)}\left[R_t+\gamma\cdot\mathbb{E}_{A_{t + 1}\sim\pi(\cdot|S_{t + 1};\boldsymbol{\theta})}[Q_{\pi}(S_{t + 1}, A_{t + 1})]\right]
+$$
+
+公式理解：
+
+ - **即时奖励与后续价值**：等式右边，$R_t$ 是在状态 $s_t$ 采取动作 $a_t$ 后获得的即时奖励 。$\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,a_t)}$ 表示基于状态转移概率 $p(\cdot|s_t,a_t)$ ，对采取动作 $a_t$ 后转移到的下一个状态 $S_{t + 1}$ 取期望 。
+ - **递归关系**：下一个状态 $S_{t + 1}$ 的动作价值通过对基于策略 $\pi$ 选取的动作 $A_{t + 1}$ 求期望得到 。它体现了当前状态 - 动作对的价值，由即时奖励和后续状态 - 动作对价值的期望（经折扣因子 $\gamma$ 折扣后 ）组成，反映了动作价值函数的递归特性，是求解最优动作价值函数和最优策略的重要基础 。 
+
+证明：
+
+基于动作价值函数 $Q_{\pi}(s, a)$ 的定义及马尔可夫决策过程（MDP）的性质，从回报的定义出发，通过展开一步回报，利用期望的性质和马尔可夫性质逐步推导。
+
+1. **明确相关定义**
+    - 动作价值函数 $Q_{\pi}(s_t, a_t)$ 定义为从状态 $s_t$ 采取动作 $a_t$ 开始，遵循策略 $\pi$ 所获得的期望回报，即 $Q_{\pi}(s_t, a_t)=\mathbb{E}_{\pi}\left[\sum_{k = 0}^{\infty}\gamma^kR_{t + k + 1}|s_t, a_t\right]$ ，其中 $\gamma\in[0, 1]$ 为折扣因子，$R_{t + k + 1}$ 是 $t + k + 1$ 时刻获得的奖励 。
+    - 回报 $G_t$ 定义为从时间步 $t$ 开始的累计折扣奖励，$G_t = R_t+\gamma R_{t + 1}+\gamma^2R_{t + 2}+\cdots=\sum_{k = 0}^{\infty}\gamma^kR_{t + k + 1}$ 。
+2. **展开一步回报**
+将回报 $G_t$ 展开一步，可得 $G_t = R_t+\gamma G_{t + 1}$ 。
+对 $Q_{\pi}(s_t, a_t)$ 进行改写，$Q_{\pi}(s_t, a_t)=\mathbb{E}_{\pi}[G_t|s_t, a_t]$ ，把 $G_t = R_t+\gamma G_{t + 1}$ 代入可得：
+$Q_{\pi}(s_t, a_t)=\mathbb{E}_{\pi}[R_t+\gamma G_{t + 1}|s_t, a_t]$ 
+根据期望的线性性质 $\mathbb{E}[X + Y]=\mathbb{E}[X]+\mathbb{E}[Y]$ ，进一步得到：
+$Q_{\pi}(s_t, a_t)=\mathbb{E}_{\pi}[R_t|s_t, a_t]+\gamma\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]$ 
+3. **计算 $\mathbb{E}_{\pi}[R_t|s_t, a_t]$ 和 $\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]$**
+    - 计算 $\mathbb{E}_{\pi}[R_t|s_t, a_t]$：
+    已知奖励 $R_t$ 依赖于当前状态 $S_t$ 、采取的动作 $A_t$ 以及状态转移到下一个状态 $S_{t + 1}$ 的过程。根据条件期望的性质，先对下一个状态 $S_{t + 1}$ 基于状态转移概率 $p(\cdot|s_t,a_t)$ 取期望，可得 $\mathbb{E}_{\pi}[R_t|s_t, a_t]=\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,a_t)}[R_t]$ 。
+    - 计算 $\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]$ ：
+    因为 $G_{t + 1}$ 是从 $t + 1$ 时刻开始的累计折扣奖励，而 $Q_{\pi}(S_{t + 1}, A_{t + 1})$ 是在状态 $S_{t + 1}$ 采取动作 $A_{t + 1}$ 后的动作价值函数。
+    首先，在状态 $S_{t + 1}$ 要根据策略 $\pi(\cdot|S_{t + 1};\boldsymbol{\theta})$ 选择动作 $A_{t + 1}$ ，所以要先对动作 $A_{t + 1}$ 基于策略 $\pi$ 取期望，再结合状态转移等情况。即 $\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]=\mathbb{E}_{A_{t + 1}\sim\pi(\cdot|S_{t + 1};\boldsymbol{\theta})}[Q_{\pi}(S_{t + 1}, A_{t + 1})]$ ，这里取期望是考虑在状态 $S_{t + 1}$ 下按照策略 $\pi$ 选择不同动作 $A_{t + 1}$ 的所有可能情况。
+4. **代入得到贝尔曼方程**
+将 $\mathbb{E}_{\pi}[R_t|s_t, a_t]=\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,a_t)}[R_t]$ 和 $\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]=\mathbb{E}_{A_{t + 1}\sim\pi(\cdot|S_{t + 1};\boldsymbol{\theta})}[Q_{\pi}(S_{t + 1}, A_{t + 1})]$ 代入 $Q_{\pi}(s_t, a_t)=\mathbb{E}_{\pi}[R_t|s_t, a_t]+\gamma\mathbb{E}_{\pi}[G_{t + 1}|s_t, a_t]$ ，就得到基于动作价值函数 $Q$ 的贝尔曼方程：
+$Q_{\pi}(s_t, a_t)=\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,a_t)}\left[R_t+\gamma\cdot\mathbb{E}_{A_{t + 1}\sim\pi(\cdot|S_{t + 1};\boldsymbol{\theta})}[Q_{\pi}(S_{t + 1}, A_{t + 1})]\right]$ 。 
+
+### 贝尔曼方程：基于状态价值
+
+基于马尔可夫决策过程（MDP）基本概念推导贝尔曼公式
+
+1. **马尔可夫性质**
+马尔可夫决策过程满足马尔可夫性质，即系统未来的状态只取决于当前状态和当前采取的动作，与过去的状态和动作无关。用数学语言表示为：
+$P(S_{t + 1}=s'|S_t = s, A_t = a, S_{t - 1}, A_{t - 1},\cdots,S_0,A_0)=P(S_{t + 1}=s'|S_t = s, A_t = a)$
+这是后续推导的基础，意味着我们在计算未来状态价值时，不需要考虑历史信息，只关注当前状态和动作。
+
+2. **状态价值函数定义**
+状态价值函数 $V_{\pi}(s_t)$ 定义为从状态 $s_t$ 开始，遵循策略 $\pi$ 所获得的期望回报。回报 $G_t$ 是从时间步 $t$ 开始的累计折扣奖励，即 $G_t = R_t+\gamma R_{t + 1}+\gamma^2R_{t + 2}+\cdots$ ，其中 $\gamma\in[0,1]$ 是折扣因子。那么状态价值函数可表示为：
+$V_{\pi}(s_t)=\mathbb{E}_{\pi}[G_t|S_t = s_t]=\mathbb{E}_{\pi}\left[\sum_{k = 0}^{\infty}\gamma^kR_{t + k + 1}|S_t = s_t\right]$
+
+3. **展开一步**
+我们将回报 $G_t$ 展开一步：
+$G_t = R_t+\gamma R_{t + 1}+\gamma^2R_{t + 2}+\cdots=R_t+\gamma\left(R_{t + 1}+\gamma R_{t + 2}+\cdots\right)=R_t+\gamma G_{t + 1}$
+对其两边取在策略 $\pi$ 下，以 $S_t = s_t$ 为条件的期望：
+$V_{\pi}(s_t)=\mathbb{E}_{\pi}[G_t|S_t = s_t]=\mathbb{E}_{\pi}[R_t+\gamma G_{t + 1}|S_t = s_t]$
+根据期望的线性性质 $\mathbb{E}[X + Y]=\mathbb{E}[X]+\mathbb{E}[Y]$ ，可得：
+$V_{\pi}(s_t)=\mathbb{E}_{\pi}[R_t|S_t = s_t]+\gamma\mathbb{E}_{\pi}[G_{t + 1}|S_t = s_t]$
+
+4. **计算 $\mathbb{E}_{\pi}[R_t|S_t = s_t]$ 和 $\mathbb{E}_{\pi}[G_{t + 1}|S_t = s_t]$**
+    - 对于 $\mathbb{E}_{\pi}[R_t|S_t = s_t]$ ，因为奖励 $R_t$ 依赖于当前状态 $S_t$ 和采取的动作 $A_t$ 以及状态转移到下一个状态的过程，在给定策略 $\pi$ 下，先对动作 $A_t$ 基于策略 $\pi(\cdot|s_t;\boldsymbol{\theta})$ 取期望，再对下一个状态 $S_{t + 1}$ 基于状态转移概率 $p(\cdot|s_t,A_t)$ 取期望，即：
+    $\mathbb{E}_{\pi}[R_t|S_t = s_t]=\mathbb{E}_{A_t\sim\pi(\cdot|s_t;\boldsymbol{\theta})}\left[\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,A_t)}[R_t]\right]$
+    - 对于 $\mathbb{E}_{\pi}[G_{t + 1}|S_t = s_t]$ ，注意到 $G_{t + 1}$ 是从 $t + 1$ 时刻开始的累计折扣奖励，而 $V_{\pi}(S_{t + 1})$ 是 $t + 1$ 时刻状态 $S_{t + 1}$ 的价值函数，也就是从 $t + 1$ 时刻开始遵循策略 $\pi$ 的期望回报，所以 $\mathbb{E}_{\pi}[G_{t + 1}|S_t = s_t]=\mathbb{E}_{A_t\sim\pi(\cdot|s_t;\boldsymbol{\theta})}\left[\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,A_t)}[V_{\pi}(S_{t + 1})]\right]$
+
+5. **代入得到贝尔曼公式**
+将上述计算结果代入 $V_{\pi}(s_t)=\mathbb{E}_{\pi}[R_t|S_t = s_t]+\gamma\mathbb{E}_{\pi}[G_{t + 1}|S_t = s_t]$ 中，就得到了贝尔曼公式：
+$ V_{\pi}(s_t)=\mathbb{E}_{A_t\sim\pi(\cdot|s_t;\boldsymbol{\theta})}\left[\mathbb{E}_{S_{t + 1}\sim p(\cdot|s_t,A_t)}\left[R_t+\gamma\cdot V_{\pi}(S_{t + 1})\right]\right] $
 
 
 
