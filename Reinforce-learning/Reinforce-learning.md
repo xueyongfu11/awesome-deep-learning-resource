@@ -23,12 +23,12 @@
 
 - https://spinningup.qiwihui.com/zh-cn/latest/
   - openAI RL学习资料
-
 - https://www.youtube.com/@HungyiLeeNTU/playlists
   - 李宏毅强化学习课程
-
-- https://www.boyuai.com/elites/course/xVqhU42F5IDky94x
-  - 强化学习视频课程，内容比较全面
+- 动手学强化学习
+  - 在线书籍：https://hrl.boyuai.com/chapter
+  - 视频讲解：https://www.boyuai.com/elites/course/xVqhU42F5IDky94x
+  
 
 ## 常见算法
 
@@ -296,60 +296,6 @@ DPG是一个off-policy算法，收集transition的行为策略和优化的目标
 - 训练价值网络
   - 每次从经验回放数组中取出一个四元组 $(s_j, \boldsymbol{a}_j, r_j, s_{j + 1})$，使用价值网络进行预测：$\widehat{q}_j = q(s_j, a_j; \boldsymbol{w})$ 和 $\widehat{q}_{j + 1} = q(s_{j + 1}, \boldsymbol{\mu}(s_{j + 1} ; \boldsymbol{\theta}) ; \boldsymbol{w})$
   - TD target是$\widehat{y}_j = r_j + \gamma \cdot \widehat{q}_{j + 1}$，那么损失函数$L(\boldsymbol{w})=\frac{1}{2}\left[\widehat{q}_j - \widehat{y}_j\right]^2$
-
-### Trust Region Policy Optimization (TRPO)  
-
-- 置信域
-
-  - 置信域方法需要构造一个函数 $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$，这个函数要满足这个条件： $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$ 很接近 $J(\boldsymbol{\theta})$， $\forall \boldsymbol{\theta} \in \mathcal{N}(\boldsymbol{\theta}_{\text{now}})$ ，那么集合 $\mathcal{N}(\boldsymbol{\theta}_{\text{now}})$ 就被称作**置信域**。顾名思义，在 $\boldsymbol{\theta}_{\text{now}}$ 的邻域上，我们可以信任 $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$，可以拿 $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$ 来替代目标函数 $J(\boldsymbol{\theta})$。 
-  - 置信域方法一般是重复下面两个过程，知道让$J$无法继续增大。
-    - **第一步——做近似**： 给定 $\boldsymbol{\theta}_{\text{now}}$，构造函数 $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$，使得 对于所有的 $\boldsymbol{\theta} \in \mathcal{N}(\boldsymbol{\theta}_{\text{now}})$，函数值 $L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$ 与 $J(\boldsymbol{\theta})$ 足够接近。
-    - **第二步——最大化**：在置信 域 $\mathcal{N}(\boldsymbol{\theta}_{\text{now}})$ 中寻找变量 $\boldsymbol{\theta}$ 的值， 使得函数 $L$ 的值最大化。把找到的值记作 $\boldsymbol{\theta}_{\text{new}} = \underset{\boldsymbol{\theta} \in \mathcal{N}(\boldsymbol{\theta}_{\text{now}})}{\arg\max} L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})$
-  - 第二步的最大化是带有约束的最大化问题，求解这个问题需要单独的数值优化算法，可以是梯度投影算法、拉格朗日法。
-  - 置信域有很多选择，可以是球，也可以是KL散度
-
-- 策略优化
-
-  我们对状态价值函数进行如下的推导：
-  $$
-  \begin{align*}
-  V_{\pi}(s)&=\mathbb{E}_{A \sim \pi(\cdot \mid s ; \boldsymbol{\theta})}\left[Q_{\pi}(s, A)\right] \\ &=\sum_{a \in \mathcal{A}} \pi(a \mid s ; \boldsymbol{\theta}) \cdot Q_{\pi}(s, a) \\
-  &=\sum_{a \in \mathcal{A}} \pi(a\mid s; \boldsymbol{\theta}_{\text{now}}) \cdot \frac{\pi(a\mid s; \boldsymbol{\theta})}{\pi(a\mid s; \boldsymbol{\theta}_{\text{now}})} \cdot Q_{\pi}(s, a) \\
-  &=\mathbb{E}_{A \sim \pi(\cdot\mid s; \boldsymbol{\theta}_{\text{now}})}\left[\frac{\pi(A\mid s; \boldsymbol{\theta})}{\pi(A\mid s; \boldsymbol{\theta}_{\text{now}})} \cdot Q_{\pi}(s, A)\right]
-  
-  \end{align*}
-  $$
-  策略学习的目标函数是：$J(\boldsymbol{\theta}) = \mathbb{E}_S[V_\pi(S)]$，基于上面的公式推导，可以得到新的目标函数：
-  $$
-  J(\boldsymbol{\theta}) = \mathbb{E}_S\left[\mathbb{E}_{A\sim\pi(\cdot|S;\boldsymbol{\theta}_{\text{now}})}\left[\frac{\pi(A|S;\boldsymbol{\theta})}{\pi(A|S;\boldsymbol{\theta}_{\text{now}})}\cdot Q_\pi(S,A)\right]\right]
-  $$
-
-- TRPO
-
-  - 首次近似：将$J(\boldsymbol{\theta})$使用蒙特卡洛近似为$L(\boldsymbol{\theta})$，使用策略网络$\pi(A|S;\boldsymbol{\theta}_{\text{now}})$采样$s_1, a_1, r_1, ... , s_n, a_n, r_n$，$L(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}})=\frac{1}{n}\sum_{t = 1}^{n}\frac{\pi(a_t|s_t;\boldsymbol{\theta})}{\pi(a_t|s_t;\boldsymbol{\theta}_{\text{now}})}\cdot Q_\pi(s_t,a_t)$
-
-  - 二次近似：$Q_{\pi}(s_t, a_t) \implies Q_{\pi_{\text{old}}}(s_t, a_t) \implies u_t$，而$ u_t = r_t + \gamma \cdot r_{t + 1} + \gamma^2 \cdot r_{t + 2} + \cdots + \gamma^{n - t} \cdot r_n $
-
-  - 最大化：使用KL散度进行最大化
-
-    $ \max_{\boldsymbol{\theta}} \tilde{L}(\boldsymbol{\theta}|\boldsymbol{\theta}_{\text{now}}); \quad \text{s.t. } \frac{1}{t}\sum_{i = 1}^{t} \text{KL} \big [\pi(\cdot|s_i; \boldsymbol{\theta}_{\text{now}}) \big \| \pi(\cdot|s_i; \boldsymbol{\theta}) \big ] \leq \Delta. $
-
-    这一步是带梯度的最大化问题，无法使用梯度优化算法，可以使用数值优化算法进行计算
-
-### PPO
-
-- PPO的一种形式是PPO-惩罚，使用拉格朗日乘数法直接将KL散度的限制直接放在了目标函数中，这就变成了无约束的优化问题，在迭代的过程中不断更新 KL 散度前的系数。
-  $$
-  J(\boldsymbol{\theta}) = \mathbb{E}_S\left[\mathbb{E}_{A\sim\pi(\cdot|S;\boldsymbol{\theta}_{\text{now}})}\left[\frac{\pi(A|S;\boldsymbol{\theta})}{\pi(A|S;\boldsymbol{\theta}_{\text{now}})}\cdot Q_\pi(S,A) - \beta DL\left[ \pi(\cdot|s; \theta) | \pi(\cdot | s; \theta_{now})  \right]\right]\right]
-  $$
-
-- PPO 的另一种形式 PPO-截断，这个方法更加直接，它在目标函数中进行限制，以保证新的参数和旧的参数的差距不会太大
-  $$
-  J(\boldsymbol{\theta}) = \mathbb{E}_S\left[\mathbb{E}_{A\sim\pi(\cdot|S;\boldsymbol{\theta}_{\text{now}})}\left[ min(\frac{\pi(A|S;\boldsymbol{\theta})}{\pi(A|S;\boldsymbol{\theta}_{\text{now}})}\cdot Q_\pi(S,A), clip(\frac{\pi(A|S;\boldsymbol{\theta})}{\pi(A|S;\boldsymbol{\theta}_{\text{now}})}, 1-\epsilon, 1+\epsilon) \cdot Q_\pi(S,A) ) \right]\right]
-  $$
-  
-
-- 大量实验表明，PPO-截断总是比 PPO-惩罚表现得更好
 
 
 
