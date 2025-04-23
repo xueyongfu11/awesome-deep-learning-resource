@@ -4,6 +4,8 @@
 
 ## Resource
 
+- https://github.com/dhcode-cpp/X-R1
+  
 - https://github.com/OpenManus/OpenManus-RL
   - 基于强化学习优化大模型智能体（类似R1算法）
 
