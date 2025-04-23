@@ -4,9 +4,9 @@
 
 ## Resource
 
+- [Reasoning 模型 RL 对齐的实际挑战](https://zhuanlan.zhihu.com/p/1892270905683575985)
 - https://github.com/OpenManus/OpenManus-RL
   - 基于强化学习优化大模型智能体（类似R1算法）
-
 - [复现和改进 DeepSeek-R1 的一些 tips](https://mp.weixin.qq.com/s/xqWYdf2c9frWbznKNGiagA)
   - 2025.03
 - [浅谈 DeepSeek-R1 和 Kimi k1.5 论文中的思维链 + 强化学习](https://weaxsey.org/articels/2025-02-01/)
