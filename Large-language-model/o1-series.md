@@ -5,6 +5,7 @@
 ## Resource
 
 - Repo
+  - https://github.com/cmu-l3/l1
   - https://github.com/shangshang-wang/Tina
   - https://github.com/hkust-nlp/simpleRL-reason
   - https://github.com/sail-sg/understand-r1-zero
