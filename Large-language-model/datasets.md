@@ -8,11 +8,11 @@
 ## 各类数据集收集repo
 - https://github.com/yaodongC/awesome-instruction-dataset
   - 多模态数据集、文本指令集、RLHF数据集
-
 - https://github.com/FreedomIntelligence/InstructionZoo
 
-- 
+## 推理数据集
 
+- https://huggingface.co/datasets/DigitalLearningGmbH/MATH-lighteval
 
 ## Preference Data
 
