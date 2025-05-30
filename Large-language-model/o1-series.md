@@ -18,6 +18,7 @@
   - https://github.com/huggingface/open-r1
   - https://github.com/aburkov/theLMbook/blob/main/GRPO_From_Scratch_Multi_GPU_DataParallel_Qwen_2_5_1_5B_Instruct.ipynb
   - https://github.com/dhcode-cpp/X-R1
+  - 
   
 - Blog
   - [R1 的一些认知：4 个经典误区](https://mp.weixin.qq.com/s/FnNRLXxBCFxFy-1v8QigLQ)
