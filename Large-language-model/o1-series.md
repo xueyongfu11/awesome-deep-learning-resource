@@ -5,6 +5,8 @@
 ## Resource
 
 - Repo
+  - https://github.com/Unakar/Logic-RL
+  - https://github.com/eddycmu/demystify-long-cot
   - https://github.com/RLHFlow/Minimal-RL
   - https://github.com/cmu-l3/l1
   - https://github.com/shangshang-wang/Tina
@@ -18,8 +20,6 @@
   - https://github.com/huggingface/open-r1
   - https://github.com/aburkov/theLMbook/blob/main/GRPO_From_Scratch_Multi_GPU_DataParallel_Qwen_2_5_1_5B_Instruct.ipynb
   - https://github.com/dhcode-cpp/X-R1
-  - 
-  
 - Blog
   - [R1 的一些认知：4 个经典误区](https://mp.weixin.qq.com/s/FnNRLXxBCFxFy-1v8QigLQ)
   - [从Math RL初窥LLM推理模型：是怎么work、哪些trick是有效的！](https://mp.weixin.qq.com/s/5zlujCaxGY1CL8IZeGqT2g)
@@ -30,6 +30,9 @@
   
   - [浅谈 DeepSeek-R1 和 Kimi k1.5 论文中的思维链 + 强化学习](https://weaxsey.org/articels/2025-02-01/)
     - 2025.02
+- Evaluation
+  - https://github.com/QwenLM/Qwen2.5-Math
+
 
 
 
