@@ -21,6 +21,9 @@
   - https://github.com/aburkov/theLMbook/blob/main/GRPO_From_Scratch_Multi_GPU_DataParallel_Qwen_2_5_1_5B_Instruct.ipynb
   - https://github.com/dhcode-cpp/X-R1
 - Blog
+  - [SPO新范式助力大模型推理能力提升](https://mp.weixin.qq.com/s/abUS_x8GTHEqTwS9rCwgLg)
+    - 为连续token片段计算reward
+  - [探讨Entropy(熵)机制在RL中扮演的角色](https://mp.weixin.qq.com/s/8eTzjE677C2jvyYtsEFukg)
   - [R1 的一些认知：4 个经典误区](https://mp.weixin.qq.com/s/FnNRLXxBCFxFy-1v8QigLQ)
   - [从Math RL初窥LLM推理模型：是怎么work、哪些trick是有效的！](https://mp.weixin.qq.com/s/5zlujCaxGY1CL8IZeGqT2g)
   - [[Experiment] Training R1-Zero-like models with Open R1](https://huggingface.co/spaces/open-r1/README/discussions/20)
