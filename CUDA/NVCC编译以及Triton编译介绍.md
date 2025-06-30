@@ -101,6 +101,35 @@ Triton编译器会将DSL代码经过多个阶段的编译，最终生成CUBIN/fa
      - 通过LLVM和PTX处理,最终到达SASS(NVIDIA GPU汇编)
      - 处理各类加速器(Accelerators)
 
+
+
+一些blogs：
+
+- [Triton编译器-PytorchConference2023](https://www.aispacewalk.cn/docs/ai/framework/pytorch/PytorchConference2023/torchcon_triton)
+- [OpenAI Triton MLIR 第零章 源码编译-来自GiantPandaCV](http://giantpandacv.com/project/%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BC%96%E8%AF%91%E5%99%A8/OpenAI%20Triton%20MLIR%20%E7%AC%AC%E9%9B%B6%E7%AB%A0%20%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/)
+
+## Triton编译器的优化Pass
+
+Pass 本质上是一段程序，它接收一种形式的 IR 作为输入，经过处理后输出转换后的 IR（可能是同一种形式，也可能是不同形式）。例如，在 MLIR（多语言中间表示）中，Pass 可以对不同层次的 IR 进行优化、转换或验证。
+
+
+
+一些重要的优化Pass：
+
+- TritonCombineOps：用于合并基础运算操作，比如点乘和地址计算
+- TritonReorderBroadcast：重排广播和分片操作的顺序，使其更高效
+- TritonRewriteTensorPointer：移除tensor指针相关的操作
+- TritonLoopUnroll：根据指定的因子展开循环结构
+- 内存合并访问（Coalescing）
+- F32 点积运算优化
+- CTA（合作线程阵列）规划
+- 线程局部性优化
+- 矩阵乘法加速
+- 点运算操作数优化
+- 数据去重
+- 指令重排序
+- TMA（Tensor Memory Access）lowering等优化
+
 ## Triton编译中间产物
 
 下面以一个基于triton编写的kernel为例进行详细说明
@@ -799,10 +828,6 @@ LBB0:
 --:-:-:Y:0	NOP;                         # 空操作
 --:-:-:Y:0	NOP;                         # 空操作
 ```
-
-
-
-
 
 
 
