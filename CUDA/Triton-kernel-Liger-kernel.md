@@ -34,6 +34,8 @@ dx_i = \frac{\partial o}{\partial x_i} = \sum_{k} \frac{\partial o}{\partial y_k
 $$
 核心是计算 $\displaystyle \frac{\partial y_k}{\partial x_i}$（即 $y_k$ 对 $x_i$ 的偏导），再结合上游梯度 $\displaystyle \frac{\partial o}{\partial y_k}$（记为 $dy_k$，由后续层反向传递而来）累加。  
 
+注意：输入$x_i$会影响所有的$y_k$，因此在计算梯度时，需要考虑$x_i$对所有$y_k$的影响并求和。
+
 
 #### 3. 计算 $\boldsymbol{\frac{\partial y_k}{\partial x_i}}$  
 分两种情况讨论（$k = i$ 或 $k \neq i$），因为 $y_k$ 的表达式中，当 $k=i$ 时 $x_i$ 同时出现在分子和归一化分母，而 $k \neq i$ 时 $x_i$ 仅出现在分母：  
@@ -100,4 +102,79 @@ $$
 #### 总结  
 RMSNorm 的反向传播本质是 **链式法则的应用**：由于输入 $x_i$ 参与了所有 $y_k$ 的归一化（分母含全局平方和），因此梯度需要遍历所有 $y_k$ 并累加其对 $x_i$ 的偏导。推导中需区分 $k=i$（自身梯度）和 $k \neq i$（交叉梯度）两种情况，最终整合得到 $dx_i$ 的表达式。  
 
-若需代码实现，通常会用向量化运算（如 PyTorch 中的 `torch.sum`、`torch.pow` 等）高效计算这些梯度，避免显式循环。
+### triton RMSNorm 准确性和性能测试
+
+[测试代码-colab codes](https://colab.research.google.com/drive/1CQYhul7MVG5F0gmqTBbx1O1HgolPgF0M?usp=sharing)
+
+## Fused Linear Cross Entropy
+
+### 为什么使用Fused Linear Cross Entropy
+
+在对Llama模型的profile分析中发现，内存变化阶段Cross entropy有一个峰值突变，它消耗了很多内存。
+
+由于使用了Checkpointing技术，在前向和反向阶段的每个Transformer Block上也能观察到内存的升降，因为计算下一个Transformer Block的时候会释放当前Transformer Block占用的内存。这里的重点是Cross Entropy的内存消耗，来源是具体化logits的过程中产生的峰值内存，因为vocab size很大。
+
+### Cross Entropy的前向和反向计算
+
+#### 前向传播公式
+**输入层到输出层的映射**  
+假设神经网络的最后一层输出为 $z_1, z_2, \dots, z_C$，其中 $C$ 是分类类别数。  
+通过 softmax 函数将其转换为概率分布：  
+$$
+\text{softmax}(z)_j = \frac{\exp(z_j)}{\sum_{i=1}^C \exp(z_i)}, \quad j=1,2,\dots,C
+$$
+**交叉熵损失函数**  
+设真实标签为 $y_1, y_2, \dots, y_C$（通常是 one-hot 向量，即仅一个类别为 1，其余为 0），则损失为：  
+$$
+L = -\sum_{j=1}^C y_j \log(\text{softmax}(z)_j)
+$$
+由于 $y_j$ 是 one-hot 向量，若真实类别为 $t$，则 $y_t=1$，其余 $y_j=0$，损失可简化为：  
+$$
+L = -\log(\text{softmax}(z)_t) = -\log\left(\frac{\exp(z_t)}{\sum_{i=1}^C \exp(z_i)}\right)
+$$
+
+
+#### 反向传播公式（梯度计算）
+**目标**：计算损失 $L$ 对输入 $z_k$ 的梯度 $\frac{\partial L}{\partial z_k}$。  
+
+**推导过程**  
+
+1. **求 softmax 函数的导数**  
+   先计算 $\text{softmax}(z)_j$ 对 $z_k$ 的偏导数：  
+   $$
+   \frac{\partial \text{softmax}(z)_j}{\partial z_k} = 
+   \begin{cases}
+   \text{softmax}(z)_j (1 - \text{softmax}(z)_j), & \text{if } j = k \\
+   -\text{softmax}(z)_j \cdot \text{softmax}(z)_k, & \text{if } j \neq k
+   \end{cases}
+   $$
+
+2. **求交叉熵损失对 softmax 输出的导数**  
+   $$
+   \frac{\partial L}{\partial \text{softmax}(z)_j} = -\frac{y_j}{\text{softmax}(z)_j}
+   $$
+
+3. **应用链式法则**  
+   $$
+   \frac{\partial L}{\partial z_k} = \sum_{j=1}^C \frac{\partial L}{\partial \text{softmax}(z)_j} \cdot \frac{\partial \text{softmax}(z)_j}{\partial z_k}
+   $$
+   将前两步的结果代入并化简（过程略），最终得到：  
+   $$
+   \frac{\partial L}{\partial z_k} = \text{softmax}(z)_k - y_k
+   $$
+   即预测概率与真实标签的差值。对于 one-hot 标签，当 $k$ 是真实类别时，梯度为 $\text{softmax}(z)_k - 1$；否则为 $\text{softmax}(z)_k$。
+
+
+#### 向量化表示
+实际代码中，通常用向量化计算加速：  
+- **输入**：$\mathbf{z} \in \mathbb{R}^C$（神经网络最后一层输出）  
+- **输出**：$\mathbf{p} = \text{softmax}(\mathbf{z}) \in \mathbb{R}^C$（预测概率分布）  
+- **损失**：$L = -\mathbf{y} \cdot \log(\mathbf{p})$（点积）  
+- **梯度**：$\frac{\partial L}{\partial \mathbf{z}} = \mathbf{p} - \mathbf{y}$
+
+### Fused Linear Cross Entropy的优化技术
+
+- 根据Cross Entropy的梯度计算公式，可以在Forward Pass时就计算梯度，可以消除重新计算前向过程的需求，从而提高计算效率。
+- 使用chunk技术：输入数据被分成多个块，逐块进行处理。这种方法可以减少内存使用。然后softmax的计算是基于全局的，因此需要使用online softmax的方法进行更新。
+
+#
