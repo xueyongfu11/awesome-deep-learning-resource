@@ -386,9 +386,10 @@ __global__ void ringAllReduceKernel(ncclWorkElem* args) {
     const int bid = args->bid;        // 获取块ID
     const int nChannels = args->nChannels;  // 获取通道数
     ncclRing* ring = &ncclShmem::channel.ring;  // 获取环形通信结构的指针
-    int ringIx = ring->index;         // 获取环形索引
+    int ringIx = ring->index;         // 获取环形索引，获取当前GPU在环里的位置信息
     
     // 计算每步处理的数据块大小
+    // 计算数据块的大小。整个AllReduce操作不是一次性完成的，而是把总数据（比如一个巨大的神经网络权重张量）切成很多片（loopSize），一片一片地执行完整的Ring AllReduce流程。chunkSize 就是比喻中每一轮传递的“一小份”数据的大小。
     const size_t chunkSize = (int(ProtocolTraits<Proto>::calcBytePerStep() / sizeof(T)) * 
                              (Proto == NCCL_PROTO_SIMPLE ? ALLREDUCE_CHUNKSTEPS : 1));
     const int nranks = ncclShmem::comm.nRanks;  // 获取总进程数
@@ -410,7 +411,7 @@ __global__ void ringAllReduceKernel(ncclWorkElem* args) {
     Primitives<T, RedOp, FanSymmetric<1>, ProtocolTraits<Proto>, 0> prims(
         tid, nthreads, &ring->prev, &ring->next, args->sendbuff, args->recvbuff, args->redOpArg);
 
-    // 主循环处理所有数据块
+    //这个循环就是把整个大任务分成小任务来处理。gridOffset 代表当前正在处理的是第几“片”数据。
     for (size_t gridOffset = 0; gridOffset < size; gridOffset += loopSize) {
         size_t realChunkSize;
         
@@ -446,10 +447,13 @@ __global__ void ringAllReduceKernel(ncclWorkElem* args) {
 
         // ReduceScatter阶段
         // step 0: 将数据推送到下一个GPU
-        chunk = modRanks(ringIx + nranks - 1);  // 计算chunk索引
+        
+        //这一行在计算当前这一步应该操作哪个数据块。环形算法的精髓就在于，每个GPU在同一步操作的数据块索引是不同的，但相对于自己在环中的位置是有规律的。
+        chunk = modRanks(ringIx + nranks - 1); 
         offset = calcOffset(chunk);           // 计算偏移量
         nelem = min(realChunkSize, size - offset); // 计算元素数量
-        prims.send(offset, nelem);           // 发送数据
+        // 每个GPU把自己负责的第一个数据块发送给下一个GPU，这一步不同于后续步骤，不需要规约加和操作
+        prims.send(offset, nelem);           
 
         // k-2步: 执行规约操作并将结果复制到下一个GPU
         for (int j = 2; j < nranks; ++j) {
