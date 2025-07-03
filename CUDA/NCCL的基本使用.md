@@ -269,12 +269,14 @@ int main(int argc, char* argv[])
 - **与算法 (Algorithm)：** 不同的算法类型（如 `TREE`, `RING`, `COLLNET`）使用通道的方式基本相同，都依赖于数据块划分和独立路径传输。树形算法中每个通道有自己的树，环形算法中每个通道有自己的环。
 - **与线程 (Threads)：** CUDA 内核里的 `tid`, `nthreads` 是负责执行单个 GPU 上单个通道内的通信操作的线程。它们处理的是这个通道分配到的数据块 (`chunkCount`, `channelCount`, `gridOffset`) 在这个特定通道的树 (`&ncclShmem.channel.tree`) 上的通信（Send/Recv/Reduce 等）。一个物理GPU上可能同时有多个 CUDA 内核在运行（每个负责一个不同的通道！），或者一个复杂的内核处理多个通道（需要同步机制）。
 
-## Ring Allreduce算法源码
+## 几种NCCL的通信算法
+
+### Ring Allreduce算法源码
 
 Ring Allreduce算法比较简单，主要由两个阶段组成：
 
 1. n-1次的ReduceScatter操作：每个节点将数据分片，通过规约操作逐步聚合到其他节点
-2. n-1次的Allreduce操作：每个节点将聚合后的结果扩散到其他所有节点，最终每个节点都拥有完整的全局结果
+2. n-1次的Allreduce操作：每个节点将聚合后的结果逐步扩散到其他所有节点，最终每个节点都拥有完整的全局结果
 
 ```c
 // Ring AllReduce算法实现 (结合了ReduceScatter和AllGather操作)
@@ -283,7 +285,7 @@ __global__ void ringAllReduceKernel(ncclWorkElem* args) {
     const int tid = threadIdx.x;      // 获取当前线程ID
     const int nthreads = args->nWarps * WARP_SIZE;  // 计算总线程数
     const int bid = args->bid;        // 获取块ID
-    const int nChannels = args->nChannels;  // 获取通道数
+    const int nChannels = args->nChannels;  // 获取总的通道数
     ncclRing* ring = &ncclShmem::channel.ring;  // 获取环形通信结构的指针
     int ringIx = ring->index;         // 获取环形索引，获取当前GPU在环里的位置信息
     
@@ -399,39 +401,56 @@ __global__ void ringAllReduceKernel(ncclWorkElem* args) {
 }
 ```
 
-## Tree Allreduce算法源码
+### Tree Allreduce算法源码
 
-### TreeUpDown算法
+#### TreeUpDown算法
+
+- UP阶段：首先将节点两两分组，每组有两个节点，一个节点把数据规约到另外一个节点。第一轮规约之后，只保留规约组内数据的节点，然后再把节点两两分组，重复执行操作，最后总数据规约到跟节点。
+- Down阶段：将根节点总数据逐层往叶子节点广播，这样所有的节点都获得了总数据。
+
+
 
 ```c
 template<typename T, typename RedOp, typename Proto>
   __device__ __forceinline__ void runTreeUpDown(int tid, int nthreads, struct ncclDevWorkColl* work) {
+    //获取当前通道的tree通信的指针
     ncclTree *tree = &ncclShmem.channel.tree;
+    // gridOffset: 这次Kernel调用处理的数据块的起始偏移
     size_t gridOffset;
+    // channelCount: 这个通信通道总共要处理的数据量
     size_t channelCount;
+    // chunkCount: 为了效率，数据被分成一小块一小块(chunk)处理，这是每一小块的大小
     size_t chunkCount;
+    // 这个函数很重要，它根据总工作量和当前GPU的信息，计算出这个Kernel要处理哪一部分数据
+    //Proto 代表通信协议（Protocol），Proto::Id 就是这个协议的唯一标识符
     ncclCollCbdPart(work, ncclShmem.channelId, Proto::Id, sizeof(T), (size_t*)nullptr, &gridOffset, &channelCount, &chunkCount);
+    
+    //在整个数据中的绝对位置偏移
     size_t offset;
     int nelem;
 
     { // Reduce : max number of recv is 3, max number of send is 1 (binary tree + local)
+      //初始化一个“原语”对象，配置为“Up”模式
+      // FanAsymmetric<NCCL_MAX_TREE_ARITY, 1>: 这是关键配置。它告诉工具箱，在Reduce阶段，一个节点最多会从 NCCL_MAX_TREE_ARITY 个子节点接收数据（比如二叉树就是2个），并且最多向 1 个父节点发送数据。
+      //tree->down: 子节点的rank列表；&tree->up: 父节点的rank；
       Primitives<T, RedOp, FanAsymmetric<NCCL_MAX_TREE_ARITY, 1>, /*Direct=*/1, Proto, 0> prims
         (tid, nthreads, tree->down, &tree->up, work->sendbuff, work->recvbuff, work->redOpArg, 0, 0, 0, work);
-      if (tree->up == -1) {
+      //根据当前GPU在树中的角色，执行不同操作
+      if (tree->up == -1) {  // 角色：树根 (Root)，只接收和计算，不发送
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
           prims.directRecvReduceCopy(offset, offset, nelem, /*postOp=*/true);
         }
       }
-      else if (tree->down[0] == -1) {
+      else if (tree->down[0] == -1) {  //角色：叶子节点 (Leaf)，只发送，不接收
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
           prims.directSend(offset, offset, nelem);
         }
       }
-      else {
+      else {  //角色：中间节点 (Intermediate)，既接收、计算，又发送
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
@@ -439,25 +458,29 @@ template<typename T, typename RedOp, typename Proto>
         }
       }
     }
+    //Reduce阶段完成后，最终的归约结果已经存在于树根GPU的 recvbuff 中
 
+    // 广播阶段
     { // Broadcast : max number of recv is 1, max number of send is 3 (binary tree + local)
+      //FanAsymmetric<1, NCCL_MAX_TREE_ARITY>:一个节点最多从 1 个父节点接收数据，然后最多向 NCCL_MAX_TREE_ARITY 个子节点发送数据
       Primitives<T, RedOp, FanAsymmetric<1, NCCL_MAX_TREE_ARITY>, /*Direct=*/1, Proto, 0> prims
         (tid, nthreads, &tree->up, tree->down, work->sendbuff, work->recvbuff, work->redOpArg, 0, 0, 0, work);
-      if (tree->up == -1) {
+        
+      if (tree->up == -1) {  // 角色：树根 (Root)，只发送，不接收
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
           prims.directSendFromOutput(offset, nelem);
         }
       }
-      else if (tree->down[0] == -1) {
+      else if (tree->down[0] == -1) {  // 角色：叶子节点 (Leaf)，只接收
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
           prims.directRecv(offset, nelem);
         }
       }
-      else {
+      else {       // 角色：中间节点 (Intermediate)，即接收又发送
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
@@ -465,10 +488,11 @@ template<typename T, typename RedOp, typename Proto>
         }
       }
     }
+    //Broadcast阶段完成后，所有参与通信的GPU的 recvbuff 中都拥有了相同的、最终的归约结果
   }
 ```
 
-### TreeSplit算法
+#### TreeSplit算法
 
 ```c
 template<typename T, typename RedOp, typename Proto>
@@ -485,12 +509,11 @@ template<typename T, typename RedOp, typename Proto>
       nthreadsSplit = nthreads/2;
       if (nthreadsSplit >= 256) nthreadsSplit += 64;
     } else { // LL & LL128
-      // Receiving from up to 3 sources is more compute intensive than sending
-      // to 3 dests. Use 70% for reduce and 30% for bcast.
+      //为什么分裂比例不同？ 注释里写得很清楚。对于 LL/LL128 协议，接收数据并计算（Reduce）比单纯发送（Broadcast）更耗费计算资源，所以给“上报组”分配了大约 70% 的线程，剩下的 30% 给“下达组”。这是为了让两组任务的完成时间差不多，避免出现“短板效应”。
       nthreadsSplit = (nthreads*7/(10*WARP_SIZE))*WARP_SIZE;
     }
 
-    if (tree->up == -1) {
+    if (tree->up == -1) {  // 根节点，只发送数据
       // Reduce and broadcast. Max number of recv is 2, max number of send is 2
       Primitives<T, RedOp, FanSymmetric<NCCL_MAX_TREE_ARITY_TOP>, /*Direct=*/1, Proto, 0>
         prims(tid, nthreads, tree->down, tree->down, work->sendbuff, work->recvbuff, work->redOpArg, 0, 0, 0, work);
@@ -500,7 +523,7 @@ template<typename T, typename RedOp, typename Proto>
         prims.directRecvReduceCopyDirectSend(offset, offset, nelem, /*doPost=*/true);
       }
     }
-    else if (tid < nthreadsSplit) {
+    else if (tid < nthreadsSplit) {  //Up组线程，把数据上报
       /* Reduce up. Max number of recv is 3, max number of send is 1 (binary tree + local).
        * Why Direct=1????
        * Answer: Because despite not performing any direct operations, the ctor
@@ -514,7 +537,8 @@ template<typename T, typename RedOp, typename Proto>
       // coverity[callee_ptr_arith:FALSE]
       Primitives<T, RedOp, FanAsymmetric<NCCL_MAX_TREE_ARITY, 1>, /*Direct=*/1, Proto, 0>
         prims(tid, nthreadsSplit, tree->down, &tree->up, work->sendbuff, work->recvbuff, work->redOpArg, 0*Proto::MaxGroupWidth, 0, 0, work);
-      if (tree->down[0] == -1) {
+        
+      if (tree->down[0] == -1) {  // 叶子节点
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
@@ -529,7 +553,7 @@ template<typename T, typename RedOp, typename Proto>
         }
       }
     }
-    else {
+    else {   //Down组线程
       // Broadcast down. Max number of recv is 1, max number of send is 3 (binary tree + local)
       // Coverity reports that the callee treats &tree->up as an array.  However, due to the use of
       // FanAsymmetric<1, n>, only the first element is ever accessed, so it's fine.
@@ -537,14 +561,15 @@ template<typename T, typename RedOp, typename Proto>
       Primitives<T, RedOp, FanAsymmetric<1, NCCL_MAX_TREE_ARITY>, /*Direct=*/1, Proto, 0>
         prims(tid-nthreadsSplit, nthreads-nthreadsSplit, &tree->up, tree->down, work->sendbuff, work->recvbuff,
             work->redOpArg, 1*Proto::MaxGroupWidth, 0, 0, work);
-      if (tree->down[0] == -1) {
+        
+      if (tree->down[0] == -1) {  // 叶子节点，只接收数据
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
           prims.directRecv(offset, nelem);
         }
       }
-      else {
+      else {   // 中间节点
         for (size_t elemOffset = 0; elemOffset < channelCount; elemOffset += chunkCount) {
           offset = gridOffset + elemOffset;
           nelem = min(chunkCount, channelCount - elemOffset);
@@ -555,20 +580,6 @@ template<typename T, typename RedOp, typename Proto>
   }
 }
 ```
-
-
-
-## 网络拓扑相关技术
-
-### NVLink
-
-
-
-### Infiniband/RoCE
-
-
-
-## 集体操作原语
 
 
 
