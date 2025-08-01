@@ -2,7 +2,7 @@
 
 > 本文主要基于cuda官方文档：[URL](https://docs.nvidia.com/cuda/parallel-thread-execution/#instruction-set)
 
-# 指令集基础
+# PTX指令集基础
 
 ### 基本指令格式
 
@@ -111,6 +111,20 @@ PTX程序在支持不同数据类型的GPU上的执行情况：
 - 因此，PTX中16位指令的语义是机器特定的，以避免32位GPU上16位代码的性能损失。编译器或程序员可通过在程序适当位置添加显式16位转换来保证代码可移植性，但这对许多性能关键型应用并不理想，且很多应用更能接受执行差异而非限制性能。
 
 # warp级矩阵乘累计指令
+
+| 特性         | wmma                                                         | mma                                                          |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 内存布局管理 | 隐式处理：使用`wmma.load`和`wmma.store`指令时，会隐式地将矩阵元素从内存组织为适合 GPU 计算的格式，开发者无需手动管理线程间的数据分配，简化了编程模型。 | 显式处理：需要显式处理矩阵元素在 warp 内各线程间的分布。开发者必须手动将矩阵分块并分配到不同线程，控制数据的加载和存储方式。 |
+| 稀疏矩阵支持 | 仅密集矩阵                                                   | 密集矩阵和结构化稀疏矩阵                                     |
+| 编程复杂度   | 低                                                           | 高                                                           |
+| 指令集层次   | 高级抽象                                                     | 底层指令                                                     |
+| 适用场景     | 快速开发、密集矩阵                                           | 高性能计算、稀疏矩阵                                         |
+
+**选择建议**
+
+- 若追求开发效率且处理密集矩阵，优先使用`wmma`。
+- 若需要处理稀疏矩阵或追求极致性能优化，选择`mma`。
+- 在Hopper上，为了获得最高的性能，应该使用`wgmma`指令。
 
 ## WMMA
 
@@ -281,31 +295,13 @@ wmma.store.d.sync.aligned.m16n16k16.global.col.f32
 
 ## MMA
 
-- MMA（Matrix Multiply Accumulate）是 NVIDIA GPU 中用于高效矩阵乘法的指令集，在 Ampere 架构及后续版本中得到广泛应用。
+### 语法
 
-- 矩阵乘法和累加操作的形式为`D = A * B + C`，其中`D`和`C`被称为累加器，可能引用相同的矩阵。
-
-- MMA描述每个线程束执行矩阵乘法时处理的子矩阵尺寸。有两种操作可以执行warp级别的MMA操作：`wmma`和`mma`。在Hopper上，为了获得最高的性能，应该使用`wgmma`指令。
-
-### 相关PTX代码
-
-#### 半精度MMA指令
+#### 半精度数据类型
 
 ```shell
-# 指令格式：mma.sync.aligned.<m>x<n>x<k>.<a布局>.<b布局>.<d数据类型>.<a数据类型>.<b数据类型>.<c数据类型> d, a, b, c;
-
-# m8n8k4定义矩阵乘法的基础计算单元大小（与输出矩阵相关）
-# m=8：输出矩阵 D 的行维度大小为 8
-# n=8：输出矩阵 D 的列维度大小为 8
-# k=4：收缩维度大小为 4，即 A 的列数和 B 的行数
-# alayout 和 blayout 是占位符
 mma.sync.aligned.m8n8k4.alayout.blayout.dtype.f16.f16.ctype  d, a, b, c;
-
-# 计算 16×8 的输出矩阵
-# 明确指定A为行优先，B为列优先
 mma.sync.aligned.m16n8k8.row.col.dtype.f16.f16.ctype  d, a, b, c;
-
-# 计算 16×8 的输出矩阵，K 维度进一步扩展到 16
 mma.sync.aligned.m16n8k16.row.col.dtype.f16.f16.ctype d, a, b, c;
 
 .alayout = {.row, .col};  # 指定矩阵 A 的存储布局：行优先
@@ -314,75 +310,202 @@ mma.sync.aligned.m16n8k16.row.col.dtype.f16.f16.ctype d, a, b, c;
 .dtype   = {.f16, .f32};  # 指定操作数D数据类型，包含两种
 ```
 
-#### 指令骨架
+#### 带block_scaling的半精度数据类型
 
 ```shell
-mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32
-  {%Rd0, %Rd1, %Rd2, %Rd3},  # 输出矩阵D (4个FP32寄存器)
-  {%Ra0, %Ra1, %Ra2, %Ra3},  # 输入矩阵A (4个FP16寄存器)
-  {%Rb0, %Rb1},              # 输入矩阵B (2个FP16寄存器)
-  {%Rc0, %Rc1, %Rc2, %Rc3};  # 累加矩阵C (4个FP32寄存器)
+# block_scale指示了在进行矩阵乘累加之前要对矩阵A和B分别用scale_A和scale_B进行scale
+# .stype指定了scale_A和scale_B的数据类型
+# .scale_vec_size指定了scale_A的列数和scale_B的行数
+# 对于指定.kind::mxf4的mma，当未指定限定符.scale_vec_size时，其默认值为2X。相反，当.kind指定为.kind::mxf8f6f4时，限定符.scale_vec_size默认值为1X。但是，对于.kind::mxf4nvf4，必须提供有效的.scale_vec_size
+mma.sync.aligned.m16n8k64.row.col.kind.block_scale{.scale_vec_size}.f32.e2m1.e2m1.f32.stype d, a, b, c, scale-a-data, {byte-id-a, thread-id-a}, scale-b-data, {byte-id-b, thread-id-b};
+
+.kind           = {.kind::mxf4};
+.scale_vec_size = {.scale_vec::2X};
+.stype          = {.ue8m0};
+
+mma.sync.aligned.m16n8k64.row.col.kind.block_scale.scale_vec_size.f32.e2m1.e2m1.f32.stype d, a, b, c, scale-a-data, {byte-id-a, thread-id-a}, scale-b-data, {byte-id-b, thread-id-b};
+
+.kind           = {.kind::mxf4nvf4};
+.scale_vec_size = {.scale_vec::2X, .scale_vec::4X};
+.stype          = {.ue8m0, .ue4m3};
+
+mma.sync.aligned.m16n8k32.row.col.kind.block_scale{.scale_vec_size}.f32.f8f6f4type.f8f6f4type.f32.stype d, a, b, c, scale-a-data, {byte-id-a, thread-id-a}, scale-b-data, {byte-id-b, thread-id-b};
+
+.kind           = {.kind::mxf8f6f4};
+.scale_vec_size = {.scale_vec::1X};
+.f8f6f4type     = {.e4m3, .e5m2, .e3m2, .e2m3, .e2m1};
+.stype          = {.ue8m0};
 ```
 
-#### 该指令累加器矩阵的布局
+### 举例
 
-![image](../assets/mma_layout.png)
+```shell
+# 全半精度 (f16) 矩阵乘法
+.reg .f16x2 %Ra<2> %Rb<2> %Rc<4> %Rd<4>
+mma.sync.aligned.m8n8k4.row.col.f16.f16.f16.f16
+{%Rd0, %Rd1, %Rd2, %Rd3},
+{%Ra0, %Ra1},
+{%Rb0, %Rb1},
+{%Rc0, %Rc1, %Rc2, %Rc3};
 
-这张图展示了 **MMA（矩阵乘法累加）指令中累加器矩阵 C/D 的分片布局**，对应 `mma.m16n8k16` 这类指令的硬件实现细节。核心是解释 **线程束（warp）内的线程如何协作处理 16×8 尺寸的累加器矩阵**，以下分层次拆解：
+# 混合精度 (f16 输入，f32 输出)
+.reg .f16x2 %Ra<2> %Rb<2> %Rc<4>
+.reg .f32 %Rd<8>
+mma.sync.aligned.m8n8k4.row.col.f32.f16.f16.f16
+{%Rd0, %Rd1, %Rd2, %Rd3, %Rd4, %Rd5, %Rd6, %Rd7},
+{%Ra0, %Ra1},
+{%Rb0, %Rb1},
+{%Rc0, %Rc1, %Rc2, %Rc3};
+```
 
-##### 基础概念
+### ldmatrix
 
-| 符号/维度  | 含义                             | 硬件关联                     |
-| ---------- | -------------------------------- | ---------------------------- |
-| `m16n8k16` | 输出矩阵尺寸：16行（M）×8列（N） | 每个线程束处理 16×8 的子矩阵 |
-| `Row\Col`  | 矩阵的行（Row）和列（Col）索引   | 对应计算结果的二维位置       |
-| `T0-T31`   | 线程束内的线程 ID（0-31）        | 32线程协作完成矩阵计算       |
-| `{c0,c1}`  | 寄存器分片（Fragment）           | 线程存储的部分计算结果       |
+从共享内存中集中加载一个或多个矩阵，来执行mma指令。
 
+#### 语法
 
-##### 矩阵分片的「行-列-线程」映射
-**1. 矩阵尺寸与线程分工**
+```shell
+# shape指定加载的矩阵的shape
+# r是寄存器，p是操作数
+# .num是单次指令加载的矩阵片数
+# .ss表示共享内存空间
+ldmatrix.sync.aligned.shape.num{.trans}{.ss}.type r, [p];
 
-- **目标矩阵**：16行（Row 0-15）×8列（Col 0-7），共 16×8=128 个元素。
-- **线程束**：32个线程（T0-T31）协作，每个线程需处理 **128/32=4 个元素**（通过寄存器分片实现）。
+# dst_fmt数据在寄存器中的存储格式
+# src_fmt数据在内存中的存储格式
+ldmatrix.sync.aligned.m8n16.num{.ss}.dst_fmt.src_fmt        r, [p];
 
-**2. 行分组：2组×8行**
+# .trans表示加载时对数据进行转置
+ldmatrix.sync.aligned.m16n16.num.trans{.ss}.dst_fmt.src_fmt r, [p];
 
-- 矩阵被分为 **2个行块**：
-  - 第1块：Row 0-7（8行）
-  - 第2块：Row 8-15（8行）
+.shape   = {.m8n8, .m16n16};
+.num     = {.x1, .x2, .x4};
+.ss      = {.shared{::cta}};
+.type    = {.b16, .b8};
+.dst_fmt = { .b8x16 };
+.src_fmt = { .b6x16_p32, .b4x16_p64 };
+```
 
-**3. 列分组：4列×2元素**
+#### 在cuda kernel中使用
 
-- 每列（Col 0-7）被拆分为 **2个元素的分片**（如 `{c0,c1}`、`{c2,c3}`）：
-- 每个线程处理 **2个列元素**（通过寄存器存2个值），配合行处理实现 **4个元素/线程**（8行分组 × 2列分片 → 4元素/线程）。
+```c++
+#include <cstdint>
+#include <iostream>
 
-**4\. 线程处理**
+// 定义一个设备端内联函数，用于从共享内存加载8x8矩阵
+// d0: 输出参数，用于存储加载的数据
+// address: 输入参数，共享内存中的地址
+__device__ __forceinline__ void ldmatrix_sync_aligned_m8n8_x1_b16(
+    uint32_t &d0, const uint32_t &address) {
+  // 使用内联PTX汇编指令加载矩阵
+  // ldmatrix.sync.aligned.m8n8.x1.shared.b16: 同步加载8x8矩阵，每个元素16位
+  // {%0}: 输出寄存器，存储加载的数据
+  // [%1]: 输入寄存器，指定共享内存地址
+  asm volatile("ldmatrix.sync.aligned.m8n8.x1.shared.b16 {%0}, [%1];"
+               : "=r"(d0)    // 输出约束，表示d0是一个输出寄存器
+               : "r"(address)); // 输入约束，表示address是一个输入寄存器
+}
 
-每个线程处理4个元素`c0`, `c1`, `c2`, `c3`。`c1`和`c2`之间的距离是8 * 8个元素。`c0`和`c1`一起是`8 bytes = 2 * sizeof(float)`
+__global__ void ldmatrix(uint16_t *value) {
+  constexpr int N = 64;
+  // 声明共享内存数组
+  __shared__ uint16_t smem[N];
+  auto tid = threadIdx.x;
 
+  // 计算行偏移量：每个线程负责8个元素，所以乘以8
+  const uint32_t offset_rows = sizeof(uint16_t) * (tid % 8) * 8;
+  // 计算最终地址：共享内存基址 + 行偏移
+  // smem是通用指针类型，转换之后，显示的标记为共享内容的指针类型
+  // 为什么编译器不自动转换？在一些场景中，编译器可能无法处理：内联汇编；地址计算
+  const uint32_t address = __cvta_generic_to_shared(smem) + offset_rows;
 
-##### 硬件执行流程
-1. **数据读取**：  
-   线程束从全局内存/共享内存读取矩阵 A（16×16）、矩阵 B（16×8）的分片。  
-   - A 矩阵：行优先存储，每个线程读取 2 个 FP16 元素（对应 `{a0,a1}` 分片）。  
-   - B 矩阵：列优先存储，每个线程读取 2 个 FP16 元素（对应 `{b0,b1}` 分片）。  
+  // 初始化共享内存
+  for (uint32_t i = tid; i < N; i += blockDim.x) {
+    smem[i] = i;
+  }
+  __syncthreads();
 
-2. **矩阵乘法**：  
-   每个线程执行 **小矩阵乘法**（如 2×2×2），结果暂存到寄存器分片（如 `{c0,c1}`）。  
+  // 声明用于存储加载数据的变量
+  uint32_t frag;
+  // 调用矩阵加载函数
+  ldmatrix_sync_aligned_m8n8_x1_b16(frag, address);
 
-3. **累加同步**：  
-   线程束内通过 `mma.sync` 指令同步，将 32 个线程的寄存器分片 **拼接成完整的 16×8 累加矩阵**，完成 `D += A×B + C` 的计算。    
+  // 再次同步，确保所有线程都完成加载
+  __syncthreads();
 
+  // 从32位数据中提取两个16位值
+  // 提取低16位
+  uint16_t number1 = static_cast<uint16_t>(frag & 0xFFFF);
+  // 提取高16位
+  uint16_t number2 = static_cast<uint16_t>((frag >> 16) & 0xFFFF);
+  // 打印结果
+  printf("%d -> %d  %d   %d   \n", tid, (int)(smem[2 * tid]), (int)number1, (int)number2);
+}
 
-##### 与 PTX 指令的映射
-结合你之前的指令 `mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32` 看：
-- `.row.col`：A 行优先、B 列优先，对应图中矩阵 A/B 的存储方式。  
-- `.f32.f16.f16.f32`：累加器 C/D 用 FP32（分片 `{c0,c1}` 实际是 FP32 存储），A/B 用 FP16（线程读取的分片是 FP16）。  
+// 主函数
+int main() {
+  // 声明设备端指针
+  uint16_t *d_value;
+  // 分配设备内存
+  cudaMalloc(&d_value, sizeof(uint16_t));
+  // 启动核函数，使用1个块，32个线程
+  ldmatrix<<<1, 32>>>(d_value);
+  // 等待设备完成
+  cudaDeviceSynchronize();
+  // 释放设备内存
+  cudaFree(d_value);
+  return 0;
+}
+```
 
+### stmatrix
 
+存储一个或者多个矩阵到共享内存
 
+#### 语法
 
+```shell
+stmatrix.sync.aligned.shape.num{.trans}{.ss}.type [p], r;
+
+.shape  = {.m8n8, .m16n8};
+.num    = {.x1, .x2, .x4};
+.ss     = {.shared{::cta}};
+.type   = {.b16, .b8};
+```
+
+#### 在cuda kernel中使用
+
+```c++
+__device__ __forceinline__ void stmatrix_sync_aligned_m8n8_x1_b16(
+    uint32_t &d0, const uint32_t &address) {
+  asm volatile(
+      "stmatrix.sync.aligned.x1.m8n8.shared.b16 [%0], {%1};\n" ::"r"(address),
+      "r"(d0));
+}
+
+__global__ void stmatrix(uint16_t *value) {
+  constexpr int N = 64;
+  __shared__ uint16_t smem[N];
+  auto tid = threadIdx.x;
+
+  const uint32_t offset_rows = sizeof(uint16_t) * (tid % 8) * 8;
+  const uint32_t address = __cvta_generic_to_shared(smem) + offset_rows;
+
+  uint32_t frag = 0x00000000;
+  frag |= (tid * 2 + 0);
+  frag |= (tid * 2 + 1) << 16;
+  __syncthreads();
+
+  stmatrix_sync_aligned_m8n8_x1_b16(frag, address);
+
+  __syncthreads();
+
+  uint16_t number1 = static_cast<uint16_t>(frag & 0xFFFF);
+  uint16_t number2 = static_cast<uint16_t>((frag >> 16) & 0xFFFF);
+  printf("%d -> %d  %d   %d   \n", tid, (int)(smem[2 * tid]), (int)number1,
+         (int)number2);
+}
+```
 
 
 
