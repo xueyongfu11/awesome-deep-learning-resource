@@ -2,11 +2,14 @@
 # CUDA
 
 - [CUDA教程集合-B站](https://space.bilibili.com/218427631/lists/4695308?type=series)
-- cuda在线文档：https://developer.nvidia.com/cuda-toolkit-archive
+- cuda toolkit在线文档：https://developer.nvidia.com/cuda-toolkit-archive
+- cutlass在线文档：https://docs.nvidia.com/cutlass/index.html#
 - CUDA C++ Programming Guide
   - https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
 - [超算习堂](https://easyhpc.net/course)
 - cuda github：https://github.com/BBuf/how-to-optim-algorithm-in-cuda/tree/master/cuda-mode
+- LeetCUDA-cuda学习笔记：https://github.com/xlite-dev/LeetCUDA
+- AI基础设施：https://github.com/Infrasys-AI/AISystem
 
 ## cuda基础入门
 
