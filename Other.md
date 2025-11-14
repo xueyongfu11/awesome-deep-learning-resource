@@ -253,12 +253,10 @@
 # leecode
 - https://github.com/krahets/hello-algo
   - 《Hello 算法》：动画图解、一键运行的数据结构与算法教程
-
 - https://github.com/TheAlgorithms/Python
 - https://github.com/labuladong/fucking-algorithm
 - https://github.com/youngyangyang04/leetcode-master
 - https://github.com/MisterBooo/LeetCodeAnimation
-- https://github.com/labuladong/fucking-algorithm
 
 
 # non deep learning

@@ -4,8 +4,6 @@
 
 ## llm
 
-- 
-  
 - https://github.com/OpenBMB/BMPrinciples
   - A collection of phenomenons observed during the scaling of big foundation models, which may be developed into consensus, principles, or laws in the future
 
@@ -137,54 +135,34 @@
   - https://huggingface.co/bosonai/Higgs-Llama-3-70B
   - https://github.com/thu-coai/CharacterGLM-6B
 
-## 大模型个性化
+## 大模型遗忘
 
-### 个性化记忆
+### 主流方法
 
-- https://github.com/modelscope/MemoryScope
-  - idea: 异步地对对话信息总结，并更新system prompt中的个性化信息
-  
-- https://github.com/liyongqi2002/Awesome-Personalized-Alignment
-  - A curated list of personalized alignment resources
+- EWC（Elastic Weight Consolidation），基于正则化的方法
+- 经验回放
+  - LAMOL，生成式回放，让模型生成虚拟的旧任务数据
+    - 经验回放可以防止大模型遗忘，但是很多时候无法获取旧数据，LAMOL方法是用大模型本身来生成数据，作为“旧数据”，然后再把“旧数据”和新任务数据混合训练。
+  - Self-Synthesize Rehearsal (Magpie)：让基础模型自问自答，生成数据，然后将这些“自己合成”的数据用于后续训练。
+  - 改写 (Paraphrase)：不用人工标注的答案，而是让基础模型将标准答案“换句话说”，再用改写后的答案去训练。因为改写后的句子更符合模型自身的语言风格，学习起来更不容易引起冲突。
+  - 自输出 (Self-Output)：将新任务的问题输入基础模型，让它直接生成答案，通过某种机制验证答案是否正确，如果答案正确，就用模型自己的输出作为标准答案来训练它自己，它本质上是在强化模型已有的、正确的知识路径。
+  - 过滤困难样本：一篇研究发现，人工标注的答案中，有些词元（token）对于基础模型来说是极难生成的（即低机率）。如果在训练时，直接忽略掉这些对模型来说过于困难的学习目标（不计算这些 token 的损失），反而能让模型学得更好，同时更好地保留原有能力。
+- Task Vector，模型合并，通过向量叠加或抵消来合并新旧任务参数
+- Gradient Projection，梯度投影，将新任务梯度投影到与旧任务冲突最小的方向上
 
-- langchain
-  - https://github.com/langchain-ai/langchain
-  - 支持检索和摘要两种记忆方式
+### Paper
 
-- mem0
-  - https://github.com/mem0ai/mem0
-  - 通过LLM+制定的metadata，抽取记忆信息，重点是定制一个合适的prompt来抽取有效信息
-  - 相关记忆信息通过向量化存储，因此可以支持记忆信息检索
-  - 记忆支持更新
-- MemGPT
-  - https://github.com/cpacker/MemGPT
+- Retaining By Doing: The Role of On-policy Data in Mitigating Forgetting
+  - 2025.10
+- A Comprehensive Survey of Continual Learning:  Theory, Method and Application
+  - 2024.08, survey
 
-### paper
+### Blog
 
-- Understanding the Role of User Profile in the Personalization of Large Language Models
-  - 2024.06，
-  - 验证了user profile对LLM个性化的影响是个性化信息而非语义内容信息
-  - 文章中的profile是历史对话信息，不包含其他信息
-  - 检索到的user profile放在开始位置对效果有更大的影响
-- HYDRA: Model Factorization Framework for Black-Box LLM Personalization
-  - 2024.06
-  - 方法：不仅用到了历史用户行为模式数据，而且也用到了所有用户共享通用知识
-- Optimization Methods for Personalizing Large Language Models through Retrieval Augmentation
-  - 2024.04
-  - 基于检索的方法
-- A Survey on the Memory Mechanism of Large Language Model based Agents
-  - 2024.04
-- Personalized Large Language Models
-  - 2024.02
-- Integrating summarization and retrieval for enhanced personalization via large language models
-  - 2023.10，Amazon Alexa AI
-  - 将对话检索和对话摘要结合在了一起
-  - employ instruction-tuned LLMs to generate abstract summaries of user history data, integrating summarization for enhanced personalization
-- Once: Boosting content-based recommendation with both open-and closed-source large language models
-  - creates user profiles by summarizing topics and regions of interest from their browsing history
-- When Large Language Models Meet Personalization: Perspectives of Challenges and Opportunities
-  - 2023.07，survey
-  - 11.3节提及了长对话历史建模的三种方法：检索、摘要、使用层次模型或者记忆增强模型
-- LaMP: When Large Language Models Meet Personalization
-  - 2023.04，google
-  - 提出了个性化语言模型评估的benchmark，以及用户的多条profile相关数据集（对话历史数据）
+- [缓解LLM fine-tune模型遗忘](https://zhuanlan.zhihu.com/p/700156271)
+- [ICLR 2025 | 大模型“遗忘”竟是错觉？首次揭示 LLM 训练中的“虚假遗忘”](https://zhuanlan.zhihu.com/p/23021161842)
+  - 通过冻结模型底层若干层（如6层或者10层，以及输入嵌入层），可以显著防止对旧任务对齐的过度破坏
+  - 但是冻结层数过多，会降低对新任务的适应能力，因此需要进行权衡。
+- [UIUC、Amazon团队最新研究指出SFT灾难性遗忘问题或被误解](https://mp.weixin.qq.com/s/29pDMmX821Z10yFPFZ-5Ng)
+  - 只需是要较小的学习率，即可缓解SFT的灾难性遗忘问题
+  - 发现造成灾难性遗忘的问题主要是训练数据中的难token，提出了TALR方法，即token预测概率低自适应的分配更小的loss权重。

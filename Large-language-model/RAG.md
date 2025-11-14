@@ -2,7 +2,9 @@
 
 
 
-## RAG
+# RAG
+
+## Paper
 
 - https://github.com/AkariAsai/self-rag
   - Self-RAG 是按需检索的（例如，可以根据不同的查询多次检索或完全跳过检索）。这意味着 Self-RAG 不像传统的 RAG 那样固定地进行检索操作，而是更具灵活性。当面对各种各样的查询时，它能够根据实际情况决定检索的次数，甚至可以选择不进行检索，从而更好地适应不同的查询需求。
@@ -66,7 +68,15 @@
 
 - [Ziya-Reader：注意力增强的训练方法](https://mp.weixin.qq.com/s/ekAyYT-Fxj5fw8GNk6Rg0g)
 
-# Blog
+## Embedding
+
+- [Later Chunking技术](https://mp.weixin.qq.com/s/V_4Sxkh01Q-hrBXrv61IFw)
+  - https://github.com/jina-ai/late-chunking
+- https://huggingface.co/sensenova/piccolo-large-zh-v2
+- https://huggingface.co/BAAI/bge-m3
+- https://huggingface.co/TencentBAC/Conan-embedding-v1
+
+## Blog
 
 - [The Rise and Evolution of RAG in 2024 A Year in Review](https://ragflow.io/blog/the-rise-and-evolution-of-rag-in-2024-a-year-in-review#agentic-and-memory)
 
@@ -89,11 +99,3 @@
 - [大模型检索增强生成（RAG）有哪些好用的技巧](https://www.zhihu.com/question/625481187/answer/3279041129)
 
 - [万字长文总结检索增强 LLM](https://zhuanlan.zhihu.com/p/655272123)
-
-## Embedding
-
-- [Later Chunking技术](https://mp.weixin.qq.com/s/V_4Sxkh01Q-hrBXrv61IFw)
-  - https://github.com/jina-ai/late-chunking
-- https://huggingface.co/sensenova/piccolo-large-zh-v2
-- https://huggingface.co/BAAI/bge-m3
-- https://huggingface.co/TencentBAC/Conan-embedding-v1
