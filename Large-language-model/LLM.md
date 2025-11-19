@@ -104,9 +104,19 @@
 
 ## 大模型幻觉
 
-- https://eecs.berkeley.edu/research/colloquium/230419-2/
-  - Reinforcement Learning from Human Feedback: Progress and Challenges
+- Semantic uncertainty: Linguistic invariances for uncertainty estimation in natural language generation
+  - 2023, ICLR
 
+  - 背景：传统不确定性方法（预测熵、词汇相似度）存在核心挑战：语义等价（不同句子但是表达相同，可能被认为意义不确定）、语言空间的高纬性（语言的输出概率只能通过蒙特卡洛采样，低概率序列影响熵的估计）、生成长度（意义相同的句子概率差异大）
+  
+  - 论文提出语义熵，一种基于意义分布而非序列分布的不确定性度量，核心是将模型输出从 “token 序列空间” 映射到语义等价类空间。
+  
+  - 从 LLM 的预测分布中采样M个输出序列（如M=10），无需修改模型，仅用单模型采样
+  
+  - 通过双向蕴含算法，将 “表达相同意义” 的序列聚类为 “语义等价类，使用微调过 MNLI 数据集的 DeBERTa-large 模型，判断 “上下文 + s” 与 “上下文 + s'” 是否双向蕴含。
+  
+  - 先计算每个语义类的概率，即将类内所有序列的概率求和，再计算语义类分布的熵。
+  
 - R-Tuning: Instructing Large Language Models to Say ‘I Don’t Know’
   - 2023.11，NAACL 2024
   - 提出了一种解决大模型幻觉现象的方法，即通过训练的方式让大模型拒答或者表示不确定性
@@ -114,6 +124,28 @@
   - 使用拒答数据来微调模型，注意，只计算answer和“I am sure” or “I am not sure”的loss
   - 推理时，先用native模型生成answer，然后用prompt组合起来，送入微调好的模型，得到模型的置信输出
   - 不太适合用在在线对话模型上
+
+- Fine-grained Hallucination Detection and Editing for Language Models
+  - 2024， COLM
+  - 构建细粒度幻觉分类体系，将 LM 幻觉划分为实体 / 关系 / 句子级矛盾、虚构、主观、不可验证 6 类，明确各类型特征与验证需求
+  - 打造 FAVABENCH 基准数据集，通过人工标注 3 个主流 LM 对 200 条信息查询指令的输出，形成约 1000 条含错误片段、类型及修正建议的细粒度标注数据；
+  - 开发检索增强型模型 FAVA，基于 35k 条合成训练数据（按分类体系插入错误生成）训练，先检索 Top5 相关 Wikipedia 文档获取事实支撑，再精准检测细粒度幻觉并输出修正后的文本。
+- Language Models (Mostly) Know What They Know
+  - 2022
+  - 该研究了语言模型对自身知识和输出的评估能力，发现大模型在合适格式（如带字母标记选项的选择题）下，在多类选择题和判断题任务中具有良好的校准性，即概率预测与实际正确率匹配
+  - 通过让模型先生成答案再评估答案正确的概率，实现对开放式任务的自我评估，且提供多个自身样本辅助评估可提升性能
+  - 训练模型预测自身能正确回答问题的概率，模型在该任务上表现良好且能部分跨任务泛化（如从 trivia 到数学、代码）
+
+
+
+**Blog:**
+
+- [OpenAI 《Why Language Models Hallucinate》论文解读](https://zhuanlan.zhihu.com/p/1949144852601237594)
+  - 探讨了大型语言模型产生幻觉的原因、表现及解决思路。
+  - 幻觉表现为模型在不确定时生成看似合理却错误的内容，源于训练与评估流程更倾向于奖励猜测行为。预训练阶段，生成任务的复杂性及统计因素导致幻觉；后训练阶段，评估体系的二进制评分方式使幻觉持续存在。
+  - 解决方法是修改评分规则，加入置信度目标，而非新增幻觉评估项目，以此引导模型诚实表达不确定性，提升可信度。
+- [大模型：降低幻觉的六种方法](https://mp.weixin.qq.com/s/LNcRJ6OEiBNeGCtTysUewA)
+- [大模型中的幻觉本质原因是什么？如何通过训练或推理手段抑制？](https://mp.weixin.qq.com/s/HWYdAZraztAnzw2b-TGe-g)
 
 ## RolePlay
 

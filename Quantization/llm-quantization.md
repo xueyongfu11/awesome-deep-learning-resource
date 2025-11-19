@@ -2,6 +2,8 @@
 
 
 
+- [量化那些事之KVCache的量化](https://zhuanlan.zhihu.com/p/691537237)
+
 - https://github.com/openppl-public/ppq
 
 - https://github.com/NVIDIA-AI-IOT/torch2trt

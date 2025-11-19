@@ -2,7 +2,6 @@
 
 
 
-
 ## mix
 
 - End-To-End Memory Networks
@@ -18,12 +17,48 @@
 
 - Layer Norm
 
+  - 在单个样本的特征维度上进行归一化
+
+  - 对每个样本 N 归一化
+
+  - 具体如何做：假设输入张量形状为：(N, C, H, W)（例如图像数据，N 是 batch size，C 是通道数，H/W 是高/宽），针对每个样本，计算所有特征的均值和方差，然后进行归一化。
+
+  - 代码实现
+
+    ```python
+    def manual_ln(x):
+        # x: (..., D)
+        # x.mean(dim)其中dim表示在哪个维度上进行聚合
+        mean = x.mean(dim=-1, keepdim=True)  # shape: (..., 1)
+        var = x.var(dim=-1, unbiased=False, keepdim=True)
+        return (x - mean) / torch.sqrt(var + 1e-5)
+    ```
+
+    
+
 - Batch Norm
 
-- Root Mean Square Layer Normalization
-  - RMSNorm
-  - 相比Layer Norm，分子去掉了减去均值部分，分母的计算使用了平方和的均值再开
-    平方
+  - 在 batch 维度上进行归一化
+
+  - 对每个通道 C 归一化
+
+  - 具体如何做：同样假设输入为：(N, C, H, W) ，batchNorm是针对每个特征维度，即通道Chanel，计算该维度在整个batch上的均值和方差，然后进行归一化。
+
+  - 代码实现
+
+    ```python
+    def manual_bn(x):
+        # x: (N, C, H, W)
+        mean = x.mean(dim=(0, 2, 3), keepdim=True)  # shape: (1, C, 1, 1)
+        var = x.var(dim=(0, 2, 3), unbiased=False, keepdim=True)
+        return (x - mean) / torch.sqrt(var + 1e-5)
+    ```
+
+    
+
+- RMSNorm（Root Mean Square Layer Normalization）
+
+  - 相比Layer Norm，分子去掉了减去均值部分，分母的计算使用了平方和的均值再开平方
 
 - DeepNorm
   - 对Post-LN的改进

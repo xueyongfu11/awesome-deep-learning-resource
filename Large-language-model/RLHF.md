@@ -30,6 +30,20 @@
 
 ## rlhf-related-algorithm
 
+- Reasons to Reject? Aligning Language Models with Judgments
+
+  - 2024
+
+  - 该研究首次将 “拒绝理由监督” 融入对比训练框架：当模型生成低质量输出时，不仅提供优质回答作为正样本，还附加具体的批评性评语（如“逻辑矛盾”“信息缺失”）作为负样本标注。这种设计使模型同时学习“应该生成什么”和“应该避免什么”，解决了传统SFT仅优化正样本导致的“好坏不分”问题。
+
+  - 论文提出的双向对比损失函数：通过传统SFT损失最大化优质回答的生成概率
+
+    正样本赔率：$\text{odds}(y_w|x) = \frac{P(y_w|x)}{1-P(y_w|x)}$，负样本赔率：$\text{odds}(y_l|x) = \frac{P(y_l|x)}{1-P(y_l|x)}$ ，最大化两者的差值$\log \text{odds}(y_w|x) - \log \text{odds}(y_l|x)$ 
+
+    $$L_{OR} = -\log \sigma\left( \log \text{odds}(y_w|x) - \log \text{odds}(y_l|x) \right)$$ 
+
+    总损失：$L_{SFT} + \lambda \cdot L_{OR}$
+
 - ORPO: Monolithic Preference Optimization without Reference Model
   - 2024.03, ORPO, 无需参考模型
   - ORPO的核心方法在于它不需要参考模型，并且可以在单一步骤中通过赋予不希望生成的风格一个小的惩罚，来高效地进行偏好对齐的监督式微调
@@ -60,7 +74,7 @@
   - 基于Cringe Loss改进对偏好数据进行训练，是一种DPO方法平替
   - Binary Cringe Loss：对chosen样本计算似然损失，对与rejected样本计算token-wise的对比loss，具体是基于LLM的top-k token与rejected样本的token计算对比损失
   - Pair Cringe Loss：是对2的改进，增加了一项基于门控的margin loss
-  
+
 - Unveiling the Implicit Toxicity in Large Language Models
   - 2023.11, EMNLP2024
   - 研究者们提出了一种基于强化学习的攻击方法，旨在进一步诱导LLMs生成隐性有毒的文本
