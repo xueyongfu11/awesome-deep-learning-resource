@@ -5,6 +5,8 @@
 
 # Agent 
 
+- [大模型 Agent 是不是就是各种 Prompt 的堆叠？](https://www.zhihu.com/question/1894891236617332066/answer/1898148855989642581)
+
 - [agent微调：为 llms 提供通用agent能力](https://zhuanlan.zhihu.com/p/679126416)
 
 - [大模型agent学习探索](https://zhuanlan.zhihu.com/p/674630135)

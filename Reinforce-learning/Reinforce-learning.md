@@ -30,6 +30,10 @@
   - 视频讲解：https://www.boyuai.com/elites/course/xVqhU42F5IDky94x
   
 
+## Blog
+
+- [强化学习中action value减去state value之后为什么减小了方差](https://www.zhihu.com/question/344367451/answer/1891095552030115567)
+
 ## 常见算法
 
 ### Q价值函数和状态价值函数

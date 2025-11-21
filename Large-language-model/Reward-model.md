@@ -89,6 +89,10 @@
 - SALMON: Self-Alignment with Instructable Reward Models
   - 2023.10, ICLR2024
   - 提出了指令性reward model，可以基于任意的人类准则来生成相应的奖励得分
+- RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback
+  - 2023.09
+  - 方法旨在解决传统通过人类反馈进行强化学习中的一个关键瓶颈问题：获取高质量的人类偏好标签
+  - 偏好标记：使用现成的LLM为一对候选摘要打上偏好标签。然后，使用对比损失训练一个奖励模型，最后使用RM提供的奖励进行策略模型的强化学习微调
 - RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment
   - 2023.07，ICML2024，RLCD
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同

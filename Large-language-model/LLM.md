@@ -140,6 +140,7 @@
 
 **Blog:**
 
+- [大模型幻觉缓解方案](https://mp.weixin.qq.com/s/qa5SjDDUMwRBacoNBxbpPQ)
 - [OpenAI 《Why Language Models Hallucinate》论文解读](https://zhuanlan.zhihu.com/p/1949144852601237594)
   - 探讨了大型语言模型产生幻觉的原因、表现及解决思路。
   - 幻觉表现为模型在不确定时生成看似合理却错误的内容，源于训练与评估流程更倾向于奖励猜测行为。预训练阶段，生成任务的复杂性及统计因素导致幻觉；后训练阶段，评估体系的二进制评分方式使幻觉持续存在。
@@ -191,6 +192,7 @@
 
 ### Blog
 
+- [每天一道大模型面试题 | 如何解决大模型训练中的灾难性遗忘问题？](https://mp.weixin.qq.com/s/UYIw5ceZgWD7XXEOkaIklA)
 - [缓解LLM fine-tune模型遗忘](https://zhuanlan.zhihu.com/p/700156271)
 - [ICLR 2025 | 大模型“遗忘”竟是错觉？首次揭示 LLM 训练中的“虚假遗忘”](https://zhuanlan.zhihu.com/p/23021161842)
   - 通过冻结模型底层若干层（如6层或者10层，以及输入嵌入层），可以显著防止对旧任务对齐的过度破坏

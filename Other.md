@@ -221,6 +221,15 @@
   
 
 # 深度学习基础和面试
+
+## 大模型
+
+- [大模型面试基础知识](https://zhuanlan.zhihu.com/p/690474151)
+- [国内20家公司大模型岗位面试经验汇总-多模态方向](https://zhuanlan.zhihu.com/p/690801254)
+- [拿到OpenAI全职offer的经历（毫无保留）](https://zhuanlan.zhihu.com/p/1939837155435315683)
+
+## 传统深度学习
+
 - https://github.com/google-research/tuning_playbook
   - 科学化调参
 - https://github.com/chehongshu/machine-learning-interview-chinese

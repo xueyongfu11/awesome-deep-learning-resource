@@ -2,6 +2,10 @@
 
 
 
+## 基础知识
+
+- [计算机数值编码精读](https://mp.weixin.qq.com/s/4BNd4u08kWVjnF3LEWjx7A)
+
 
 - https://github.com/NVIDIA/TransformerEngine
 

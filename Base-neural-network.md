@@ -87,3 +87,191 @@
 ## Loss
 
 - [PolyLoss超越Focal Loss](https://mp.weixin.qq.com/s/4Zig1wXNDHEjmK1afnBw4A)
+
+## MLP回归网络的前向和后向传播
+
+当然，以下是带有LaTeX格式公式的两层MLP回归网络的前向传播和反向传播过程。
+
+### 1. 前向传播
+
+假设输入 ( X ) 的维度是 ( (n, d) )，隐藏层的单元数是 ( h )，输出层的单元数是1（回归任务）。前向传播包括两个主要步骤：
+
+#### 第一层（输入到隐藏层）
+
+输入通过权重 ( W_1 ) 和偏置 ( b_1 ) 进行线性变换：
+
+$$
+ Z_1 = X W_1 + b_1
+ $$
+
+然后应用激活函数（例如ReLU）：
+
+$$
+ A_1 = \text{ReLU}(Z_1)
+ $$
+
+#### 第二层（隐藏层到输出层）
+
+隐藏层的输出通过权重 ( W_2 ) 和偏置 ( b_2 ) 进行线性变换：
+
+$$
+ Z_2 = A_1 W_2 + b_2
+ $$
+
+最终输出：
+
+$$
+ \hat{Y} = Z_2
+ $$
+
+这里，输出 ( \hat{Y} ) 是回归任务的预测值。
+
+### 2. 反向传播
+
+反向传播计算每一层的梯度，以下是每一层的梯度计算公式。
+
+#### 损失函数（均方误差）
+
+损失函数使用均方误差（MSE）：
+
+$$
+ \mathcal{L} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+ $$
+
+其中 ( y_i ) 是真实值，( \hat{y}_i ) 是预测值。
+
+#### 计算梯度
+
+##### 1. 输出层到隐藏层（第二层到第一层）
+
+计算输出层的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial \hat{Y}} = \frac{2}{n} (\hat{Y} - Y)
+ $$
+
+然后计算输出层的权重和偏置的梯度：
+
+- 对 ( W_2 ) 的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial W_2} = A_1^T \frac{\partial \mathcal{L}}{\partial \hat{Y}}
+ $$
+
+- 对 ( b_2 ) 的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial b_2} = \sum \frac{\partial \mathcal{L}}{\partial \hat{Y}}
+ $$
+
+##### 2. 隐藏层到输入层（第一层到输入层）
+
+接下来，计算隐藏层的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial A_1} = \frac{\partial \mathcal{L}}{\partial \hat{Y}} W_2^T
+ $$
+
+然后对隐藏层的输入 ( Z_1 ) 应用激活函数的导数：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial Z_1} = \frac{\partial \mathcal{L}}{\partial A_1} \cdot \text{ReLU}'(Z_1)
+ $$
+
+ReLU的导数为：
+
+$$
+ \text{ReLU}'(Z_1) =
+ \begin{cases}
+ 1 & \text{if } Z_1 > 0 \
+ 0 & \text{if } Z_1 \leq 0
+ \end{cases}
+ $$
+
+然后计算隐藏层的权重和偏置的梯度：
+
+- 对 ( W_1 ) 的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial W_1} = X^T \frac{\partial \mathcal{L}}{\partial Z_1}
+ $$
+
+- 对 ( b_1 ) 的梯度：
+
+$$
+ \frac{\partial \mathcal{L}}{\partial b_1} = \sum \frac{\partial \mathcal{L}}{\partial Z_1}
+ $$
+
+### 3. 代码实现
+
+```python
+import numpy as np
+
+class MLPRegressor:
+    def __init__(self, input_dim, hidden_dim):
+        # 初始化权重和偏置
+        self.W1 = np.random.randn(input_dim, hidden_dim) * 0.01
+        self.b1 = np.zeros(hidden_dim)
+        self.W2 = np.random.randn(hidden_dim, 1) * 0.01
+        self.b2 = np.zeros(1)
+    
+    def relu(self, x):
+        return np.maximum(0, x)
+    
+    def relu_derivative(self, x):
+        return (x > 0).astype(float)
+
+    def forward(self, X):
+        self.X = X
+        self.Z1 = X.dot(self.W1) + self.b1
+        self.A1 = self.relu(self.Z1)
+        self.Z2 = self.A1.dot(self.W2) + self.b2
+        self.Y_hat = self.Z2
+        return self.Y_hat
+
+    def backward(self, X, Y):
+        # 计算输出层的梯度
+        m = X.shape[0]
+        dZ2 = (2/m) * (self.Y_hat - Y)
+        dW2 = self.A1.T.dot(dZ2)
+        db2 = np.sum(dZ2, axis=0, keepdims=True)
+        
+        # 计算隐藏层的梯度
+        dA1 = dZ2.dot(self.W2.T)
+        dZ1 = dA1 * self.relu_derivative(self.Z1)
+        dW1 = X.T.dot(dZ1)
+        db1 = np.sum(dZ1, axis=0)
+        
+        # 更新权重和偏置
+        self.W1 -= 0.01 * dW1
+        self.b1 -= 0.01 * db1
+        self.W2 -= 0.01 * dW2
+        self.b2 -= 0.01 * db2
+
+# 测试 MLP 回归网络
+X = np.random.randn(5, 3)  # 5个样本，3个特征
+Y = np.random.randn(5, 1)  # 5个样本，1个输出
+
+# 创建模型
+model = MLPRegressor(input_dim=3, hidden_dim=4)
+
+# 前向传播
+Y_hat = model.forward(X)
+print("预测值 Y_hat:\n", Y_hat)
+
+# 反向传播
+model.backward(X, Y)
+
+```
+
+
+
+### 4. 总结
+
+在前向传播中，使用线性变换和激活函数来计算每一层的输出。在反向传播中，通过链式法则计算每一层的梯度，并更新网络的权重和偏置。反向传播的核心步骤包括：
+
+- 计算输出层的梯度；
+- 计算隐藏层的梯度；
+- 更新权重和偏置。
+
+这些梯度计算步骤对于训练神经网络至关重要，尤其是在回归任务中。

@@ -20,11 +20,10 @@
 
 - [大模型量化概述](https://mp.weixin.qq.com/s/_bF6nQ6jVoj-_fAY8L5RvQ)
   - 分为量化感知训练、量化感知微调、训练后量化
+- [GGUF 格式完美指南](https://blog.mikihands.com/zh-hans/whitedec/2025/11/20/gguf-format-complete-guide-local-llm-new-standard/)
 
 
 ## Quantization-aware train/finetune
-
-### 2023
 
 - LLM-FP4: 4-Bit Floating-Point Quantized Transformers
   - https://github.com/nbasyl/LLM-FP4/tree/main
@@ -47,7 +46,6 @@
   - https://huggingface.co/blog/4bit-transformers-bitsandbytes
     - 介绍及使用
 
-### 2022
 - LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale
   - [A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using Hugging Face Transformers, Accelerate and bitsandbytes](https://huggingface.co/blog/hf-bitsandbytes-integration)
   - 量化的基本原理
@@ -58,7 +56,10 @@
 
 ## Post-training quantization
 
-### 2023
+- AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration
+  - 2023.06
+  - [Blog 深入理解AWQ量化技术](https://zhuanlan.zhihu.com/p/697761176)
+
 - FPTQ: Fine-grained Post-Training Quantization for Large Language Models
   - 相比smoothquant，使用了指数函数把激活量化的难度转移到权重量化上
   - 相比通道量化，使用了分组量化
@@ -71,8 +72,6 @@
 - Up or Down? Adaptive Rounding for Post-Training Quantization
   - [blog](https://zhuanlan.zhihu.com/p/363941822)
   - 核心：对weights进行量化时，不再是round to nearest，而是自适应的量化到最近右定点值还是左定点值
-
-### 2022
 
 - SmoothQuant和增强型SmoothQuant
   - 增强的SmoothQuant使用了自动化确定alpha值的方法，而原始的SmoothQuant则是固定了alpha值
