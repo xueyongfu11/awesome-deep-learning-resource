@@ -187,3 +187,36 @@
   - [APO｜利用GAN的思想训练RLHF中的RM](https://zhuanlan.zhihu.com/p/674776494)
   - 想法：当前的很多模型的表现与gpt-4不相上下，当把gpt-4作为gold label时，可能会影响模型的效果？
 
+## Blog
+
+- [从 PPO、DPO 到 GRPO：万字长文详解大模型训练中的三大关键算法](https://mp.weixin.qq.com/s/OMpD6ITqNi4jX95nSRC2Ig)
+- [大语言模型对齐: 直接偏好优化(DPO)](https://syhya.github.io/zh/posts/2025-02-08-dpo/)
+  - 包含详细的公式推导：根据RLHF的目标推导出奖励函数、最优策略分布、参考模型分布之前的关系，然后基于Bradley–Terry 模型定义出另外一个目标：给定输入，模型输出高质量回复的概率高于输出低指令回复的概率。
+  - 然后使用待训练的Actor模型代替最优策略模型，配分函数只和输入相关，在 Bradley–Terry 模型中可以被消去，最后得到DPO的损失函数。
+- [大模型面试题：PPO算法中Critic和Reward的区别是啥？](https://mp.weixin.qq.com/s/dnPbaMZJilMVhObHMZ7KKw)
+- [面试题题：PPO算法到底是on-policy还是off-policy](https://mp.weixin.qq.com/s/N-miDef7gQG7Ev1VYzUfag)
+- [面试题：DPO训练过程中，training positive和 negative的概率同时下降的原因？](https://mp.weixin.qq.com/s/KsWsKmXFCNmStfzxrT3aXg)
+- [Iterative Length-Regularized DPO: 7B模型也可以打败GPT4](https://zhuanlan.zhihu.com/p/706172882)
+  - 提出了一种加入了长度正则项的迭代式的DPO算法
+- [LD-DPO：基于DPO的长度脱敏偏好优化算法](https://zhuanlan.zhihu.com/p/5748074631)
+  - 通过计算DPO损失相对两个预测变量（$y_w$、$y_l$）的梯度，发现二者梯度之比取决于actor模型的概率预测，而概率预测是逐token相乘的结果。
+  - 基于该发现提出了长度脱敏算法LD-DPO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
