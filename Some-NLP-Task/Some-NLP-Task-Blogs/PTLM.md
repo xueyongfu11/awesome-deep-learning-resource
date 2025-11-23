@@ -15,15 +15,12 @@
 - [详解自注意力机制中的位置编码（第一部分）](https://zhuanlan.zhihu.com/p/352233973)
 - [详解自注意力机制中的位置编码（第二部分）](https://zhuanlan.zhihu.com/p/354963727)
 - [如何优雅地编码文本中的位置信息？三种positioanl encoding方法简述](https://mp.weixin.qq.com/s/ENpXBYQ4hfdTLSXBIoF00Q)
-
 - [transformer中为什么使用不同的K 和 Q， 为什么不能使用同一个值？](https://www.zhihu.com/question/319339652)
 - [transformer面试题的简单回答](https://zhuanlan.zhihu.com/p/363466672)
-
 - [在注意力中重新思考Softmax：分解非线性，这个线性Transformer变体实现多项SOTA](https://mp.weixin.qq.com/s/tQmRUee_Yj-J_ljZGV1uFQ)
 - [FLASH：可能是近来最有意思的高效Transformer设计](https://kexue.fm/archives/8934)
 - [Transformer的一家！](https://mp.weixin.qq.com/s/f1OajymdtvswzFw_UunLlw)
 - [分解非线性，这个线性transformer变体实现多项SOTA](https://mp.weixin.qq.com/s/7CRFr0fEQx7mpgWtAzAeXA)
-- 
 
 # tokenizer
 - [BPE 算法详解](https://wmathor.com/index.php/archives/1517/)

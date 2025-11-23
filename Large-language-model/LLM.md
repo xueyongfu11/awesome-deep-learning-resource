@@ -147,6 +147,13 @@
   - 解决方法是修改评分规则，加入置信度目标，而非新增幻觉评估项目，以此引导模型诚实表达不确定性，提升可信度。
 - [大模型：降低幻觉的六种方法](https://mp.weixin.qq.com/s/LNcRJ6OEiBNeGCtTysUewA)
 - [大模型中的幻觉本质原因是什么？如何通过训练或推理手段抑制？](https://mp.weixin.qq.com/s/HWYdAZraztAnzw2b-TGe-g)
+- [怎么阻止大模型说瞎话？](https://zhuanlan.zhihu.com/p/676530275)
+  - 列举了缓解大模型幻觉的几个方法
+- [John Schulman：强化学习与真实性，通往TruthGPT之路](https://juejin.cn/post/7229891752647950394)
+  - 理论性和启发性很强
+
+- [大模型「幻觉」，看这一篇就够了 | 哈工大华为出品](https://zhuanlan.zhihu.com/p/667478955)
+  - 一篇综述性质的文章
 
 ## RolePlay
 

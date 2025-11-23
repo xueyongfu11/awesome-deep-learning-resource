@@ -189,6 +189,10 @@
 
 ## Blog
 
+- [比 GRPO 更稳定更高效：GSPO 算法如何颠覆大模型 RL 训练](https://zhuanlan.zhihu.com/p/1932770229693450218)
+  - GSPO的advantage的计算与GRPO相同，都是使用组内相对优势
+  - GSPO和GRPO的概率比（重要性比）的计算方法不同，GRPO是每个 token 都会计算一个概率比，而GSPO则将整个序列看作一个整体，计算序列级别的概率比。
+
 - [从 PPO、DPO 到 GRPO：万字长文详解大模型训练中的三大关键算法](https://mp.weixin.qq.com/s/OMpD6ITqNi4jX95nSRC2Ig)
 - [大语言模型对齐: 直接偏好优化(DPO)](https://syhya.github.io/zh/posts/2025-02-08-dpo/)
   - 包含详细的公式推导：根据RLHF的目标推导出奖励函数、最优策略分布、参考模型分布之前的关系，然后基于Bradley–Terry 模型定义出另外一个目标：给定输入，模型输出高质量回复的概率高于输出低指令回复的概率。
@@ -202,13 +206,42 @@
   - 通过计算DPO损失相对两个预测变量（$y_w$、$y_l$）的梯度，发现二者梯度之比取决于actor模型的概率预测，而概率预测是逐token相乘的结果。
   - 基于该发现提出了长度脱敏算法LD-DPO
 
+### 大模型对齐
+
+- [有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
+- [深度解析DPO及其变体在多种任务上的表现如何，该如何选择](https://mp.weixin.qq.com/s/DwBpfMiSbGJ8N07e6zN4eg)
+- [剑桥提出RLHF平替方案：在SFT以外，我们还能拿SFT数据做什么？](https://mp.weixin.qq.com/s/Sbu1-EA6gCKsyUdGpRTuRg)
+- [Self-Play的对齐算法介绍](https://zhuanlan.zhihu.com/p/699292524) 
+- RLHF方法-PPO详解
+  - [ChatGPT 背后的“功臣”——RLHF 技术详解](https://huggingface.co/blog/zh/rlhf)
+  - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
+    - PPO原理解读，非常详细
+  - [详解大模型RLHF过程（配代码解读）](https://blog.csdn.net/qq_27590277/article/details/132614226)
+- [如何完成一次成功的对齐(1)：SFT篇](https://zhuanlan.zhihu.com/p/687926037)
+
+### offline-rlhf
+
+- [为什么我们应该做online RLHF/DPO？](https://mp.weixin.qq.com/s/f68yoZkByWlPvckoFK9qCg)
+- [仅靠开源数据复刻出LLaMA3指令学习效果，在线迭代RLHF全流程解决方案来了](https://www.jiqizhixin.com/articles/2024-05-18)
 
 
+### 免微调对齐
 
+- [大模型免微调解锁对话能力，RLHF没必要了！节省大量成本和时间，一作上交大校友](https://zhuanlan.zhihu.com/p/670682075)
+  - URIAL, base model的免微调方法
+- [OPO:无需训练实现价值观实时动态对齐：上交开源价值观对齐方法，闭源与开源大模型均适用](https://mp.weixin.qq.com/s/_CB0LBQVI_2NBiX63pyYSA)
+  - OPO，收集相关法律或者道德准则，使用RAG检索与query相关的准则，基于检索结果来生成
 
+### 面试trick
 
+- [在LLM中选择像传统RL中value network和policy network共享底座会有问题吗？如果有解释一下为什么？](https://zhuanlan.zhihu.com/p/699827201)
+- [RLHF中，为什么计算了两次actor_prob？](https://www.zhihu.com/question/654282515/answer/3481039875)
 
+## 基础知识
 
+### GRPO如何为每个token分配advantage
+
+参考 [blog](https://zhuanlan.zhihu.com/p/20812786520) ，通过组内优势估计计算每个 response 的相对优势 advantage，然后将 advantage 作为每个 token 的advantage。
 
 
 
