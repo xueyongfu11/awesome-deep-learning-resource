@@ -27,7 +27,7 @@
 
   - https://www.youtube.com/watch?v=bJZTJ7MjYqg
 
-## agent框架
+# agent框架
 
 - langchain
   - https://github.com/langchain-ai/langchain
@@ -52,9 +52,14 @@
 - XAgent
   - https://github.com/OpenBMB/XAgent
 
-# Tool Learning
 
-## Blog
+
+# Blog
+
+- Agentic 上下文工程：无需微调，让智能体自我学习与进化
+  - [实战·Agentic 上下文工程（上）：无需微调，让智能体自我学习与进化](https://mp.weixin.qq.com/s/CIzchmwwHhNu7xo4KR9D3w)
+
+  - [实战·Agentic 上下文工程（下）：实现一个可自我学习与进化的智能体原型](https://mp.weixin.qq.com/s/2ra6JQlUJQM0SLTi44ef8A)
 
 - [论文导读 | 大模型的工具学习](https://mp.weixin.qq.com/s/G2thTH204ufM71qzovSNsQ)
 

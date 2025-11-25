@@ -95,6 +95,11 @@
   - 结论2：专家数量达到10时，效果开始区域稳定
   - 结论3：soft merging策略相比离散路由策略效果更好
 
+### Blog
+
+- [Mixture-of-Experts (MoE) 经典论文一览](https://zhuanlan.zhihu.com/p/542465517)
+- [对MoE大模型的训练和推理做分布式加速——DeepSpeed-MoE论文速读](https://zhuanlan.zhihu.com/p/466363675)
+
 
 ## LLM和知识图谱
 

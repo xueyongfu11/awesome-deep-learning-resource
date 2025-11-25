@@ -15,6 +15,12 @@
   - 随着数据量的增加，在不同数据集上的表现有所不同，在Extract, Classification, Closed QA, 和Summarization任务上，增加数据带来的效果提升并未到达天花板；在Math, Code, 和COT任务上，继续增加数据，效果出现下降；在Translation, Rewrite, 和Brainstorming任务上，少量的数据就可以获得不错的效果，继续增加数据，模型提升非常有限。
 
 
+
+**Blog:**
+
+- [NEFT：在embedding上添加噪声减少过拟合并提升泛化性](https://zhuanlan.zhihu.com/p/661962656)
+
+
 # 数据筛选
 
 - LESS: Selecting Influential Data for Targeted Instruction Tuning

@@ -14,7 +14,6 @@
 - https://wukong-dataset.github.io/wukong-dataset/benchmark.html
   - WuKong, benchmark, baseline
 
-
 # Paper
 
 ## multi-modal 

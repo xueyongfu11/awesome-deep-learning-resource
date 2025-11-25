@@ -189,6 +189,8 @@
 
 ## Blog
 
+- [强化微调RFT技术解析](https://blog.csdn.net/AIBigModel/article/details/144350849)
+  
 - [比 GRPO 更稳定更高效：GSPO 算法如何颠覆大模型 RL 训练](https://zhuanlan.zhihu.com/p/1932770229693450218)
   - GSPO的advantage的计算与GRPO相同，都是使用组内相对优势
   - GSPO和GRPO的概率比（重要性比）的计算方法不同，GRPO是每个 token 都会计算一个概率比，而GSPO则将整个序列看作一个整体，计算序列级别的概率比。
