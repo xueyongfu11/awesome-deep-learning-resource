@@ -8,7 +8,7 @@
 - Baichuan
 
   - Baichuan 2: Open Large-scale Language Models
-    - https://github.com/baichuan-inc/Baichuan2
+    - 2023.09， https://github.com/baichuan-inc/Baichuan2
     - 数据处理：数据频率和质量，使用聚类和去重方法，基于LSH和dense embedding方法
     - tokenizer：更好的压缩率，对数字的每一位分开，添加空格token
     - 位置编码：7B Rope，13B ALiBi
@@ -73,7 +73,6 @@
     - https://github.com/MediaBrain-SJTU/MedicalGPT-zh
       - 一个基于ChatGLM的在高质量指令数据集微调的中文医疗对话语言模型
     - https://github.com/hiyouga/ChatGLM-Efficient-Tuning
-  
 - LLaMA
   - LLaMA: Open and Efficient Foundation Language Models
     - 数据处理：质量过滤，重复过滤
@@ -89,7 +88,6 @@
        - 奖励模型：使用两个奖励模型，helpfulness和safety，使用chat model checkpoint来初始化；奖励模型与chat model不同地方就是分类header替换成regression header，
          损失使用的是binary ranking loss，使用了margin进一步优化
        - 为了提高多轮对话的一致性，提出可Ghost Attention
-
 - llama open source repo
   - https://github.com/tatsu-lab/stanford_alpaca
     - 基于自生成的instructions来微雕LLaMA模型
@@ -109,81 +107,19 @@
   - https://github.com/ymcui/Chinese-LLaMA-Alpaca
     - 扩充了中文词表，进行了预训练和指令微调
   - https://github.com/hiyouga/LLaMA-Factory
-
-- Qwen
-  - https://github.com/QwenLM/Qwen
-  - 3T tokens；语言判别工具；去重工具；低质量数据过滤（rule-based & machine-learning-based）；上采样部分数据；在预训练阶段添加部分指令数据
-  - BPE tokenizer（基于tiktoken）；使用常用chinese token增强；数字细粒度切分
-  - 基础模型：主要基于llama，改进的地方：embedding和output project不在共享权重；使用FP32的Rope；移去所有的bias，但是QKV添加了bias；
-    使用Pre-Norm & RMSNorm；SwiGLU激活函数
-  - 推理长度扩展：NTK-Rope；LogN-Scaling；window attention（lower layer对window size更加敏感，因此lower layer使用更小的window size）
-  - SFT finetune and RLHF: 为了提高泛化性，去掉了固定prompt格式的数据；使用了OpenAI的chatML-style format；RLHF基本同llama2
-  - TOOL USE, CODE INTERPRETER, AND AGENT：使用了self-instruce+人工纠正，训练时也添加了其他通用目的的SFT数据
-  - Code-Qwen：基于基础模型用code data进一步预训练，然后使用Code SFT数据微调
-
-- Yi
-  - https://github.com/01-ai/Yi
-  - [Yi-34b模型训练和微调对齐介绍](https://mp.weixin.qq.com/s/cPjioApwlx711pNIPpB24w)
-
-- MistralAI
-
-- https://github.com/FlagAlpha/Llama2-Chinese
-  - 基于llama-2做中文预训练，词表扩充，推理加速
-
-- https://github.com/InternLM/InternLM/blob/main/README-zh-Hans.md
-
-- https://github.com/OpenBuddy/OpenBuddy/blob/main/README.zh.md
-  - 基于开源大模型微调，如llama、chatglm、baichuan，多轮对话，包含3b,7b,34b,70b
-
-- https://github.com/FlagAI-Open/Aquila2
-
-- MindLLM: Pre-training Lightweight Large Language Model from Scratch, Evaluations and Domain Applications
-  - [blog](https://mp.weixin.qq.com/s/nPdll5L4PsPYcjguBD4_rQ)
-
-- https://github.com/SkyworkAI/Skywork
-  - benchmark评估集效果好的很大一部分原因很可能是stage-2的in-domain training
-
-- https://github.com/mosaicml/llm-foundry
-
-- https://github.com/RUCAIBox/LLMSurvey
-
-- https://github.com/FlagAI-Open/FlagAI
-
-- https://github.com/jerryjliu/llama_index
-
-- https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models
-
-- https://github.com/ssymmetry/BBT-FinCUGE-Applications
-
-- https://github.com/CVI-SZU/Linly
-
-- [新加坡科技设计大学提出FLACUNA：提高LLMs问题解决能力!](https://mp.weixin.qq.com/s/QwLs9mdfyIwdTtCOwptkbA)
-- [LLM综述全新出炉：51页论文带你盘点LLM领域专业化技术](https://mp.weixin.qq.com/s/bRQ7xjs4ewNJoE2Gug3lSA)
-
-- https://github.com/MLNLP-World/Awesome-LLM
 - https://github.com/formulahendry/awesome-gpt
-
 - https://github.com/dandelionsllm/pandallm/
 - https://github.com/stability-AI/stableLM/
-
-- https://huggingface.co/YeungNLP/firefly-1b4
-- https://huggingface.co/YeungNLP/firefly-2b6
-
 - https://github.com/FreedomIntelligence/LLMZoo
 - https://github.com/project-baize/baize-chatbot/blob/main/README.md
-
 - 超对称大模型：https://bbt.ssymmetry.com/model.html
-
 - https://github.com/LC1332/Luotuo-Chinese-LLM
-
 - MOSS
   - https://github.com/OpenLMLab/MOSS
-
 - OpenAssistant
   - https://github.com/LAION-AI/Open-Assistant 
   - https://huggingface.co/datasets/OpenAssistant/oasst1
   - https://open-assistant.io 
-
 - Vicuna
   - https://vicuna.lmsys.org/
   - https://github.com/lm-sys/FastChat
@@ -228,8 +164,6 @@
 
 ## paper
 
-
-
 - Language Is Not All You Need: Aligning Perception with Language Models
   - [[code]](https://github.com/microsoft/unilm)
   - <details>
@@ -251,8 +185,6 @@
     6. GLM的int4量化模型performance未明显下降，可以用4*3090运行
     <img src="" align="middle" />
     </details>
-
-
 
 - FINETUNED LANGUAGE MODELS ARE ZERO-SHOT LEARNERS
   

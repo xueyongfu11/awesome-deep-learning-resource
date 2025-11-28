@@ -2,8 +2,6 @@
 
 
 
-
-
 ## Repo
 
 - https://github.com/Shark-NLP/OpenICL
@@ -15,8 +13,6 @@
 
 ## Paper
 
-
-
 - Few-shot Fine-tuning vs. In-context Learning: A Fair Comparison and Evaluation
   - 探究了在同等模型参数条件下few-shot ICL和few-shot微调的跨领域泛化效果对比，二者取得了相近的性能
   - 随着模型参数的增加，in-domain和OOD上的评估效果都进一步提升，并且微调相比ICL在更多情况下取得了更好的效果
@@ -27,8 +23,6 @@
 
 - Learning to Retrieve In-Context Examples for Large Language Models
   - 提出了一个新颖的框架去迭代性的训练向量检索工具，目的是为了识别高质量的in-context样本
-
-
 
 
 - Improving In-Context Few-Shot Learning via Self-Supervised Training
