@@ -2,6 +2,8 @@
 
 
 
+# Repo
+
 - https://github.com/HITsz-TMG/UMOE-Scaling-Unified-Multimodal-LLMs
 
 
@@ -90,9 +92,12 @@
   - code: https://github.com/jd-aig/JAVE
 
 
-## AIGC
+# Blog
 
 - [StableDiffusion原理详细介绍](https://mp.weixin.qq.com/s/-aQt5JgtrdrgapLxo5YVwg)
+- [李沐论文精读-多模态论文串讲（上）和（下）精读](https://blog.csdn.net/qq_45276194/article/details/136760273)
+  - 主要介绍2023初之前的经典多模态模型：ViLT、CLIP、ALBEF、VLMO、BLIP、CoCa、BEiT v3等模型
+
 
 # datasets
 

@@ -35,22 +35,11 @@
 ## leaderboard
 
 - https://flageval.baai.ac.cn/#/trending
-
 - https://opencompass.org.cn/leaderboard-llm
-
 - https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
-
 - https://cluebenchmarks.com/superclue.html
-
-- https://cevalbenchmark.com/static/leaderboard.html
-  - 中文大模型评估排行榜
-
-- http://115.182.62.166:18000/public
-    - 大模型安全性评估
-
 - https://github.com/google/BIG-bench
 - https://github.com/suzgunmirac/BIG-Bench-Hard
-
 - LongBench
   - eval datasets: https://kaiokendev.github.io/context
   - https://github.com/THUDM/LongBench#leaderboard
@@ -58,7 +47,8 @@
 - 偏好数据标注工具
   - https://github.com/SupritYoung/RLHF-Label-Tool
 
-
+- 大模型评测中文benckmark
+  - C-Eval：https://cevalbenchmark.com/index.html
 
 ## MoE
 
@@ -185,6 +175,9 @@
 ### 主流方法
 
 - EWC（Elastic Weight Consolidation），基于正则化的方法
+  - 损失函数： $ \mathcal{L} = \mathcal{L}_{B} + \sum_i \frac{\lambda}{2} F_i (\theta_i - \theta^{*}_{A,i})^2 $
+  - A 表示旧任务，B 表示新任务，$ F $ 是 Fisher 矩阵，用来衡量每个参数对旧任务损失的敏感度。如果某个参数对旧任务重要，新任务训练更不允许改变它，如果对旧任务不重要，则更可以改变。
+
 - 经验回放
   - LAMOL，生成式回放，让模型生成虚拟的旧任务数据
     - 经验回放可以防止大模型遗忘，但是很多时候无法获取旧数据，LAMOL方法是用大模型本身来生成数据，作为“旧数据”，然后再把“旧数据”和新任务数据混合训练。
@@ -199,6 +192,7 @@
 
 - Retaining By Doing: The Role of On-policy Data in Mitigating Forgetting
   - 2025.10
+  - 论文证明了 RL 相比 SFT 训练之后的灾难性遗忘更低，RL 训练时能够更好的保持先前的任务知识。
 - A Comprehensive Survey of Continual Learning:  Theory, Method and Application
   - 2024.08, survey
 

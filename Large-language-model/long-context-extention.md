@@ -52,7 +52,7 @@
 
 # 位置编码
 
-### 正弦位置编码（Sinusoidal Positional Encoding）
+## 正弦位置编码（Sinusoidal Positional Encoding）
 
 **特点:**
 
@@ -81,7 +81,7 @@ $$ PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d}}\right) \\ PE_{(pos, 2i+1)
 
 ------
 
-### 可学习位置编码（Learnable Positional Embedding）
+## 可学习位置编码（Learnable Positional Embedding）
 
 **特点**
 
@@ -105,7 +105,7 @@ $$ PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d}}\right) \\ PE_{(pos, 2i+1)
 
 ------
 
-### ROPE（Rotary Position Embedding，旋转位置编码）
+## ROPE（Rotary Position Embedding，旋转位置编码）
 
 **核心思想**
 
@@ -221,5 +221,198 @@ class RotaryAttention(nn.Module):
         out = torch.matmul(attn, v)  # [B, n_h, L, d_h]
         out = out.transpose(1, 2).contiguous().view(B, L, D)
         return self.out_proj(out)
+```
+
+## 3D 旋转位置编码
+
+### 输入张量与维度定义（统一规范）
+
+我们先约定清楚所有张量形状（非常重要）：
+
+```text
+B = batch size
+H = attention heads
+N = token 数量 = T * X * Y
+D = 单头维度 (head_dim)
+```
+
+Q / K 输入:
+
+```text
+q, k : [B, H, N, D]
+```
+
+每个 token 的 3D 坐标索引：
+
+```text
+t_pos : [N]   时间坐标 (0 ~ T-1)
+x_pos : [N]   宽度坐标 (0 ~ W-1)
+y_pos : [N]   高度坐标 (0 ~ H-1)
+```
+
+3D 维度切分（核心设定）：
+
+```text
+D = Dt + Dx + Dy
+Dt % 2 == 0
+Dx % 2 == 0
+Dy % 2 == 0
+```
+
+------
+
+### 1D RoPE（带完整维度注释）
+
+这是所有 RoPE 的最小原子单元：
+
+```python
+def apply_rope_1d(x, pos, freqs):
+    """
+    x     : [B, H, N, D_axis]
+    pos   : [N]
+    freqs : [D_axis // 2]
+    """
+
+    B, H, N, D_axis = x.shape
+    assert D_axis % 2 == 0
+
+    # pos[:, None]        -> [N, 1]
+    # freqs[None, :]     -> [1, D_axis//2]
+    # sin, cos           -> [N, D_axis//2]
+    sin = torch.sin(pos[:, None] * freqs[None, :])
+    cos = torch.cos(pos[:, None] * freqs[None, :])
+
+    # 拆偶数 / 奇数通道
+    x1 = x[..., 0::2]   # [B, H, N, D_axis//2]
+    x2 = x[..., 1::2]   # [B, H, N, D_axis//2]
+
+    # 广播对齐：
+    # sin, cos:   [1, 1, N, D_axis//2]
+    sin = sin[None, None, :, :]
+    cos = cos[None, None, :, :]
+
+    # RoPE 旋转
+    x_rot_1 = x1 * cos - x2 * sin   # [B, H, N, D_axis//2]
+    x_rot_2 = x1 * sin + x2 * cos   # [B, H, N, D_axis//2]
+
+    # 交错拼回原维度
+    x_out = torch.stack([x_rot_1, x_rot_2], dim=-1)
+    # [B, H, N, D_axis//2, 2]
+
+    x_out = x_out.flatten(-2)
+    # [B, H, N, D_axis]
+
+    return x_out
+```
+
+------
+
+### 完整 3D RoPE
+
+```python
+def apply_3d_rope(q, t_pos, x_pos, y_pos,
+                  freqs_t, freqs_x, freqs_y):
+    """
+    q : [B, H, N, D]
+
+    t_pos : [N]
+    x_pos : [N]
+    y_pos : [N]
+
+    freqs_t : [Dt//2]
+    freqs_x : [Dx//2]
+    freqs_y : [Dy//2]
+    """
+
+    B, H, N, D = q.shape
+
+    Dt = freqs_t.shape[0] * 2
+    Dx = freqs_x.shape[0] * 2
+    Dy = freqs_y.shape[0] * 2
+
+    assert Dt + Dx + Dy == D
+
+    # ========= 1️⃣ 按 3 轴切分 =========
+    q_t = q[..., :Dt]                 # [B, H, N, Dt]
+    q_x = q[..., Dt:Dt+Dx]            # [B, H, N, Dx]
+    q_y = q[..., Dt+Dx:]              # [B, H, N, Dy]
+
+    # ========= 2️⃣ 分别做 RoPE =========
+    q_t = apply_rope_1d(q_t, t_pos, freqs_t)   # [B, H, N, Dt]
+    q_x = apply_rope_1d(q_x, x_pos, freqs_x)   # [B, H, N, Dx]
+    q_y = apply_rope_1d(q_y, y_pos, freqs_y)   # [B, H, N, Dy]
+
+    # ========= 3️⃣ 拼接回完整维度 =========
+    q_out = torch.cat([q_t, q_x, q_y], dim=-1)
+    # [B, H, N, D]
+
+    return q_out
+```
+
+------
+
+### K 的处理方式
+
+```python
+q = apply_3d_rope(q, t_pos, x_pos, y_pos,
+                  freqs_t, freqs_x, freqs_y)
+
+k = apply_3d_rope(k, t_pos, x_pos, y_pos,
+                  freqs_t, freqs_x, freqs_y)
+```
+
+然后：
+
+```python
+attn = (q @ k.transpose(-2, -1)) / sqrt(D)
+```
+
+------
+
+### freqs 向量的标准构造方式
+
+```python
+def build_rope_freqs(dim, base=10000):
+    """
+    dim : 必须是偶数
+    return : [dim//2]
+    """
+    half = dim // 2
+    freq_seq = torch.arange(half, dtype=torch.float32)
+    inv_freq = 1.0 / (base ** (freq_seq / half))
+    return inv_freq
+```
+
+使用方式：
+
+```python
+freqs_t = build_rope_freqs(Dt)
+freqs_x = build_rope_freqs(Dx)
+freqs_y = build_rope_freqs(Dy)
+```
+
+------
+
+### 3D Token 如何生成 t_pos / x_pos / y_pos？
+
+假设你的视频是：
+
+```text
+T = 8 帧
+H = 16
+W = 16
+N = 8 * 16 * 16 = 2048
+```
+
+那么：
+
+```python
+t = torch.arange(T)[:, None, None]        # [T,1,1]
+x = torch.arange(W)[None, :, None]        # [1,W,1]
+y = torch.arange(H)[None, None, :]        # [1,1,H]
+
+t_pos = t.repeat(1, W, H).reshape(-1)     # [N]
+x_pos = x.repeat(T, 1, H).reshape(-1)     # [N]
+y_pos = y.repeat(T, W, 1).reshape(-1)     # [N]
 ```
 

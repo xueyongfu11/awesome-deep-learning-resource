@@ -5,15 +5,11 @@
 # 训练框架
 
 - https://github.com/hpcaitech/ColossalAI
-
 - Deepspeed
-  - deepspeed config: https://www.deepspeed.ai/docs/config-json/
-  - [Deepspeed的使用总结](https://zhuanlan.zhihu.com/p/650824387)
-  - [DeepSpeed 通过系统优化加速大模型推理](https://zhuanlan.zhihu.com/p/629644249#%E5%9B%9B%EF%BC%8CDeepspeed%20Inference%20%E6%A8%A1%E5%9D%97%E7%9A%84%E7%89%B9%E6%80%A7)
-  - [blog2](https://mp.weixin.qq.com/s/OXKg4f6bEso8E-Rp-m7scg)
-
+  - [Deepspeed的基本使用](https://zhuanlan.zhihu.com/p/650824387)
 - https://github.com/NVIDIA/Megatron-LM
   - [图解大模型训练之：张量模型并行(TP)，Megatron-LM](https://zhuanlan.zhihu.com/p/622212228?utm_campaign=shareopn&utm_medium=social&utm_oi=615941546193850368&utm_psn=1631231489340559360&utm_source=wechat_session)
+- [大模型训练-并行策略](https://mp.weixin.qq.com/s/opALgF1G9d-Lp-AjxhzUVw)
 
 
 # Train

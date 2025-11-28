@@ -67,10 +67,15 @@
 - **音频生成建模**
 
   - 首先论文尝试说明了Mimi编解码器的audio token相比text token的压缩率很低。对于codebook为8的12.5Hz的音频，1秒的音频生成需要模型生成100个audio token，这在推理时是不可接受的。相反，每秒钟的音频只需要3-4个text token。
+
   - 根据前文我们知道，音频编码之后的每个step有Q个量化向量组成（Q是codebook的数量），论文使用RQ-Transformer来建模。
+
   - RQ-Transformer：同时在时序方向和深度方向对数据进行建模。在Moshi中，时序方向对应时间步，而深度方向对应RVQ模块的多层量化向量<img src="../../assets/RQ-Transformer.png" alt="image-20240929112456655" style="zoom:67%;" />
+
   - 前面已经提及，Q为8的codebook中，第一个codebook对应语义token信息，其他的codebook对应着声学token信息。论文发现，对声学token信息进行delay可以提供更稳定的语音生成效果。
+
   - 将Moshi和用户的音频同时建模，并且对每个音频流都使用了声学token信息delay。两个音频流的audio token直接进行拼接，如果使用了Q个codebook，那么量化向量的数量为2Q，此时RQ-Transformer的每个step输入时2Q个量化向量
+
   - **论文提出了”Inner Monologue“方法**
     - 即相比只使用audio token，同时使用audio的转录文本信息，能够增加生成音频的质量。只对Moshi的音频进行了转录，不对用户的音频进行转录，因为推理时对用户的音频进行转录需要额外的ASR进行语音识别。
 
@@ -78,8 +83,10 @@
 
     - 通过在text token和audio token引入delay，这种delay可以将一个模型被另外一个模态支配。如果text token在audio token的前面，那么text便由audio决定，此时可以衍生出ASR系统；反之，如果audio token在text token的前面，那么audio便由text决定，此时可以衍生出TTS系统。因此只需要改变delay的方向，可以支持不同的系统，而不需要改变训练的Loss。
 
-    - 由于引入了”Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：![image-20240929124229465](../../assets/Moshi-input.png)
+    - 由于引入了”Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：
 
+      ![image-20240929124229465](../../assets/Moshi-input.png)
+    
   - **Moshi的联合多个sequence的表征**，如下图：<img src="../assets/Moshi_joint_repre.png" alt="image" style="zoom: 40%;" />
 
   - **推理过程**
