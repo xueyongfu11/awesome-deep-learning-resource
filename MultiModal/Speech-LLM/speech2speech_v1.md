@@ -2,15 +2,19 @@
 
 
 
-## 全模态大模型（gpt-4o-like model）
+## 全模态大模型
 
 - AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling
-  - 2024.02, Fudan
+  - 2024.02；Fudan；https://junzhan2000.github.io/AnyGPT.github.io/
   -  将所有模态转化为离散的token，然后进行模型训练，支持各种模态的输入和输出。
-  - 各个模态的离散token生成使用了现成的tokenizer和de-tokenizer
+  - 各个模态的离散token生成使用了现成的tokenizer和de-tokenizer。
+    - 图像编码器：使用SEED编码器，它由ViT编码器、Causal Q-Former、VQ码本、MLP和UNet解码器组成。输入为224x224的RGB图像，输出32个语义符号。
+    - 图像生成：使用Diffusion Model从SEED语义token生成高质量图像
+    - 语音编码器：采用SpeechTokenizer，这是一个基于RVQ-VAE结构的编码器-解码器。它将语音序列编码为8层1024个audio token的矩阵，每层捕获不同的语义和声学信息。
+    - 语音生成：使用SoundStorm从语义符号生成声学符号，然后通过SpeechTokenizer的解码器转换成语音波形。
+    - 音乐编码器：使用Encodec，这是一个基于卷积自编码器和RVQ的编码器。
+    - 音乐生成：使用Encodec的解码器从音乐符号生成高保真音频。
   - 提出了AnyInstruct-108k多模态数据集，包含了各种模态复杂交织的多轮对话数据集
-  - https://junzhan2000.github.io/AnyGPT.github.io/
-  - https://ai-scholar.tech/zh/articles/large-language-models/anygpt
 - SpeechGPT-Gen: Scaling Chain-of-Information Speech Generation
   - 2024.01
 - OneLLM: One Framework to Align All Modalities with Language

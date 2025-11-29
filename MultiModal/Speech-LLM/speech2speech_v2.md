@@ -15,7 +15,7 @@
 
 ### VITA
 
-- 2024.08，[Code](https://github.com/VITA-MLLM/VITA), [Paper: VITA: Towards Open-Source Interactive Omni Multimodal LLM](https://arxiv.org/pdf/2408.05211)
+- 2024.08，Tencent，[Code](https://github.com/VITA-MLLM/VITA), [Paper: VITA: Towards Open-Source Interactive Omni Multimodal LLM](https://arxiv.org/pdf/2408.05211)
 - 大模型指令微调
   - 模型使用了Mixtral 8x7B，为了对中文有更好的支持，扩充了词表，并使用了5M的合成双语数据进行指令微调
 - 多模态对齐
@@ -40,7 +40,7 @@
 
 ### Moshi
 
-- [Code](https://github.com/kyutai-labs/moshi), [Paper: Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf)
+- 2024.10，[Code](https://github.com/kyutai-labs/moshi)， [Paper: Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf)
 
 - **整体概述**
   
@@ -62,34 +62,41 @@
   - 基于背景介绍中存在的问题，文章提出了Mimi音频编解码器，核心是将支持语义token编码的双向模型蒸馏到单向因果模型中。
   - Mimi编码器使用了时序卷积网络对输入音频进行encoding，得到隐式表征。接着使用残差向量量化RVQ将隐式表征离散化为codebook中的向量（RVQ具体方法可以学习相关论文）
   - 在量化前和量化后添加了8层的casual transformer层，为了稳定训练，使用了LayerScalue初始化方法
-  - 如何蒸馏？论文将WavLM语义信息蒸馏到了RVQ的第一层中，方法是计算RVQ首次量化输出的embedding和WavLM的embedding的cosine举例，作为训练loss的一部分。因此第一个量化层保留语义token信息，而声学token则在RVQ的其他量化层进行了保留。![image-20240928174746137](../../assets/Mini.png)
-
+  - 如何蒸馏？论文将WavLM语义信息蒸馏到了RVQ的第一层中，方法是计算RVQ首次量化输出的embedding和WavLM的embedding的cosine距离，作为训练loss的一部分。因此第一个量化层保留语义token信息，而声学token则在RVQ的其他量化层进行了保留。
+  - ![image-20240928174746137](../../assets/Mini.png)
+  
 - **音频生成建模**
 
   - 首先论文尝试说明了Mimi编解码器的audio token相比text token的压缩率很低。对于codebook为8的12.5Hz的音频，1秒的音频生成需要模型生成100个audio token，这在推理时是不可接受的。相反，每秒钟的音频只需要3-4个text token。
 
   - 根据前文我们知道，音频编码之后的每个step有Q个量化向量组成（Q是codebook的数量），论文使用RQ-Transformer来建模。
 
-  - RQ-Transformer：同时在时序方向和深度方向对数据进行建模。在Moshi中，时序方向对应时间步，而深度方向对应RVQ模块的多层量化向量<img src="../../assets/RQ-Transformer.png" alt="image-20240929112456655" style="zoom:67%;" />
+  - RQ-Transformer：同时在时序方向和深度方向对数据进行建模。在Moshi中，时序方向对应时间步，而深度方向对应RVQ模块的多层量化向量
+
+  - <img src="../../assets/RQ-Transformer.png" />
 
   - 前面已经提及，Q为8的codebook中，第一个codebook对应语义token信息，其他的codebook对应着声学token信息。论文发现，对声学token信息进行delay可以提供更稳定的语音生成效果。
 
-  - 将Moshi和用户的音频同时建模，并且对每个音频流都使用了声学token信息delay。两个音频流的audio token直接进行拼接，如果使用了Q个codebook，那么量化向量的数量为2Q，此时RQ-Transformer的每个step输入时2Q个量化向量
+  - 将Moshi和用户的音频同时建模，并且对每个音频流都使用了声学token信息delay。两个音频流的audio token直接进行拼接，如果使用了Q个codebook，那么量化向量的数量为2Q，此时RQ-Transformer的每个step输入是2Q个量化向量
 
-  - **论文提出了”Inner Monologue“方法**
+  - **论文提出了“Inner Monologue”方法**
+    
     - 即相比只使用audio token，同时使用audio的转录文本信息，能够增加生成音频的质量。只对Moshi的音频进行了转录，不对用户的音频进行转录，因为推理时对用户的音频进行转录需要额外的ASR进行语音识别。
-
+    
     - 为了将text token与audio token进行对齐，使用whisper对语音进行识别，获取识别文字的时间窗口，从而对应到audio token，未被text token覆盖到的时间窗口使用PAD token来表示，并在下一个text token前添加EPAD，表示padding的截止符。
-
+    
     - 通过在text token和audio token引入delay，这种delay可以将一个模型被另外一个模态支配。如果text token在audio token的前面，那么text便由audio决定，此时可以衍生出ASR系统；反之，如果audio token在text token的前面，那么audio便由text决定，此时可以衍生出TTS系统。因此只需要改变delay的方向，可以支持不同的系统，而不需要改变训练的Loss。
-
-    - 由于引入了”Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：
-
+    
+    - 由于引入了“Inner Monologue”，即Moshi音频的text输入，此时RQ-Transformer的每个step输入时2Q+1个量化向量，如下图：
+    
       ![image-20240929124229465](../../assets/Moshi-input.png)
     
-  - **Moshi的联合多个sequence的表征**，如下图：<img src="../assets/Moshi_joint_repre.png" alt="image" style="zoom: 40%;" />
+  - **Moshi的联合多个sequence的表征**，如下图：
+
+    ![](../../assets/Moshi_joint_repre.png)
 
   - **推理过程**
+
     - 在推理时，我们对与Moshi输出的所有子序列索引 $V^{s,k}$ 中进行采样：即，对于k=1是对应于Moshi讲话的文本标记，而对于k∈{2,..., 2+Q}则是Moshi的音频标记。在推理环境中，来自用户的音频标记（k>2+Q）的预测实际上是被忽略的，因为使用的是实际的用户音频。
     - 用户和Moshi之间的轮次转换没有明确的界限：Moshi可以在任何时候说话和倾听，必要时甚至可以同时进行。特别是当用户说话而Moshi保持沉默时，Moshi流对应的音频标记解码为“自然静音”，一种接近静音的波形，而不是具有固定、明确定义的值；同时，Moshi的文本流将填充PAD标记。
 
@@ -113,7 +120,7 @@
 
 ### Mini-Omni
 
-- [Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
+- 2024.08，[Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
 
 - Mini-Omni概述
 
