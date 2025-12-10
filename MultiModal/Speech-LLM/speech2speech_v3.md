@@ -8,7 +8,7 @@
   - 2025.02，阶跃星辰
   - code：https://github.com/stepfun-ai/Step-Audio
   - 论文贡献
-    - 开源130B统一end2end的语音对话模型Step-Audio-Chat，支持各种语音任务。支持多感情、多中声音模式、方言以及角色扮演等。
+    - 开源130B统一end2end的语音对话模型Step-Audio-Chat，支持各种语音任务。支持多感情、多种声音模式、方言以及角色扮演等。
     - 基于130B模型蒸馏的数据训练并开源了TTS-3B模型
   - Step-Audio-Chat使用了语音输入，文本输出，TTS的框架，本质上仍然是一个级联式的语音大模型
     - ![image-20250314134529216](../../assets/StepAudio.png)
