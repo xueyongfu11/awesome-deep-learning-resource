@@ -2,30 +2,33 @@
 
 
 
-
 # Agent 
 
-- [大模型 Agent 是不是就是各种 Prompt 的堆叠？](https://www.zhihu.com/question/1894891236617332066/answer/1898148855989642581)
+- Measuring and Narrowing the Compositionality Gap in Language Models
 
-- [agent微调：为 llms 提供通用agent能力](https://zhuanlan.zhihu.com/p/679126416)
+  - 2022.10, self-ask, 
 
-- [大模型agent学习探索](https://zhuanlan.zhihu.com/p/674630135)
+  - 直接看图：
 
-- [大模型agent](https://zhuanlan.zhihu.com/p/662239288)
+    ![](../assets/self-ask.png)
 
-- https://github.com/Paitesanshi/LLM-Agent-Survey
+- [ReAct (Reason+Act) prompting in LLMs](https://tsmatz.wordpress.com/2023/03/07/react-with-openai-gpt-and-langchain/)
 
-- The Rise and Potential of Large Language Model Based Agents: A Survey
+  - 2022.10, ReAct
 
-- AgentTuning: Enabling Generalized Agent Abilities for LLMs
-  - https://github.com/THUDM/AgentTuning
+  - 详细说明了ReAct原理，即“reasoning -> action -> observation”的不断迭代并得出最终结果的过程。以action为web search为例，搜索的结果需要填充在observation位置，然后接着输入大模型生成reasoning、action，继续把搜索结果填充在observation位置，再次输出大模型生成reasoning、action，该过程持续多次并得到最终结果。
 
+  - 提供了few-shot和zero-shot的prompt构建方式
 
-- [机器人自学停不下来！具身智能被革命](https://mp.weixin.qq.com/s/2bQTuwE-k6ukp--XHXIzMg)
-- [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)
-- 李宏毅agent介绍
+  - ReAct方法消耗大量的tokens，Blog也提及了一种改进算法ReWOO，一次性生成完整的reasonings、actions，然后顺序执行所有的actions并汇总结果。缺点是不能动态纠正。
 
-  - https://www.youtube.com/watch?v=bJZTJ7MjYqg
+- Survey
+
+  - A Survey on Large Language Model based Autonomous Agents
+    - https://github.com/Paitesanshi/LLM-Agent-Survey
+
+  - The Rise and Potential of Large Language Model Based Agents: A Survey
+
 
 # agent框架
 
@@ -52,10 +55,12 @@
 - XAgent
   - https://github.com/OpenBMB/XAgent
 
-
-
 # Blog
 
+- [Agent全面爆发！一文搞懂Agent开发核心链路](https://mp.weixin.qq.com/s/gSDpv742AcDg7Jn4Ayppyg)
+  
+- [大模型agent](https://zhuanlan.zhihu.com/p/662239288)
+  
 - Agentic 上下文工程：无需微调，让智能体自我学习与进化
   - [实战·Agentic 上下文工程（上）：无需微调，让智能体自我学习与进化](https://mp.weixin.qq.com/s/CIzchmwwHhNu7xo4KR9D3w)
 
@@ -70,3 +75,5 @@
 - [Paper: HuggingGPT： 用ChatGPT和它的朋友在HuggingFace中解决AI任务](https://zhuanlan.zhihu.com/p/619763221)
 
 - [OpenBMB的BMTools笔记](https://zhuanlan.zhihu.com/p/639581784)
+
+- [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)

@@ -2,7 +2,7 @@
 
 
 
-## gpt-4o-liked models
+# gpt-4o-liked models
 
 - https://github.com/gpt-omni/mini-omni2
 - https://github.com/gpt-omni/mini-omni
@@ -13,7 +13,7 @@
 - LLaMA-Omni
   - [Code](https://github.com/ictnlp/LLaMA-Omni), [Paper: LLaMA-Omni: Seamless Speech Interaction with Large Language Models](https://arxiv.org/pdf/2409.06666)
 
-### VITA
+## VITA
 
 - 2024.08，Tencent，[Code](https://github.com/VITA-MLLM/VITA), [Paper: VITA: Towards Open-Source Interactive Omni Multimodal LLM](https://arxiv.org/pdf/2408.05211)
 - 大模型指令微调
@@ -38,7 +38,7 @@
   - 噪声过滤：使用了状态token <2> 来判断输入音频是否时有效的query
   - 声音打断交互：同时部署两个模型，生成模型用来回复用户的query，而监测模型同时监测环境声音，当监测到有效的query时，生成模型终止回复，并将上下文提供给监测模型，监测模型开始对新query进行回复，而生成模型对环境生成进行监测，二者完成了身份的互换。
 
-### Moshi
+## Moshi
 
 - 2024.10，[Code](https://github.com/kyutai-labs/moshi)， [Paper: Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf)
 
@@ -118,7 +118,7 @@
 
   <img src="../../assets/Moshi_loss.png" alt="image-20240929140720667" style="zoom: 50%;" />
 
-### Mini-Omni
+## Mini-Omni
 
 - 2024.08，[Code](https://github.com/gpt-omni/mini-omni), [Paper: Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/pdf/2408.16725)
 
@@ -137,19 +137,21 @@
 
   - 理解这部分之前，首先要熟悉audio token。音频编解码器一般使用残差向量量化RVQ对音频特征进行离散化，经过多层量化之后，audio token由Q个向量组成，Q是codebook的数量。
 
+  - 推理时，模型预测的text token和audio tokens直接相加并平均，作为下个token预测的输入。
+
   - 解码时可以顺序进行，但是对于实时音频生成任务来说，并行解码是一种更合适的方案。建议看下MusicGen这篇论文，能够对并行解码有更深刻的理解。
 
-  - **Text-delay Parallel Decoding**：Mini-Omni概述部分提及到，使用了文本知道音频生成的方法。具体实现是对text token和audio token同时解码，并加入delay机制，使得text token先生成，来指导音频的生成
+  - **Text-delay Parallel Decoding**：Mini-Omni概述部分提及到，使用了文本指导音频生成的方法。具体实现是对text token和audio token同时解码，并加入delay机制，使得text token先生成，来指导音频token的生成
 
   - **Batch Parallel Decoding**
-
+  
     - 进一步增强模型在对话中的推理能力，最大化其基于文本的能力转移，研究人员尝试使用Batch Parallel Decoding
     - 鉴于模型在文本模态中表现更强，他们将单个输入的推理任务扩展到批次大小为2：一个样本同时需要文本和音频响应，另一个样本只需要文本响应，重点放在基于文本的音频合成上。
     - 第一个样本的文本标记输出被丢弃，而第二个样本的文本输出则嵌入到第一个样本相应的文本标记位置。与此同时，第一个样本的音频流使用了第二个样本纯文本响应的内容；这一过程被称为批处理并行解码。
     - 通过这种方法，几乎可以完全以最小资源开销将模型基于文本的能力转移到音频模态，显著增强了它在新模态下的推理能力。
 
   - Parallel Decoding和Batch Parallel Decoding的图解
-
+  
     ![image-20241001001201128](../../assets/omni_parallel_decoding.png)
 
 

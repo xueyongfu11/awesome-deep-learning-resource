@@ -74,4 +74,3 @@
 
 
 
-[**点击查看我的更多AI学习笔记github**](https://github.com/xueyongfu11/awesome-deep-learning-resource)
