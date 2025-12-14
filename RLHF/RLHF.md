@@ -41,6 +41,41 @@
 
   - 2025.04，TTRL方法
   - LLM先处理提示x，从策略πθ(y|x)中采样生成N个候选输出{y₁, y₂, ..., yₙ}。通过多数投票确定共识答案y*，再按与y*的匹配情况（匹配得1分、不匹配得0分）为各候选输出计算奖励，最后用PPO或GRPO等RL算法更新模型参数θ，以最大化预期奖励。
+  
+- Training language models to follow instructions with human feedback
+  - 2022.03，OpenAI
+  - 使用人工编写的prompt数据，基于GPT3模型进行再训练，得到一个增强的预训练语言模型
+  
+  - 基于1中训练好的预训练语言模型以及构建好的prompt集，使用beam-search等生成prompt的多个回复结果，然后人工对生成的多个结果排序，然后基于该数据训练了一个6B的打分模型，使用的是pair-wise的ranking loss
+  
+  - 基于PPO算法训练强化学习模型，模型使用1中预训练好的模型进行初始化，给定prompt生成输出，然后用2中打分模型计算得分，然后优化强化学习模型。然后再使用强化学习模型生成，再打分。优化目标函数中添加了自回归语言模型的loss
+  
+- PPO in RLHF
+
+  - [RLHF中PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
+
+  - [PPO原理解读和重要性采样](https://www.cnblogs.com/xingzheai/p/15931681.html)
+
+  - 逐token的奖励值如何计算？
+
+    - 假设EOS终止步长为T，当token的pos小于T时，奖励值为0，当大于T时，奖励值为奖励模型计算的序列级的奖励。
+
+    - 很多论文并未使用上述逐token的奖励值，而是使用带KL penalty的逐token奖励值。即在上述奖励值的基础上，添加一项token级别的KL penalty项。
+      $$
+      r_t =
+      \begin{cases}
+      -\beta \left( \log \pi_\theta(a_t \mid s_t) - \log \pi_{\mathrm{ref}}(a_t \mid s_t) \right), 
+      & t < T, \\[6pt]
+      R_{\mathrm{RM}}(x, y)
+      -\beta \left( \log \pi_\theta(a_T \mid s_T) - \log \pi_{\mathrm{ref}}(a_T \mid s_T) \right),
+      & t = T.
+      \end{cases}
+      $$
+
+  - 逐token 的advantage如何计算
+
+    - 逐token的advantage是用逐token的及时奖励、值函数，通过GAE算法从后往前计算来的
+
 
 ## off-policy RLHF（离线强化学习）
 
@@ -142,9 +177,33 @@
   
 - Direct Preference Optimization: Your Language Model is Secretly a Reward Model
   - 2023.05, DPO
-  - DPO通过一个简单的分类损失函数直接优化策略，而不是先拟合一个奖励模型，然后使用强化学习来最大化这个奖励
-  - 与RLHF相比，DPO算法更稳定、性能更好，且计算成本更低。它不需要在微调期间从LM中采样，也不需要进行大量的超参数调整
+  
+  - DPO通过一个简单的分类损失函数直接优化策略，而不是先拟合一个奖励模型，然后使用强化学习来最大化这个奖励。与RLHF相比，DPO算法更稳定、性能更好，且计算成本更低。它不需要在微调期间从LM中采样，也不需要进行大量的超参数调整
+  
   - DPO方法背后的理论基础是，存在一个从奖励函数到最优策略的解析映射，这使得研究者能够将基于奖励的损失函数转换为直接针对策略的损失函数
+  
+    - 通过RLHF的目标函数，推到出奖励函数和最优策略与参考策略之对数比的数学关系。
+  
+    - 为了利用偏好数据训练模型，希望生成高质量的回复概率大于低质量回复的概率。Bradley-Terry模型可以用来计算两个对象，其中一个对象比另外一个对象强的概率。因此可以计算高质量回复的奖励值强于低质量回复的奖励值的概率。
+  
+    - 将强度概率公式中的奖励值使用“最优策略与参考策略之对数比”进行替代，便得到DPO的目标公式。
+      $$
+      \mathcal{L}_{\mathrm{DPO}}(\pi_\theta; \pi_{\mathrm{ref}})
+      = -\mathbb{E}_{(x, y_w, y_l) \sim D} \bigg[
+          \log \sigma\!\left(
+              \beta \log \frac{\pi_\theta(y_w \mid x)}{\pi_{\mathrm{ref}}(y_w \mid x)}
+              \;-\;
+              \beta \log \frac{\pi_\theta(y_l \mid x)}{\pi_{\mathrm{ref}}(y_l \mid x)}
+          \right)
+      \bigg]
+      $$
+      其中$\beta$用来调节模型对好坏答案的区分强度，该参数与RLHF中的KL散度的$\beta$等价
+  
+  - Blog：
+  
+    - [大语言模型对齐: 直接偏好优化(DPO)](https://syhya.github.io/zh/posts/2025-02-08-dpo/)
+  
+    - [有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
   
 - RRHF: Rank Responses to Align Language Models with Human Feedback without tears
   - 2023.04， NeurIPS 2023，基于排序的方法
@@ -190,15 +249,10 @@
 ## Blog
 
 - [强化微调RFT技术解析](https://blog.csdn.net/AIBigModel/article/details/144350849)
-  
 - [比 GRPO 更稳定更高效：GSPO 算法如何颠覆大模型 RL 训练](https://zhuanlan.zhihu.com/p/1932770229693450218)
   - GSPO的advantage的计算与GRPO相同，都是使用组内相对优势
   - GSPO和GRPO的概率比（重要性比）的计算方法不同，GRPO是每个 token 都会计算一个概率比，而GSPO则将整个序列看作一个整体，计算序列级别的概率比。
-
 - [从 PPO、DPO 到 GRPO：万字长文详解大模型训练中的三大关键算法](https://mp.weixin.qq.com/s/OMpD6ITqNi4jX95nSRC2Ig)
-- [大语言模型对齐: 直接偏好优化(DPO)](https://syhya.github.io/zh/posts/2025-02-08-dpo/)
-  - 包含详细的公式推导：根据RLHF的目标推导出奖励函数、最优策略分布、参考模型分布之前的关系，然后基于Bradley–Terry 模型定义出另外一个目标：给定输入，模型输出高质量回复的概率高于输出低指令回复的概率。
-  - 然后使用待训练的Actor模型代替最优策略模型，配分函数只和输入相关，在 Bradley–Terry 模型中可以被消去，最后得到DPO的损失函数。
 - [大模型面试题：PPO算法中Critic和Reward的区别是啥？](https://mp.weixin.qq.com/s/dnPbaMZJilMVhObHMZ7KKw)
 - [面试题题：PPO算法到底是on-policy还是off-policy](https://mp.weixin.qq.com/s/N-miDef7gQG7Ev1VYzUfag)
 - [面试题：DPO训练过程中，training positive和 negative的概率同时下降的原因？](https://mp.weixin.qq.com/s/KsWsKmXFCNmStfzxrT3aXg)
@@ -210,16 +264,11 @@
 
 ### 大模型对齐
 
-- [有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
 - [深度解析DPO及其变体在多种任务上的表现如何，该如何选择](https://mp.weixin.qq.com/s/DwBpfMiSbGJ8N07e6zN4eg)
 - [剑桥提出RLHF平替方案：在SFT以外，我们还能拿SFT数据做什么？](https://mp.weixin.qq.com/s/Sbu1-EA6gCKsyUdGpRTuRg)
 - [Self-Play的对齐算法介绍](https://zhuanlan.zhihu.com/p/699292524) 
-- RLHF方法-PPO详解
-  - [ChatGPT 背后的“功臣”——RLHF 技术详解](https://huggingface.co/blog/zh/rlhf)
-  - [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://mp.weixin.qq.com/s/J8c7rEmkQH4lBj1pWntv9w)
-    - PPO原理解读，非常详细
-  - [详解大模型RLHF过程（配代码解读）](https://blog.csdn.net/qq_27590277/article/details/132614226)
 - [如何完成一次成功的对齐(1)：SFT篇](https://zhuanlan.zhihu.com/p/687926037)
+- [在LLM中选择像传统RL中value network和policy network共享底座会有问题吗？如果有解释一下为什么？](https://zhuanlan.zhihu.com/p/699827201)
 
 ### offline-rlhf
 
@@ -234,16 +283,12 @@
 - [OPO:无需训练实现价值观实时动态对齐：上交开源价值观对齐方法，闭源与开源大模型均适用](https://mp.weixin.qq.com/s/_CB0LBQVI_2NBiX63pyYSA)
   - OPO，收集相关法律或者道德准则，使用RAG检索与query相关的准则，基于检索结果来生成
 
-### 面试trick
-
-- [在LLM中选择像传统RL中value network和policy network共享底座会有问题吗？如果有解释一下为什么？](https://zhuanlan.zhihu.com/p/699827201)
-- [RLHF中，为什么计算了两次actor_prob？](https://www.zhihu.com/question/654282515/answer/3481039875)
-
 ## 基础知识
 
 ### GRPO如何为每个token分配advantage
 
-参考 [blog](https://zhuanlan.zhihu.com/p/20812786520) ，通过组内优势估计计算每个 response 的相对优势 advantage，然后将 advantage 作为每个 token 的advantage。
+- 参考 [blog](https://zhuanlan.zhihu.com/p/20812786520) ，通过组内优势估计计算每个 response 的相对优势 advantage，然后将 advantage 作为每个 token 的advantage。
+- 而PPO算法的逐token的advantage是用逐token的及时奖励、值函数，通过GAE算法从后往前计算来的。GRPO没有值函数，所以无法使用GAE。
 
 
 

@@ -52,7 +52,59 @@
 
 ## MoE
 
+- Qwen2 MoE
+
+  - Qwen3取消了不同层之间的专家共享机制；
+
+  - 为防止路由不均导致某些专家过载或“闲置”，引入全局批量负载均衡损失。即在计算门控损失时，将所有层、整个batch的token分配情况综合考虑，鼓励模型将不同token分散给尽可能多的专家。
+
+- Qwen2-57B-A14B
+
+  - Qwen2-57B-A14B同Qwen1.5-MoE-A2.7B，不同之处是使用了8个共享专家和8个路由专家
+
+  - Qwen2的技术报告中具体描述了专家初始化方法
+    - 首先设定目标专家的intermediate size和专家数，据此计算需要复制FFN的次数，得到FFN的intermediate size * 复制次数的通道数
+
+    - 然后对上述复制后的参数沿着intermediate 维度shuffle，然后再从中截取所有的目标专家
+
+    - 为了进一步引入随机性，进一步对intermediate维度的50%的参数进行随机化初始化
+
+  - Qwen2-57B-A14B在多个评测数据上达到甚至超过Yi-1.5-34B and Qwen1.5-32B模型
+
+- Qwen1.5-MoE: Matching 7B Model Performance with 1/3 Activated Parameters
+
+  - https://qwenlm.github.io/blog/qwen-moe/
+
+  - Qwen1.5-MoE-A2.7B相比Qwen1.5-7B训练成本降低了75%，推理速度提升了1.74倍
+
+  - 初始化使用了训练好的Qwen1.5-1.8B模型，使用了upcycling方法来构建多专家。在初始化阶段引入了随机性，实验发现可以提高收敛速度，提升模型效果。
+
+  - 不同于Deepseek-MoE直接复制FFN层来创建MoE专家，Qwen1.5-MoE使用了finegrained-MoE，我推理是在直接复制的基础上，将单个FFN层切割成多个专家，而不显著增加模型参数。
+
+  - 使用了4个共享专家和60选4的路由专家。
+
+  - 模型参数配置
+
+    ```json
+    // Qwen1.5-1.8B
+    {
+      "hidden_size": 2048,
+      "intermediate_size": 5504,
+    }
+    
+    // Qwen1.5-MoE-2.7B
+    {
+      "hidden_size": 2048,
+      "intermediate_size": 5632,
+      "moe_intermediate_size": 1408,
+      "shared_expert_intermediate_size": 5632,
+      "num_experts_per_tok": 4,
+      "num_experts": 60,
+    }
+    ```
+
 - https://github.com/TUDB-Labs/MoE-PEFT
+
 - MIXLORA: Enhancing Large Language Models Fine-Tuning with LoRA-based Mixture of Experts
   - 2024.04
   - 提出了MixLoRA，不同于其它方法，MixLoRA的每个专家都由原始模型层结构和LoRA组成，与传统的MoE模型更加相似。
@@ -63,21 +115,23 @@
   - 2024.02
   - 论文验证了模型的较低层的expert之间相似性更大，存在参数冗余
   - 论文提出了MoLA，从对比实验中可以得出，固定expert的总数，模型较高层相比较低层设置更多的expert，效果表现最好
-  
+
 - Parameter-Efficient Sparsity Crafting from Dense to Mixture-of-Experts for  Instruction Tuning on General Tasks
   - 2024.01，PESC
-  
+
   - 提出了一种MoE-LoRA架构模型PESC，该方法使用了串行结构的adapter-MoE，并在损失中添加了expert balance loss
-  
+
 - LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin
   - 2023.12
   - 实验发现在SFT阶段显著增加指令数据量会损害LLMs中的世界知识
   - 引入了LoRAMoE框架，通过集成LoRAs和路由器来增强模型处理下游任务的能力，同时减轻世界知识遗忘。具体是提出局部平衡约束，以鼓励专家之间的合作，并在不同类型的任务上实现专家的专业化。
+
 - When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
   - 2023.10
   - 主要为了解决任务多样性问题和高昂的调优成本，提出的方法主要应用的医疗领域
   - MOELoRA：结合了MoE和LoRA，核心是门控的设计，具体是不同层共享门控，构建任务类型的embedding，通过一个线性层输出专家权重，这里可以使用稀疏和非稀疏的加权方式。
   - 推理时，可以恢复出每个任务类型的微调权重，并将微调权重与原始模型合并，避免的MoE带来的额外推理成本
+
 - Pushing Mixture of Experts to the Limit:  Extremely Parameter Efficient MoE for  Instruction Tuning
   - 2023.09
   - 提出了结合peft和MoE的两种方法MoV和MoLoRA
@@ -85,11 +139,16 @@
   - 结论2：专家数量达到10时，效果开始区域稳定
   - 结论3：soft merging策略相比离散路由策略效果更好
 
+### MoE基础
+
+- 常见的MoE论文，如Switch Transformer、GShard、Deepspeed MoE等，是使用点积+softmax来计算路由
+- MoE一般规定每个专家的token容量，如果路由到某个专家的token数量超过规定的容量，部分token会被直接Drop。在最常见的 Token-Dropping MoE 实现中，被 drop 的 token 的输出会被直接设为0向量。
+
 ### Blog
 
+- [MoE 入门介绍 核心工作回顾 模型篇](https://zhuanlan.zhihu.com/p/671434414)
 - [Mixture-of-Experts (MoE) 经典论文一览](https://zhuanlan.zhihu.com/p/542465517)
 - [对MoE大模型的训练和推理做分布式加速——DeepSpeed-MoE论文速读](https://zhuanlan.zhihu.com/p/466363675)
-
 
 ## LLM和知识图谱
 
