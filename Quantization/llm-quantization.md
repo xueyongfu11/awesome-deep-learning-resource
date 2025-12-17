@@ -2,6 +2,8 @@
 
 
 
+# Quantization
+
 - [量化那些事之KVCache的量化](https://zhuanlan.zhihu.com/p/691537237)
 
 - https://github.com/openppl-public/ppq
@@ -23,7 +25,7 @@
 - [GGUF 格式完美指南](https://blog.mikihands.com/zh-hans/whitedec/2025/11/20/gguf-format-complete-guide-local-llm-new-standard/)
 
 
-## Quantization-aware train/finetune
+# Quantization-aware train/finetune
 
 - LLM-FP4: 4-Bit Floating-Point Quantized Transformers
   - https://github.com/nbasyl/LLM-FP4/tree/main
@@ -54,31 +56,67 @@
   - 选取激活中的outliers，同时需要将权重矩阵中相应的列取出，与outliners进行矩阵相乘
 
 
-## Post-training quantization
+# Post-training quantization
 
 - AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration
   - 2023.06
-  - 某个权重是否重要不仅取决于权重大小，还取决于该通道的输入规模。激活值大的输入通道，对输出误差的放大效应应该越严重，这些通道的权重越要被精细地量化。
-  - 用少量数据跑一下模型，统计每个输入通道的绝对值的平均值。然后定义每个输出通道的绝对值，即输入通道和权重的乘积。基于结果挑选少量且重要的通道进行量化。
-  - 论文引入缩放因子来减少关键权重的量化误差。将大于1的缩放因子乘上模型权重，然后进行量化，同时将输入除以缩放因子，这在数学上是等价的，但是却可以降低量化误差
-  - [Blog 深入理解AWQ量化技术](https://zhuanlan.zhihu.com/p/697761176)
+  
+  - 某个权重是否重要不仅取决于权重大小，还取决于该通道的输入规模。基于显著的激活值选取权重通道，只对其他权重通道进行量化，可以有效地提高量化效果。
+  
+  - 论文发现通过对显著权重进行scale，可以减少量化误差。对于显著的权重通道乘上大于1的scale因子，在分组量化中，可以减少量化误差，但是会压缩group内其他通道，使得这些通道的量化误差增大。group和通道可以这样理解：
+  
+    ```text
+    W =
+    channel 0: [ w00 w01 w02 w03 | w04 w05 w06 w07 ]
+    channel 1: [ w10 w11 w12 w13 | w14 w15 w16 w17 ]
+                 ↑ group 0       ↑ group 1
+    
+    W的维度(out_features, in_features)，这个例子能够很好的解释通道和group之间的额关系
+    ```
+  
+  - 因此，为了进行平衡，论文使用了自动grid搜索方式计算每个权重通道的scale因子，目标是使得量化误差最小。
+  
+  - AWQ相比GPTQ计算更加友好，在低bite量化上效果更好。
+  
 - FPTQ: Fine-grained Post-Training Quantization for Large Language Models
   - 相比smoothquant，使用了指数函数把激活量化的难度转移到权重量化上
   - 相比通道量化，使用了分组量化
-- GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
-  - 2022.10
-  - GPTQ不是对权重进行量化，而是基于输出误差最小化的量化方法。GPTQ 目标函数展开后得到带 Hessian 的二次型，其中Hessian 矩阵反映了每个权重对输出的重要性。
-  - OBQ的思想是在最小化输出误差的前提下，逐个权重量化，并动态修正后续权重。每量化一个权重，就必须更新逆Hessian，比较慢，不并行，不稳定。
-  - GPTQ对OBQ的改进，不再使用全局顺序量化，而是按照block/group量化，互不依赖，因此支持并行，提高量化速度。
-  - block/group内部则按顺序贪心量化，无法并行。假如一行为一个分组，则按列量化每个参数，每量化一个参数，便使用Hessian更新剩余未量化的参数。
-  - 使用了Cholesky信息重组的方法，提高了稳定性
+  
 - Up or Down? Adaptive Rounding for Post-Training Quantization
   - [blog](https://zhuanlan.zhihu.com/p/363941822)
   - 核心：对weights进行量化时，不再是round to nearest，而是自适应的量化到最近右定点值还是左定点值
-- SmoothQuant和增强型SmoothQuant
+  
+- 增强型SmoothQuant：Neural Compressor
   - 增强的SmoothQuant使用了自动化确定alpha值的方法，而原始的SmoothQuant则是固定了alpha值
   - [相关blog](https://zhuanlan.zhihu.com/p/648016909)
+  
 - SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models
-  - 使用了alpha增强的将激活量化难度转移到权重量化上，同时保证矩阵乘积不变
-  - 实现时只对计算密集型算法进行了smooth量化，而对LN，relu，softmax等访存密集型算子使用fp16计算
-  - ICML2023
+  - 2022.11，ICML2023
+  
+  - 论文发现在int8、W8A8量化中，最大的性能损失来自于激活中的异常最值，使得量化时scale被迫拉大，大多数激活精度被浪费
+  
+  - 论文的思路是把激活中的异常值转移到权重中，同时保证矩阵乘积不变。
+  
+  - 使用了alpha增强的将激活量化难度转移到权重量化上，同时保证矩阵乘积不变：
+    $$
+    xW = \left(xS^{-1}\right)\left(SW\right) \\
+    
+    s_i = \frac{\left(\max |x_i|\right)^\alpha}{\left(\max |W_i|\right)^{1-\alpha}}
+    $$
+    $\alpha$用来控制转移的程度，越大转移的越多
+  
+  - 实现时只对计算密集层进行了smooth量化，而对LN，relu，softmax等访存密集型算子使用fp16计算
+
+- GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
+
+  - 2022.10
+
+  - GPTQ 仍然是权重量化，但它不是“直接最小化权重量化误差”，而是在二阶近似下最小化输出（或中间激活）误差的权重量化方法。GPTQ 目标函数展开后得到带 Hessian 的二次型，其中Hessian 矩阵反映了每个权重对输出的重要性。
+
+  - 而OBQ的思想是在最小化输出误差的前提下，逐个权重量化，并动态修正后续权重。每量化一个权重，就必须更新逆Hessian，比较慢，不并行，不稳定。
+
+  - GPTQ对OBQ的改进，不再使用全局顺序量化，而是按照block/group量化，block/group内部顺序量化，block/group之间互不依赖，因此支持并行，提高量化速度。
+
+  - block/group内部则按顺序贪心量化，无法并行。假如一行为一个分组，则按列量化每个参数，每量化一个参数，便使用Hessian更新剩余未量化的参数。
+
+  - GPTQ使用Cholesky分解把二阶误差目标“变成正交空间下的逐坐标问题”，提高了稳定性

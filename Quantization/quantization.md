@@ -2,7 +2,7 @@
 
 
 
-## 基础知识
+# 基础知识
 
 - [计算机数值编码精读](https://mp.weixin.qq.com/s/4BNd4u08kWVjnF3LEWjx7A)
 
@@ -10,7 +10,7 @@
 - https://github.com/NVIDIA/TransformerEngine
 
 
-## Quantization-aware train/finetune
+# Quantization-aware train/finetune
 
 - FP4量化
   - 要理解FP4量化，需要先理解FP8量化
