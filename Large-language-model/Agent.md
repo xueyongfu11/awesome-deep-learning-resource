@@ -4,6 +4,20 @@
 
 # Agent 
 
+- LLMRefine: Pinpointing and Refining Large Language Models via Fine-Grained Actionable Feedback
+
+  - 2024, NAACL
+
+  - 不同于self-refine，Refine核心思想是利用一个经过训练的细粒度反馈模型来精准定位缺陷，并指导大语言模型（LLM）对其进行迭代优化。
+
+- Self-Refine: Iterative Refinement with Self-Feedback
+
+  - 2023.03
+
+  - 大模型生成内容之后，然后用同一个大模型扮演批判者，对生成内容进行批判，反馈结果再给到大模型对生成内容进行优化，该过程重复多次
+
+  - ![](../assets/self-refine.png)
+
 - Measuring and Narrowing the Compositionality Gap in Language Models
 
   - 2022.10, self-ask, 
@@ -55,25 +69,42 @@
 - XAgent
   - https://github.com/OpenBMB/XAgent
 
+# 基础内容
+
+## 工具数量爆炸导致模型动作选择混乱？
+
+在工具增强的大模型或 Agent 系统中，随着可用工具数量和类型的不断扩展，模型在每一步推理中面临的动作空间急剧膨胀，导致动作选择不稳定、误用或滥用工具等问题
+
+### 方案一：基于 Logits 掩码的动态动作约束
+
+**方案**：在解码阶段引入状态依赖的 logits 掩码机制，根据当前上下文动态屏蔽不合法或不相关的动作 token（如特定工具前缀对应的 token 集合），从而在不移除工具定义的前提下，显式约束模型的可选动作空间。该方法通过在概率层面将非法动作的生成概率置零，使模型只能在当前状态允许的工具子集中进行选择，有效降低动作空间复杂度并提升行为稳定性。
+
+### 方案二：基于状态机的响应模式管理
+
+**方案**：通过构建显式的状态机，对模型在不同推理阶段的响应模式进行管理，预先限定其输出类型（如自由选择、必须调用工具或指定调用某一工具），而非由模型隐式推断。状态机根据上下文切换响应模式，并与工具调用流程解耦，在不修改工具定义的情况下约束模型的高层行为路径，从而确保推理流程的结构一致性并减少工具调用混乱。
+
 # Blog
 
-- [Agent全面爆发！一文搞懂Agent开发核心链路](https://mp.weixin.qq.com/s/gSDpv742AcDg7Jn4Ayppyg)
-  
+- [一文搞懂Agent开发核心链路](https://mp.weixin.qq.com/s/gSDpv742AcDg7Jn4Ayppyg)
+  - 提出多个agent开发中的问题及其解决方案
+  - agent benchmark等
+
+- [Agent及其主流框架介绍](https://mp.weixin.qq.com/s/qyCLff0WG15bEQvjodF-GQ)
+
+- [Anthropic使用代码来调用工具](https://mp.weixin.qq.com/s/XHuQghz8bHXqxes_0dS3FQ)
+  - 适用在工具链执行，但不依赖工具执行结果的系统中，如：读取数据->存储数据
+  - 让Token消耗暴降98.7%
+
+- [Lumine：在3D开放世界中打造通用智能体](https://www.lumine-ai.org/)
+
+- [Ahthropic 如何构建多agent系统](https://www.anthropic.com/engineering/multi-agent-research-system)
+
 - [大模型agent](https://zhuanlan.zhihu.com/p/662239288)
-  
-- Agentic 上下文工程：无需微调，让智能体自我学习与进化
-  - [实战·Agentic 上下文工程（上）：无需微调，让智能体自我学习与进化](https://mp.weixin.qq.com/s/CIzchmwwHhNu7xo4KR9D3w)
 
-  - [实战·Agentic 上下文工程（下）：实现一个可自我学习与进化的智能体原型](https://mp.weixin.qq.com/s/2ra6JQlUJQM0SLTi44ef8A)
-
-- [论文导读 | 大模型的工具学习](https://mp.weixin.qq.com/s/G2thTH204ufM71qzovSNsQ)
+- Agentic Context Engineering（ACE）
+  - [无需微调，让智能体自我学习与进化（上）](https://mp.weixin.qq.com/s/CIzchmwwHhNu7xo4KR9D3w)
+  - [实现一个可自我学习与进化的智能体原型（下）](https://mp.weixin.qq.com/s/2ra6JQlUJQM0SLTi44ef8A)
 
 - [大模型的外部工具调用能力](https://mp.weixin.qq.com/s/1v4Oc0XHROlUEqxi2p4xbg)
-
-- [Paper: ToolLLM：开源大模型工具使用能力的新高峰](https://mp.weixin.qq.com/s/nNueOgD-6TPfG_wMm3USFw)
-
-- [Paper: HuggingGPT： 用ChatGPT和它的朋友在HuggingFace中解决AI任务](https://zhuanlan.zhihu.com/p/619763221)
-
-- [OpenBMB的BMTools笔记](https://zhuanlan.zhihu.com/p/639581784)
 
 - [从第一性原理看大模型Agent技术](https://mp.weixin.qq.com/s/PL-QjlvVugUfmRD4g0P-qQ)

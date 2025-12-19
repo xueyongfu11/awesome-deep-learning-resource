@@ -4,11 +4,18 @@
 
 # Audio tokenizer
 
-- higgs audio
+> 当前的语音大模型中最重要的是如何拥有一个良好的audio tokenizer，常见的方法有VQ-VAE、EnCodec、SoundStream、DAC、SpeechTokenizer、SNAC以及Higgs Audio Tokenizer等。
 
-  - https://huggingface.co/bosonai/higgs-audio-v2-tokenizer
-  - https://github.com/boson-ai/higgs-audio
-- [blog](https://zhuanlan.zhihu.com/p/1970905557931106554)
+- higgs audio tokenizer
+
+  - https://github.com/boson-ai/higgs-audio, [blog](https://zhuanlan.zhihu.com/p/1970905557931106554)
+  
+  - 使用了双流encoder，分别编码semantic和acoustic信息，并在输出通道层进行concat，然后再执行RVQ
+  
+    ![](../../assets/higgs-audio-tokenizer.png)
+  
+  - Higgs audio tokenizer可以在25帧率下运行，而常见的audio tokenizer通常是其的两倍；统一使用24kHz数据进行训练，在一个统一的系统中涵盖语音、音乐和声音事件。
+  
 - SNAC: multi-scale neural audio codec
 
   - 2024.10
@@ -18,15 +25,21 @@
   - 为了增加随机性，增强decoder的表达能力，在上采样层之后添加了高斯噪声，实验发现提高重建质量和码本利用率。
   - SNAC使用了深度可分离卷积，使模型轻量化的同时也提高了训练稳定性。
   - SNAC在最低的时序分辨率处使用了局部窗口注意力机制。
+  
 - SpeechTokenizer: Unified Speech Tokenizer for Speech Large Language Models
 
   - 2023.08，ICML2024，Fudan
 
-  - 为了评估语音令牌对于构建语音语言模型的适用性，作者建立了第一个基准测试SLMTokBench
+  - 论文认为现有的tokenizer不是为了语音大模型而设计的，为了评估语音token对于构建语音语言模型的适用性，作者建立了第一个基准测试SLMTokBench
 
-  - 提出了SpeechTokenizer，这是一个为语音大型语言模型设计的统一语音分词，基于RVQ-VAE，它采用编码器-解码器架构，并结合残差向量量化（RVQ）技术
+  - 论文发现acoustic或semantic token都无法很好的构建语音大模型，提出了SpeechTokenizer，这是一个为语音大型语言模型设计的统一声学和语义的语音分词器。
 
+  - 它采用编码器-解码器架构，并结合残差向量量化（RVQ）技术。使用HuBERT模型将semantic蒸馏到RVQ的第一层，其他层建模声学信息。
+  
+    ![](../../assets/speechTokenizer.png)
+  
   - 基于SpeechTokenizer，作者构建了一个统一的语音语言模型（USLM），它结合了自回归和非自回归模型
+  
 - High-Fidelity Audio Compression with Improved RVQGAN
 
   - 2023.06，DAC，https://github.com/descriptinc/descript-audio-codec
@@ -45,6 +58,7 @@
     - 启发式的损失加权
     
   - 实验结果显示，在各种比率上超越了EnCodec、Lyra、Opus等方法
+  
 - Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation
 
   - https://github.com/LAION-AI/CLAP
