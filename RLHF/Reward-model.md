@@ -4,12 +4,11 @@
 
 ## reward model
 
-### resource
+奖励模型的研究可以分成判别式奖励模型和生成式奖励模型，判别式奖励模型直接通过value head输出奖励值，而生成式奖励模型利用大模型的生成能力，具有一定的可解释性，样本效率更高。在RLHF中，奖励模型经常发生奖励过优化，也叫做奖励黑客。
 
-- Paper: 
-  - Towards Understanding the Influence of Reward Margin on Preference Model Performance
-  - Prototypical Reward Network for Data-Efficient RLHF
-  - ZYN: Zero-Shot Reward Models with Yes-No Questions
+因此本文主要介绍奖励模型不同类别的经典方法，最后介绍缓解奖励黑客的几篇论文。论文按照由近及远排列，建议选择适合自己的顺序阅读。
+
+### resource
 
 - https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark
   - Reward Model Benchmark
@@ -26,7 +25,7 @@
 - https://github.com/OpenLMLab/MOSS-RLHF
 - Towards Understanding the Influence of Reward Margin on Preference Model Performance
 
-### generative reward model
+### 生成式奖励模型generative reward model
 
 - Beyond Scalar Reward Model: Learning Generative Judge from Preference Data
   - 2024.10
@@ -37,17 +36,20 @@
 - Generative Reward Models
   - 2024.10
   - 论文提出了GenRM和CoT-GenRM。GenRM使用”下一个token预测“的方式，计算偏好选项的概率。相比传统添加value header的方法，GenRM未改变模型结构，而是以大模型自生成的方式。
-  2. GenRM以DPO方法进行训练。CoT-GenRM是在推理出偏好选项之前，先生成偏好对比的思维链依据。
+  
+  - GenRM以DPO方法进行训练。CoT-GenRM是在推理出偏好选项之前，先生成偏好对比的思维链依据。
 - Direct Judgement Preference Optimization
   - 2024.9
   - 通过结合正面和负面的偏好数据优化生成型评估模型的评估能力
-  2. 三种训练任务：Chain-of-Thought Critique：通过逐步推理来生成详细的语言反馈和最终判断；Standard Judgement：仅生成最终判断，剔除语言反馈，以提供更直接的监督信号；Response Deduction：通过模型的评估推断原始的模型输出，以加深对高质量和低质量响应的理解
-  3. 综合采用DPO和SFT损失函数，在构造数据时，利用强大的教师模型生成高质量的偏好数据，并使用弱模型生成负例
+  
+  - 三种训练任务：Chain-of-Thought Critique：通过逐步推理来生成详细的语言反馈和最终判断；Standard Judgement：仅生成最终判断，剔除语言反馈，以提供更直接的监督信号；Response Deduction：通过模型的评估推断原始的模型输出，以加深对高质量和低质量响应的理解
+  
+  - 综合采用DPO和SFT损失函数，在构造数据时，利用强大的教师模型生成高质量的偏好数据，并使用弱模型生成负例
 - Critique-out-Loud Reward Models
   - 2024.8
   - 提出了CLoud，首先训练模型生成回复的评论信息，然后将prompt，response，回复的评论信息作为输入，输出reward value
 
-### paper-reward model
+### 判别式奖励模型 discriminative reward model
 
 - HAF-RM: A Hybrid Alignment Framework for Reward Model Training
   - 2024.07
@@ -98,7 +100,7 @@
   - 论文提出基于positive prompt和negative prompt来生成对比性强、质量好的偏好对，然后训练reward模型，接下来的PPO训练部分与常见方案相同
   - 不同于RLAIF，仅使用同一个prompt生成两个回复并打分，RLCD是使用两个对比prompt生成回复。
 
-### paper-reward hacking
+### 奖励黑客 reward hacking
 
 - Spontaneous Reward Hacking in Iterative Self-Refinement
   - 2024.07

@@ -78,6 +78,55 @@
     -  基于T5模型的指令ner信息抽取  <br>
     </details>
 
+# 基于ChatGPT的信息抽取
+
+- How to Unleash the Power of Large Language Models for Few-shot Relation Extraction?
+
+  - ACL
+
+  - 阅读笔记
+
+    - 基于 ChatGPT 大模型的 few-shot 关系抽取
+
+    - 提出了两种策略：task-related instructions 和 schema-constrained data generation
+
+    - task-related instructions：不同于 text prompt，使用“任务指令描述”的方式来进行关系抽取任务
+
+    - schema-constrained data generation：使用实体类型限定的关系抽取任务
+
+- Small Models are Valuable Plug-ins for Large Language Models
+
+  - [[code]](https://aka.ms/SuperICL)
+
+  - 阅读笔记
+
+    - 将大模型 ChatGPT 和本地微调的小模型结合起来
+
+    - 基于 in-context learning：将小模型预测的 label 和置信度加入到 context 中，再基于该上下文使用 ChatGPT 进行 label 预测，并给出推理过程
+
+- GPT-NER: Named Entity Recognition via Large Language Models
+
+  - [code](https://github.com/ShuheWang1998/GPT-NER)
+
+  - 阅读笔记
+
+    - 为了减少生成式大模型与抽取任务的 gap：在原始文本的实体前后添加 special token，并将其作为 label；然后使用“任务指令 + few-shot”的方式用大模型进行预测
+
+    - few-shot 样例构建：随机采样 + 基于 kNN 相似度检索
+
+    - 为防止大模型过度自信：提出 few-shot 自我验证方法——通过指令让大模型回答“抽取到的实体是否属于对应类别”
+
+- Zero-Shot Information Extraction via Chatting with ChatGPT
+
+  - [[code]](https://github.com/cocacola-lab/ChatIE)
+
+  - 阅读笔记
+
+    - 基于 ChatGPT，将 zero-shot 信息抽取分成两个阶段
+
+    - 第一阶段：通过 prompt 得到可能涉及的实体类型
+
+    - 第二阶段：根据第一阶段的实体类型 + 任务相关 schema，提示模型获取其他相关信息
 
 # Table understanding
 

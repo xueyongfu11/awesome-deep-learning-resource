@@ -2,19 +2,25 @@
 
 
 
-# Repo
+# Resource
 
 - https://github.com/PaddlePaddle/VIMER#structext
 - https://github.com/alibaba/AliceMind
 - https://github.com/tstanislawek/awesome-document-understanding
   - 文档理解相关资源
-
-# Resource
-
 - https://rrc.cvc.uab.es/
   - ICDAR比赛
 - DocVQA榜单：https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1 
 - 网页问答榜单WebSRC：https://x-lance.github.io/WebSRC/index.html
+
+
+
+- document parser
+  - PyMuPDF工具 https://github.com/pymupdf/PyMuPDF
+  - Parsr https://github.com/axa-group/Parsr
+  - Plumber  https://github.com/jsvine/pdfplumber
+  - https://github.com/jalan/pdftotext
+  - https://github.com/allenai/scholarphi
 
 
 # Paper  

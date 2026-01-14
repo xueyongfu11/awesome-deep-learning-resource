@@ -2,7 +2,7 @@
 
 
 
-# Repo
+# Resorce
 
 - https://github.com/madmaze/pytesseract
 - https://github.com/roatienza/straug

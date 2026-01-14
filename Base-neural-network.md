@@ -65,6 +65,55 @@
   - 以alpha参数来扩大残差连接，LN(alpha * x + f(x))
   - 在Xavier初始化过程中以Bata减小部分参数的初始化范围
 
+# Post Norm和Pre Norm
+
+> pre-norm 和 post-norm 的区别到底是什么？
+> 我理解 post-norm 每层输出都会做 LN，所以传到下一层的输入分布也稳定；而且除了第一层 embedding 之外，后面每层的输入都已经 LN 过了。
+> 那 post-norm 是不是基本等同于 pre-norm？如果不等同，关键差别到底在哪里？
+
+
+
+**差异 1：残差“直通路径”是否被 LayerNorm 夹住（训练稳定性的关键）**
+
+**Post-norm：**
+$$
+x_{l+1}=\mathrm{LN}\big(x_l + F(x_l)\big)
+$$
+
+反向传播时，梯度从 $x_{l+1}$ 回到 $x_l$，残差那条本应“直通”的路径也必须穿过 LN 的雅可比矩阵 $J_{\mathrm{LN}}$：
+$$
+\frac{\partial x_{l+1}}{\partial x_l}
+= J_{\mathrm{LN}}\big(x_l+F(x_l)\big)\cdot\big(I+J_F(x_l)\big)
+$$
+因此 **没有一个完全不经过 LN 的恒等梯度通路**，层数很深时更容易对学习率、warmup、初始化变得敏感，训练更不稳定。
+
+**Pre-norm：**
+$$
+x_{l+1}=x_l + F\big(\mathrm{LN}(x_l)\big)
+$$
+
+此时梯度里永远带有一个来自残差的保底项 $I$：
+$$
+\frac{\partial x_{l+1}}{\partial x_l}
+= I + J_F\big(\mathrm{LN}(x_l)\big)\cdot J_{\mathrm{LN}}(x_l)
+$$
+这意味着存在一条“不经过 LN 的直通梯度高速路”，所以一般更容易训练很深的网络。
+
+结论：pre/post 最大的训练差异不在“下一层输入是否 LN 过”，而在“残差梯度通路有没有被 LN 打断”。
+
+
+
+**差异 2：LN 作用在“加和之后” vs “进入子层之前”（前向表示的约束方式不同）**
+
+你指出的事实是对的：在标准堆叠里，post-norm 的 $x_l$ 通常是上一层 LN 后的输出，所以子层 $F$ 往往也在吃“已归一化”的输入（除了第一层 embedding）。
+
+但两者仍然不同，因为 LN 的位置改变了每层对表示的“重写方式”：
+
+* **Post-norm：**LN 作用在加和之后 $\mathrm{LN}(x_l+F(x_l))$
+  → 每层都会把“残差累加后的表示”重新归一化，相当于对每层输出施加强约束（尺度/方向会被 LN 重新缩放/投影）。
+
+* **Pre-norm：**LN 作用在进入子层之前 $F(\mathrm{LN}(x_l))$
+  → LN 主要用于给子层稳定工作点，但 residual 累加的表示本身不在每层被 LN 强制重写（通常只在最后再做一次 final LN）。
 
 # activation func
 

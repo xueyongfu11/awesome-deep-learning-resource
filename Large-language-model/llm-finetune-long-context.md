@@ -53,8 +53,7 @@
   - 使用GPU、CPU、硬盘对大模型进行训练
   - 解决涉及到的相关内存和带宽问题：infinity offload engine、memory-centric tiling、bandwidth-centric partitioning、overlap-centric design、ease-inspired implementation
 
-- [
-ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/)
+- [ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/)
 - [ZeRO-2 & DeepSpeed: Shattering barriers of deep learning speed & scale](https://www.microsoft.com/en-us/research/blog/zero-2-deepspeed-shattering-barriers-of-deep-learning-speed-scale/)
 
 - 稀疏attention

@@ -5,34 +5,6 @@
 
 # Paper
 
-- VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks
-
-  - 2025.04
-
-  - 不同GRPO、DAPO，VAPO是一种基于值模型的方法，并超越了无值模型的方法
-
-  - 作者提出值模型的预训练，认为先前方法效果不好的原因是值模型权重从奖励模型初始化，但是二者目标并不匹配。作者从初始策略模型中采样数据，使用蒙特卡洛回报更新值模型。
-
-  - 论文使用解耦的GAE方法，policy model和value model使用不同的时间衰减系数。在policy model中，advantage作为概率比的加权值，在value model中，advantage与老的值网络的和作为target，与新的值网络之间计算MSE损失。VC-PPO任务将时间衰减系数设置为1，是一种无偏的梯度估计。因此VAPO的policy model的advantage计算采用的时间衰减系数为1，而value model的advantage计算采用的时间衰减系统是0.9
-
-  - 使用长度自适应的GAE。固定的时间衰减系数下，当长度很长时，奖励几乎为0，论文提出的长度自适应的GAE可以根据长度来调整时间衰减系数，使得优势函数中累积的学习信号随着生成长度线性增长。使用了DAPO中token级别的策略梯度损失，进一步缓解异常的序列长度问题。
-
-  - 使用更高的上裁剪值；增加LM损失；组采样时，尽可能采样出有区分度的正负样本。
-
-- DAPO: an open-source LLM reinforcement learning system at scale
-
-  - 2025.03
-
-  - 作者研究发现，使用GRPO的默认参数设置训练出的模型效果远低于DS-R1论文中报告的结果。作者发现在训练过程中，存在熵坍塌、奖励噪声、训练不稳定等问题。
-
-  - 将上裁剪值和下裁剪值解耦，使用更高的上裁剪值，帮助模型进行更好的探索，提升多样性，避免熵坍塌
-
-  - 使用动态采样方法提升训练效率和稳定性，摒弃组内采样奖励值都为0或者1的数据，因为这样的数据计算的advantage都为0
-
-  - 为避免样本级 GRPO 在 Long-CoT 场景下对长序列 token 学习信号的过度稀释及对冗余模式惩罚不足，作者将策略梯度损失由 sample-level 重构为 token-level，从而实现对推理关键 token 的精细化优化与对无意义生成的有效抑制。
-
-  - 对于过长的样本一般采用截断处理，这种方法会引入奖励噪声和损害训练过程。论文提出长度过滤方法，通过定义过长的长度区间，在该区间中，模型回复越长惩罚越大。
-
 - QwQ-32B-Preview
 
   - [Blog](https://qwenlm.github.io/zh/blog/qwq-32b/)
