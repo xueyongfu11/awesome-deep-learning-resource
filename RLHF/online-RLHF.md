@@ -85,6 +85,8 @@
       \end{cases}
       $$
 
-  - 逐token 的advantage如何计算
+  - PPO中的clip操作是对概率比进行裁剪，防止学习的policy和采样数据的policy偏离太远
 
-    - 逐token的advantage是用逐token的及时奖励、值函数，通过GAE算法从后往前计算来的
+  - 逐token 的advantage如何计算：逐token的advantage是用逐token的及时奖励、值函数，通过GAE算法从后往前计算来的
+  
+  - critic model的loss：old critic model的状态值 + advantage 与 当前 critic model的状态值的MSE作为训练的损失。advantage可以理解为真实回报相比baseline（old critic model）状态值的增量。

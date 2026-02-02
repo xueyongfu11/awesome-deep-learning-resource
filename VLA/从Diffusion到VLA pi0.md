@@ -58,8 +58,9 @@ $x_t = \sqrt{\bar\alpha_t} x_0 + \sqrt{1-\bar\alpha_t} \varepsilon,\quad \vareps
 - 与像素级扩散模型不同，Stable Diffusion 首先通过 VAE 将高分辨率图像压缩为低分辨率、高语义密度的潜表示。扩散过程仅在该潜空间中进行，从而显著降低计算成本和显存开销，同时保持较高的生成质量。
 
 - Stable Diffusion 基于 Latent Diffusion Model（LDM） 架构，将扩散过程从高维像素空间转移到由 VAE 学习得到的低维潜空间中。模型推理由文本编码器（CLIP）、潜空间去噪网络（条件 U-Net）和 VAE 解码器组成。VAE 负责在图像与潜变量之间进行双向映射。
-- Stable Diffusion 的U-Net 架构，由多层下采样编码器、瓶颈层和对称的上采样解码器构成，并通过 skip connection 保留多尺度特征信息。与传统 U-Net 不同的是，该模型在多个分辨率层中引入了 Transformer Block，从而增强全局建模能力。这种 CNN 与 Transformer 的混合结构兼顾了局部纹理建模与长程依赖建模，适合复杂图像生成任务。每个Transformer Block由self-attention、cross-attention、FFN组成。潜空间特征首选要flatten成序列（类似text embedding），才能被输入到Transformer-Block中。在 cross-attention 中，潜空间特征作为 Query，文本特征作为 Key 和 Value，使模型能够在空间位置级别对齐文本语义。这一机制使得 Stable Diffusion 能够精细控制图像内容和局部细节，是 prompt 驱动生成能力的核心来源。
-- 扩散过程被离散为多个时间步，每个时间步通过时间嵌入（time embedding）注入到 U-Net 各层，使模型能够感知当前噪声强度。具体是把时间步t进行sinusoidal embedding，通过MLP，注入到UNet。
+- Stable Diffusion 的U-Net 架构，由多层下采样编码器、瓶颈层和对称的上采样解码器构成，并通过 skip connection 保留多尺度特征信息。在三个组件中，都堆叠了ResBlock，其典型结构是两层卷积+中间归一化/激活+残差。
+- 与传统 U-Net 不同的是，该模型在多个分辨率层中引入了 Transformer Block，从而增强全局建模能力。这种 CNN 与 Transformer 的混合结构兼顾了局部纹理建模与长程依赖建模，适合复杂图像生成任务。每个Transformer Block由self-attention、cross-attention、FFN组成。潜空间特征首选要flatten成序列（类似text embedding），才能被输入到Transformer-Block中。在 cross-attention 中，潜空间特征作为 Query，文本特征作为 Key 和 Value，使模型能够在空间位置级别对齐文本语义。这一机制使得 Stable Diffusion 能够精细控制图像内容和局部细节，是 prompt 驱动生成能力的核心来源。
+- 扩散过程被离散为多个时间步，每个时间步通过时间嵌入（time embedding）注入到 U-Net 各层，使模型能够感知当前噪声强度。具体是把时间步t进行sinusoidal embedding，通过不同的MLP，投射到不同的ResBlock的通道数，再把它broadcast成[B,C,1,1]，直接加到ResBlock的卷积特征图上。
 - ![](../assets/LDM.png)
 
 # Transfusion
@@ -82,7 +83,7 @@ $x_t = \sqrt{\bar\alpha_t} x_0 + \sqrt{1-\bar\alpha_t} \varepsilon,\quad \vareps
 
 - 模型架构
 
-  - $\pi$0主要基于Transfusion改进，为了执行高度灵活和负责的物理任务，使用了基于flow matching的action chunking来表示复杂并连续的action分布，推理时可以输出多个未来action轨迹。离散输出使用cross-entropy loss，连续输出使用flow-matching loss。
+  - $\pi$0主要基于Transfusion改进，为了执行高度灵活和复杂的物理任务，使用了基于flow matching的action chunking来表示复杂并连续的action分布，推理时可以输出多个未来action轨迹。离散输出使用cross-entropy loss，连续输出使用flow-matching loss。
   - 为了充分整合VLM和flow matching，模型使用了轻量级MoE架构，增加了action expert，对于输入action token只能经过action expert。
   - ![](../assets/pi0.png)
 

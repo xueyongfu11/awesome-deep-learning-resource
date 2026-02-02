@@ -14,6 +14,12 @@
 - DRAM 通过 “Bank Group” 和 “Bank” 的层级结构支持并行访问；
 - 多核处理器的 L1/L2 缓存也可能采用多 bank 设计以支持多核并行访问。
 
+
+
+在 CUDA 的 shared memory 里，数据按地址被切成以 bank 宽度（常见 4B）为单位的连续“word”，这些 word 会以交错轮转的方式分配到多个 bank：第 0 个 word 落在 bank0、第 1 个落在 bank1……到 bankN-1 后再回到 bank0，如此循环；
+
+因此某个地址属于哪个 bank 主要由 bank_id = (addr / bank_width) % num_banks 决定，而不是“整块数据顺序装进同一个 bank”。
+
 ### 存储体冲突的定义与产生机制
 
 当多个并行访问请求（如 GPU 线程束中的多个线程、多核处理器的多个核心）试图在同一周期内访问同一个存储体时，就会发生 “存储体冲突”。
