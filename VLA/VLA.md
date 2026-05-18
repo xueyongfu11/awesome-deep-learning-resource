@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 # Paper
 
 - OpenVLA: an open-source vision-language-action model
@@ -15,15 +13,12 @@
 - RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
 
   - 2023.07，Deepmind
-
   - 基于预训练好的VLM模型，使用多模态视觉任务数据以及robot数据进行共训练。将连续robot action离散化，具体是将每个维度离散成256个bin
 
     ![](../assets/rt2-tokenizer.png)
-
   - RT2基于PaLI-X和PaLM-E模型构建，架构如下：
 
     ![](../assets/rt2.png)
-
   - RT2在泛化性、涌现能力、模型参数scaling、思维链推理等方面表现出不错的效果
 
 # Blog
