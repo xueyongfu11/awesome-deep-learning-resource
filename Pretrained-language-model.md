@@ -68,7 +68,7 @@
 - https://github.com/zhongerqiandan/pretrained-unilm-Chinese
 - https://github.com/ymcui/Chinese-BERT-wwm
 - https://github.com/ZhuiyiTechnology/WoBERT
-- https://github.com/NVIDIA/Megatron-LM
+
 
 ## 长文本PTLM
 - https://github.com/SCHENLIU/longformer-chinese
