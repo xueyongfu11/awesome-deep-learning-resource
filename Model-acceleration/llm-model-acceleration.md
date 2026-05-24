@@ -80,7 +80,7 @@
 
 
 
-# Blog
+# 博客Blog
 
 - [大模型部署的方案](https://mp.weixin.qq.com/s/hSFuULV-7bykz-zRmG5CXA)
 - [大语言模型推理性能优化汇总](https://mp.weixin.qq.com/s/9mfx5ePcWYvWogeOMPTnqA)
