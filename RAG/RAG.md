@@ -78,6 +78,8 @@
 
 ## Blog
 
+### 增强 RAG
+
 - [The Rise and Evolution of RAG in 2024 A Year in Review](https://ragflow.io/blog/the-rise-and-evolution-of-rag-in-2024-a-year-in-review#agentic-and-memory)
 
 - [RAPTOR 一种基于树的RAG方法，RAG的准确率提高 20%](https://www.cnblogs.com/xiaoqi/p/18060281/RAPTOR)
@@ -99,3 +101,12 @@
 - [大模型检索增强生成（RAG）有哪些好用的技巧](https://www.zhihu.com/question/625481187/answer/3279041129)
 
 - [万字长文总结检索增强 LLM](https://zhuanlan.zhihu.com/p/655272123)
+
+
+### Agentic RAG
+
+- [A-RAG 框架全面解析](https://mp.weixin.qq.com/s/6b2Pugbqrzql60P2Pt_J_Q)
+
+- [Agentic RAG和增强RAG的效果对比](https://mp.weixin.qq.com/s/ykIGiBfpeISf36ndyZcGOg)
+
+
