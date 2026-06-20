@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文总结"
+  short_description: "按中文样例总结、讲解论文和研究文档"
+  default_prompt: "Use $summarize-paper to summarize and explain this paper in Chinese."

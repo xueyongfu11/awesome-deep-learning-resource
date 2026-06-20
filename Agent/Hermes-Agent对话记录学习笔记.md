@@ -40,6 +40,8 @@ skill_view(name="arxiv")
 
 很多人看 Agent，会先看工具列表。但我觉得 system prompt 更值得先看。工具决定 Agent 能做什么，system prompt 决定它应该怎么做、什么时候做、做到什么程度。
 
+具体system prompt内容以及构建可以参考源码：[URL](https://github.com/NousResearch/hermes-agent/blob/main/agent/prompt_builder.py)
+
 这次导出的 system prompt 不是一句简单的角色设定，而是分成了好几块：persona、memory、工具使用规则、执行纪律、澄清策略、上下文缺失处理、skill 加载规则、可用 skill 索引、运行环境提示。每一块都会影响后面的行为。
 
 先看最前面的 persona。它表面上是在定义 Agent 的语气和身份，但里面也可以放工作流要求。比如这段：
