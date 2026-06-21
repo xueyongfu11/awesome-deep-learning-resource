@@ -23,4 +23,8 @@
 
 # Blog
 
+- [Efficient VLA综述](https://zhuanlan.zhihu.com/p/1977112008424960777)
+
+- [ICLR 2026 VLA 研究现状-截止到2025.10月的研究综述](https://zhuanlan.zhihu.com/p/1961724511847192399)
+
 - [一站式具身智能RL入门指南](https://paj5uamwttr.feishu.cn/wiki/GaozwfU3iiWA9Nk0LVUcUzKZnHc)
