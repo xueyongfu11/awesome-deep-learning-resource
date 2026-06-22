@@ -1,0 +1,4 @@
+interface:
+  display_name: "保存关键 QA 到知识库"
+  short_description: "从当前对话提取关键技术问答，定位相关文件并安全追加"
+  default_prompt: "Use $capture-qa-to-repo to save the key Q&A from this conversation into the most relevant knowledge-base file."
