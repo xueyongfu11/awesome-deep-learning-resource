@@ -85,6 +85,8 @@
 
 # Blog
 
+- [Agent 如何管理其他 Agent：四种Sub Agent 模式](https://mp.weixin.qq.com/s/OmdV7cucIVqwOVo7ZO_h1g)
+  
 - [一文搞懂Agent开发核心链路](https://mp.weixin.qq.com/s/gSDpv742AcDg7Jn4Ayppyg)
   - 提出多个agent开发中的问题及其解决方案
   - agent benchmark等

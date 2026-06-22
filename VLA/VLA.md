@@ -21,6 +21,10 @@
     ![](../assets/rt2.png)
   - RT2在泛化性、涌现能力、模型参数scaling、思维链推理等方面表现出不错的效果
 
+## Repo
+
+- https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-Guide
+
 # Blog
 
 - [Efficient VLA综述](https://zhuanlan.zhihu.com/p/1977112008424960777)
@@ -28,3 +32,5 @@
 - [ICLR 2026 VLA 研究现状-截止到2025.10月的研究综述](https://zhuanlan.zhihu.com/p/1961724511847192399)
 
 - [一站式具身智能RL入门指南](https://paj5uamwttr.feishu.cn/wiki/GaozwfU3iiWA9Nk0LVUcUzKZnHc)
+
+- [具身智能求职终极指南-VLA篇：从领域现状到最新模型](https://zhuanlan.zhihu.com/p/2011878915350733886)

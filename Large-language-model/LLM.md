@@ -50,6 +50,10 @@
 - 大模型评测中文benckmark
   - C-Eval：https://cevalbenchmark.com/index.html
 
+## OPD
+
+- [简单微调分词方式，轻松实现跨架构OPD](https://mp.weixin.qq.com/s/WX-OKr6R5G0ZdIPND0ybQg)
+
 ## MoE
 
 - Qwen2 MoE

@@ -3,6 +3,8 @@
 
 ## Skills
 
+- [AI infra/ agent (vllm/sglang/torch等) skills整理](https://zhuanlan.zhihu.com/p/2023063871259177169)
+
 - [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
 
 - [hermes tools](https://github.com/NousResearch/hermes-agent/tree/main/tools)
