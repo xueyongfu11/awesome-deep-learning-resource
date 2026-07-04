@@ -21,6 +21,7 @@
 - https://github.com/dhcode-cpp/X-R1
 
 - Blog
+  - [【AgentRL】工业级Agentic RL 训练对比选型指南](https://zhuanlan.zhihu.com/p/1978600046514685178)
   - [SPO新范式助力大模型推理能力提升](https://mp.weixin.qq.com/s/abUS_x8GTHEqTwS9rCwgLg)
     - 为连续token片段计算reward
   - [探讨Entropy(熵)机制在RL中扮演的角色](https://mp.weixin.qq.com/s/8eTzjE677C2jvyYtsEFukg)

@@ -56,6 +56,7 @@
 
 ## Blog
 
+- [GRPO熵坍缩问题](https://zhuanlan.zhihu.com/p/1938946998960095949)
 - [强化微调RFT技术解析](https://blog.csdn.net/AIBigModel/article/details/144350849)
 - [比 GRPO 更稳定更高效：GSPO 算法如何颠覆大模型 RL 训练](https://zhuanlan.zhihu.com/p/1932770229693450218)
   - GSPO的advantage的计算与GRPO相同，都是使用组内相对优势
@@ -97,7 +98,6 @@
 
 - 参考 [blog](https://zhuanlan.zhihu.com/p/20812786520) ，通过组内优势估计计算每个 response 的相对优势 advantage，然后将 advantage 作为每个 token 的advantage。
 - 而PPO算法的逐token的advantage是用逐token的及时奖励、值函数，通过GAE算法从后往前计算来的。GRPO没有值函数，所以无法使用GAE。
-
 
 
 
