@@ -2,6 +2,7 @@
 
 # 模型微调
 
+- [微调需要多少数据？](https://mp.weixin.qq.com/s/LbIMOjSZ83KFqM8zWdV4Wg)
 - Critique Fine-Tuning: Learning to Critique is More Effective than Learning to Imitate
 
   - 2025.01

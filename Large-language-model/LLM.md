@@ -52,6 +52,7 @@
 
 ## OPD
 
+- [On-Policy-Distillation 进展总结：密集奖励的隐患与对策](https://zhuanlan.zhihu.com/p/2028518805890974874)
 - [如何突破On Policy Distillation（OPD）的性能上限？](https://www.zhihu.com/question/2037212225740464733/answer/2040106776469708879)
 - [简单微调分词方式，轻松实现跨架构OPD](https://mp.weixin.qq.com/s/WX-OKr6R5G0ZdIPND0ybQg)
 
