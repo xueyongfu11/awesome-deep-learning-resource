@@ -262,6 +262,7 @@
 
 ### Blog
 
+- [如何解决大模型在继续预训练或微调后出现的灾难性遗忘问题？](https://www.zhihu.com/question/640869050/answer/2012685876371686363)
 - [每天一道大模型面试题 | 如何解决大模型训练中的灾难性遗忘问题？](https://mp.weixin.qq.com/s/UYIw5ceZgWD7XXEOkaIklA)
 - [缓解LLM fine-tune模型遗忘](https://zhuanlan.zhihu.com/p/700156271)
 - [ICLR 2025 | 大模型“遗忘”竟是错觉？首次揭示 LLM 训练中的“虚假遗忘”](https://zhuanlan.zhihu.com/p/23021161842)

@@ -18,6 +18,7 @@
 
 **Blog:**
 
+- [大模型后训练再思考：决定推理SFT泛化能力的三个隐藏变量](https://zhuanlan.zhihu.com/p/2026442713378174652)
 - [NEFT：在embedding上添加噪声减少过拟合并提升泛化性](https://zhuanlan.zhihu.com/p/661962656)
 
 
