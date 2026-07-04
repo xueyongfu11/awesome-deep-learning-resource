@@ -1,9 +1,9 @@
 # Repository index
 
-- Snapshot date: `2026-06-21`
-- Resolved Windows path: `D:\Codes\00-Synchronize-repo\awesome-deep-learning-resource`
+- Snapshot date: `2026-07-02`
+- Resolved Windows path: `/work/awesome-deep-learning-resource`
 - Alternate Linux path: `/work/awesome-deep-learning-resource`
-- Markdown files indexed: `180`
+- Markdown files indexed: `183`
 
 Use this snapshot for navigation, then search the live repo before editing.
 
@@ -32,6 +32,8 @@ Use this snapshot for navigation, then search the live repo before editing.
 - `Agent/Agent.md` — Agent / agent框架
 - `Agent/Agent评测集.md` — Claw-Eval / SkillsBench
 - `Agent/Hermes-Agent对话记录学习笔记.md` — 从一次 Hermes Agent 会话看 System Prompt、Tools 和 Skills / 1. 先看整体流程
+- `Agent/Skills/capture-qa-to-repo/references/repo-index.md` — Repository index / Directory and Markdown file map
+- `Agent/Skills/capture-qa-to-repo/SKILL.md` — Capture QA to Repo / Repository discovery
 - `Agent/Skills/Skills.md` — Skills
 - `Agent/Skills/summarize-paper/SKILL.md` — Summarize Paper / Core Workflow
 
@@ -132,6 +134,7 @@ Use this snapshot for navigation, then search the live repo before editing.
 - `Model-acceleration/megatron代码学习/README.md` — Megatron Core 学习笔记 / 学习顺序
 - `Model-acceleration/model-acceleration.md` — inference tools / 模型并发推理
 - `Model-acceleration/Model-compression.md` — 加速与量化 / KD
+- `Model-acceleration/Transformer激活内存与选择性重计算.md` — Transformer 激活内存与选择性重计算 / 2. No Parallelism 公式推导
 - `Model-acceleration/vllm.md` — Vllm / vllm参数理解
 - `Model-acceleration/常见问题1.md` — 用 CompletableFuture 比老的 Future 好在哪？怎么编排多个异步任务？ / 模型服务流量突然暴增，怎么做自动扩缩容？看哪些指标？
 - `Model-acceleration/常见问题2.md` — 对 AI Infra 这个方向的理解 / 混合精度训练的原理是什么？FP16、BF16 和 FP32 如何转换与同步？
@@ -189,7 +192,7 @@ Use this snapshot for navigation, then search the live repo before editing.
 - `RLHF/OpenRLHF的Ray资源调度和PPO训练流程.md` — 理一下OpenRLHF的Ray资源调度和PPO训练流程 / Ray和DeepSpeed的功能和差异
 - `RLHF/reasoning-RL.md` — Repo
 - `RLHF/reward-model-loss.md` — RLHF中reward model的奖励值有哪些计算方法？Loss如何计算？ / decoder-only模型
-- `RLHF/reward-model.md` — reward model / resource
+- `RLHF/Reward-model.md` — reward model / resource
 - `RLHF/RLHF.md` — resource / self-improving
 
 ### Sentiment-analysis
@@ -240,7 +243,7 @@ Use this snapshot for navigation, then search the live repo before editing.
 ### VLA
 
 - `VLA/Taxonomy.md` — A：**Control & Reasoning Paradigm（控制范式）** / A1. Policy-Centric VLA（端到端）
-- `VLA/VLA.md` — Paper / Blog
+- `VLA/VLA.md` — Paper / Repo
 - `VLA/从Diffusion到VLA pi0.md` — DDPM / UNet
 - `VLA/入门教程/L2-1 经典的规划方法 学习课程.md` — L2-1 经典的规划方法：新手学习课程 / 0. 这节课在讲什么
 - `VLA/入门教程/L2-2 控制算法介绍 学习课程.md` — L2-2 控制算法介绍：新手学习课程 / 0. 这节课在讲什么
