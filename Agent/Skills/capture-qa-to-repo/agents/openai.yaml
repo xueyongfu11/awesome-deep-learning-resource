@@ -1,4 +1,0 @@
-interface:
-  display_name: "保存 QA 和 URL 到知识库"
-  short_description: "从对话提取技术问答或链接，定位合适文件与章节后安全保存"
-  default_prompt: "Use $capture-qa-to-repo to save key Q&A or a titled URL into the most relevant knowledge-base file and section."
