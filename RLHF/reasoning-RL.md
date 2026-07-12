@@ -4,6 +4,15 @@
 
 # Repo
 
+- [mll-lab-nu/VAGEN](https://github.com/mll-lab-nu/VAGEN)（Python）：使用多轮强化学习训练视觉语言模型 Agent。
+- [thinkwee/AgentsMeetRL](https://github.com/thinkwee/AgentsMeetRL)（HTML）：Agentic RL 论文、方法和资源的精选列表。
+- [HHHHHejia/Awesome-AgenticLLM-RL-Papers](https://github.com/HHHHHejia/Awesome-AgenticLLM-RL-Papers)：Agentic LLM 强化学习综述的官方资源库，按算法和研究方向整理相关论文。
+- [microsoft/agent-lightning](https://github.com/microsoft/agent-lightning)（Python）：用于训练和优化 AI Agent 的强化学习框架。
+- [alibaba/ROLL](https://github.com/alibaba/ROLL)（Python）：面向大语言模型强化学习的高效、易用、可扩展训练库。
+- [ChenmienTan/RL2](https://github.com/ChenmienTan/RL2)（Python）：强调清晰实现的 LLM 后训练库，支持 FSDP、Megatron、多轮 rollout 和 Agent 环境。
+- [THUDM/slime](https://github.com/THUDM/slime)（Python）：面向大规模 LLM 强化学习后训练的框架。
+- [areal-project/AReaL](https://github.com/areal-project/AReaL)（Python）：为 LLM Agent 应用提供灵活、简化的强化学习训练桥梁。
+- [OpenPipe/ART](https://github.com/OpenPipe/ART)（Python）：使用 GRPO 等方法训练多步 Agent 完成真实任务的强化学习框架。
 - https://github.com/Unakar/Logic-RL
 - https://github.com/eddycmu/demystify-long-cot
 - https://github.com/RLHFlow/Minimal-RL

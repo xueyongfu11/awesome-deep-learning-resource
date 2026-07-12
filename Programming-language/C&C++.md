@@ -68,6 +68,74 @@ Person& operator=(const Person&) = delete;
 
 一句话总结：默认逐成员复制正确时不要手写；需要深拷贝、自定义共享语义或禁止复制时，才显式定义或删除拷贝操作。
 
+## 现代 C++ 中“让资源由对象管理，让对象由作用域管理”怎么理解？
+
+这句话指的是 RAII（Resource Acquisition Is Initialization，资源获取即初始化）：把资源的申请和释放绑定到对象生命周期上，而不是靠程序员在每条路径上手工 `new/delete`、`fopen/fclose`、`lock/unlock`。
+
+手工管理资源容易出错：
+
+- 忘记释放，导致内存泄漏或句柄泄漏；
+- 同一地址释放两次，导致重复释放；
+- 对象已经销毁但指针仍被使用，形成悬空指针；
+- 分配和释放形式不匹配，例如 `new[]` 搭配 `delete`；
+- 函数提前 `return` 或抛异常，导致释放语句没有执行。
+
+所以现代 C++ 的默认原则是：资源交给对象管理，对象交给作用域管理。
+
+```cpp
+void f() {
+    auto p = std::make_unique<int>(42);
+
+    risky();  // 即使这里抛异常
+}             // p 离开作用域，析构函数自动释放内存
+```
+
+这里不需要手写 `delete`。`std::unique_ptr` 是管理资源的对象，函数作用域结束时它会自动析构，并释放它拥有的内存。
+
+类似地，`std::vector` 管理动态数组，`std::string` 管理字符串内存，`std::ifstream` 管理文件打开和关闭，`std::lock_guard` 管理互斥锁的加锁和解锁。使用这些 RAII 类型时，业务类通常不需要自己写析构函数：
+
+```cpp
+class User {
+    std::string name;
+    std::vector<int> scores;
+    std::unique_ptr<int> id;
+};
+```
+
+编译器生成的析构函数会自动调用每个成员的析构函数，成员自己会释放资源。这就是 Rule of Zero：能不写析构函数、拷贝构造、赋值运算符，就尽量不写，让成员对象自己处理资源管理。
+
+只有当类直接拥有某种原始资源时，才通常需要自己写析构函数。例如：
+
+```cpp
+class File {
+    FILE* fp = nullptr;
+
+public:
+    File(const char* path) {
+        fp = std::fopen(path, "r");
+    }
+
+    ~File() {
+        if (fp) {
+            std::fclose(fp);
+        }
+    }
+
+    File(const File&) = delete;
+    File& operator=(const File&) = delete;
+};
+```
+
+`FILE*` 本身不会在离开作用域时自动 `fclose`，所以这个类如果负责 `fopen`，就必须负责 `fclose`。同时还要禁止拷贝，否则两个 `File` 对象可能持有同一个 `FILE*`，析构时重复关闭同一个文件。
+
+更现代的写法是优先使用已有 RAII 类型：
+
+```cpp
+std::ifstream file("a.txt");
+```
+
+一句话总结：如果成员变量自己会释放资源，通常不要写析构函数；如果类直接拥有裸指针、文件句柄、Socket、操作系统句柄等原始资源，才需要自定义析构，或者更好地把它们封装进 RAII 类型。
+
 ## C++11 中 const 和 constexpr 有什么区别？
 
 `const` 强调“对象初始化后不可修改”，`constexpr` 强调“表达式可以在编译期求值”。
