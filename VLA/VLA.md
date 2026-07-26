@@ -23,10 +23,19 @@
 
 ## Repo
 
+- [RLinf/RLinf](https://github.com/RLinf/RLinf)（Python）：服务于具身智能和 Agentic AI 的强化学习基础设施。
+- [OpenHelix-Team/VLA-Adapter](https://github.com/OpenHelix-Team/VLA-Adapter)
+- [open-gigaai/giga-brain-0](https://github.com/open-gigaai/giga-brain-0)
+- [starVLA/starVLA](https://github.com/starVLA/starVLA)
+- [jonyzhang2023/awesome-embodied-vla-va-vln](https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln)
+- [Mininglamp-AI/Mano-P](https://github.com/Mininglamp-AI/Mano-P)
 - https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-Guide
 
 # Blog
 
+- [具身智能（运动控制方向）如何学习？](https://www.zhihu.com/question/2019488603890266175/answer/2021123672463688982)
+- [具身智能（运动控制方向）如何学习？](https://www.zhihu.com/question/2019488603890266175/answer/2022307874802517337)
+- [VLA系统化课程](https://zhuanlan.zhihu.com/p/2045105630495642303)
 - [Efficient VLA综述](https://zhuanlan.zhihu.com/p/1977112008424960777)
 
 - [ICLR 2026 VLA 研究现状-截止到2025.10月的研究综述](https://zhuanlan.zhihu.com/p/1961724511847192399)
@@ -34,3 +43,10 @@
 - [一站式具身智能RL入门指南](https://paj5uamwttr.feishu.cn/wiki/GaozwfU3iiWA9Nk0LVUcUzKZnHc)
 
 - [具身智能求职终极指南-VLA篇：从领域现状到最新模型](https://zhuanlan.zhihu.com/p/2011878915350733886)
+
+## 学习路径
+
+- 从仿真开始，侧重 VLA 时可先学习 LIBERO、RoboTwin 2.0 或 ManiSkill；这些环境的代码和文档相对丰富。
+- 结合轻量化模型，从 VLA-Adapter 论文与代码开始复现；单卡 4090 可以跑起来。
+- 学习扩散策略时，可参考 Diffusion Policy 与千寻智能的 Spirit v1.5；先明确模型输入（observation 图像、本体 state）和输出（action chunk）。
+- 真机代码可参考 LeRobot，但复杂度更高；经费允许时，开箱即用的数采设备能节省时间。自行搭建 VR 遥操作可能需要约一个月调试。
