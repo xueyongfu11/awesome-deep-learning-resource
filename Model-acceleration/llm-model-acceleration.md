@@ -3,6 +3,9 @@
 
 # llm-model-acceleration
 
+- [AIInfraGuide](https://github.com/caomaolufei/AIInfraGuide)
+- [Awesome-ML-SYS-Tutorial](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial)
+
 - flashMLA
 
   - 个人注释版：https://github.com/xueyongfu11/FlashMLA
