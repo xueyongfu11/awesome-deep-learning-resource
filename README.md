@@ -1,3 +1,5 @@
+
+
 # awesome-deep-learning-resource
 
 深度学习、自然语言处理、大模型与多模态相关资料整理。
@@ -8,6 +10,7 @@
 
 - [Large-language-model](./Large-language-model/)：大语言模型、开源 LLM、长上下文、数据合成、微调、CoT、垂直领域大模型等
 - [Agent](./Agent/)：Agent 评测、对话记录学习等
+- [LLM-Memory](./LLM-Memory/)：Agent 记忆管理
 - [RAG](./RAG/)：检索增强生成、RAG 分类与系统实践
 - [RLHF](./RLHF/)：RLHF、Reward Model、PPO、在线/离线 RLHF、推理强化学习等
 - [PEFT](./PEFT/)：LoRA、参数高效微调
